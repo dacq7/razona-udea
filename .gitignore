@@ -1,0 +1,13 @@
+.env.local
+.env
+node_modules/
+.next/
+.vercel
+*.log
+.DS_Store
+out/
+build/
+dist/
+.turbo/
+coverage/
+.pnpm-store/
