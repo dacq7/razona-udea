@@ -1,1 +1,386 @@
-[]
+[
+  {
+    "id": "prac1-tablas-graficas-lectura-directa",
+    "dificultad": 1,
+    "enunciado": "La tabla muestra las notas de tres estudiantes:\n| Estudiante | Matemáticas | Ciencias | Español |\n|---|---|---|---|\n| Ana | 85 | 72 | 90 |\n| Luis | 68 | 80 | 75 |\n| María | 91 | 65 | 82 |\n\n¿Cuál es la nota de Luis en Ciencias?",
+    "pista": "Ubica la fila de Luis y la columna de Ciencias. La respuesta está en la celda donde se cruzan.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "68",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 68 es la nota de Luis en Matemáticas, no en Ciencias. Error de leer la columna equivocada — se quedó en la primera columna de datos en lugar de avanzar hasta Ciencias."
+      },
+      {
+        "letra": "B",
+        "texto": "80",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Fila Luis → columna Ciencias → celda = 80."
+      },
+      {
+        "letra": "C",
+        "texto": "75",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 75 es la nota de Luis en Español, la tercera columna. Error de avanzar una columna de más."
+      },
+      {
+        "letra": "D",
+        "texto": "65",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 65 es la nota de María en Ciencias, no de Luis. Error de leer la fila equivocada — se ubicó en la columna correcta (Ciencias) pero en la fila de María."
+      }
+    ]
+  },
+  {
+    "id": "prac2-tablas-graficas-barras-diferencia",
+    "dificultad": 1,
+    "enunciado": "Un gráfico de barras muestra libros vendidos por género:\n- Novela: 350\n- Ciencia ficción: 180\n- Historia: 240\n- Autobiografía: 120\n\n¿Cuál es la diferencia entre el género más vendido y el menos vendido?",
+    "pista": "Identifica el valor máximo y el mínimo entre las cuatro barras, luego réstalos.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "170",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $350 - 180 = 170$, que es la diferencia entre el más vendido (Novela=350) y el segundo menos vendido (Ciencia ficción=180). El menos vendido de todos es Autobiografía con 120."
+      },
+      {
+        "letra": "B",
+        "texto": "230",
+        "es_correcta": true,
+        "explicacion": "Es correcto. El género más vendido es Novela (350) y el menos vendido es Autobiografía (120). Diferencia: $350 - 120 = 230$."
+      },
+      {
+        "letra": "C",
+        "texto": "350",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 350 es el valor del género más vendido (Novela), no la diferencia entre máximo y mínimo. La diferencia requiere restar el mínimo (120) del máximo: $350 - 120 = 230$."
+      },
+      {
+        "letra": "D",
+        "texto": "120",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 120 es el valor del género menos vendido (Autobiografía), no la diferencia. La diferencia es $350 - 120 = 230$."
+      }
+    ]
+  },
+  {
+    "id": "prac3-tablas-graficas-circular-valor",
+    "dificultad": 1,
+    "enunciado": "Un gráfico circular muestra el destino de un presupuesto de eventos de $\\$800.000$:\n- Comida: 40%\n- Decoración: 25%\n- Música: 20%\n- Logística: 15%\n\n¿A cuánto equivale el rubro de Música en pesos?",
+    "pista": "Multiplica el porcentaje de Música por el presupuesto total. No uses el porcentaje como valor directo.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "$\\$20.000$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: error de usar el porcentaje (20) como si fueran pesos directamente, sin multiplicar por el total. $20\\%$ de $\\$800.000$ no es $\\$20.000$; es $\\$160.000$."
+      },
+      {
+        "letra": "B",
+        "texto": "$\\$120.000$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $120.000 = 800.000 \\times 0.15$, que corresponde a Logística (15%), no a Música (20%). Error de leer el porcentaje equivocado."
+      },
+      {
+        "letra": "C",
+        "texto": "$\\$160.000$",
+        "es_correcta": true,
+        "explicacion": "Es correcto. $\\$800.000 \\times 0.20 = \\$160.000$."
+      },
+      {
+        "letra": "D",
+        "texto": "$\\$200.000$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $\\$200.000 = \\$1.000.000 \\times 0.20$. Se usó $\\$1.000.000$ como total en lugar del presupuesto real de $\\$800.000$."
+      }
+    ]
+  },
+  {
+    "id": "prac4-tablas-graficas-barras-porcentaje",
+    "dificultad": 2,
+    "enunciado": "Un gráfico de barras compara las ventas trimestrales de cuatro tiendas:\n- Tienda Norte: 480 unidades\n- Tienda Sur: 360 unidades\n- Tienda Centro: 600 unidades\n- Tienda Este: 420 unidades\n\n¿Cuánto más vendió Tienda Centro que Tienda Sur, en términos porcentuales?",
+    "pista": "La base del porcentaje es Tienda Sur (el valor de referencia). Aplica la fórmula: (Centro - Sur) / Sur × 100.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "40%",
+        "es_correcta": false,
+        "explicacion": "Es trampa — error de usar Centro como base: $\\dfrac{600-360}{600} \\times 100 = \\dfrac{240}{600} \\times 100 = 40\\%$. Pero la pregunta pide cuánto más vendió Centro respecto a Sur, así que la base es Sur (360)."
+      },
+      {
+        "letra": "B",
+        "texto": "66.7%",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Base = Sur (360). $\\dfrac{600 - 360}{360} \\times 100 = \\dfrac{240}{360} \\times 100 = 66.\\overline{6}\\%$."
+      },
+      {
+        "letra": "C",
+        "texto": "240",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 240 es la diferencia ABSOLUTA (600 - 360 = 240 unidades), no la diferencia porcentual. La pregunta pide en términos porcentuales."
+      },
+      {
+        "letra": "D",
+        "texto": "60%",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $60\\% = \\dfrac{240}{400}$, que usaría 400 como denominador (promedio de 360 y 440, o algún valor incorrecto). La base correcta es Sur = 360."
+      }
+    ]
+  },
+  {
+    "id": "prac5-tablas-graficas-circular-suma",
+    "dificultad": 2,
+    "enunciado": "Un gráfico circular muestra la distribución de 1.500 empleados en una empresa:\n- Producción: 40%\n- Ventas: 25%\n- Administración: 20%\n- IT: 10%\n- RRHH: 5%\n\n¿Cuántos empleados están en Ventas o IT combinados?",
+    "pista": "Primero suma los porcentajes de Ventas e IT, luego multiplica el resultado por el total de empleados.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "375",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $375 = 1500 \\times 0.25$, que es solo el total de Ventas. No se incluyó IT."
+      },
+      {
+        "letra": "B",
+        "texto": "150",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $150 = 1500 \\times 0.10$, que es solo el total de IT. No se incluyó Ventas."
+      },
+      {
+        "letra": "C",
+        "texto": "525",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Ventas (25%) + IT (10%) = 35%. $1500 \\times 0.35 = 525$ empleados."
+      },
+      {
+        "letra": "D",
+        "texto": "35",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 35 es la suma de los PORCENTAJES (25%+10%=35%), no el número de empleados. Siempre multiplica el porcentaje por el total: $1500 \\times 0.35 = 525$."
+      }
+    ]
+  },
+  {
+    "id": "prac6-tablas-graficas-lineas-maximo",
+    "dificultad": 2,
+    "enunciado": "Un gráfico de líneas muestra el precio de una acción ($) durante 5 semanas:\n- Semana 1: 45.000\n- Semana 2: 52.000\n- Semana 3: 48.000\n- Semana 4: 61.000\n- Semana 5: 58.000\n\n¿En qué período se registró el mayor incremento absoluto?",
+    "pista": "Calcula la diferencia entre cada par de semanas consecutivas. Solo considera los períodos donde hubo aumento (diferencia positiva).",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Semana 1 a Semana 2",
+        "es_correcta": false,
+        "explicacion": "Es trampa: el incremento de semana 1 a 2 fue $52.000 - 45.000 = 7.000$. Sin embargo, el mayor incremento fue de semana 3 a semana 4: $61.000 - 48.000 = 13.000$, que es casi el doble."
+      },
+      {
+        "letra": "B",
+        "texto": "Semana 3 a Semana 4",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Incrementos: S1→S2: +7.000; S2→S3: -4.000 (caída); S3→S4: +13.000 (mayor); S4→S5: -3.000 (caída). El período S3→S4 tiene el mayor incremento absoluto."
+      },
+      {
+        "letra": "C",
+        "texto": "Semana 2 a Semana 3",
+        "es_correcta": false,
+        "explicacion": "Es trampa: de semana 2 a semana 3 el precio BAJÓ de 52.000 a 48.000 (-4.000). No hubo incremento, sino disminución."
+      },
+      {
+        "letra": "D",
+        "texto": "Semana 4 a Semana 5",
+        "es_correcta": false,
+        "explicacion": "Es trampa: de semana 4 a semana 5 el precio BAJÓ de 61.000 a 58.000 (-3.000). Tampoco hubo incremento."
+      }
+    ]
+  },
+  {
+    "id": "prac7-tablas-graficas-doble-entrada-total",
+    "dificultad": 2,
+    "enunciado": "La tabla muestra 200 estudiantes por género y deporte favorito:\n| | Fútbol | Baloncesto | Natación | Total |\n|---|---|---|---|---|\n| Hombres | 45 | 30 | 15 | 90 |\n| Mujeres | 20 | 40 | 50 | 110 |\n| Total | 65 | 70 | 65 | 200 |\n\n¿Cuántos estudiantes prefieren baloncesto en total?",
+    "pista": "El total de cada deporte está en la fila 'Total'. Busca la columna de Baloncesto en esa fila.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "30",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 30 es el número de HOMBRES que prefieren baloncesto, no el total. Error de leer solo la fila 'Hombres' en lugar de la fila 'Total'."
+      },
+      {
+        "letra": "B",
+        "texto": "40",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 40 es el número de MUJERES que prefieren baloncesto. Error de leer solo la fila 'Mujeres'."
+      },
+      {
+        "letra": "C",
+        "texto": "70",
+        "es_correcta": true,
+        "explicacion": "Es correcto. La fila 'Total' en la columna 'Baloncesto' es 70. También: $30 + 40 = 70$ (suma de hombres y mujeres que prefieren baloncesto)."
+      },
+      {
+        "letra": "D",
+        "texto": "200",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 200 es el TOTAL GENERAL de todos los estudiantes, no el total de quienes prefieren baloncesto. Error de leer el total de la tabla completa en vez del total del deporte específico."
+      }
+    ]
+  },
+  {
+    "id": "prac8-tablas-graficas-doble-entrada-condicional",
+    "dificultad": 2,
+    "enunciado": "Usando la misma tabla de 200 estudiantes:\n| | Fútbol | Baloncesto | Natación | Total |\n|---|---|---|---|---|\n| Hombres | 45 | 30 | 15 | 90 |\n| Mujeres | 20 | 40 | 50 | 110 |\n| Total | 65 | 70 | 65 | 200 |\n\n¿Qué porcentaje de las mujeres prefiere natación?",
+    "pista": "El grupo de referencia es 'las mujeres', así que el denominador es el total de mujeres (110), no el total general (200) ni el total de natación (65).",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "25%",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $\\dfrac{50}{200} \\times 100 = 25\\%$. Error de usar el total GENERAL (200) como denominador. La pregunta pide '¿de las mujeres?', así que la base es solo el total de mujeres (110)."
+      },
+      {
+        "letra": "B",
+        "texto": "45.45%",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Mujeres que prefieren natación = 50. Total de mujeres = 110. $\\dfrac{50}{110} \\times 100 \\approx 45.45\\%$."
+      },
+      {
+        "letra": "C",
+        "texto": "50%",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $\\dfrac{50}{100} = 50\\%$, que usaría 100 como denominador sin base en la tabla. El total de mujeres es 110, no 100."
+      },
+      {
+        "letra": "D",
+        "texto": "76.9%",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $\\dfrac{50}{65} \\times 100 \\approx 76.9\\%$. Error de usar el total de NATACIÓN (65) como denominador. La pregunta pregunta '¿de las mujeres?', no '¿de los que practican natación?'."
+      }
+    ]
+  },
+  {
+    "id": "prac9-tablas-graficas-doble-entrada-total-general",
+    "dificultad": 2,
+    "enunciado": "Con la misma tabla de 200 estudiantes por género y deporte:\n| | Fútbol | Baloncesto | Natación | Total |\n|---|---|---|---|---|\n| Hombres | 45 | 30 | 15 | 90 |\n| Mujeres | 20 | 40 | 50 | 110 |\n| Total | 65 | 70 | 65 | 200 |\n\n¿Qué porcentaje del total del grupo son hombres que prefieren fútbol?",
+    "pista": "Aquí el denominador es el total GENERAL del grupo (200), porque la pregunta dice 'del total del grupo'. El numerador es el dato específico: hombres + fútbol.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "50%",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $\\dfrac{45}{90} \\times 100 = 50\\%$, que calcula qué porcentaje de los hombres prefieren fútbol. Pero la pregunta pide el porcentaje del total general (200), no del total de hombres (90)."
+      },
+      {
+        "letra": "B",
+        "texto": "69.2%",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $\\dfrac{45}{65} \\times 100 \\approx 69.2\\%$, que calcula qué porcentaje del total de futbolistas (65) son hombres. La pregunta pide el porcentaje del total general (200)."
+      },
+      {
+        "letra": "C",
+        "texto": "22.5%",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Hombres que prefieren fútbol = 45. Total general = 200. $\\dfrac{45}{200} \\times 100 = 22.5\\%$."
+      },
+      {
+        "letra": "D",
+        "texto": "45%",
+        "es_correcta": false,
+        "explicacion": "Es trampa: se tomó el número 45 directamente como porcentaje, sin dividir entre el total. El 45 representa 45 estudiantes, y como porcentaje del total de 200 es $\\dfrac{45}{200} = 22.5\\%$."
+      }
+    ]
+  },
+  {
+    "id": "prac10-tablas-graficas-escala-enganosa",
+    "dificultad": 3,
+    "enunciado": "Un gráfico de barras muestra las ganancias de dos empresas con el eje Y comenzando en $\\$900.000$ (no en $0$):\n- Empresa A: $\\$1.000.000$\n- Empresa B: $\\$1.100.000$\n\nVisualmente la barra de B parece el doble de la de A. ¿Cuál es el incremento porcentual REAL de B respecto a A?",
+    "pista": "Ignora el tamaño visual de las barras. Usa solo los valores numéricos reales. La base es el valor de la Empresa A.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "100%",
+        "es_correcta": false,
+        "explicacion": "Es trampa visual: si el eje empieza en $\\$900.000$, las barras visibles miden 100.000 (A) y 200.000 (B). B parece el doble de A, sugiriendo un 100% de diferencia. Pero los valores REALES son $\\$1.000.000$ y $\\$1.100.000$. El incremento real es $\\dfrac{100.000}{1.000.000} = 10\\%$."
+      },
+      {
+        "letra": "B",
+        "texto": "10%",
+        "es_correcta": true,
+        "explicacion": "Es correcto. $\\dfrac{1.100.000 - 1.000.000}{1.000.000} \\times 100 = \\dfrac{100.000}{1.000.000} \\times 100 = 10\\%$. La escala engañosa amplifica visualmente una diferencia pequeña."
+      },
+      {
+        "letra": "C",
+        "texto": "50%",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 50% sería el punto medio entre 10% (real) y 100% (visual), pero no tiene base matemática. El cálculo con los valores reales da exactamente 10%."
+      },
+      {
+        "letra": "D",
+        "texto": "11%",
+        "es_correcta": false,
+        "explicacion": "Es trampa de cálculo: $\\dfrac{1.100.000}{1.000.000} = 1.10$, que indica que B es el 110% de A, es decir, un incremento del 10%, no del 11%. El error es confundir 'B es 110% de A' con 'B es 10% mayor que A' (ambas son correctas en realidad). Pero la respuesta es $10\\%$, no $11\\%$."
+      }
+    ]
+  },
+  {
+    "id": "prac11-tablas-graficas-combinacion",
+    "dificultad": 3,
+    "enunciado": "La tabla muestra la producción anual (unidades) de tres plantas:\n| Planta | 2021 | 2022 | 2023 |\n|---|---|---|---|\n| Norte | 500 | 620 | 580 |\n| Sur | 300 | 450 | 520 |\n| Centro | 400 | 380 | 440 |\n\n¿Qué planta tuvo el mayor crecimiento porcentual de 2021 a 2023?",
+    "pista": "Calcula la variación porcentual de 2021 a 2023 para cada planta: (2023 - 2021) / 2021 × 100. No te guíes por los valores absolutos.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Planta Norte",
+        "es_correcta": false,
+        "explicacion": "Es trampa: Norte tiene el mayor valor en 2023 (580), pero la pregunta es sobre crecimiento PORCENTUAL. Norte creció $\\dfrac{580-500}{500} \\times 100 = 16\\%$. Sur creció $\\dfrac{520-300}{300} \\times 100 \\approx 73.3\\%$, mucho más."
+      },
+      {
+        "letra": "B",
+        "texto": "Planta Sur",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Norte: $\\dfrac{80}{500} = 16\\%$. Sur: $\\dfrac{220}{300} \\approx 73.3\\%$. Centro: $\\dfrac{40}{400} = 10\\%$. Sur tiene el mayor crecimiento porcentual, aunque Norte tiene los valores absolutos más altos."
+      },
+      {
+        "letra": "C",
+        "texto": "Planta Centro",
+        "es_correcta": false,
+        "explicacion": "Es trampa: Centro tuvo el menor crecimiento porcentual ($\\dfrac{40}{400} = 10\\%$). No es la respuesta correcta."
+      },
+      {
+        "letra": "D",
+        "texto": "No se puede determinar con la tabla dada",
+        "es_correcta": false,
+        "explicacion": "Es trampa: la tabla tiene todos los datos necesarios para calcular la variación porcentual de cada planta de 2021 a 2023. La fórmula $(V_{2023} - V_{2021}) / V_{2021} \\times 100$ aplica directamente."
+      }
+    ]
+  },
+  {
+    "id": "prac12-tablas-graficas-histograma",
+    "dificultad": 3,
+    "enunciado": "Un histograma muestra la distribución de edades de 100 empleados:\n- [20-30): 18 personas\n- [30-40): 32 personas\n- [40-50): 28 personas\n- [50-60): 15 personas\n- [60-70): 7 personas\n\n¿Cuál es la frecuencia acumulada hasta los 40 años (personas menores de 40)?",
+    "pista": "Frecuencia acumulada 'hasta los 40 años' significa sumar los intervalos que terminan ANTES de 40. El intervalo [30-40) incluye personas hasta los 39 años, no hasta los 40.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "18",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 18 es solo la frecuencia del intervalo [20-30). Menores de 40 años incluye también el intervalo [30-40): $18 + 32 = 50$."
+      },
+      {
+        "letra": "B",
+        "texto": "32",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 32 es solo la frecuencia del intervalo [30-40). La frecuencia acumulada hasta los 40 años suma TODOS los intervalos anteriores: $[20-30) + [30-40) = 18 + 32 = 50$."
+      },
+      {
+        "letra": "C",
+        "texto": "50",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Menores de 40 años = intervalo [20-30) + intervalo [30-40) = $18 + 32 = 50$ personas."
+      },
+      {
+        "letra": "D",
+        "texto": "78",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $18 + 32 + 28 = 78$, que incluye el intervalo [40-50). Pero 'menores de 40' excluye a quienes tienen entre 40 y 49 años. El intervalo [40-50) empieza en 40, no termina en 40."
+      }
+    ]
+  }
+]

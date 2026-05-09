@@ -1,1 +1,250 @@
-[]
+[
+  {
+    "id": "sim1-tablas-graficas-tabla-producto",
+    "modulo_slug": "tablas-graficas",
+    "enunciado": "La tabla muestra las ventas de una tienda:\n| Producto | Precio | Unidades vendidas |\n|---|---|---|\n| Arroz | $3.500 | 120 |\n| Leche | $2.800 | 85 |\n| Pan | $1.500 | 200 |\n| Aceite | $8.000 | 40 |\n\n¿Cuál fue el ingreso total generado por las ventas de Pan?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "$\\$200$",
+        "es_correcta": false,
+        "explicacion": "Error: 200 son las UNIDADES vendidas de Pan, no el ingreso. El ingreso requiere multiplicar precio por unidades: $\\$1.500 \\times 200 = \\$300.000$."
+      },
+      {
+        "letra": "B",
+        "texto": "$\\$1.500$",
+        "es_correcta": false,
+        "explicacion": "Error: $\\$1.500$ es el PRECIO UNITARIO del Pan, no el ingreso total. El ingreso es precio × cantidad: $\\$1.500 \\times 200 = \\$300.000$."
+      },
+      {
+        "letra": "C",
+        "texto": "$\\$300.000$",
+        "es_correcta": true,
+        "explicacion": "Correcto. Ingreso de Pan = precio × unidades = $\\$1.500 \\times 200 = \\$300.000$."
+      },
+      {
+        "letra": "D",
+        "texto": "$\\$340.000$",
+        "es_correcta": false,
+        "explicacion": "Error: $\\$340.000 = \\$8.500 \\times 40$... no corresponde a ningún cálculo directo de Pan. Posiblemente se confundió con el precio del Aceite ($\\$8.000 \\times 40 = \\$320.000$) o se sumó incorrectamente. Pan = $\\$1.500 \\times 200 = \\$300.000$."
+      }
+    ]
+  },
+  {
+    "id": "sim2-tablas-graficas-barras-promedio",
+    "modulo_slug": "tablas-graficas",
+    "enunciado": "Un gráfico de barras muestra el índice de satisfacción (0-100) de cuatro departamentos:\n- Marketing: 75\n- Ventas: 82\n- Producción: 68\n- RRHH: 90\n\n¿Cuál es el promedio de satisfacción de todos los departamentos?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "90",
+        "es_correcta": false,
+        "explicacion": "Error: 90 es el puntaje de RRHH (el máximo), no el promedio. El promedio requiere sumar todos y dividir entre 4: $(75+82+68+90) / 4 = 315 / 4 = 78.75$."
+      },
+      {
+        "letra": "B",
+        "texto": "78.75",
+        "es_correcta": true,
+        "explicacion": "Correcto. Suma: $75 + 82 + 68 + 90 = 315$. Promedio: $315 \\div 4 = 78.75$."
+      },
+      {
+        "letra": "C",
+        "texto": "315",
+        "es_correcta": false,
+        "explicacion": "Error: 315 es la SUMA de los cuatro puntajes, no el promedio. Para el promedio hay que dividir entre el número de departamentos: $315 \\div 4 = 78.75$."
+      },
+      {
+        "letra": "D",
+        "texto": "80",
+        "es_correcta": false,
+        "explicacion": "Error de cálculo: $80 = 320 \\div 4$, que implica una suma de 320 en vez de 315. La suma real es $75+82+68+90 = 315$, y el promedio es $315 \\div 4 = 78.75$."
+      }
+    ]
+  },
+  {
+    "id": "sim3-tablas-graficas-circular-votos",
+    "modulo_slug": "tablas-graficas",
+    "enunciado": "Un gráfico circular muestra la distribución de 2.400 votos en una elección:\n- Candidato A: 45%\n- Candidato B: 30%\n- Candidato C: 18%\n- Voto en blanco: 7%\n\n¿Cuántos votos obtuvo el Candidato B?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "30",
+        "es_correcta": false,
+        "explicacion": "Error clásico: se usó el porcentaje (30) directamente como número de votos. El porcentaje debe multiplicarse por el total: $2.400 \\times 0.30 = 720$ votos."
+      },
+      {
+        "letra": "B",
+        "texto": "720",
+        "es_correcta": true,
+        "explicacion": "Correcto. $2.400 \\times 0.30 = 720$ votos para el Candidato B."
+      },
+      {
+        "letra": "C",
+        "texto": "1.080",
+        "es_correcta": false,
+        "explicacion": "Error: $1.080 = 2.400 \\times 0.45$, que son los votos del Candidato A (45%), no del B (30%). Se leyó el porcentaje incorrecto."
+      },
+      {
+        "letra": "D",
+        "texto": "648",
+        "es_correcta": false,
+        "explicacion": "Error: $648 = 2.400 \\times 0.27$, usando 27% en lugar del 30% del Candidato B. El porcentaje correcto según el gráfico es 30%."
+      }
+    ]
+  },
+  {
+    "id": "sim4-tablas-graficas-doble-entrada-condicional1",
+    "modulo_slug": "tablas-graficas",
+    "enunciado": "La tabla muestra a 140 estudiantes según si estudiaron y si aprobaron:\n| | Aprobó | Reprobó | Total |\n|---|---|---|---|\n| Estudió | 70 | 10 | 80 |\n| No estudió | 20 | 40 | 60 |\n| Total | 90 | 50 | 140 |\n\n¿Qué porcentaje de los que reprobaron NO había estudiado?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "66.7%",
+        "es_correcta": false,
+        "explicacion": "Error de denominador: $\\dfrac{40}{60} \\times 100 = 66.7\\%$ usa el total de 'no estudió' (60) como base. La pregunta es '¿de los que reprobaron?', así que la base debe ser el total de reprobados (50)."
+      },
+      {
+        "letra": "B",
+        "texto": "28.6%",
+        "es_correcta": false,
+        "explicacion": "Error de denominador: $\\dfrac{40}{140} \\times 100 \\approx 28.6\\%$ usa el total general (140) como base. La pregunta es '¿de los que reprobaron?', por lo que la base es 50, no 140."
+      },
+      {
+        "letra": "C",
+        "texto": "80%",
+        "es_correcta": true,
+        "explicacion": "Correcto. De los 50 que reprobaron, 40 no habían estudiado. Base = total de reprobados = 50. $\\dfrac{40}{50} \\times 100 = 80\\%$."
+      },
+      {
+        "letra": "D",
+        "texto": "50%",
+        "es_correcta": false,
+        "explicacion": "Error: $50\\% = \\dfrac{25}{50}$ o algún cálculo inexacto. No hay combinación de datos que dé 50% aquí. El cálculo correcto: $\\dfrac{40}{50} \\times 100 = 80\\%$."
+      }
+    ]
+  },
+  {
+    "id": "sim5-tablas-graficas-doble-entrada-condicional2",
+    "modulo_slug": "tablas-graficas",
+    "enunciado": "Usando la misma tabla de 140 estudiantes:\n| | Aprobó | Reprobó | Total |\n|---|---|---|---|\n| Estudió | 70 | 10 | 80 |\n| No estudió | 20 | 40 | 60 |\n| Total | 90 | 50 | 140 |\n\n¿Qué porcentaje de los que estudiaron aprobó el examen?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "50%",
+        "es_correcta": false,
+        "explicacion": "Error: $\\dfrac{70}{140} \\times 100 = 50\\%$ usa el total general (140) como base. La pregunta es '¿de los que estudiaron?', así que la base es el total de quienes estudiaron (80)."
+      },
+      {
+        "letra": "B",
+        "texto": "77.8%",
+        "es_correcta": false,
+        "explicacion": "Error: $\\dfrac{70}{90} \\times 100 \\approx 77.8\\%$ usa el total de aprobados (90) como base. La pregunta es '¿de los que estudiaron?', por lo que la base es 80."
+      },
+      {
+        "letra": "C",
+        "texto": "87.5%",
+        "es_correcta": true,
+        "explicacion": "Correcto. De los 80 que estudiaron, 70 aprobaron. Base = total de estudiantes que sí estudiaron = 80. $\\dfrac{70}{80} \\times 100 = 87.5\\%$."
+      },
+      {
+        "letra": "D",
+        "texto": "100%",
+        "es_correcta": false,
+        "explicacion": "Error: no todos los que estudiaron aprobaron — 10 estudiaron y aun así reprobaron (según la tabla). La tasa de aprobación entre quienes estudiaron es $\\dfrac{70}{80} = 87.5\\%$, no 100%."
+      }
+    ]
+  },
+  {
+    "id": "sim6-tablas-graficas-variacion-porcentual",
+    "modulo_slug": "tablas-graficas",
+    "enunciado": "La tabla muestra el precio de tres productos en diferentes años:\n| Producto | 2020 | 2021 | 2022 |\n|---|---|---|---|\n| X | 10.000 | 12.000 | 11.500 |\n| Y | 8.000 | 9.000 | 11.000 |\n| Z | 15.000 | 14.000 | 16.500 |\n\n¿Cuál fue la variación porcentual del precio del Producto Y desde 2020 hasta 2022?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "3.000",
+        "es_correcta": false,
+        "explicacion": "Error: $11.000 - 8.000 = 3.000$ es la variación ABSOLUTA en pesos, no la porcentual. La pregunta pide la variación porcentual, que es $\\dfrac{3.000}{8.000} \\times 100 = 37.5\\%$."
+      },
+      {
+        "letra": "B",
+        "texto": "27.3%",
+        "es_correcta": false,
+        "explicacion": "Error de base: $\\dfrac{3.000}{11.000} \\times 100 \\approx 27.3\\%$ usa el valor FINAL (2022) como base. La variación porcentual siempre usa el valor INICIAL (2020 = 8.000) como base."
+      },
+      {
+        "letra": "C",
+        "texto": "37.5%",
+        "es_correcta": true,
+        "explicacion": "Correcto. Base = valor en 2020 (8.000). $\\dfrac{11.000 - 8.000}{8.000} \\times 100 = \\dfrac{3.000}{8.000} \\times 100 = 37.5\\%$."
+      },
+      {
+        "letra": "D",
+        "texto": "22.2%",
+        "es_correcta": false,
+        "explicacion": "Error: $\\dfrac{2.000}{9.000} \\times 100 \\approx 22.2\\%$ calcula la variación de 2021 a 2022 ($11.000 - 9.000 = 2.000$), usando 2021 como base. La pregunta pide de 2020 a 2022."
+      }
+    ]
+  },
+  {
+    "id": "sim7-tablas-graficas-escala-enganosa",
+    "modulo_slug": "tablas-graficas",
+    "enunciado": "Un gráfico de barras muestra el puntaje promedio de dos grupos de estudiantes. El eje Y va de 70 a 100 (NO empieza en 0):\n- Grupo A: 80 puntos\n- Grupo B: 88 puntos\n\nVisualmente la barra de B parece mucho más alta que la de A. ¿Cuánto mayor es el puntaje de B respecto al de A en porcentaje?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "80%",
+        "es_correcta": false,
+        "explicacion": "Error visual: si el eje empieza en 70, las alturas visibles son 10 (Grupo A: 80-70) y 18 (Grupo B: 88-70). Visualmente B parece 80% más alto que A. Pero los valores reales son 80 y 88: la diferencia real es $\\dfrac{8}{80} \\times 100 = 10\\%$."
+      },
+      {
+        "letra": "B",
+        "texto": "10%",
+        "es_correcta": true,
+        "explicacion": "Correcto. Usando los valores reales (no la escala visual): $\\dfrac{88 - 80}{80} \\times 100 = \\dfrac{8}{80} \\times 100 = 10\\%$. La escala que no empieza en 0 amplifica visualmente diferencias pequeñas."
+      },
+      {
+        "letra": "C",
+        "texto": "8%",
+        "es_correcta": false,
+        "explicacion": "Error: $8\\%$ usaría la diferencia absoluta (88-80=8) como si fuera directamente el porcentaje, sin dividir entre la base (80). El porcentaje es $\\dfrac{8}{80} = 10\\%$, no $8\\%$."
+      },
+      {
+        "letra": "D",
+        "texto": "9.1%",
+        "es_correcta": false,
+        "explicacion": "Error de base: $\\dfrac{8}{88} \\times 100 \\approx 9.1\\%$ usa el valor FINAL (88) como base. La variación porcentual de A respecto a B usa A (80) como base: $\\dfrac{8}{80} = 10\\%$."
+      }
+    ]
+  },
+  {
+    "id": "sim8-tablas-graficas-lineas-incremento",
+    "modulo_slug": "tablas-graficas",
+    "enunciado": "Un gráfico de líneas muestra las ventas mensuales de una empresa (en miles de pesos):\n- Enero: 4.500\n- Febrero: 5.200\n- Marzo: 4.800\n- Abril: 6.100\n- Mayo: 5.700\n\n¿Cuál fue la variación porcentual total de las ventas entre enero y mayo?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "26.7%",
+        "es_correcta": true,
+        "explicacion": "Correcto. Base = enero (4.500). $\\dfrac{5.700 - 4.500}{4.500} \\times 100 = \\dfrac{1.200}{4.500} \\times 100 \\approx 26.7\\%$."
+      },
+      {
+        "letra": "B",
+        "texto": "21.1%",
+        "es_correcta": false,
+        "explicacion": "Error de base: $\\dfrac{1.200}{5.700} \\times 100 \\approx 21.1\\%$ usa mayo (el valor final) como base. La variación porcentual siempre usa el valor INICIAL como denominador."
+      },
+      {
+        "letra": "C",
+        "texto": "1.200",
+        "es_correcta": false,
+        "explicacion": "Error: 1.200 es la variación ABSOLUTA ($5.700 - 4.500 = 1.200$ miles de pesos), no la porcentual. La variación porcentual es $\\dfrac{1.200}{4.500} \\times 100 \\approx 26.7\\%$."
+      },
+      {
+        "letra": "D",
+        "texto": "35.6%",
+        "es_correcta": false,
+        "explicacion": "Error: $35.6\\%$ podría resultar de calcular la variación desde el mínimo (marzo=4.800) hasta el máximo (abril=6.100): $\\dfrac{1.300}{3.650} \\approx 35.6\\%$. Pero la pregunta pide de enero a mayo, no del mínimo al máximo."
+      }
+    ]
+  }
+]

@@ -1,3 +1,161 @@
 # Análisis de Tablas y Gráficas
 
-Contenido en desarrollo. ¡Vuelve pronto!
+El análisis de tablas y gráficos es un tema transversal en el examen UdeA: los datos siempre se presentan representados visualmente, y el error más común no es matemático sino de lectura. Leer el dato equivocado o confundir variación absoluta con porcentual puede costar puntos que sí sabías calcular.
+
+## 1. Lectura de tablas simples
+
+Una tabla organiza datos en **filas** (horizontales) y **columnas** (verticales). Cada celda es la intersección de una fila y una columna.
+
+**Ejemplo:**
+
+| Estudiante | Matemáticas | Ciencias | Español |
+|-----------|-------------|---------|---------|
+| Ana | 85 | 72 | 90 |
+| Luis | 68 | 80 | 75 |
+| María | 91 | 65 | 82 |
+
+Para encontrar "la nota de Luis en Ciencias": ubica la **fila** "Luis" y la **columna** "Ciencias". La respuesta es 80.
+
+### Errores comunes al leer tablas
+
+- **Leer la columna equivocada:** confundir "Ciencias" con "Español" por estar cercanas.
+- **Confundir fila con columna:** leer un dato de Ana creyendo que es de Luis.
+- **Usar el total cuando se pide un dato específico:** la fila/columna "Total" existe para sumar, no para cada categoría individual.
+- **Ignorar las unidades:** una tabla puede estar en miles de pesos; si la unidad dice "miles de $" y la celda dice 120, el valor real es $120.000.
+
+## 2. Gráficos de barras
+
+Los gráficos de barras representan cantidades con barras proporcionales. Pueden ser verticales (columnas) u horizontales.
+
+### Cómo leerlos
+
+1. Identifica qué representa el **eje horizontal** (categorías o tiempo) y el **eje vertical** (valores).
+2. Para cada barra, traza una línea horizontal hasta el eje vertical para leer su valor.
+3. Verifica la **escala**: cada división del eje puede valer 5, 10, 100, etc.
+
+### Cálculos frecuentes
+
+- **Máximo y mínimo:** la barra más alta/baja.
+- **Diferencia absoluta:** $\text{mayor} - \text{menor}$.
+- **Diferencia porcentual:** $\dfrac{\text{mayor} - \text{menor}}{\text{valor base}} \times 100\%$.
+
+**¡Atención con la base!** Si preguntan "¿cuánto más vendió A que B en porcentaje?", la base es el valor de **B** (lo que se compara), no el de A.
+
+### La trampa de la escala que no empieza en 0
+
+Si el eje Y empieza en 900 en lugar de 0, una diferencia real del 10% puede verse visualmente como una diferencia del 100%. Siempre lee los valores numéricos, no el tamaño visual de las barras.
+
+**Ejemplo:** Empresa A gana \$1.000.000 y Empresa B gana \$1.100.000. Si el eje empieza en \$900.000, la barra de A parece medir 1 unidad (1.000.000 - 900.000 = 100.000) y la de B mide 2 unidades (1.100.000 - 900.000 = 200.000). B parece el doble, pero el incremento real es solo $\frac{100.000}{1.000.000} = 10\%$.
+
+## 3. Gráficos de líneas
+
+Los gráficos de líneas muestran **tendencias en el tiempo**. Los puntos representan valores y la línea los conecta.
+
+### Conceptos clave
+
+- **Pendiente positiva (subiendo):** el valor aumenta.
+- **Pendiente negativa (bajando):** el valor disminuye.
+- **Pendiente plana:** el valor se mantiene estable.
+- **Mayor cambio:** el período donde la línea es más inclinada (mayor diferencia entre dos puntos consecutivos).
+
+### Cruces entre dos series
+
+Cuando dos líneas se cruzan, significa que en ese punto ambas series tienen el mismo valor. Antes del cruce, una era mayor; después, la otra lo es.
+
+### Incremento porcentual entre dos puntos
+
+$$\text{Variación \%} = \frac{V_{\text{final}} - V_{\text{inicial}}}{V_{\text{inicial}}} \times 100$$
+
+**Cuidado:** la base siempre es el valor **inicial** del período analizado, no el final.
+
+## 4. Gráficos circulares (de torta)
+
+El gráfico circular representa un todo (100%) dividido en sectores. Cada sector es proporcional al porcentaje que representa.
+
+### Cálculos esenciales
+
+- **Porcentaje de un sector:** ya viene dado directamente.
+- **Valor absoluto de un sector:** $\text{Valor} = \text{Total} \times \frac{\text{Porcentaje}}{100}$
+- **Comparación de sectores:** el sector con mayor porcentaje es el más grande.
+
+**Error clásico:** tomar el porcentaje del sector como el valor absoluto. Si "Transporte = 15%" y el total es \$800.000, entonces Transporte = $800.000 \times 0.15 = \$120.000$, no \$15.000 ni \$150.000.
+
+### Suma de porcentajes
+
+Todos los sectores deben sumar 100%. Si hay redondeo, puede aparecer 99% o 101% — es un error de presentación, no del estudiante. En esos casos, usa los porcentajes dados directamente.
+
+## 5. Histogramas y distribuciones de frecuencia
+
+Un **histograma** es similar a un gráfico de barras pero representa **datos continuos agrupados en intervalos**.
+
+### Diferencias con el gráfico de barras
+
+| | Gráfico de barras | Histograma |
+|--|--|--|
+| Variable | Categórica (colores, tipos) | Numérica continua (edades, alturas) |
+| Barras | Separadas | Contiguas (sin espacio) |
+| Eje X | Categorías | Intervalos numéricos |
+
+### Frecuencia acumulada
+
+La frecuencia acumulada hasta el intervalo $[a, b)$ es la suma de todas las frecuencias de los intervalos anteriores incluyendo ese:
+
+$$F_{\text{acumulada hasta } b} = f_1 + f_2 + \cdots + f_k$$
+
+**Ejemplo:** Si los intervalos [20-30), [30-40), [40-50) tienen frecuencias 18, 32, 28, entonces la frecuencia acumulada hasta los 40 años es $18 + 32 = 50$ (los que tienen menos de 40 años).
+
+### Mediana aproximada
+
+La mediana es el valor que divide la distribución en dos mitades iguales. Visualmente, es donde la frecuencia acumulada supera el 50% del total.
+
+## 6. Tablas de doble entrada
+
+Una tabla de doble entrada cruza **dos variables categóricas**. Las filas representan una variable y las columnas la otra.
+
+**Ejemplo:**
+
+| | Fútbol | Baloncesto | Natación | Total |
+|---|---|---|---|---|
+| Hombres | 45 | 30 | 15 | 90 |
+| Mujeres | 20 | 40 | 50 | 110 |
+| Total | 65 | 70 | 65 | 200 |
+
+### Tipos de porcentajes en tablas de doble entrada
+
+**Porcentaje del total general:** $\frac{\text{celda}}{200} \times 100$
+
+Ejemplo: hombres que prefieren fútbol = $\frac{45}{200} \times 100 = 22.5\%$ del grupo total.
+
+**Porcentaje condicional por fila:** $\frac{\text{celda}}{\text{total de la fila}} \times 100$
+
+Ejemplo: porcentaje de mujeres que prefieren natación = $\frac{50}{110} \times 100 \approx 45.45\%$ (base = total de mujeres).
+
+**Porcentaje condicional por columna:** $\frac{\text{celda}}{\text{total de la columna}} \times 100$
+
+Ejemplo: porcentaje de nadadores que son mujeres = $\frac{50}{65} \times 100 \approx 76.9\%$ (base = total que prefieren natación).
+
+**Error crítico:** usar el denominador incorrecto. Siempre identifica primero qué grupo es la "base" de la pregunta.
+
+## 7. Combinación de tablas y gráficos
+
+El examen frecuentemente da una tabla y pide interpretar un gráfico derivado, o viceversa. La clave es:
+
+1. **Extraer el dato correcto** de la tabla o gráfico.
+2. **Calcular** lo que piden (diferencia, porcentaje, promedio).
+3. **Verificar** que el cálculo use los datos correctos y la base correcta.
+
+Para **variación porcentual entre años** en una tabla:
+$$\text{Variación \%} = \frac{V_{2} - V_{1}}{V_{1}} \times 100$$
+
+donde $V_1$ es el año de referencia (inicial) y $V_2$ es el año final.
+
+## 8. Trampas frecuentes en el examen
+
+| Trampa | Descripción | Cómo evitarla |
+|--------|-------------|--------------|
+| Escala que no empieza en 0 | Las barras parecen más distintas de lo que son | Lee siempre los valores numéricos del eje |
+| Confundir absoluto con porcentual | "Aumentó 500 pesos" vs "aumentó 25%" | Identifica si la pregunta pide valor o porcentaje |
+| Base incorrecta en porcentaje | Usar el total cuando piden % del subgrupo | Subraya el grupo de referencia en la pregunta |
+| Porcentaje como valor absoluto | Tomar 15% como $15.000 directamente | Siempre multiplica: % × total = valor |
+| Confundir variación con valor final | Creen que el valor en 2023 es el "aumento" | Lee cuidadosamente: "valor en" vs "aumento de" |
+| Ignorar notas al pie | Las tablas pueden tener excepciones o unidades especiales | Revisa si hay asteriscos o notas bajo la tabla |

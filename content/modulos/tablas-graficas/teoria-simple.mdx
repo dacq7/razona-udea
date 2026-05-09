@@ -1,3 +1,111 @@
 # Análisis de Tablas y Gráficas — Versión fácil
 
-Contenido en desarrollo. ¡Vuelve pronto!
+## Las tablas son como un mapa: cada celda tiene coordenadas
+
+Una tabla organiza datos en cuadrículas. Para encontrar un dato específico, necesitas dos coordenadas: la fila (horizontal) y la columna (vertical).
+
+Ejemplo mental: si te preguntan "la nota de Luis en Ciencias", primero buscas la fila donde dice "Luis" y luego sigues esa fila hasta la columna "Ciencias". La celda donde se cruzan es la respuesta.
+
+**Los errores más frecuentes al leer tablas:**
+- Leer la fila o columna equivocada (sobre todo cuando las columnas tienen nombres parecidos).
+- Dar el TOTAL cuando te piden un dato específico. Si hay una columna "Total" o una fila "Total", es solo para sumar todo, no es la respuesta a casi ninguna pregunta específica.
+- Olvidar las unidades: si la tabla dice "en miles", un 120 en la tabla es en realidad 120.000.
+
+## Gráficos de barras: mira los números, no el tamaño visual
+
+Un gráfico de barras muestra cantidades con barras más largas o más cortas. La tentación es comparar visualmente las barras... pero eso te puede engañar.
+
+**Regla:** siempre lee el valor numérico que corresponde a cada barra en el eje, no compares los tamaños a ojo.
+
+**Cálculos que te pedirán:**
+- La barra más alta/baja: fácil, solo identifica el valor más grande o más pequeño.
+- Diferencia entre dos barras: réstalas.
+- "¿Cuánto más vendió A que B en porcentaje?": esa fórmula es $(A - B) / B \times 100\%$. La base (abajo) es siempre el que se usa como referencia (generalmente el menor o el de comparación).
+
+## La trampa visual del eje que no empieza en 0
+
+Esta es la trampa más usada en exámenes. Observa dos situaciones:
+
+**Situación A:** un gráfico con eje Y de 0 a 1.000.000.
+- Empresa A: barra llega a 1.000.000.
+- Empresa B: barra llega a 1.100.000.
+→ La barra de B es apenas un poco más alta. Visualmente se ve que son casi iguales.
+
+**Situación B:** el mismo gráfico pero el eje empieza en 900.000.
+- Empresa A: la barra mide "100.000 de altura visual".
+- Empresa B: la barra mide "200.000 de altura visual".
+→ Visualmente parece que B es el DOBLE de A. ¡Pero la diferencia real sigue siendo solo el 10%!
+
+**La regla:** SIEMPRE usa los valores numéricos del eje para calcular. No te dejes llevar por el tamaño aparente de las barras.
+
+## Gráficos de líneas: cuentan una historia en el tiempo
+
+Una línea que sube → el valor está creciendo. Una línea que baja → está cayendo. Una línea plana → se mantiene.
+
+**Lo que el examen pregunta:**
+- "¿En qué período aumentó más?": busca dónde la línea es más empinada hacia arriba. Compara las diferencias entre puntos consecutivos.
+- "¿Cuál fue la variación porcentual?": usa la fórmula $(V_{\text{final}} - V_{\text{inicial}}) / V_{\text{inicial}} \times 100$.
+- "¿Cuándo coinciden dos líneas?": cuando se cruzan.
+
+**Trampa típica:** preguntar por el incremento porcentual desde el inicio hasta el final, y poner como opción incorrecta el incremento calculado con el valor final como base en vez del inicial.
+
+## Gráficos circulares: todo suma 100%
+
+El gráfico circular (de torta o pie) divide un total en pedazos. Cada pedazo es un porcentaje del total.
+
+**El cálculo más común: encontrar el valor real de un sector**
+
+Si "Transporte = 15%" y el total es $800.000:
+→ Transporte = $800.000 × 0.15 = $120.000
+
+**NO** digas que es $15.000 (eso sería si el total fuera $100.000, no $800.000).
+**NO** digas que es $150.000 (eso sería 15% de $1.000.000).
+
+La fórmula es siempre: **Valor del sector = Total × (Porcentaje / 100)**.
+
+## Histogramas: barras que cuentan frecuencias
+
+Un histograma es como un gráfico de barras, pero las barras muestran cuántos datos caen en cada rango numérico. Por ejemplo:
+- Empleados entre 20-30 años: 18
+- Empleados entre 30-40 años: 32
+- Empleados entre 40-50 años: 28
+
+**Frecuencia acumulada:** cuántos hay en total hasta cierto punto. "¿Cuántos tienen menos de 40 años?" → sumas los dos primeros grupos: 18 + 32 = 50.
+
+**Trampa:** el examen puede preguntar "hasta los 40 años" y la opción incorrecta incluye también el grupo [40-50). "Hasta los 40 años" significa menos de 40, así que no incluyes el grupo que empieza en 40.
+
+## Tablas de doble entrada: dos variables en un mismo cuadro
+
+Una tabla de doble entrada cruza dos cosas a la vez. Por ejemplo, "género" por un lado y "deporte favorito" por el otro.
+
+La diferencia crucial está en el DENOMINADOR cuando calculas porcentajes:
+
+**"¿Qué porcentaje del TOTAL SON las mujeres que prefieren natación?"**
+→ Base = total de todos los estudiantes.
+
+**"¿Qué porcentaje de las MUJERES prefieren natación?"**
+→ Base = total de mujeres (no el total general).
+
+**"¿Qué porcentaje de los que practican NATACIÓN son mujeres?"**
+→ Base = total de practicantes de natación (no el total general ni el de mujeres).
+
+El examen cambia el denominador entre opciones para ver si distingues. **Subraya siempre el grupo de referencia antes de calcular.**
+
+## Combinación de datos: tabla + gráfico
+
+A veces te dan una tabla y te piden identificar cuál gráfico la representa, o te dan datos en varios formatos y combinas información.
+
+**Clave:** no hay matemática nueva. Todo se reduce a:
+1. Extraer el dato correcto.
+2. Calcular lo que te piden.
+3. Verificar que usaste la base correcta.
+
+**Para comparar crecimiento porcentual entre categorías (típico examen UdeA):** calcula $(V_{final} - V_{inicial}) / V_{inicial}$ para cada categoría. La que tiene el mayor resultado es la de mayor crecimiento porcentual, aunque no sea la que tiene el mayor valor absoluto.
+
+## Resumen de errores que el examen aprovecha
+
+1. **Eje que no empieza en 0:** visualmente engaña; siempre lee el número.
+2. **Base equivocada en porcentaje:** identifica si te preguntan del total o de un subgrupo.
+3. **Porcentaje = valor absoluto:** multiplica siempre por el total.
+4. **Variación absoluta vs. porcentual:** una empresa puede crecer 1000 pesos (poco) o 100% (mucho).
+5. **Fecha inicial como base:** la variación porcentual siempre usa el valor INICIAL como denominador.

@@ -1,1 +1,56 @@
-[]
+[
+  {
+    "id": "ej1-tablas-lectura-directa",
+    "enunciado": "La siguiente tabla muestra las notas de tres estudiantes en tres materias:\n| Estudiante | Matemáticas | Ciencias | Español |\n|---|---|---|---|\n| Ana | 85 | 72 | 90 |\n| Luis | 68 | 80 | 75 |\n| María | 91 | 65 | 82 |\n\n¿Cuál es el promedio de las tres materias para María?",
+    "pasos": [
+      "Paso 1 — Ubicar la fila de María: sus notas son Matemáticas=91, Ciencias=65, Español=82.",
+      "Paso 2 — Calcular el promedio: $\\dfrac{91 + 65 + 82}{3} = \\dfrac{238}{3} \\approx 79.3$.",
+      "Paso 3 — Verificar: $91 + 65 = 156$; $156 + 82 = 238$; $238 \\div 3 \\approx 79.3$."
+    ],
+    "conclusion": "El promedio de María es $\\mathbf{79.3}$. El error típico es leer la fila equivocada (Ana o Luis) o sumar solo dos materias. La clave: ubicar fila y columnas correctas antes de calcular."
+  },
+  {
+    "id": "ej2-tablas-barras-diferencia",
+    "enunciado": "Un gráfico de barras muestra las unidades vendidas por cuatro tiendas:\n- Tienda Norte: 480\n- Tienda Sur: 360\n- Tienda Centro: 600\n- Tienda Este: 420\n\n¿Cuánto más vendió Tienda Centro que Tienda Sur, en términos porcentuales?",
+    "pasos": [
+      "Paso 1 — Identificar los valores: Centro = 600, Sur = 360.",
+      "Paso 2 — La base del porcentaje es Sur (el valor de referencia, el que se usa para comparar): $\\dfrac{600 - 360}{360} \\times 100$.",
+      "Paso 3 — Calcular: $\\dfrac{240}{360} \\times 100 = 66.\\overline{6}\\%$.",
+      "Paso 4 — Error frecuente: usar Centro (600) como base → $\\dfrac{240}{600} \\times 100 = 40\\%$. Eso respondería '¿la diferencia qué porcentaje es de Centro?', no cuánto más vendió Centro respecto a Sur."
+    ],
+    "conclusion": "Tienda Centro vendió $\\mathbf{66.7\\%}$ más que Tienda Sur. La base del porcentaje siempre es el valor que sirve de comparación."
+  },
+  {
+    "id": "ej3-tablas-grafico-circular",
+    "enunciado": "Un gráfico circular muestra la distribución del presupuesto mensual de una familia con ingreso de $\\$2.500.000$:\n- Vivienda: 35%\n- Alimentación: 30%\n- Transporte: 15%\n- Educación: 12%\n- Ahorro: 8%\n\n¿A cuánto equivale el rubro de Transporte en pesos?",
+    "pasos": [
+      "Paso 1 — Identificar: Transporte = 15%, Total = $\\$2.500.000$.",
+      "Paso 2 — Calcular: $\\$2.500.000 \\times 0.15 = \\$375.000$.",
+      "Paso 3 — Verificar errores típicos: si alguien escribe $\\$15.000$, confundió 15% con $\\$15.000$ directamente. Si escribe $\\$150.000$, calculó el 15% de $\\$1.000.000$ (total incorrecto).",
+      "Paso 4 — Comprobar que los porcentajes suman: $35+30+15+12+8 = 100\\%$ ✓."
+    ],
+    "conclusion": "Transporte equivale a $\\mathbf{\\$375.000}$. Nunca uses el porcentaje como valor directo — siempre multiplica por el total."
+  },
+  {
+    "id": "ej4-tablas-doble-entrada",
+    "enunciado": "La tabla muestra 200 estudiantes por género y deporte favorito:\n| | Fútbol | Baloncesto | Natación | Total |\n|---|---|---|---|---|\n| Hombres | 45 | 30 | 15 | 90 |\n| Mujeres | 20 | 40 | 50 | 110 |\n| Total | 65 | 70 | 65 | 200 |\n\n¿Qué porcentaje de las mujeres prefieren natación?",
+    "pasos": [
+      "Paso 1 — Identificar el grupo de referencia: 'de las mujeres' → base = total de mujeres = 110 (no el total general 200).",
+      "Paso 2 — Dato: mujeres que prefieren natación = 50.",
+      "Paso 3 — Calcular: $\\dfrac{50}{110} \\times 100 \\approx 45.45\\%$.",
+      "Paso 4 — Error frecuente A: $\\dfrac{50}{200} \\times 100 = 25\\%$ (usa total general como base). Error frecuente B: $\\dfrac{50}{65} \\times 100 \\approx 76.9\\%$ (usa total de natación como base)."
+    ],
+    "conclusion": "El $\\mathbf{45.45\\%}$ de las mujeres prefieren natación. El denominador SIEMPRE refleja el grupo que la pregunta nombra como referencia."
+  },
+  {
+    "id": "ej5-tablas-lineas-tendencia",
+    "enunciado": "Un gráfico de líneas muestra las ventas mensuales (miles de pesos):\n- Enero: 4.500\n- Febrero: 5.200\n- Marzo: 4.800\n- Abril: 6.100\n- Mayo: 5.700\n\nDetermina: (a) el período de mayor incremento y (b) la variación porcentual total de enero a mayo.",
+    "pasos": [
+      "Paso 1 — Calcular variaciones consecutivas: Ene→Feb: +700. Feb→Mar: -400. Mar→Abr: +1300 (mayor). Abr→May: -400.",
+      "Paso 2 — Mayor incremento: período Marzo a Abril, con +1300 miles.",
+      "Paso 3 — Variación porcentual total: base = valor inicial (enero = 4500). $\\dfrac{5700 - 4500}{4500} \\times 100 = \\dfrac{1200}{4500} \\times 100 \\approx 26.7\\%$.",
+      "Paso 4 — Error: usar mayo (5700) como base → $\\dfrac{1200}{5700} \\approx 21.1\\%$. Incorrecto: la base siempre es el valor INICIAL del período."
+    ],
+    "conclusion": "(a) Mayor incremento: Marzo a Abril (+1.300). (b) Variación porcentual total: $\\mathbf{26.7\\%}$, con enero como base."
+  }
+]
