@@ -153,5 +153,98 @@
         "explicacion": "Falso. El bicondicional sí puede ser falso — precisamente cuando $p$ y $q$ tienen valores distintos (uno V y el otro F, en cualquier combinación)."
       }
     ]
+  },
+  {
+    "id": "sim6-logica-tautologia",
+    "modulo_slug": "logica-proposicional",
+    "enunciado": "¿Cuál de las siguientes proposiciones es siempre verdadera (tautología)?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "$p \\land \\neg p$",
+        "es_correcta": false,
+        "explicacion": "Esta es una CONTRADICCIÓN, siempre F. Una proposición no puede ser V y F al mismo tiempo. Cuando $p=V$: $V \\land F = F$. Cuando $p=F$: $F \\land V = F$. Siempre Falso."
+      },
+      {
+        "letra": "B",
+        "texto": "$p \\lor \\neg p$",
+        "es_correcta": true,
+        "explicacion": "Correcto. Esta es la Ley del Tercio Excluido: una proposición o es V o su negación es V — siempre uno de los dos es V. Cuando $p=V$: $V \\lor F = V$. Cuando $p=F$: $F \\lor V = V$. Siempre Verdadero: es una tautología."
+      },
+      {
+        "letra": "C",
+        "texto": "$p \\rightarrow \\neg p$",
+        "es_correcta": false,
+        "explicacion": "Esta es una contingencia, no una tautología. Cuando $p=V$: $V \\rightarrow F = F$. Cuando $p=F$: $F \\rightarrow V = V$. El resultado depende del valor de $p$, así que no es siempre V."
+      },
+      {
+        "letra": "D",
+        "texto": "$\\neg(p \\lor q)$",
+        "es_correcta": false,
+        "explicacion": "Esta es una contingencia. Es equivalente a $\\neg p \\land \\neg q$ (De Morgan), que es V solo cuando ambas son F. Cuando $p=V$ o $q=V$, resulta F. No puede ser siempre V."
+      }
+    ]
+  },
+  {
+    "id": "sim7-logica-falacia-argumento",
+    "modulo_slug": "logica-proposicional",
+    "enunciado": "El argumento: '(1) Si el bus sale a tiempo, llego puntual. (2) Llegué puntual. Conclusión: El bus salió a tiempo.' ¿Es válido?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Sí, es válido — es Modus Ponens.",
+        "es_correcta": false,
+        "explicacion": "Error: Modus Ponens requiere como segunda premisa el ANTECEDENTE ($p$ = 'el bus salió a tiempo'). Aquí la segunda premisa es el CONSECUENTE ($q$ = 'llegué puntual'). Para que fuera Modus Ponens, la premisa 2 debería ser 'El bus salió a tiempo'."
+      },
+      {
+        "letra": "B",
+        "texto": "Sí, es válido — es Modus Tollens.",
+        "es_correcta": false,
+        "explicacion": "Error: Modus Tollens requiere la NEGACIÓN del consecuente ($\\neg q$ = 'no llegué puntual'). Aquí la premisa 2 es $q$ directamente ('llegué puntual'), no su negación. Para Modus Tollens se concluiría '¿el bus no salió a tiempo?', no '¿salió a tiempo?'."
+      },
+      {
+        "letra": "C",
+        "texto": "No, es la falacia de afirmación del consecuente.",
+        "es_correcta": true,
+        "explicacion": "Correcto. La forma es: $p \\rightarrow q$, $q$, $\\therefore p$ — afirmar el consecuente. Esta forma es inválida porque pude llegar puntual por otras razones (taxi, caminé rápido, etc.). El condicional solo dice que SI el bus sale a tiempo ENTONCES llego puntual; no dice que sea la ÚNICA forma de llegar puntual."
+      },
+      {
+        "letra": "D",
+        "texto": "Sí, es válido — si llegué puntual, el bus necesariamente salió a tiempo.",
+        "es_correcta": false,
+        "explicacion": "Error conceptual: confunde la validez del argumento con la verdad de la conclusión en un caso específico. Incluso si en la realidad el bus es la única forma de llegar, el argumento lógico es inválido porque la FORMA $p \\rightarrow q$, $q$, $\\therefore p$ nunca garantiza la conclusión. La lógica evalúa la forma, no el contenido."
+      }
+    ]
+  },
+  {
+    "id": "sim8-logica-tres-conjuntos",
+    "modulo_slug": "logica-proposicional",
+    "enunciado": "En una clase de 35 estudiantes: 20 gustan matemáticas ($M$), 15 ciencias ($C$) y 10 artes ($A$). Las intersecciones son: $|M \\cap C| = 7$, $|M \\cap A| = 4$, $|C \\cap A| = 3$, $|M \\cap C \\cap A| = 2$. ¿Cuántos estudiantes no gustan de ninguna de las tres materias?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "0",
+        "es_correcta": false,
+        "explicacion": "Error: asumir que todos los estudiantes gustan de al menos una materia sin calcularlo. $|M \\cup C \\cup A| = 20+15+10-7-4-3+2 = 33 \\neq 35$. Hay $35 - 33 = 2$ estudiantes fuera de la unión."
+      },
+      {
+        "letra": "B",
+        "texto": "2",
+        "es_correcta": true,
+        "explicacion": "Correcto. $|M \\cup C \\cup A| = |M|+|C|+|A| - |M \\cap C| - |M \\cap A| - |C \\cap A| + |M \\cap C \\cap A| = 20+15+10-7-4-3+2 = 33$. Los que no gustan de ninguna = $35 - 33 = 2$."
+      },
+      {
+        "letra": "C",
+        "texto": "4",
+        "es_correcta": false,
+        "explicacion": "Error: olvidó sumar la intersección triple. Si se calcula sin el $+|M \\cap C \\cap A|$: $20+15+10-7-4-3 = 31$, y $35-31=4$. La fórmula de inclusión-exclusión para tres conjuntos exige SUMAR la intersección triple al final porque fue restada en exceso al quitar las intersecciones de pares."
+      },
+      {
+        "letra": "D",
+        "texto": "7",
+        "es_correcta": false,
+        "explicacion": "Error: posiblemente solo aplicó la fórmula a dos de los tres conjuntos. Por ejemplo $|M \\cup C| = 20+15-7=28$, y $35-28=7$, ignorando el conjunto A. Es necesario considerar los tres conjuntos en la fórmula completa."
+      }
+    ]
   }
 ]

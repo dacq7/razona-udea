@@ -1,55 +1,170 @@
 # Lógica y Conjuntos — Versión fácil
 
-## Proposiciones: afirmaciones que son V o F
+## Las proposiciones: el juego del Verdadero o Falso
 
-Una proposición es como una pregunta de Sí o No. "El cielo es azul" → Verdadero. "2 + 2 = 5" → Falso. Eso es todo.
+Una proposición es cualquier afirmación a la que puedes responder "sí, es cierto" o "no, es falso". Nada intermedio. Piensa en ellas como interruptores: están encendidos (V) o apagados (F).
 
-## Los conectivos son como botones de combinación
+"Medellín es en Colombia" → V. "Los gatos ladran" → F. "¿Qué hora es?" → ❌ No es proposición, es una pregunta.
 
-Imagina que tienes dos interruptores: $p$ y $q$.
+Las llamamos $p$, $q$, $r$... como variables matemáticas.
 
-**Negación ($\neg p$):** "Lo contrario de p." Si p está encendido (V), $\neg p$ está apagado (F). Simple.
+## Los conectivos: cómo combinar proposiciones
 
-**Conjunción ($p \land q$ = "p Y q"):** Como una puerta que se abre solo si los DOS seguros están desbloqueados. Si uno está cerrado, no pasa.
+Piensa en los conectivos como operaciones matemáticas, pero con V y F en vez de números.
 
-**Disyunción ($p \lor q$ = "p O q"):** Como una puerta que se abre si AL MENOS UNO está desbloqueado. Solo está cerrada si los dos están bloqueados a la vez.
+**Negación ($\neg$) — el interruptor que voltea todo**
 
-**Condicional ($p \rightarrow q$ = "Si p entonces q"):** Este es el más importante. Piénsalo así: es una promesa. "Si llueve, llevo paraguas." La promesa solo se rompe (= Falso) si llueve Y no llevas paraguas. En todos los demás casos, la promesa se cumple.
+Si p es V, ¬p es F. Si p es F, ¬p es V. Simple: da la vuelta, siempre.
 
-| Llueve ($p$) | Paraguas ($q$) | ¿Cumpliste la promesa? |
-|---|---|---|
-| Sí | Sí | ✅ Sí |
-| Sí | No | ❌ ¡No cumpliste! |
-| No | Sí | ✅ Sí (te protegiste de más, pero no rompiste la promesa) |
-| No | No | ✅ Sí (no llovió, así que la promesa no aplica) |
+**Conjunción ($\land$ = "Y") — el portón con dos candados**
 
-**Bicondicional ($p \leftrightarrow q$):** "Son iguales." Verdadero cuando los dos tienen el mismo valor (los dos V o los dos F).
+Solo se abre si los DOS candados están abiertos. Si uno está cerrado, el portón no abre.
+- V Y V = V ✅ | V Y F = F ❌ | F Y V = F ❌ | F Y F = F ❌
 
-## De Morgan: cómo negar combinaciones
+**Disyunción ($\lor$ = "O") — el portón con dos llaves posibles**
 
-Hay dos reglas mágicas:
-- Negar "p Y q" = "No p" O "No q"
-- Negar "p O q" = "No p" Y "No q"
+Basta con que UNA llave funcione. Solo falla si las DOS llaves fallan.
+- V O V = V | V O F = V | F O V = V | F O F = F ❌ (único caso falso)
 
-Truco: al negar, el "Y" se convierte en "O" y viceversa, y niegas cada parte.
+**Condicional ($\rightarrow$ = "Si... entonces...") — la promesa**
 
-## Modus Tollens (el más útil del examen)
+Este es el más importante del examen y el que más confunde. La clave es pensarlo como una promesa:
 
-Si sabes: "Si estudias → apruebas" y también sabes "No aprobaste"... entonces concluyes "No estudiaste." Eso es modus tollens.
+"Si llueve, llevo paraguas."
 
-## Conjuntos: grupos de cosas
+La promesa se ROMPE (= Falso) ÚNICAMENTE si llueve (V) Y no llevas paraguas (F). En todos los demás casos, la promesa sigue en pie:
+- Llueve y llevas paraguas → Cumpliste ✅
+- Llueve y no llevas → Rompiste la promesa ❌ (único caso falso)
+- No llueve y llevas → No la rompiste ✅ (te preparaste de más, pero eso no está mal)
+- No llueve y no llevas → No la rompiste ✅ (no había condición que cumplir)
 
-- **Unión** ($A \cup B$): todo lo que hay en el grupo A o en el grupo B (o en los dos).
-- **Intersección** ($A \cap B$): solo lo que está en los DOS grupos al mismo tiempo.
-- **Complemento** ($A'$): todo lo que NO está en el grupo A.
-- **Diferencia** ($A - B$): lo que está en A pero no en B. Como sacar del grupo A los que también están en B.
+**Regla de oro:** El condicional solo es F cuando antecedente=V y consecuente=F.
 
-**Fórmula estrella:** Si tienes dos grupos que se mezclan:
-$$\text{Total en A o B} = \text{En A} + \text{En B} - \text{En ambos}$$
+**El contrarrecíproco es tu amigo:** "Si llueve, llevo paraguas" es exactamente igual a decir "Si no llevo paraguas, no está lloviendo". Estas dos formas siempre tienen el mismo valor de verdad. Pero "Si llevo paraguas, llueve" (converso) NO es equivalente.
 
-(Restas "en ambos" porque los contaste dos veces.)
+**Bicondicional ($\leftrightarrow$ = "Si y solo si") — el acuerdo mutuo**
 
-## Cuantificadores: "todos" vs "alguno"
+Es V cuando los dos tienen el mismo valor. "Están de acuerdo." V↔V=V, F↔F=V, pero V↔F=F y F↔V=F.
 
-- "**Todos** los estudiantes pasaron" → Para negarla: "**Algún** estudiante no pasó"
-- "**Algún** estudiante pasó" → Para negarla: "**Ningún** estudiante pasó"
+## Cómo construir una tabla de verdad sin perderse
+
+Con $n$ variables necesitas $2^n$ filas. Con 2: 4 filas. Con 3: 8 filas. Con 4: 16 filas.
+
+**Truco para no confundirse:**
+1. Llena la última columna de variables alternando V/F cada fila (V, F, V, F...).
+2. La anterior, alterna cada dos (V, V, F, F, V, V...).
+3. La anterior, cada cuatro (V, V, V, V, F, F, F, F...).
+4. Evalúa de adentro hacia afuera (los paréntesis primero).
+
+## ¿Siempre V? ¿Siempre F? ¿O depende?
+
+Una vez que construyes la tabla, mira la columna final:
+
+- **Todos V** → es una **tautología** (siempre cierta). Ejemplo clásico: "$p$ o no-$p$" — una proposición siempre es V o F, así que "$p$ o no-$p$" siempre es V.
+- **Todos F** → es una **contradicción** (nunca cierta). Ejemplo: "$p$ y no-$p$" — no puede ser V y F al mismo tiempo.
+- **Mezcla de V y F** → es una **contingencia** (depende de los valores). La mayoría de proposiciones son así.
+
+## Reglas mágicas para negar (De Morgan y amigos)
+
+**De Morgan — la más útil:**
+
+- Negar "p **Y** q" = "no-p **O** no-q"
+- Negar "p **O** q" = "no-p **Y** no-q"
+
+Truco mental: al negar una combinación, el Y se convierte en O (o viceversa) y se niegan los dos lados.
+
+Ejemplo: La negación de "Tengo hambre y sed" es "No tengo hambre O no tengo sed" (no necesito tener las DOS para que la negación sea cierta — basta con no tener una).
+
+**Equivalencia del condicional:**
+
+"Si p entonces q" es lo mismo que "no-p o q". Sirve para cuando necesitas trabajar con condicionales de otra forma.
+
+La negación de "si p entonces q" es "p y no-q" — es decir, se cumple el antecedente PERO NO el consecuente.
+
+**Doble negación:** Negar dos veces devuelve lo mismo. $\neg\neg p \equiv p$.
+
+## Argumentos: cuándo puedes sacar conclusiones
+
+Un argumento tiene premisas (lo que sabes) y una conclusión (lo que quieres concluir). Es **válido** si las premisas verdaderas garantizan la conclusión, sin importar si en el mundo real son verdaderas.
+
+### Los cuatro argumentos válidos que el examen pregunta
+
+**Modus Ponens — la lógica directa:**
+
+Sabes: "Si estudio, apruebo." Sabes que: "Estudié." Concluyes: "Aprobé." ✅
+
+Forma: $p \rightarrow q$, $p$ → concluyes $q$.
+
+**Modus Tollens — la lógica inversa:**
+
+Sabes: "Si estudio, apruebo." Sabes que: "No aprobé." Concluyes: "No estudié." ✅
+
+Forma: $p \rightarrow q$, no-$q$ → concluyes no-$p$.
+
+**Silogismo Hipotético — la cadena:**
+
+Sabes: "Si estudio, entiendo." Y: "Si entiendo, apruebo." Concluyes: "Si estudio, apruebo." ✅
+
+Forma: $p \rightarrow q$, $q \rightarrow r$ → concluyes $p \rightarrow r$.
+
+**Silogismo Disyuntivo — eliminación:**
+
+Sabes: "O voy en bus o camino." Y: "No fui en bus." Concluyes: "Caminé." ✅
+
+Forma: $p \lor q$, no-$p$ → concluyes $q$.
+
+### Las trampas que el examen pone (falacias)
+
+**Trampa 1 — Afirmación del consecuente:**
+
+"Si estudio, apruebo. Aprobé. ∴ Estudié." ❌
+
+¿Por qué es trampa? Porque pude haber aprobado sin estudiar. El condicional solo dice qué pasa SI estudias, no que estudiar sea la ÚNICA forma de aprobar.
+
+**Trampa 2 — Negación del antecedente:**
+
+"Si estudio, apruebo. No estudié. ∴ No aprobé." ❌
+
+¿Por qué es trampa? Porque pude haber aprobado de todas formas. El condicional no dice nada sobre qué pasa cuando NO se cumple la condición.
+
+**Clave para no confundirse:** Los únicos válidos son Modus Ponens (sabes p) y Modus Tollens (sabes no-q). Si el examen te da q como premisa o no-p como premisa con un condicional p→q, es una trampa.
+
+## Conjuntos: grupos y sus operaciones
+
+Un conjunto es una colección de cosas claramente definidas. Lo escribimos con llaves: $A = \{1, 2, 3\}$.
+
+**Las cinco operaciones básicas:**
+
+- **Unión** ($A \cup B$): "todo lo de A más todo lo de B". Si está en uno, ya cuenta. No lo repitas.
+- **Intersección** ($A \cap B$): "solo lo que está en LOS DOS al mismo tiempo".
+- **Complemento** ($A'$): "todo lo del universo que NO está en A". Todo lo que A dejó fuera.
+- **Diferencia** ($A - B$): "lo que está en A pero NO en B". Le quitas a A lo que comparte con B.
+- **Diferencia simétrica** ($A \triangle B$): "lo que está en uno O en el otro, pero NO en los dos". Los que son exclusivos de cada grupo.
+
+**La fórmula clave para dos grupos que se mezclan:**
+
+$$\text{En A o B} = \text{En A} + \text{En B} - \text{En ambos}$$
+
+Restas "en ambos" porque los contaste dos veces (una vez en cada grupo).
+
+Ejemplo: 18 personas estudian física, 15 estudian química, 7 estudian ambas. ¿Cuántas estudian al menos una? 18 + 15 − 7 = 26.
+
+**Para tres grupos:**
+
+$$\text{En A, B o C} = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|$$
+
+Sumas las intersecciones de pares porque las restaste demasiado, y sumas la triple porque la restaste una vez de más al quitar las pares.
+
+## Cuantificadores: "todos" y "alguno"
+
+Los cuantificadores dicen CUÁNTOS elementos cumplen una condición.
+
+**Para negar "todos":** basta encontrar UNO que no cumpla.
+- "**Todos** los perros son simpáticos" → negación: "**Existe algún** perro que no es simpático"
+
+**Para negar "existe alguno":** necesitas que NINGUNO cumpla.
+- "**Existe algún** estudiante que no estudió" → negación: "**Todos** los estudiantes estudiaron"
+
+**El error más común:** negar "Todos los X son Y" como "Ningún X es Y". La negación correcta es solo "Algún X no es Y". Probar que NINGUNO es Y es mucho más difícil y es una afirmación diferente.
+
+Ejemplo práctico: "Todos los exámenes del semestre son difíciles." Negación correcta: "Existe al menos un examen que no es difícil." No necesitas probar que TODOS son fáciles — basta con encontrar UNO que no sea difícil.

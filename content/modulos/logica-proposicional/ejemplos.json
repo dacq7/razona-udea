@@ -30,5 +30,29 @@
       "Paso 4 — $A'$: todo en U que no está en A. $A' = \\{1, 3, 5, 7, 9\\}$ (los números impares del universo)."
     ],
     "conclusion": "$A \\cap B = \\{6\\}$, $A \\cup B = \\{2,3,4,6,8,9,10\\}$, $A' = \\{1,3,5,7,9\\}$."
+  },
+  {
+    "id": "ej4-logica-tautologia",
+    "enunciado": "Determina si la proposición $p \\rightarrow (q \\rightarrow p)$ es una tautología evaluándola para todos los valores posibles de $p$ y $q$.",
+    "pasos": [
+      "Paso 1 — Identificar la estructura: es un condicional cuyo consecuente ($q \\rightarrow p$) es a su vez un condicional.",
+      "Paso 2 — Caso $p = V$: el consecuente $q \\rightarrow p = q \\rightarrow V$. Un condicional con consecuente V es siempre V (independientemente del valor de $q$). Entonces el condicional externo es $V \\rightarrow V = V$.",
+      "Paso 3 — Caso $p = F$, $q = V$: $q \\rightarrow p = V \\rightarrow F = F$. El condicional externo es $F \\rightarrow F = V$.",
+      "Paso 4 — Caso $p = F$, $q = F$: $q \\rightarrow p = F \\rightarrow F = V$. El condicional externo es $F \\rightarrow V = V$.",
+      "Paso 5 — En los 4 casos (p=V/q=V, p=V/q=F, p=F/q=V, p=F/q=F) el resultado es V."
+    ],
+    "conclusion": "$p \\rightarrow (q \\rightarrow p)$ es una tautología: es verdadera para cualquier valor de $p$ y $q$. La clave intuitiva es que si $p$ es V, el consecuente interno siempre es V; y si $p$ es F, el condicional externo tiene antecedente F y siempre resulta V."
+  },
+  {
+    "id": "ej5-logica-tres-conjuntos",
+    "enunciado": "En una clase de 35 estudiantes: 20 les gustan las matemáticas ($M$), 15 las ciencias ($C$) y 10 las artes ($A$). Las intersecciones son: $|M \\cap C| = 7$, $|M \\cap A| = 4$, $|C \\cap A| = 3$ y $|M \\cap C \\cap A| = 2$. Calcula: (a) cuántos les gusta al menos una materia, (b) cuántos no les gusta ninguna.",
+    "pasos": [
+      "Paso 1 — Aplicar la fórmula de inclusión-exclusión para tres conjuntos: $|M \\cup C \\cup A| = |M| + |C| + |A| - |M \\cap C| - |M \\cap A| - |C \\cap A| + |M \\cap C \\cap A|$.",
+      "Paso 2 — Sustituir valores: $|M \\cup C \\cup A| = 20 + 15 + 10 - 7 - 4 - 3 + 2 = 45 - 14 + 2 = 33$.",
+      "Paso 3 — Al menos una materia: 33 estudiantes.",
+      "Paso 4 — Ninguna materia: $35 - 33 = 2$ estudiantes no les gusta ninguna de las tres.",
+      "Paso 5 — Verificación interna: exactamente una materia = $(20-7-4+2)+(15-7-3+2)+(10-4-3+2) = 11+7+5 = 23$. Exactamente dos = $(7-2)+(4-2)+(3-2) = 5+2+1 = 8$. Exactamente tres = 2. Ninguna = 2. Total: $23+8+2+2 = 35$ ✓"
+    ],
+    "conclusion": "(a) 33 estudiantes gustan de al menos una materia. (b) 2 estudiantes no gustan de ninguna. La clave es sumar las intersecciones dobles (las restamos una vez extra) y sumar la triple (la restamos dos veces extra al quitar las intersecciones dobles)."
   }
 ]

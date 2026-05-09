@@ -1,81 +1,274 @@
 # Lógica Proposicional y Conjuntos
 
-La lógica proposicional estudia cómo combinar afirmaciones para razonar de forma válida. Una **proposición** es cualquier afirmación que puede ser verdadera (V) o falsa (F), pero no ambas.
+La lógica proposicional estudia cómo construir y evaluar afirmaciones para razonar de forma válida. El dominio de este módulo es fundamental: los conectivos lógicos y los conjuntos aparecen en prácticamente todas las secciones del examen UdeA.
 
-## Conectivos lógicos
+## 1. Proposiciones
 
-Los conectivos permiten construir proposiciones compuestas a partir de proposiciones simples $p$, $q$, $r$...
+Una **proposición** es una oración declarativa que tiene exactamente uno de dos valores de verdad: **Verdadero (V)** o **Falso (F)**. No puede ser ambas cosas ni ninguna.
 
-| Nombre | Símbolo | Se lee | Es verdadero cuando... |
-|--------|---------|--------|------------------------|
-| Negación | $\neg p$ | "no p" | $p$ es falso |
-| Conjunción | $p \land q$ | "p y q" | ambos son verdaderos |
-| Disyunción | $p \lor q$ | "p o q" | al menos uno es verdadero |
-| Condicional | $p \rightarrow q$ | "si p entonces q" | no ocurre que p sea V y q sea F |
-| Bicondicional | $p \leftrightarrow q$ | "p si y solo si q" | $p$ y $q$ tienen el mismo valor |
+**Proposiciones válidas:**
+- "Medellín es la capital de Antioquia." → V
+- "7 es un número par." → F
+- "Si llueve, el suelo se moja." → V (proposición compuesta)
 
-### El condicional $p \rightarrow q$
+**No son proposiciones:** preguntas ("¿Llueve?"), órdenes ("¡Estudia!"), oraciones sin valor de verdad definido ("Esta oración es falsa").
 
-Es la proposición más importante del examen y la que más confunde. La única forma en que $p \rightarrow q$ es **falso** es cuando $p$ es verdadero y $q$ es falso.
+Las proposiciones simples se denotan con letras minúsculas: $p$, $q$, $r$, $s$...
+
+## 2. Conectivos lógicos
+
+Los **conectivos** combinan proposiciones simples para formar proposiciones compuestas. A continuación, cada uno con su tabla de verdad completa.
+
+### 2.1 Negación ($\neg$)
+
+$\neg p$ se lee "no p". Invierte el valor de verdad.
+
+| $p$ | $\neg p$ |
+|-----|---------|
+| V | F |
+| F | V |
+
+**Ejemplo:** Si $p$ = "Está lloviendo", entonces $\neg p$ = "No está lloviendo".
+
+### 2.2 Conjunción ($\land$)
+
+$p \land q$ se lee "p **y** q". Es V solo cuando **ambas** son V.
+
+| $p$ | $q$ | $p \land q$ |
+|-----|-----|-------------|
+| V | V | **V** |
+| V | F | F |
+| F | V | F |
+| F | F | F |
+
+**Ejemplo:** "Estudio y practico" es verdadero solo si hago ambas cosas.
+
+### 2.3 Disyunción ($\lor$)
+
+$p \lor q$ se lee "p **o** q" (disyunción inclusiva). Es V cuando **al menos una** es V. Solo es F cuando ambas son F.
+
+| $p$ | $q$ | $p \lor q$ |
+|-----|-----|------------|
+| V | V | V |
+| V | F | V |
+| F | V | V |
+| F | F | **F** |
+
+**Ejemplo:** "Llevaré paraguas o impermeable" — basta cumplir una de las dos condiciones.
+
+### 2.4 El condicional ($\rightarrow$) — el más importante del examen
+
+$p \rightarrow q$ se lee "**si** p, **entonces** q". El antecedente es $p$; el consecuente es $q$.
+
+| $p$ | $q$ | $p \rightarrow q$ |
+|-----|-----|--------------------|
+| V | V | V |
+| V | F | **F** ← único caso falso |
+| F | V | V |
+| F | F | V |
+
+**Regla de oro:** El condicional es F **únicamente** cuando el antecedente es V y el consecuente es F. En todos los demás casos es V.
+
+**Analogía de la promesa:** "Si llueve, llevo paraguas." La promesa solo se rompe (F) si llueve (V) y no llevo paraguas (F). Si no llueve, la promesa sigue vigente sin importar lo demás.
+
+#### Formas relacionadas del condicional
+
+Dado $p \rightarrow q$:
+
+| Nombre | Expresión | ¿Equivalente al original? |
+|--------|-----------|--------------------------|
+| Inverso | $\neg p \rightarrow \neg q$ | ❌ No |
+| Recíproco (converso) | $q \rightarrow p$ | ❌ No |
+| Contrarrecíproco | $\neg q \rightarrow \neg p$ | ✅ **Sí — siempre equivalente** |
+
+**El inverso y el recíproco no son equivalentes al original. El contrarrecíproco sí lo es.** Esta distinción es esencial en el examen.
+
+#### Equivalencia fundamental del condicional
+
+$$p \rightarrow q \equiv \neg p \lor q$$
+
+"Si p entonces q" es exactamente lo mismo que "no-p o q". Esta equivalencia permite reescribir y negar condicionales con facilidad.
+
+**Corolario:** La negación de $p \rightarrow q$ es $p \land \neg q$ (antecedente verdadero y consecuente falso).
+
+### 2.5 Bicondicional ($\leftrightarrow$)
+
+$p \leftrightarrow q$ se lee "p **si y solo si** q". Es V cuando ambas proposiciones tienen el mismo valor de verdad.
+
+| $p$ | $q$ | $p \leftrightarrow q$ |
+|-----|-----|----------------------|
+| V | V | **V** |
+| V | F | F |
+| F | V | F |
+| F | F | **V** |
+
+**Equivalencia:** $p \leftrightarrow q \equiv (p \rightarrow q) \land (q \rightarrow p)$. Expresa una relación de doble implicación.
+
+## 3. Tablas de verdad: cómo construirlas
+
+Para una proposición con $n$ variables se necesitan $2^n$ filas. Con 2 variables: $2^2 = 4$. Con 3 variables: $2^3 = 8$.
+
+**Procedimiento sistemático:** evalúa primero los paréntesis más internos, luego los conectivos de menor a mayor alcance.
+
+**Ejemplo con 3 variables — tabla de verdad de $(p \land q) \rightarrow \neg r$:**
 
 $$
-\begin{array}{c|c|c}
-p & q & p \rightarrow q \\
+\begin{array}{c|c|c|c|c|c}
+p & q & r & p \land q & \neg r & (p \land q) \rightarrow \neg r \\
 \hline
-V & V & V \\
-V & F & \mathbf{F} \\
-F & V & V \\
-F & F & V \\
+V & V & V & V & F & F \\
+V & V & F & V & V & V \\
+V & F & V & F & F & V \\
+V & F & F & F & V & V \\
+F & V & V & F & F & V \\
+F & V & F & F & V & V \\
+F & F & V & F & F & V \\
+F & F & F & F & V & V \\
 \end{array}
 $$
 
-**Ejemplo:** "Si estudio, apruebo." Si estudias y no apruebas → la afirmación es falsa. En cualquier otro caso es verdadera (incluso si no estudias y apruebas de casualidad).
+Como hay una fila con resultado F (la primera), la proposición **no es una tautología**.
+
+## 4. Tautología, contradicción y contingencia
+
+| Concepto | Definición | Ejemplo |
+|----------|-----------|---------|
+| **Tautología** | Siempre V en toda la tabla | $p \lor \neg p$ ("p o no-p") |
+| **Contradicción** | Siempre F en toda la tabla | $p \land \neg p$ ("p y no-p") |
+| **Contingencia** | Algunas filas V, otras F | $p \lor q$ |
+
+La tautología $p \lor \neg p$ se llama **Ley del tercio excluido**. La contradicción $p \land \neg p$ es imposible por definición.
+
+## 5. Equivalencias lógicas importantes
+
+Dos proposiciones son **lógicamente equivalentes** ($\equiv$) si tienen el mismo valor de verdad en todas las filas de su tabla de verdad.
 
 ### Leyes de De Morgan
-
-Útiles para negar conjunciones y disyunciones:
 
 $$\neg(p \land q) \equiv \neg p \lor \neg q$$
 $$\neg(p \lor q) \equiv \neg p \land \neg q$$
 
-**Regla fácil de recordar:** Al negar, cambias $\land$ por $\lor$ (o viceversa) y niegas cada parte.
+**Regla:** Al distribuir la negación sobre una conjunción o disyunción, el conectivo cambia ($\land \leftrightarrow \lor$) y se niegan los dos términos.
 
-## Argumentos lógicos válidos
+### Tabla de equivalencias útiles
 
-El examen pide reconocer si una conclusión se sigue correctamente de las premisas.
+| Nombre | Equivalencia |
+|--------|-------------|
+| Doble negación | $\neg(\neg p) \equiv p$ |
+| Condicional material | $p \rightarrow q \equiv \neg p \lor q$ |
+| Contrarrecíproco | $p \rightarrow q \equiv \neg q \rightarrow \neg p$ |
+| Negación del condicional | $\neg(p \rightarrow q) \equiv p \land \neg q$ |
+| Distributiva (∧ sobre ∨) | $p \land (q \lor r) \equiv (p \land q) \lor (p \land r)$ |
+| Distributiva (∨ sobre ∧) | $p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)$ |
+| Absorción | $p \lor (p \land q) \equiv p$ |
 
-**Modus Ponens:** Si tienes $p \rightarrow q$ y $p$, puedes concluir $q$.
+## 6. Argumentos lógicos: válidos e inválidos
 
-**Modus Tollens:** Si tienes $p \rightarrow q$ y $\neg q$, puedes concluir $\neg p$.
+Un **argumento** consiste en un conjunto de premisas y una conclusión. Es **válido** si, suponiendo que todas las premisas son verdaderas, la conclusión necesariamente también lo es. La validez lógica es **independiente** de si las premisas son realmente verdaderas en el mundo real.
 
-**Silogismo hipotético:** Si $p \rightarrow q$ y $q \rightarrow r$, entonces $p \rightarrow r$.
+### Reglas de inferencia válidas
 
-## Teoría de conjuntos
+**Modus Ponens:**
 
-Un **conjunto** es una colección de elementos. Se denota con letras mayúsculas.
+$$\frac{p \rightarrow q \quad p}{\therefore\ q}$$
 
-### Operaciones básicas
+*"Si estudio, apruebo. Estudié. ∴ Aprobé."*
 
-| Operación | Símbolo | Resultado |
-|-----------|---------|-----------|
-| Unión | $A \cup B$ | Todo lo que está en $A$ **o** en $B$ (o en ambos) |
-| Intersección | $A \cap B$ | Solo lo que está en $A$ **y** también en $B$ |
-| Complemento | $A'$ o $\overline{A}$ | Todo lo del universo $U$ que **no** está en $A$ |
-| Diferencia | $A - B$ | Lo que está en $A$ pero **no** en $B$ |
+**Modus Tollens:**
 
-### Fórmula de inclusión-exclusión
+$$\frac{p \rightarrow q \quad \neg q}{\therefore\ \neg p}$$
 
-Para problemas de conteo con dos conjuntos:
+*"Si estudio, apruebo. No aprobé. ∴ No estudié."*
 
+**Silogismo Hipotético:**
+
+$$\frac{p \rightarrow q \quad q \rightarrow r}{\therefore\ p \rightarrow r}$$
+
+*"Si estudio, entiendo. Si entiendo, apruebo. ∴ Si estudio, apruebo."*
+
+**Silogismo Disyuntivo:**
+
+$$\frac{p \lor q \quad \neg p}{\therefore\ q}$$
+
+*"O voy en bus o camino. No fui en bus. ∴ Caminé."*
+
+### Falacias formales (argumentos inválidos)
+
+Las falacias son formas de argumento que **parecen** válidas pero no lo son.
+
+**Falacia de afirmación del consecuente:**
+
+$$\frac{p \rightarrow q \quad q}{\therefore\ p} \quad \text{❌ INVÁLIDO}$$
+
+*"Si estudio, apruebo. Aprobé. ∴ Estudié."* — Error: pude haber aprobado sin estudiar.
+
+**Falacia de negación del antecedente:**
+
+$$\frac{p \rightarrow q \quad \neg p}{\therefore\ \neg q} \quad \text{❌ INVÁLIDO}$$
+
+*"Si estudio, apruebo. No estudié. ∴ No aprobé."* — Error: pude haber aprobado de todas formas.
+
+**Clave para distinguirlas:** Solo Modus Ponens ($p \rightarrow q$, $p$, $\therefore q$) y Modus Tollens ($p \rightarrow q$, $\neg q$, $\therefore \neg p$) son válidos. Las otras combinaciones con el condicional son falacias.
+
+## 7. Teoría de conjuntos
+
+Un **conjunto** es una colección bien definida de objetos llamados **elementos**. Se denota con letras mayúsculas ($A$, $B$, $U$...) y sus elementos entre llaves.
+
+### Notación fundamental
+
+- $x \in A$: "$x$ pertenece a $A$"
+- $x \notin A$: "$x$ no pertenece a $A$"
+- $\emptyset$ (conjunto vacío): sin elementos
+- $U$ (conjunto universal): contiene todos los elementos del contexto
+- $|A|$: cardinalidad — número de elementos de $A$
+- $A \subseteq B$: "$A$ es subconjunto de $B$" (todo elemento de $A$ está en $B$)
+
+### Operaciones entre conjuntos
+
+| Operación | Símbolo | Elementos que incluye |
+|-----------|---------|----------------------|
+| Unión | $A \cup B$ | Los de $A$ **o** $B$ (o ambos) |
+| Intersección | $A \cap B$ | Los de $A$ **y** $B$ simultáneamente |
+| Complemento | $A'$ o $\overline{A}$ | Los de $U$ que **no** están en $A$ |
+| Diferencia | $A - B$ | Los de $A$ que **no** están en $B$ |
+| Diferencia simétrica | $A \triangle B$ | Los de $A$ o $B$, pero **no de ambos** |
+
+**Diferencia simétrica:** $A \triangle B = (A - B) \cup (B - A)$. Es lo que está exclusivamente en uno de los dos conjuntos.
+
+### Diagramas de Venn
+
+Un diagrama de Venn representa conjuntos como círculos solapados dentro de un rectángulo (el universo $U$). La región de solapamiento es $A \cap B$. Las regiones exclusivas de cada círculo son $A - B$ y $B - A$. Fuera de ambos círculos está $(A \cup B)'$.
+
+### Fórmulas de conteo (inclusión-exclusión)
+
+**Para dos conjuntos:**
 $$|A \cup B| = |A| + |B| - |A \cap B|$$
 
-Si además sabes el total del universo $|U|$, los que no pertenecen a ninguno son:
+Los que no están en ninguno: $|U| - |A \cup B|$
 
-$$|A \cup B|^c = |U| - |A \cup B|$$
+**Para tres conjuntos:**
+$$|A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|$$
 
-### Cuantificadores
+**Ejemplo:** En un grupo de 40 personas, 25 hablan inglés ($I$) y 18 hablan francés ($F$). Si 10 hablan ambos y todos hablan al menos uno, ¿cuántos hay en el grupo? $|I \cup F| = 25 + 18 - 10 = 33$. Pero el enunciado dice que todos hablan al menos uno, así que el total es 33. (Si hubiera personas que no hablan ninguno, se agregarían al final.)
 
-| Afirmación | Negación |
-|-----------|---------|
-| "Todos los X son Y" ($\forall x$) | "Existe algún X que no es Y" ($\exists x: \neg$) |
-| "Existe algún X que es Y" ($\exists x$) | "Ningún X es Y" ($\forall x: \neg$) |
+## 8. Cuantificadores lógicos
+
+Los cuantificadores expresan la cantidad de elementos que satisfacen una propiedad $P(x)$.
+
+| Cuantificador | Símbolo | Lectura | Cuándo es verdadero |
+|--------------|---------|---------|---------------------|
+| Universal | $\forall x: P(x)$ | "Para todo $x$, $P(x)$" | $P(x)$ es V para TODOS los $x$ |
+| Existencial | $\exists x: P(x)$ | "Existe al menos un $x$ tal que $P(x)$" | $P(x)$ es V para AL MENOS UN $x$ |
+
+### Negación de cuantificadores
+
+$$\neg(\forall x: P(x)) \equiv \exists x: \neg P(x)$$
+$$\neg(\exists x: P(x)) \equiv \forall x: \neg P(x)$$
+
+**Regla:** Al negar, el cuantificador cambia ($\forall \leftrightarrow \exists$) y se niega la propiedad.
+
+**Ejemplos:**
+- "**Todos** los estudiantes pasaron" → negación: "**Existe algún** estudiante que no pasó"
+- "**Existe algún** número primo par" → negación: "**Todo** número primo es impar"
+
+**Error clásico del examen:** Negar "Todos los X son Y" como "Ningún X es Y". La negación correcta es solo "Algún X no es Y". Para que "Ningún X es Y" sea cierto necesitarías probar que TODOS fallan, lo cual es una afirmación mucho más fuerte que la simple negación.

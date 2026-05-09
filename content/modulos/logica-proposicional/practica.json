@@ -158,5 +158,229 @@
         "explicacion": "Es trampa: {a, b, e, f} es la diferencia simétrica $A \\triangle B$ = $(A - B) \\cup (B - A)$. Incluye lo que está exclusivamente en A ({a, b}) y lo que está exclusivamente en B ({e, f}), que es una operación diferente."
       }
     ]
+  },
+  {
+    "id": "prac6-logica-tabla-tres-variables",
+    "dificultad": 1,
+    "enunciado": "Dados $p = V$, $q = V$ y $r = F$, ¿cuál es el valor de verdad de $(p \\land \\neg q) \\lor r$?",
+    "pista": "Evalúa primero $\\neg q$, luego la conjunción del paréntesis, y finalmente la disyunción con $r$.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Verdadero, porque $p$ y $q$ son verdaderos.",
+        "es_correcta": false,
+        "explicacion": "Es trampa: la proposición contiene $\\neg q$, no $q$. Como $q = V$, entonces $\\neg q = F$. La conjunción $p \\land \\neg q = V \\land F = F$. No se puede usar el valor de $q$ directamente sin negarlo."
+      },
+      {
+        "letra": "B",
+        "texto": "Falso.",
+        "es_correcta": true,
+        "explicacion": "Es correcto. $\\neg q = F$. Luego $p \\land \\neg q = V \\land F = F$. Finalmente $(p \\land \\neg q) \\lor r = F \\lor F = F$. La disyunción es F cuando ambas partes son F."
+      },
+      {
+        "letra": "C",
+        "texto": "Verdadero, porque la disyunción con cualquier V resulta V.",
+        "es_correcta": false,
+        "explicacion": "Es trampa: la disyunción es V si AL MENOS UNO de sus términos es V. Pero aquí el primer término $(p \\land \\neg q) = F$ y el segundo $r = F$. Como los dos son F, el resultado es F."
+      },
+      {
+        "letra": "D",
+        "texto": "Verdadero, porque $r = F$ y $\\neg r = V$.",
+        "es_correcta": false,
+        "explicacion": "Es trampa: la proposición usa $r$ directamente (como $r = F$), no $\\neg r$. Confundir $r$ con $\\neg r$ es un error de lectura. No hay negación de $r$ en la expresión original."
+      }
+    ]
+  },
+  {
+    "id": "prac7-logica-de-morgan-lenguaje",
+    "dificultad": 1,
+    "enunciado": "La afirmación 'Juan estudia Y María trabaja' es verdadera. ¿Cuál de las siguientes es su negación lógica correcta?",
+    "pista": "Aplica la primera Ley de De Morgan: la negación de una conjunción es la disyunción de las negaciones.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Juan no estudia Y María no trabaja.",
+        "es_correcta": false,
+        "explicacion": "Es trampa frecuente: niega cada parte por separado pero mantiene el conector Y. De Morgan dice que al negar 'p Y q' el conector Y debe convertirse en O. Esta opción equivale a $\\neg p \\land \\neg q$, no a $\\neg(p \\land q)$."
+      },
+      {
+        "letra": "B",
+        "texto": "Juan no estudia O María no trabaja.",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Por la Ley de De Morgan: $\\neg(p \\land q) \\equiv \\neg p \\lor \\neg q$. La negación de 'Juan estudia Y María trabaja' es 'Juan NO estudia O María NO trabaja'. Basta con que una de las dos condiciones no se cumpla para negar la conjunción."
+      },
+      {
+        "letra": "C",
+        "texto": "Juan estudia O María trabaja.",
+        "es_correcta": false,
+        "explicacion": "Es trampa: cambió el Y por O pero no negó cada parte. $p \\lor q$ no es la negación de $p \\land q$. Por ejemplo, si ambas son V: $p \\land q = V$ y $p \\lor q = V$ también, cuando deberían tener valores opuestos."
+      },
+      {
+        "letra": "D",
+        "texto": "Juan estudia Y María no trabaja.",
+        "es_correcta": false,
+        "explicacion": "Es trampa: solo niega uno de los dos términos y mantiene el Y. Una negación parcial no es la negación lógica de la proposición completa. Además, el conector debe cambiar según De Morgan."
+      }
+    ]
+  },
+  {
+    "id": "prac8-logica-modus-ponens",
+    "dificultad": 2,
+    "enunciado": "El argumento: '(1) Si un paciente tiene fiebre, está enfermo. (2) Este paciente tiene fiebre. Conclusión: Este paciente está enfermo.' ¿Qué forma de inferencia válida sigue?",
+    "pista": "Identifica cuáles son las premisas y la conclusión, y compara con las formas canónicas de Modus Ponens, Modus Tollens, Silogismo Hipotético y Silogismo Disyuntivo.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Modus Tollens",
+        "es_correcta": false,
+        "explicacion": "Es trampa: Modus Tollens requiere que la premisa 2 sea la negación del consecuente ($\\neg q$). Aquí la premisa 2 es el antecedente ($p$) directamente. Modus Tollens concluiría 'no tiene fiebre' a partir de 'no está enfermo'."
+      },
+      {
+        "letra": "B",
+        "texto": "Modus Ponens",
+        "es_correcta": true,
+        "explicacion": "Es correcto. La forma es: premisa 1 = $p \\rightarrow q$ ('fiebre → enfermo'), premisa 2 = $p$ ('tiene fiebre'), conclusión = $q$ ('está enfermo'). Esto es exactamente Modus Ponens: de $p \\rightarrow q$ y $p$, se concluye $q$."
+      },
+      {
+        "letra": "C",
+        "texto": "Silogismo Hipotético",
+        "es_correcta": false,
+        "explicacion": "Es trampa: el Silogismo Hipotético requiere DOS condicionales como premisas ($p \\rightarrow q$ y $q \\rightarrow r$) para concluir $p \\rightarrow r$. Aquí solo hay un condicional como premisa y un hecho ($p$) como segunda premisa."
+      },
+      {
+        "letra": "D",
+        "texto": "Silogismo Disyuntivo",
+        "es_correcta": false,
+        "explicacion": "Es trampa: el Silogismo Disyuntivo requiere una disyunción ($p \\lor q$) y la negación de uno de los disyuntos ($\\neg p$) para concluir el otro ($q$). Aquí no hay ninguna disyunción entre las premisas."
+      }
+    ]
+  },
+  {
+    "id": "prac9-logica-falacia-consecuente",
+    "dificultad": 2,
+    "enunciado": "Evalúa el argumento: '(1) Si un triángulo es equilátero, entonces es equiángulo. (2) Este triángulo es equiángulo. Conclusión: Este triángulo es equilátero.' ¿Es válido?",
+    "pista": "Identifica la forma del argumento: ¿qué se conoce como premisa 2? ¿Es el antecedente ($p$) o el consecuente ($q$) del condicional?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Sí, es válido — sigue la forma del Modus Ponens.",
+        "es_correcta": false,
+        "explicacion": "Es trampa: Modus Ponens requiere que la premisa 2 sea el ANTECEDENTE ($p$ = 'es equilátero'). Aquí la premisa 2 es el CONSECUENTE ($q$ = 'es equiángulo'). Confundir el antecedente con el consecuente es el error clásico que conduce a esta falacia."
+      },
+      {
+        "letra": "B",
+        "texto": "No, es la falacia de afirmación del consecuente.",
+        "es_correcta": true,
+        "explicacion": "Es correcto. La forma del argumento es: $p \\rightarrow q$, $q$, $\\therefore p$. Afirmar el consecuente ($q$) no permite concluir el antecedente ($p$). Un triángulo puede ser equiángulo sin ser equilátero (en geometría esto es posible para otros polígonos, y en lógica el razonamiento es inválido de todas formas). El condicional solo garantiza que si es equilátero ENTONCES es equiángulo, no el camino inverso."
+      },
+      {
+        "letra": "C",
+        "texto": "Sí, es válido — es el contrarrecíproco del condicional original.",
+        "es_correcta": false,
+        "explicacion": "Es trampa sofisticada: el contrarrecíproco de $p \\rightarrow q$ es $\\neg q \\rightarrow \\neg p$, que SÍ es equivalente. Pero para usar el contrarrecíproco se necesitaría '$\\neg q$' (no es equiángulo) como premisa, no '$q$' (es equiángulo). Este argumento NO usa el contrarrecíproco."
+      },
+      {
+        "letra": "D",
+        "texto": "No, porque los triángulos equiláteros y equiángulos son diferentes.",
+        "es_correcta": false,
+        "explicacion": "Es trampa: en geometría euclidiana, todos los triángulos equiláteros son equiángulos y viceversa (60° cada ángulo), así que factualmente podrían ser equivalentes. Pero la RAZÓN por la que el argumento es inválido es LÓGICA, no geométrica: la forma $p \\rightarrow q$, $q$, $\\therefore p$ es siempre una falacia, sin importar el contenido."
+      }
+    ]
+  },
+  {
+    "id": "prac10-logica-inclusion-exclusion",
+    "dificultad": 2,
+    "enunciado": "En un salón, todos los estudiantes aprobaron al menos una de las dos materias: 24 aprobaron matemáticas y 20 aprobaron español. Si 8 aprobaron ambas, ¿cuántos estudiantes tiene el salón?",
+    "pista": "Usa la fórmula de inclusión-exclusión: el número total de estudiantes es $|M \\cup E| = |M| + |E| - |M \\cap E|$. El enunciado dice que todos aprobaron al menos una.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "44",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $24 + 20 = 44$, pero olvida restar la intersección. Los 8 que aprobaron ambas materias fueron contados dos veces (una en el grupo de matemáticas y una en el de español). Hay que restarlos una vez: $44 - 8 = 36$."
+      },
+      {
+        "letra": "B",
+        "texto": "36",
+        "es_correcta": true,
+        "explicacion": "Es correcto. $|M \\cup E| = |M| + |E| - |M \\cap E| = 24 + 20 - 8 = 36$. Como todos aprobaron al menos una, el total del salón es 36 estudiantes."
+      },
+      {
+        "letra": "C",
+        "texto": "32",
+        "es_correcta": false,
+        "explicacion": "Es trampa: posiblemente resulta de $24 + 20 - 8 - 4 = 32$ (restando la intersección dos veces) o de $24 + 8 = 32$ (algún cálculo parcial incorrecto). La fórmula correcta resta la intersección una sola vez."
+      },
+      {
+        "letra": "D",
+        "texto": "28",
+        "es_correcta": false,
+        "explicacion": "Es trampa: podría resultar de $24 + 20 - 8 - 8 = 28$ (restando la intersección dos veces) o de $24 - 8 + 20 - 8 = 28$ (restando la intersección de cada grupo por separado). La intersección se resta una sola vez del total combinado."
+      }
+    ]
+  },
+  {
+    "id": "prac11-logica-negacion-cuantificador",
+    "dificultad": 3,
+    "enunciado": "¿Cuál es la negación lógica correcta de 'Todos los estudiantes que faltan más del 20% de las clases pierden la materia'?",
+    "pista": "La negación de 'Todo X que cumple A, cumple B' es 'Existe algún X que cumple A pero NO cumple B'. La negación del cuantificador universal produce uno existencial.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Ningún estudiante que falta más del 20% pierde la materia.",
+        "es_correcta": false,
+        "explicacion": "Es trampa clásica: 'Ningún...' es una negación demasiado fuerte. Para que sea cierta, TODOS los que faltan más del 20% deberían pasar — eso no es lo que basta para negar la afirmación original. La negación lógica solo requiere encontrar UN contraejemplo."
+      },
+      {
+        "letra": "B",
+        "texto": "Existe algún estudiante que falta más del 20% y no pierde la materia.",
+        "es_correcta": true,
+        "explicacion": "Es correcto. La afirmación original es $\\forall x: (F(x) \\rightarrow P(x))$ ('para todo $x$, si falta >20%, pierde'). Su negación es $\\exists x: (F(x) \\land \\neg P(x))$ ('existe algún $x$ que falta >20% y NO pierde'). Basta encontrar UN estudiante que falte mucho y aun así pase para negar la afirmación universal."
+      },
+      {
+        "letra": "C",
+        "texto": "Todos los estudiantes que no faltan más del 20% no pierden la materia.",
+        "es_correcta": false,
+        "explicacion": "Es trampa: esta opción habla de los estudiantes que NO faltan más del 20% — es decir, niega el antecedente del condicional. La negación correcta debe mantener la condición de faltar (>20%) y negar la consecuencia (perder). Esta opción es una proposición diferente a la negación."
+      },
+      {
+        "letra": "D",
+        "texto": "Algunos estudiantes pierden la materia aunque no faltan más del 20%.",
+        "es_correcta": false,
+        "explicacion": "Es trampa: esta opción afirma algo sobre estudiantes con buena asistencia, pero la negación de la original debe hablar de estudiantes con alta inasistencia. Es una afirmación diferente que no contradice directamente la original."
+      }
+    ]
+  },
+  {
+    "id": "prac12-logica-equivalencia-condicional",
+    "dificultad": 3,
+    "enunciado": "¿Cuál de las siguientes proposiciones es lógicamente equivalente a $p \\rightarrow q$?",
+    "pista": "Recuerda la equivalencia fundamental del condicional: $p \\rightarrow q \\equiv \\neg p \\lor q$ (condicional material). También es equivalente a su contrarrecíproco $\\neg q \\rightarrow \\neg p$.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "$\\neg p \\rightarrow \\neg q$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: esta es la forma INVERSA del condicional. El inverso no es equivalente al original. Contraejemplo: con $p=F$, $q=V$, el original $p \\rightarrow q = F \\rightarrow V = V$, pero el inverso $\\neg p \\rightarrow \\neg q = V \\rightarrow F = F$. Valores distintos, no equivalentes."
+      },
+      {
+        "letra": "B",
+        "texto": "$q \\rightarrow p$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: esta es la forma RECÍPROCA (conversa) del condicional. El recíproco tampoco es equivalente. Contraejemplo: con $p=F$, $q=V$, el original $p \\rightarrow q = V$, pero $q \\rightarrow p = V \\rightarrow F = F$. No son equivalentes."
+      },
+      {
+        "letra": "C",
+        "texto": "$\\neg p \\lor q$",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Esta es la equivalencia fundamental: $p \\rightarrow q \\equiv \\neg p \\lor q$ (condicional material). Se verifica fila por fila: la única fila donde $p \\rightarrow q$ es F es cuando $p=V$ y $q=F$, y en esa misma fila $\\neg p \\lor q = F \\lor F = F$. En todas las demás filas ambas son V."
+      },
+      {
+        "letra": "D",
+        "texto": "$p \\land \\neg q$",
+        "es_correcta": false,
+        "explicacion": "Es trampa muy sofisticada: $p \\land \\neg q$ es la NEGACIÓN de $p \\rightarrow q$, no su equivalente. Cuando $p=V$ y $q=F$: $p \\rightarrow q = F$ y $p \\land \\neg q = V$. Son proposiciones opuestas — cuando una es V, la otra es F, y viceversa."
+      }
+    ]
   }
 ]
