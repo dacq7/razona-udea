@@ -1,3 +1,159 @@
 # Series y Secuencias — Versión fácil
 
-Contenido en desarrollo. ¡Vuelve pronto!
+Una serie es como una cola de personas siguiendo una regla de orden: "entra uno grande, uno chico, uno grande, uno chico..." Si descifras la regla, sabes quién sigue. Eso es todo. El reto es que la regla a veces se esconde.
+
+## La pregunta mágica: ¿qué cambia entre un término y el siguiente?
+
+Siempre que veas una serie, hazte esta pregunta. La respuesta te dice el tipo de serie:
+
+- ¿Siempre se **suma** (o resta) lo mismo? → **Aritmética**
+- ¿Siempre se **multiplica** (o divide) por lo mismo? → **Geométrica**
+- ¿El cambio también cambia? → **De orden superior** (cuadrática, cúbica)
+- ¿Hay dos reglas que se turnan? → **Alternada** (separa en dos grupos)
+- ¿Cada término depende de los anteriores? → **Recursiva** (tipo Fibonacci)
+
+## Series aritméticas: la escalera
+
+Imagina una escalera donde cada peldaño tiene exactamente la misma altura. La serie $5, 8, 11, 14, 17, \ldots$ sube de 3 en 3. Esa "altura del peldaño" es $d$.
+
+**Fórmula para saltar directamente al peldaño $n$:**
+
+$$a_n = a_1 + (n-1) \times d$$
+
+**Ejemplo:** En la serie $5, 8, 11, 14, \ldots$, ¿cuál es el peldaño número 10?
+
+$a_{10} = 5 + (10-1) \times 3 = 5 + 27 = 32$.
+
+No necesitas contar los 10 peldaños uno a uno — la fórmula te lleva directo.
+
+**¿Cómo saber si es aritmética?** Resta un término menos el anterior. Luego vuelve a restar. Si siempre da lo mismo, es una escalera uniforme → aritmética.
+
+## Series geométricas: el doblador
+
+Imagina que cada día duplicas tu dinero. El primer día tienes $1, el segundo $2, el tercero $4, el cuarto $8... Eso es una serie geométrica con razón $r = 2$. Cada término es el anterior multiplicado por el mismo número.
+
+**Fórmula para llegar al término $n$:**
+
+$$a_n = a_1 \times r^{n-1}$$
+
+**Ejemplo:** En la serie $3, 6, 12, 24, \ldots$ (duplica cada vez), ¿cuál es el quinto término?
+
+$a_5 = 3 \times 2^{5-1} = 3 \times 16 = 48$.
+
+**Trampa clásica:** la serie $2, 4, 8, 16$ parece que "suma 2, luego 4, luego 8..." — ¡pero eso no es constante! Es una serie geométrica donde se *multiplica* por 2.
+
+## Series cuadráticas: la escalera que acelera
+
+¿Qué pasa si la escalera no tiene peldaños de la misma altura, sino que cada peldaño es un poco más alto que el anterior? Como la serie $1, 3, 6, 10, 15, \ldots$ (los números triangulares).
+
+Las diferencias son $2, 3, 4, 5, \ldots$ — no son iguales. Pero si vuelves a restar las diferencias, obtienes $1, 1, 1, \ldots$ ¡Ahí está la constante, escondida un nivel más abajo!
+
+**Estrategia práctica — construye hacia arriba:**
+
+Serie: $3 \quad 6 \quad 11 \quad 18 \quad 27 \quad ?$
+
+Paso 1 — resta consecutivos: $3 \quad 5 \quad 7 \quad 9 \quad ?$
+
+Paso 2 — resta de nuevo: $2 \quad 2 \quad 2 \quad 2$ → ¡constante!
+
+Paso 3 — el siguiente en la fila de abajo es $2$. El siguiente en la fila del medio: $9 + 2 = 11$. El siguiente término: $27 + 11 = \mathbf{38}$.
+
+Como si construyeras un edificio de abajo hacia arriba: primero el cimiento, luego el piso, luego el techo.
+
+## Series alternadas: las dos canciones
+
+Algunas series tienen dos patrones intercalados. Como una conversación donde hablan dos personas por turnos:
+
+$2, 4, 6, 12, 14, 28, 30, \ldots$
+
+Persona A habla en los términos impares: $2, 6, 14, 30, \ldots$ (multiplica por 2 y suma 2...)
+
+Persona B habla en los pares: $4, 12, 28, \ldots$
+
+**Truco:** cuando las diferencias no tienen ningún patrón claro, busca si hay dos sub-series intercaladas. Separa los términos en posición impar y en posición par y analiza cada una.
+
+## Series Fibonacci: el árbol genealógico
+
+En la serie de Fibonacci cada persona "hereda" de sus dos padres anteriores: $1, 1, 2, 3, 5, 8, 13, 21, \ldots$
+
+Regla: cada número = los dos anteriores sumados.
+
+**Variantes que aparecen en el examen:**
+
+- $2, 5, 7, 12, 19, 31, \ldots$ → misma regla, distintos valores iniciales
+- $1, 2, 4, 7, 11, 16, \ldots$ → cada diferencia aumenta en 1 (parece Fibonacci pero es diferente)
+
+**¿Cómo reconocerlas?** Cuando nada de lo anterior funciona, prueba: ¿el término es la suma de los dos anteriores? ¿O de alguna otra combinación?
+
+## Series de figuras: cuenta lo visible
+
+Cuando el examen muestra figuras que cambian, tu trabajo es simple: **cuenta algo concreto** en cada figura (puntos, lados, bloques) y convierte el problema visual en uno numérico.
+
+**Ejemplo:** Cuadros de puntos que crecen:
+- Figura 1: 1 punto (1×1)
+- Figura 2: 4 puntos (2×2)
+- Figura 3: 9 puntos (3×3)
+- Figura 4: 16 puntos (4×4)
+
+Secuencia numérica: $1, 4, 9, 16, \ldots$ → cuadrados perfectos → Figura 6 tiene $6^2 = 36$ puntos.
+
+**Lo que debes contar según el tipo:**
+- Figuras con puntos o bloques → cuenta cuántos hay
+- Figuras con lados o ángulos → cuenta los lados
+- Figuras que rotan → anota la dirección (arriba=0°, derecha=90°, etc.)
+- Figuras que se parten en trozos → cuenta los trozos
+
+## Series de letras: traduce al abecedario
+
+El alfabeto tiene 26 letras. Cada letra tiene un número: A=1, B=2, C=3, ..., Z=26.
+
+**Paso 1:** Convierte las letras a números.
+
+**Paso 2:** Encuentra el patrón numérico (aritmética, geométrica, etc.).
+
+**Paso 3:** Calcula el siguiente número.
+
+**Paso 4:** Si el número está entre 1 y 26, conviértelo de vuelta. Si pasa de 26, réstale 26 (el abecedario da la vuelta).
+
+**Ejemplo:** $A, D, G, J, M, \ldots$
+
+Números: $1, 4, 7, 10, 13, \ldots$ → suma 3 cada vez.
+
+Siguiente: $13 + 3 = 16$ → letra número 16 → **P**.
+
+**Ejemplo con la vuelta:** si la siguiente posición es 29: $29 - 26 = 3$ → letra **C**.
+
+## Analogías: "X es a Y como..."
+
+Una analogía es como una proporción pero de ideas: $A : B = C : ?$
+
+Tu trabajo: descubrir la relación exacta entre $A$ y $B$, y aplicarla a $C$.
+
+**No digas "están relacionados." Sé específico:**
+
+| En vez de... | Di... |
+|---|---|
+| "9 y 3 tienen que ver" | "9 es el cuadrado de 3" |
+| "libro y capítulo se conectan" | "el capítulo es parte del libro" |
+| "4 y 2 son parecidos" | "4 dividido entre 2 da 2" |
+
+**Ejemplo:** $25 : 5 = 49 : ?$
+
+¿Qué le pasa a 25 para convertirse en 5? → $\sqrt{25} = 5$ (raíz cuadrada).
+
+Aplico lo mismo a 49: $\sqrt{49} = 7$. Respuesta: **7**.
+
+**Si dos opciones parecen válidas:** tu relación es demasiado general. Busca una más específica que solo aplique a una opción.
+
+## ¿Qué hago si me bloqueo?
+
+Protocolo de emergencia cuando no reconoces el patrón:
+
+1. **Calcula diferencias** (resta términos consecutivos).
+2. Si no son iguales, **calcula razones** (divide términos consecutivos).
+3. Si tampoco, **calcula diferencias de las diferencias**.
+4. Si la serie tiene letras, **conviértelas a números primero**.
+5. Si nada funciona, **mira si los términos dependen de los anteriores** (tipo Fibonacci).
+6. En el peor caso, **elimina distractores** por absurdos y marca la más razonable.
+
+El examen siempre tiene un patrón detectable. Si no lo ves en 30 segundos, sal, responde las otras preguntas y vuelve con ojos frescos.

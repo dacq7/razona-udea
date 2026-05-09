@@ -1,1 +1,250 @@
-[]
+[
+  {
+    "id": "sim1-series-secuencias-geometrica-termino",
+    "modulo_slug": "series-secuencias",
+    "enunciado": "En la progresión geométrica $4, 12, 36, 108, \\ldots$, ¿cuál es el quinto término?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "144",
+        "es_correcta": false,
+        "explicacion": "Error: $144 = 108 + 36$, que suma el último y el penúltimo término (patrón Fibonacci erróneo). La serie es geométrica con $r = 3$. El quinto término: $108 \\times 3 = 324$."
+      },
+      {
+        "letra": "B",
+        "texto": "216",
+        "es_correcta": false,
+        "explicacion": "Error: $216 = 108 \\times 2$, que usa $r = 2$ en lugar del cociente real. Verificar: $12/4 = 3$, $36/12 = 3$, $108/36 = 3$. La razón es $r = 3$, no 2. El quinto término: $108 \\times 3 = 324$."
+      },
+      {
+        "letra": "C",
+        "texto": "324",
+        "es_correcta": true,
+        "explicacion": "Correcto. La razón geométrica es $r = 3$ ($12/4=3$, $36/12=3$, $108/36=3$). El quinto término: $108 \\times 3 = 324$. Usando la fórmula: $a_5 = 4 \\cdot 3^{5-1} = 4 \\cdot 81 = 324$."
+      },
+      {
+        "letra": "D",
+        "texto": "432",
+        "es_correcta": false,
+        "explicacion": "Error: $432 = 108 \\times 4$, que usa $r = 4$ en lugar del real $r = 3$. El cociente entre términos consecutivos es siempre 3, no 4. El quinto término: $108 \\times 3 = 324$."
+      }
+    ]
+  },
+  {
+    "id": "sim2-series-secuencias-orden2-siguiente",
+    "modulo_slug": "series-secuencias",
+    "enunciado": "¿Cuál es el siguiente término de la serie $5, 8, 13, 20, 29, \\ldots$?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "38",
+        "es_correcta": false,
+        "explicacion": "Error: $38 = 29 + 9$, que suma la última primera diferencia (entre 20 y 29: $29-20=9$) sin actualizarla. Las primeras diferencias son $3, 5, 7, 9, \\ldots$ (crecen de 2 en 2). La siguiente primera diferencia es $9+2=11$. El siguiente término: $29+11=40$."
+      },
+      {
+        "letra": "B",
+        "texto": "40",
+        "es_correcta": true,
+        "explicacion": "Correcto. Primeras diferencias: $3, 5, 7, 9, \\ldots$ — progresión aritmética con $d=2$. Segundas diferencias constantes = 2. Siguiente primera diferencia: $9+2=11$. Siguiente término: $29+11=40$."
+      },
+      {
+        "letra": "C",
+        "texto": "41",
+        "es_correcta": false,
+        "explicacion": "Error: $41 = 29 + 12$, que usa una primera diferencia de 12 en lugar de 11. Las diferencias crecen de 2 en 2 (son 3, 5, 7, 9, 11...), no de 3 en 3. La siguiente diferencia es 11, no 12."
+      },
+      {
+        "letra": "D",
+        "texto": "36",
+        "es_correcta": false,
+        "explicacion": "Error: $36 = 29 + 7$, que usa la primera diferencia de dos pasos atrás ($13-20$... no, $20-13=7$). Se usó la diferencia del paso anterior anterior. La secuencia de diferencias es $3,5,7,9,11$ — el siguiente es 11, no 7."
+      }
+    ]
+  },
+  {
+    "id": "sim3-series-secuencias-alfabetica-grupos",
+    "modulo_slug": "series-secuencias",
+    "enunciado": "¿Cuál es el siguiente grupo en la serie: $AB, DE, GH, JK, \\ldots$?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "LM",
+        "es_correcta": false,
+        "explicacion": "Error: L=12, M=13, pero los grupos no son consecutivos entre sí. Los primeros términos de cada par son: A=1, D=4, G=7, J=10. Diferencia: $+3$ cada vez. El siguiente primer término: $10+3=13=M$. El par siguiente: $MN$, no $LM$."
+      },
+      {
+        "letra": "B",
+        "texto": "MN",
+        "es_correcta": true,
+        "explicacion": "Correcto. Los pares de letras son: AB(1,2), DE(4,5), GH(7,8), JK(10,11). Los primeros elementos forman la progresión $1, 4, 7, 10, \\ldots$ con $d=3$. El siguiente: $10+3=13=M$. El par siguiente es $MN$ (M=13, N=14, letras consecutivas)."
+      },
+      {
+        "letra": "C",
+        "texto": "NO",
+        "es_correcta": false,
+        "explicacion": "Error: N=14, O=15. La serie de primeros elementos es $1, 4, 7, 10, \\ldots$ con $d=3$, dando $13=M$ como el siguiente primer elemento. $NO$ empieza en la posición 14, que no sigue el patrón."
+      },
+      {
+        "letra": "D",
+        "texto": "KL",
+        "es_correcta": false,
+        "explicacion": "Error: K=11, L=12. $KL$ seguiría inmediatamente a $JK$ si los pares fueran consecutivos sin salto. Pero el patrón salta de 3 en 3 posiciones en la primera letra: A, D, G, J, M. El par correcto es $MN$."
+      }
+    ]
+  },
+  {
+    "id": "sim4-series-secuencias-figurativa-puntos",
+    "modulo_slug": "series-secuencias",
+    "enunciado": "Considera la siguiente secuencia de figuras:\n- Figura 1: un cuadrado con 1 punto en el centro\n- Figura 2: un cuadrado con 4 puntos formando un cuadrado de 2×2\n- Figura 3: un cuadrado con 9 puntos formando un cuadrado de 3×3\n- Figura 4: un cuadrado con 16 puntos formando un cuadrado de 4×4\n\n¿Cuántos puntos tendrá la Figura 6?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "25",
+        "es_correcta": false,
+        "explicacion": "Error: $25 = 5^2$, que corresponde a la Figura 5, no a la Figura 6. El patrón es $a_n = n^2$: Figura 1=1, Figura 2=4, Figura 3=9, Figura 4=16, Figura 5=25, Figura 6=$6^2=36$."
+      },
+      {
+        "letra": "B",
+        "texto": "36",
+        "es_correcta": true,
+        "explicacion": "Correcto. La secuencia de puntos es $1, 4, 9, 16, \\ldots = 1^2, 2^2, 3^2, 4^2, \\ldots$. El término general es $a_n = n^2$. Para la Figura 6: $6^2 = 36$ puntos."
+      },
+      {
+        "letra": "C",
+        "texto": "32",
+        "es_correcta": false,
+        "explicacion": "Error: $32 = 16 + 16$, que duplica el último valor. La serie es de cuadrados perfectos, no geométrica. Las diferencias entre términos son $3, 5, 7, 9, 11, \\ldots$ (no constantes), y el patrón correcto da $6^2 = 36$."
+      },
+      {
+        "letra": "D",
+        "texto": "30",
+        "es_correcta": false,
+        "explicacion": "Error: posiblemente $30 = 16 + 14$, que usa una primera diferencia de 14 (cuando la real es $25-16=9$, $36-25=11$). Las diferencias entre cuadrados consecutivos son los números impares: $3, 5, 7, 9, 11, \\ldots$ El término correcto: $25 + 11 = 36$."
+      }
+    ]
+  },
+  {
+    "id": "sim5-series-secuencias-recursiva-variante",
+    "modulo_slug": "series-secuencias",
+    "enunciado": "En la serie $1, 3, 4, 7, 11, 18, 29, \\ldots$, ¿cuál es el siguiente término?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "40",
+        "es_correcta": false,
+        "explicacion": "Error: $40 = 29 + 11$, que suma el último con el antepenúltimo (saltándose un término). La regla es $a_n = a_{n-1} + a_{n-2}$: cada término es la suma de los DOS ANTERIORES. El siguiente: $18 + 29 = 47$."
+      },
+      {
+        "letra": "B",
+        "texto": "47",
+        "es_correcta": true,
+        "explicacion": "Correcto. La serie sigue la regla $a_n = a_{n-1} + a_{n-2}$ (tipo Fibonacci). Verificación: $1+3=4$, $3+4=7$, $4+7=11$, $7+11=18$, $11+18=29$. Siguiente: $18+29=47$."
+      },
+      {
+        "letra": "C",
+        "texto": "58",
+        "es_correcta": false,
+        "explicacion": "Error: $58 = 29 \\times 2$, que duplica el último término como si fuera geométrica. La regla de esta serie es $a_n = a_{n-1} + a_{n-2}$ (suma de los dos anteriores): $18 + 29 = 47$."
+      },
+      {
+        "letra": "D",
+        "texto": "43",
+        "es_correcta": false,
+        "explicacion": "Error: $43 = 29 + 14$, que usa el 14 sin base en la serie (no aparece ningún término con valor 14). Los dos últimos términos son 18 y 29; su suma es $18+29=47$."
+      }
+    ]
+  },
+  {
+    "id": "sim6-series-secuencias-analogia-cuadrado",
+    "modulo_slug": "series-secuencias",
+    "enunciado": "Completa la analogía: $16 : 4 = 81 : \\_\\_\\_$",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "9",
+        "es_correcta": true,
+        "explicacion": "Correcto. Relación: $\\sqrt{16} = 4$ (la raíz cuadrada del primer número da el segundo). Aplicar al 81: $\\sqrt{81} = 9$. Verificación: $9^2 = 81$. ✓"
+      },
+      {
+        "letra": "B",
+        "texto": "20.25",
+        "es_correcta": false,
+        "explicacion": "Error: $81/4 = 20.25$, que divide 81 entre el segundo elemento del primer par (4) en lugar de aplicar la relación correcta. La relación es raíz cuadrada: $\\sqrt{81} = 9$."
+      },
+      {
+        "letra": "C",
+        "texto": "324",
+        "es_correcta": false,
+        "explicacion": "Error: $324 = 81 \\times 4$, que multiplica 81 por el segundo elemento del primer par. La relación es $\\sqrt{A} = B$: $\\sqrt{16} = 4$ y $\\sqrt{81} = 9$, no $81 \\times 4$."
+      },
+      {
+        "letra": "D",
+        "texto": "27",
+        "es_correcta": false,
+        "explicacion": "Error: $27 = 81/3$, que divide por 3. La relación entre 16 y 4 no es 'dividir por 4' ($16/4 = 4$ coincide numéricamente, pero la relación fundamental es la raíz cuadrada). Para 81: $\\sqrt{81} = 9$, no $81/3 = 27$."
+      }
+    ]
+  },
+  {
+    "id": "sim7-series-secuencias-orden2-term-n",
+    "modulo_slug": "series-secuencias",
+    "enunciado": "La serie $2, 5, 10, 17, 26, \\ldots$ sigue el patrón $a_n = n^2 + 1$. ¿Cuál es el valor del octavo término?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "63",
+        "es_correcta": false,
+        "explicacion": "Error: $63 = 8^2 - 1$, que resta 1 en lugar de sumar 1. La fórmula es $a_n = n^2 + 1$. Para $n=8$: $8^2 + 1 = 64 + 1 = 65$."
+      },
+      {
+        "letra": "B",
+        "texto": "64",
+        "es_correcta": false,
+        "explicacion": "Error: $64 = 8^2$, que olvida sumar el término constante +1. La fórmula es $a_n = n^2 + 1$. Para $n=8$: $8^2 + 1 = 65$, no 64."
+      },
+      {
+        "letra": "C",
+        "texto": "65",
+        "es_correcta": true,
+        "explicacion": "Correcto. La fórmula es $a_n = n^2 + 1$. Para $n=8$: $a_8 = 8^2 + 1 = 64 + 1 = 65$. Verificación contando: $2, 5, 10, 17, 26, 37, 50, 65$. ✓"
+      },
+      {
+        "letra": "D",
+        "texto": "37",
+        "es_correcta": false,
+        "explicacion": "Error: $37 = 6^2 + 1$, que es el sexto término ($n=6$), no el octavo. Para $n=8$: $a_8 = 8^2 + 1 = 65$."
+      }
+    ]
+  },
+  {
+    "id": "sim8-series-secuencias-analogia-verbal-herramienta",
+    "modulo_slug": "series-secuencias",
+    "enunciado": "Completa la analogía verbal: 'Escritor : novela = compositor : ___'",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Piano",
+        "es_correcta": false,
+        "explicacion": "Error: el piano es la HERRAMIENTA del compositor, no el PRODUCTO. La relación en el primer par es creador → obra creada: el escritor produce una novela. El compositor produce una sinfonía (o una obra musical), no un piano."
+      },
+      {
+        "letra": "B",
+        "texto": "Música",
+        "es_correcta": false,
+        "explicacion": "Error parcial: 'música' es demasiado general y es el campo del compositor, no la obra específica que produce. La relación pide la misma especificidad que 'novela' (una obra concreta). 'Sinfonía' es la obra equivalente específica."
+      },
+      {
+        "letra": "C",
+        "texto": "Sinfonía",
+        "es_correcta": true,
+        "explicacion": "Correcto. La relación es 'creador → obra que crea': el escritor crea una novela; el compositor crea una sinfonía. Ambas son obras artísticas específicas producidas por su respectivo creador."
+      },
+      {
+        "letra": "D",
+        "texto": "Director",
+        "es_correcta": false,
+        "explicacion": "Error: el director (de orquesta) INTERPRETA una obra, no la crea. La relación correcta es creador → obra creada, no creador → intérprete. El análogo del escritor es el compositor, y el análogo de la novela es la sinfonía."
+      }
+    ]
+  }
+]

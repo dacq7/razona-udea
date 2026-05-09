@@ -1,1 +1,386 @@
-[]
+[
+  {
+    "id": "prac1-series-secuencias-aritmetica-siguiente",
+    "dificultad": 1,
+    "enunciado": "¿Cuál es el siguiente término de la serie $7, 13, 19, 25, 31, \\ldots$?",
+    "pista": "Calcula la diferencia entre dos términos consecutivos cualesquiera. Si es la misma, súmala al último término.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "36",
+        "es_correcta": false,
+        "explicacion": "Es trampa: posiblemente se sumó 5 en lugar de 6. Verificar: $13-7=6$, $19-13=6$, $25-19=6$, $31-25=6$. La diferencia constante es $d=6$, no 5. El siguiente término es $31+6=37$."
+      },
+      {
+        "letra": "B",
+        "texto": "37",
+        "es_correcta": true,
+        "explicacion": "Es correcto. La diferencia constante es $d = 6$ (verificable: $13-7=6$, $19-13=6$, etc.). El siguiente término es $31 + 6 = 37$."
+      },
+      {
+        "letra": "C",
+        "texto": "38",
+        "es_correcta": false,
+        "explicacion": "Es trampa: se sumó 7 en lugar de 6. La diferencia entre términos consecutivos es siempre 6, no 7. $31 + 6 = 37$, no 38."
+      },
+      {
+        "letra": "D",
+        "texto": "62",
+        "es_correcta": false,
+        "explicacion": "Es trampa: posiblemente se aplicó $a_1 \\times 2 - a_2 = 7 \\times 2 - 13 = 1$ o algún cálculo erróneo. La serie es aritmética con $d=6$. El siguiente término (6.º) es $7 + 5 \\times 6 = 37$."
+      }
+    ]
+  },
+  {
+    "id": "prac2-series-secuencias-geometrica-siguiente",
+    "dificultad": 1,
+    "enunciado": "¿Cuál es el siguiente término de la serie $3, 6, 12, 24, 48, \\ldots$?",
+    "pista": "Calcula el cociente entre dos términos consecutivos. Si es el mismo, multiplica el último término por ese cociente.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "72",
+        "es_correcta": false,
+        "explicacion": "Es trampa: se sumó 24 al último término ($48 + 24 = 72$) en vez de multiplicar. La serie es geométrica, no aritmética. El cociente constante es $r = 2$: $6/3=2$, $12/6=2$, etc. El siguiente término es $48 \\times 2 = 96$."
+      },
+      {
+        "letra": "B",
+        "texto": "90",
+        "es_correcta": false,
+        "explicacion": "Es trampa: no corresponde a ninguna operación directa con los datos. La razón es $r = 2$ (verificable: $6/3=2$, $12/6=2$, $24/12=2$, $48/24=2$). El siguiente término es $48 \\times 2 = 96$."
+      },
+      {
+        "letra": "C",
+        "texto": "96",
+        "es_correcta": true,
+        "explicacion": "Es correcto. La serie es geométrica con razón $r = 2$ (cada término se multiplica por 2). El siguiente término es $48 \\times 2 = 96$."
+      },
+      {
+        "letra": "D",
+        "texto": "100",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 100 es un número redondo que puede atraer por intuición, pero no tiene base en el patrón. La razón geométrica es $r = 2$ y el siguiente término es $48 \\times 2 = 96$."
+      }
+    ]
+  },
+  {
+    "id": "prac3-series-secuencias-aritmetica-formula",
+    "dificultad": 1,
+    "enunciado": "En la progresión aritmética $2, 9, 16, 23, 30, \\ldots$, ¿cuál es el valor del octavo término?",
+    "pista": "Identifica $a_1$ y $d$, luego aplica la fórmula $a_n = a_1 + (n-1) \\cdot d$ con $n = 8$.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "44",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $44 = 2 + 6 \\times 7$, que usa $d = 6$ en lugar de $d = 7$. La diferencia correcta es $9 - 2 = 7$, $16 - 9 = 7$, confirmado. $a_8 = 2 + 7 \\times 7 = 51$."
+      },
+      {
+        "letra": "B",
+        "texto": "51",
+        "es_correcta": true,
+        "explicacion": "Es correcto. $d = 9 - 2 = 7$. Usando $a_n = a_1 + (n-1) \\cdot d$: $a_8 = 2 + (8-1) \\cdot 7 = 2 + 49 = 51$."
+      },
+      {
+        "letra": "C",
+        "texto": "58",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $58 = 2 + 8 \\times 7$, que usa $n = 8$ sin restar 1 (es decir, aplica $a_1 + n \\cdot d$ en lugar de $a_1 + (n-1) \\cdot d$). El error clásico de confundir el índice: si $n = 8$, el exponente es $(8-1) = 7$, no 8."
+      },
+      {
+        "letra": "D",
+        "texto": "37",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $37 = 30 + 7$, que es el séptimo término (el siguiente al dado), no el octavo. El octavo término es $37 + 7 = 44$... no, espera: $a_6 = 37$, $a_7 = 44$, $a_8 = 51$. La respuesta correcta es 51."
+      }
+    ]
+  },
+  {
+    "id": "prac4-series-secuencias-orden-superior-cuadratica",
+    "dificultad": 2,
+    "enunciado": "¿Cuál es el siguiente término de la serie $1, 3, 7, 13, 21, 31, \\ldots$?",
+    "pista": "Las diferencias entre términos consecutivos no son constantes. Calcula las diferencias de las diferencias (segundas diferencias) para encontrar el patrón.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "41",
+        "es_correcta": false,
+        "explicacion": "Es trampa: se calcularon las primeras diferencias ($2, 4, 6, 8, 10$) y se sumó 10 directamente: $31 + 10 = 41$. Pero la primera diferencia que sigue no es 10 sino 12 (las diferencias crecen de 2 en 2). El siguiente término es $31 + 12 = 43$."
+      },
+      {
+        "letra": "B",
+        "texto": "43",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Primeras diferencias: $2, 4, 6, 8, 10, \\ldots$ Segundas diferencias: $2, 2, 2, 2$ (constante). La siguiente primera diferencia es $10 + 2 = 12$. El siguiente término: $31 + 12 = 43$."
+      },
+      {
+        "letra": "C",
+        "texto": "45",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $45 = 31 + 14$ usa una primera diferencia de 14 en lugar de 12. Las primeras diferencias crecen de 2 en 2 (son 2, 4, 6, 8, 10, 12...). La siguiente es 12, no 14."
+      },
+      {
+        "letra": "D",
+        "texto": "37",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $37 = 31 + 6$, que es la diferencia del paso $21 \\to 31$ (que en realidad es 10, no 6). Posiblemente se confundió con la primera diferencia de un paso anterior. La siguiente diferencia correcta es 12."
+      }
+    ]
+  },
+  {
+    "id": "prac5-series-secuencias-alternada",
+    "dificultad": 2,
+    "enunciado": "¿Cuál es el siguiente término de la serie $4, 8, 6, 12, 10, 20, 18, \\ldots$?",
+    "pista": "Intenta separar los términos en dos sub-series según su posición (impares y pares). Cada sub-serie tiene su propia regla.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "22",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $22 = 20 + 2$, que asume una diferencia de $+2$. Pero la serie alterna entre dos reglas: posiciones pares duplican ($4\\times2=8$, $6\\times2=12$, $10\\times2=20$) y posiciones impares restan 2 ($8-2=6$, $12-2=10$, $20-2=18$). El término 8 está en posición par, así que $18 \\times 2 = 36$."
+      },
+      {
+        "letra": "B",
+        "texto": "34",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $34 = 18 + 16$, basado en algún cálculo sin fundamento en el patrón real. La regla de las posiciones pares es multiplicar por 2: $18 \\times 2 = 36$."
+      },
+      {
+        "letra": "C",
+        "texto": "36",
+        "es_correcta": true,
+        "explicacion": "Es correcto. La serie alterna dos reglas: posiciones impares = término anterior $\\times 2$ (doblado); posiciones pares = término anterior $- 2$. Verificación: $4 \\times 2 = 8$; $8 - 2 = 6$; $6 \\times 2 = 12$; $12 - 2 = 10$; $10 \\times 2 = 20$; $20 - 2 = 18$; $18 \\times 2 = \\mathbf{36}$."
+      },
+      {
+        "letra": "D",
+        "texto": "16",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $16 = 18 - 2$, que aplica la regla de restar 2 cuando corresponde aplicar multiplicar por 2. El término siguiente al séptimo (posición impar) está en posición par, así que la regla es $\\times 2$: $18 \\times 2 = 36$."
+      }
+    ]
+  },
+  {
+    "id": "prac6-series-secuencias-cubos",
+    "dificultad": 2,
+    "enunciado": "¿Cuál es el siguiente término de la serie $0, 1, 8, 27, 64, \\ldots$?",
+    "pista": "Relaciona cada término con su posición en la serie (0, 1, 2, 3, 4...) y busca la operación que convierte la posición en el término.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "100",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $100 = 10^2$, que es el cuadrado de 10. Los términos de la serie son cubos perfectos: $0^3=0$, $1^3=1$, $2^3=8$, $3^3=27$, $4^3=64$. El siguiente sería $5^3 = 125$."
+      },
+      {
+        "letra": "B",
+        "texto": "112",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $112 = 64 + 48$. Las primeras diferencias son $1, 7, 19, 37, \\ldots$ y la siguiente no es 48 sino 61 ($61 = 37 + 24$, porque las terceras diferencias son constantes = 6). El término correcto: $64 + 61 = 125$."
+      },
+      {
+        "letra": "C",
+        "texto": "125",
+        "es_correcta": true,
+        "explicacion": "Es correcto. La serie es $n^3$ para $n = 0, 1, 2, 3, 4, \\ldots$: $0^3=0$, $1^3=1$, $2^3=8$, $3^3=27$, $4^3=64$. El siguiente término: $5^3 = 125$."
+      },
+      {
+        "letra": "D",
+        "texto": "128",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $128 = 2^7$, que podría sugerir una serie de potencias de 2. Pero los términos son cubos perfectos, no potencias de 2. $5^3 = 125$, no 128."
+      }
+    ]
+  },
+  {
+    "id": "prac7-series-secuencias-alfabetica",
+    "dificultad": 2,
+    "enunciado": "¿Cuál es el siguiente elemento de la serie alfabética $D, H, M, S, \\ldots$?",
+    "pista": "Convierte las letras a sus posiciones en el alfabeto (A=1, B=2, ...) y analiza las diferencias entre posiciones consecutivas.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "X",
+        "es_correcta": false,
+        "explicacion": "Es trampa: X tiene posición 24. Las posiciones son D=4, H=8, M=13, S=19. Diferencias: $8-4=4$, $13-8=5$, $19-13=6$. La siguiente diferencia es 7: $19+7=26=Z$, no 24=X."
+      },
+      {
+        "letra": "B",
+        "texto": "Y",
+        "es_correcta": false,
+        "explicacion": "Es trampa: Y tiene posición 25. La diferencia que sigue es 7 (las diferencias son 4, 5, 6, 7...), así que la siguiente posición es $19+7=26=Z$, no 25=Y."
+      },
+      {
+        "letra": "C",
+        "texto": "Z",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Posiciones: D=4, H=8, M=13, S=19. Diferencias: $4, 5, 6, \\ldots$ — crecen de 1 en 1. La siguiente diferencia es 7. Siguiente posición: $19 + 7 = 26$. La letra en posición 26 es $Z$."
+      },
+      {
+        "letra": "D",
+        "texto": "V",
+        "es_correcta": false,
+        "explicacion": "Es trampa: V tiene posición 22. Posiblemente se mantuvo la diferencia de 6 en lugar de aumentarla a 7: $19 + 3 = 22$ (error de cálculo) o $S + 3 = V$. La diferencia crece: fue 4, 5, 6, así que la siguiente es 7, no 3 ni 6."
+      }
+    ]
+  },
+  {
+    "id": "prac8-series-secuencias-figurativa",
+    "dificultad": 2,
+    "enunciado": "Considera la siguiente secuencia de figuras:\n- Figura 1: un triángulo con 3 puntos, uno en cada vértice\n- Figura 2: un cuadrado con 4 puntos, uno en cada vértice y ninguno dentro\n- Figura 3: un pentágono con 5 puntos, uno en cada vértice\n- Figura 4: un hexágono con 6 puntos, uno en cada vértice\n\n¿Cuántos puntos tendrá la Figura 7?",
+    "pista": "Cuenta los puntos de cada figura y escribe la secuencia numérica resultante. Busca la relación entre la posición de la figura y el número de puntos.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "8",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 8 sería el número de vértices de un octágono. Pero la Figura 7 tiene un polígono con $7 + 2 = 9$ lados, no 8. La secuencia es $3, 4, 5, 6, \\ldots$ — cada figura tiene $n + 2$ puntos. Para $n=7$: $7 + 2 = 9$."
+      },
+      {
+        "letra": "B",
+        "texto": "9",
+        "es_correcta": true,
+        "explicacion": "Es correcto. La secuencia de puntos es $3, 4, 5, 6, \\ldots$ — progresión aritmética con $d=1$ y $a_1=3$. El término general es $a_n = n + 2$. Para la Figura 7: $7 + 2 = 9$ puntos (un eneágono con 9 vértices)."
+      },
+      {
+        "letra": "C",
+        "texto": "10",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 10 correspondería a la Figura 8 ($8 + 2 = 10$), no a la Figura 7. Error de avanzar un término de más en la secuencia."
+      },
+      {
+        "letra": "D",
+        "texto": "7",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 7 es el número de la figura, confundido con el número de puntos. La regla es $\\text{puntos} = \\text{número de figura} + 2$: Figura 7 tiene $7 + 2 = 9$ puntos, no 7."
+      }
+    ]
+  },
+  {
+    "id": "prac9-series-secuencias-fibonacci",
+    "dificultad": 2,
+    "enunciado": "En la serie $3, 5, 8, 13, 21, 34, \\ldots$, ¿cuál es el siguiente término?",
+    "pista": "Esta serie no es aritmética ni geométrica. Observa si cada término es la suma de los dos anteriores.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "47",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $47 = 34 + 13$, que es correcto pero con el par equivocado de términos. Espera — $34 + 13 = 47$. La regla es sumar los dos anteriores: $21 + 34 = 55$. El error es usar el término penúltimo (13) en vez del antepenúltimo correcto... recalculando: los dos anteriores a '?' son 21 y 34, entonces $21 + 34 = 55$."
+      },
+      {
+        "letra": "B",
+        "texto": "51",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $51 = 34 + 17$. El 17 no aparece en la serie. La regla de Fibonacci es sumar los DOS ÚLTIMOS términos dados: $21 + 34 = 55$."
+      },
+      {
+        "letra": "C",
+        "texto": "55",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Esta es la serie de Fibonacci con valores iniciales 3 y 5. La regla es $a_n = a_{n-1} + a_{n-2}$: $3+5=8$, $5+8=13$, $8+13=21$, $13+21=34$, $21+34=55$."
+      },
+      {
+        "letra": "D",
+        "texto": "68",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $68 = 34 \\times 2$, que duplicaría el último término en lugar de sumar los dos anteriores. La regla de Fibonacci no es multiplicar sino sumar: $21 + 34 = 55$."
+      }
+    ]
+  },
+  {
+    "id": "prac10-series-secuencias-analogia-potencia",
+    "dificultad": 3,
+    "enunciado": "Completa la analogía: $2 : 32 = 3 : \\_\\_\\_$",
+    "pista": "Identifica la operación exacta que transforma el primer número en el segundo. Prueba cuadrado, cubo, potencias mayores.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "48",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $48 = 3 \\times 16 = 3 \\times 2^4$, que usaría una relación mixta (multiplicar 3 por $2^4$). Pero la relación correcta es $2^5 = 32$: el número base se eleva a la quinta potencia. $3^5 = 243$."
+      },
+      {
+        "letra": "B",
+        "texto": "243",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Relación: $2^5 = 32$ (el primer número elevado a la quinta potencia da el segundo). Aplicar al 3: $3^5 = 3 \\times 3 \\times 3 \\times 3 \\times 3 = 243$."
+      },
+      {
+        "letra": "C",
+        "texto": "96",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $96 = 32 \\times 3$, que multiplica el segundo elemento del primer par por el primer elemento del segundo par. No es la relación correcta. La relación es elevar a la quinta potencia: $3^5 = 243$."
+      },
+      {
+        "letra": "D",
+        "texto": "27",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $27 = 3^3$ (el cubo de 3). La relación entre 2 y 32 no es cúbica ($2^3 = 8 \\neq 32$), sino que $2^5 = 32$. Por coherencia, se debe aplicar la quinta potencia: $3^5 = 243$."
+      }
+    ]
+  },
+  {
+    "id": "prac11-series-secuencias-analogia-verbal",
+    "dificultad": 3,
+    "enunciado": "Completa la analogía verbal: 'Semilla : árbol = huevo : ___'",
+    "pista": "Identifica la relación exacta entre el primer par: ¿qué es el árbol respecto a la semilla? Aplica esa misma relación al huevo.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Nido",
+        "es_correcta": false,
+        "explicacion": "Es trampa: el nido está relacionado con el huevo (es donde se pone), pero no es la relación correcta. La relación en el primer par es origen-resultado de desarrollo: la semilla SE CONVIERTE en árbol. El huevo se convierte en un animal, no en nido."
+      },
+      {
+        "letra": "B",
+        "texto": "Pájaro",
+        "es_correcta": true,
+        "explicacion": "Es correcto. La relación es 'X es el estado inicial del que surge Y por desarrollo natural': la semilla se desarrolla y se convierte en árbol; el huevo se desarrolla y se convierte en pájaro (o en la cría del ave). Relación: origen → forma adulta desarrollada."
+      },
+      {
+        "letra": "C",
+        "texto": "Cáscara",
+        "es_correcta": false,
+        "explicacion": "Es trampa: la cáscara es PARTE del huevo, no el resultado de su desarrollo. La relación correcta es origen → resultado del desarrollo. La semilla no se convierte en su propia corteza; se convierte en árbol."
+      },
+      {
+        "letra": "D",
+        "texto": "Gallina",
+        "es_correcta": false,
+        "explicacion": "Es trampa sofisticada: la gallina pone el huevo (relación inversa: causa → efecto). Pero la analogía pide la misma dirección que el primer par: semilla → árbol (la semilla produce al árbol, el huevo produce al pájaro). 'Gallina' invierte la relación. Aunque una gallina pone el huevo, la pregunta pide qué surge DEL huevo como el árbol surge DE la semilla."
+      }
+    ]
+  },
+  {
+    "id": "prac12-series-secuencias-mixta-compleja",
+    "dificultad": 3,
+    "enunciado": "¿Cuál es el siguiente término de la serie $1, 2, 6, 24, 120, \\ldots$?",
+    "pista": "Calcula los cocientes entre términos consecutivos ($a_2/a_1$, $a_3/a_2$, etc.) en lugar de las diferencias. ¿Qué patrón forman esos cocientes?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "240",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $240 = 120 \\times 2$, que usaría un cociente de 2. Pero los cocientes son $2, 3, 4, 5, \\ldots$ (crecen de 1 en 1). El siguiente cociente es 6: $120 \\times 6 = 720$."
+      },
+      {
+        "letra": "B",
+        "texto": "600",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $600 = 120 \\times 5$, que repite el cociente de 5 (el que ya se usó en el paso anterior: $120/24 = 5$). El patrón de los cocientes es $2, 3, 4, 5, 6, \\ldots$ — el siguiente es 6, no 5 de nuevo."
+      },
+      {
+        "letra": "C",
+        "texto": "720",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Los cocientes entre términos son: $2/1=2$, $6/2=3$, $24/6=4$, $120/24=5$. Los cocientes forman la progresión $2, 3, 4, 5, \\ldots$ El siguiente cociente es 6. Siguiente término: $120 \\times 6 = 720$. (Esta es la serie de los factoriales: $1! = 1$, $2! = 2$, $3! = 6$, $4! = 24$, $5! = 120$, $6! = 720$.)"
+      },
+      {
+        "letra": "D",
+        "texto": "144",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $144 = 12^2$ o $144 = 120 + 24$, que suma el penúltimo término. Ni la suma de los dos anteriores ni el cuadrado corresponden al patrón. El patrón es multiplicación por cocientes crecientes: $120 \\times 6 = 720$."
+      }
+    ]
+  }
+]

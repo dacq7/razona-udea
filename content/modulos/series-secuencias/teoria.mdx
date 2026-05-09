@@ -1,3 +1,266 @@
 # Series y Secuencias
 
-Contenido en desarrollo. ¡Vuelve pronto!
+Una **serie o secuencia** es una lista ordenada de elementos (números, letras o figuras) que siguen una regla. Encontrar esa regla es el núcleo del tema. El error más costoso no es matemático: es confundir el tipo de serie y aplicar la estrategia equivocada. La táctica universal es siempre la misma: calcular diferencias consecutivas primero, luego razones.
+
+## 1. Series aritméticas (progresión aritmética)
+
+Una **progresión aritmética** es aquella en que la diferencia entre términos consecutivos es **constante**. A esa diferencia se le llama **razón aritmética** $d$.
+
+**Ejemplo:** $3, 7, 11, 15, 19, \ldots$
+
+Diferencias: $7-3=4$, $11-7=4$, $15-11=4$. La diferencia constante es $d = 4$.
+
+### Fórmula del término n-ésimo
+
+$$a_n = a_1 + (n-1) \cdot d$$
+
+donde $a_1$ es el primer término, $d$ es la diferencia constante y $n$ es la posición del término buscado.
+
+**Ejemplo:** En la serie $3, 7, 11, 15, \ldots$, encontrar el décimo término.
+
+$$a_{10} = 3 + (10-1) \cdot 4 = 3 + 36 = 39$$
+
+### Identificación visual
+
+Calcula $a_2 - a_1$, $a_3 - a_2$, $a_4 - a_3$. Si todas son iguales, es aritmética.
+
+**Casos frecuentes:**
+- $d > 0$: serie creciente $(5, 8, 11, 14, \ldots)$
+- $d < 0$: serie decreciente $(20, 15, 10, 5, \ldots)$
+- $d$ fraccionario: $(1, 1.5, 2, 2.5, \ldots)$ con $d = 0.5$
+
+## 2. Series geométricas (progresión geométrica)
+
+Una **progresión geométrica** es aquella en que el cociente entre términos consecutivos es **constante**. A ese cociente se le llama **razón geométrica** $r$.
+
+**Ejemplo:** $2, 6, 18, 54, 162, \ldots$
+
+Cocientes: $6/2=3$, $18/6=3$, $54/18=3$. La razón constante es $r = 3$.
+
+### Fórmula del término n-ésimo
+
+$$a_n = a_1 \cdot r^{n-1}$$
+
+**Ejemplo:** En la serie $2, 6, 18, 54, \ldots$, encontrar el sexto término.
+
+$$a_6 = 2 \cdot 3^{6-1} = 2 \cdot 3^5 = 2 \cdot 243 = 486$$
+
+### Casos con $r$ fraccional o negativo
+
+**$r$ fraccional** (entre 0 y 1): la serie decrece hacia cero. Ejemplo: $64, 32, 16, 8, 4, \ldots$ con $r = 1/2$.
+
+$$a_n = 64 \cdot \left(\frac{1}{2}\right)^{n-1}$$
+
+**$r$ negativo**: los términos alternan de signo. Ejemplo: $1, -3, 9, -27, 81, \ldots$ con $r = -3$.
+
+### Cómo distinguir aritmética de geométrica
+
+| | Aritmética | Geométrica |
+|---|---|---|
+| Operación clave | Suma o resta un valor fijo | Multiplica o divide por un valor fijo |
+| Verificación | $a_2 - a_1 = a_3 - a_2$ | $a_2 / a_1 = a_3 / a_2$ |
+| Ejemplo | 5, 8, 11, 14 ($d=3$) | 5, 10, 20, 40 ($r=2$) |
+
+**Trampa frecuente:** una serie como $2, 4, 8, 16$ parece aritmética (diferencias crecientes: 2, 4, 8...) hasta que verificas los cocientes: $4/2=2$, $8/4=2$, $16/8=2$. Es geométrica con $r=2$, no aritmética.
+
+## 3. Series mixtas y de orden superior
+
+Cuando las diferencias entre términos consecutivos **no son constantes**, pero las **diferencias de esas diferencias** (segundas diferencias) sí lo son, la serie es de **segundo orden** o cuadrática.
+
+**Ejemplo:** $1, 4, 9, 16, 25, 36, \ldots$ (cuadrados perfectos)
+
+| Nivel | Valores |
+|---|---|
+| Serie | 1 | 4 | 9 | 16 | 25 | 36 |
+| 1ª diferencia | | 3 | 5 | 7 | 9 | 11 |
+| 2ª diferencia | | | 2 | 2 | 2 | 2 |
+
+Las segundas diferencias son constantes (2), lo que confirma la naturaleza cuadrática. El término general es $a_n = n^2$.
+
+**Series cúbicas:** si las segundas diferencias tampoco son constantes pero las **terceras diferencias** sí lo son, la serie es de tercer orden.
+
+**Ejemplo:** $1, 8, 27, 64, 125, \ldots$ (cubos perfectos, $a_n = n^3$)
+
+| Nivel | Valores |
+|---|---|
+| Serie | 1 | 8 | 27 | 64 | 125 |
+| 1ª diferencia | | 7 | 19 | 37 | 61 |
+| 2ª diferencia | | | 12 | 18 | 24 |
+| 3ª diferencia | | | | 6 | 6 |
+
+### Estrategia práctica: construir de abajo hacia arriba
+
+Para encontrar el **siguiente término** en una serie de orden superior:
+
+1. Calcula diferencias hasta encontrar cuáles son constantes.
+2. Extiende la fila de diferencias constantes una posición más (copiando el mismo valor).
+3. Sube hacia la serie original sumando hacia arriba.
+
+**Ejemplo:** Serie $3, 6, 11, 18, 27, \ldots$ — ¿cuál es el siguiente término?
+
+| Nivel | Valores |
+|---|---|
+| Serie | 3 | 6 | 11 | 18 | 27 | **?** |
+| 1ª diferencia | | 3 | 5 | 7 | 9 | **11** |
+| 2ª diferencia | | | 2 | 2 | 2 | **2** |
+
+Las 2ª diferencias son 2 (constante). Extiendo: siguiente 2ª diferencia = 2, siguiente 1ª diferencia = $9+2=11$, siguiente término = $27+11 = \mathbf{38}$.
+
+## 4. Series con dos operaciones alternadas
+
+Algunas series no tienen una sola regla sino que **alternan entre dos operaciones**. Ejemplo:
+
+$$3, 6, 9, 18, 21, 42, 45, \ldots$$
+
+Las operaciones se alternan: $\times 2$, $+3$, $\times 2$, $+3$, $\times 2$, $+3, \ldots$
+
+**Estrategia:** separar la serie en dos sub-series según las posiciones pares e impares.
+
+- Posiciones impares: $3, 9, 21, 45, \ldots$ (la regla es la sub-serie propia)
+- Posiciones pares: $6, 18, 42, \ldots$ (la otra sub-serie)
+
+Otra variante frecuente en el examen:
+
+$$2, 4, 6, 12, 14, 28, 30, \ldots$$
+
+Operaciones: $+2$, $\times 3$ no... verifiquemos: $\times 2$, $+2$, $\times 2$, $+2$, $\times 2$, $+2$. Sí: $2 \times 2 = 4$, $4+2=6$, $6\times 2=12$, $12+2=14$, $14\times 2=28$, $28+2=30$, $30\times 2=60$.
+
+## 5. Series recursivas (tipo Fibonacci)
+
+En una **serie recursiva**, cada término depende de uno o más términos anteriores. No existe una fórmula directa para el término $n$-ésimo; hay que construir la serie desde el inicio.
+
+**Fibonacci clásico:** $1, 1, 2, 3, 5, 8, 13, 21, \ldots$
+
+Regla: $a_n = a_{n-1} + a_{n-2}$ (cada término es la suma de los dos anteriores).
+
+**Variantes frecuentes en el examen:**
+
+| Regla | Ejemplo |
+|---|---|
+| $a_n = a_{n-1} + a_{n-2}$ | 2, 5, 7, 12, 19, 31, ... |
+| $a_n = a_{n-1} \times 2$ | 1, 2, 4, 8, 16, ... (geométrica encubierta) |
+| $a_n = a_{n-1} + n$ | 1, 2, 4, 7, 11, 16, ... (diferencias crecientes: 1,2,3,4,5) |
+| $a_n = 2 \cdot a_{n-1} - a_{n-2}$ | Produce una progresión aritmética |
+
+**Cómo identificarlas:** cuando ningún patrón de diferencias ni de razones funciona, escribe cada término y verifica si es combinación de los anteriores.
+
+## 6. Series gráficas y figurativas
+
+El examen UdeA incluye frecuentemente series de **figuras que cambian** de un término al siguiente. La estrategia es convertir el patrón visual en una secuencia numérica.
+
+**Tipos de cambio más frecuentes:**
+
+1. **Conteo de elementos:** la figura tiene 1, 4, 9, 16 puntos → cuadrados perfectos ($a_n = n^2$).
+2. **Rotación cíclica:** una flecha apunta arriba → 90° derecha → abajo → 90° izquierda → arriba (ciclo de 4).
+3. **Adición de partes:** triángulo (3 lados) → cuadrado (4) → pentágono (5) → patrón aritmético con $d=1$.
+4. **Cambio de relleno:** alterna entre figura rellena y vacía (ciclo de 2).
+5. **Crecimiento en capas:** figura con 1 punto en el centro, luego rodeada de 8, luego de 16 más → 1, 9, 25... (cuadrados impares).
+
+**Ejemplo textual:** Secuencia de cuadros de puntos:
+- Figura 1: 1 punto (disposición 1×1)
+- Figura 2: 4 puntos (disposición 2×2)
+- Figura 3: 9 puntos (disposición 3×3)
+- Figura 4: 16 puntos (disposición 4×4)
+
+¿Cuántos puntos tiene la Figura 6? → $a_n = n^2$ → $a_6 = 36$ puntos.
+
+**Estrategia para series figurativas:**
+1. Cuenta los elementos relevantes (puntos, lados, segmentos) en cada figura.
+2. Escribe la secuencia numérica resultante.
+3. Aplica el protocolo estándar de diferencias y razones.
+
+## 7. Series alfabéticas
+
+Las series de letras se resuelven convirtiendo las letras a su **posición en el alfabeto** (A=1, B=2, C=3, ..., Z=26), encontrando el patrón numérico y convirtiendo de vuelta.
+
+**Ejemplo básico:** $A, D, G, J, M, \ldots$
+
+Posiciones: $1, 4, 7, 10, 13, \ldots$ → diferencia constante $d = 3$ (progresión aritmética).
+
+Siguiente posición: $13 + 3 = 16$ → letra $P$.
+
+**Ejemplo de orden superior:** $B, E, I, N, T, \ldots$
+
+Posiciones: $2, 5, 9, 14, 20, \ldots$
+
+Diferencias: $3, 4, 5, 6, \ldots$ → las diferencias mismas forman una progresión aritmética con $d=1$.
+
+Siguiente diferencia: $7$. Siguiente posición: $20 + 7 = 27$. Como $27 > 26$, aplicar módulo: $27 - 26 = 1 = A$.
+
+**Variantes frecuentes:**
+
+| Patrón | Ejemplo |
+|---|---|
+| Salto fijo | A, C, E, G... (salta de 2 en 2) |
+| Letras en reversa | Z, X, V, T... (resta 2 cada vez) |
+| Grupos de letras | ABC, DEF, GHI... (grupos de 3 consecutivas) |
+| Letra + número | A2, C4, E6, G8... (letra salta 2, número suma 2) |
+
+**Regla del módulo:** si la posición supera 26, resta 26. Si es menor que 1, suma 26.
+
+## 8. Analogías numéricas y verbales
+
+Una **analogía** tiene la forma: "$A$ es a $B$ como $C$ es a $\_\_\_$", escrito $A : B = C : X$.
+
+La clave es identificar la relación **exacta** entre $A$ y $B$ antes de aplicarla a $C$.
+
+### Relaciones numéricas frecuentes
+
+| Relación | Ejemplo | Aplicación |
+|---|---|---|
+| Cuadrado | $4 : 16 = 5 : \_\_\_$ | $A^2 = B$ → $5^2 = 25$ |
+| Raíz cuadrada | $36 : 6 = 49 : \_\_\_$ | $\sqrt{A} = B$ → $\sqrt{49} = 7$ |
+| Suma constante | $3 : 7 = 8 : \_\_\_$ | $A + 4 = B$ → $8 + 4 = 12$ |
+| Multiplicación | $6 : 18 = 5 : \_\_\_$ | $A \times 3 = B$ → $5 \times 3 = 15$ |
+| Potencia cúbica | $2 : 8 = 3 : \_\_\_$ | $A^3 = B$ → $3^3 = 27$ |
+| Inverso | $2 : 0.5 = 4 : \_\_\_$ | $1/A = B$ → $1/4 = 0.25$ |
+
+### Relaciones verbales frecuentes
+
+- **Parte-todo:** "capítulo : libro = escena : película"
+- **Herramienta-función:** "bisturí : operar = pincel : pintar"
+- **Causa-efecto:** "estudio : conocimiento = lluvia : inundación"
+- **Grado de intensidad:** "tibio : caliente = fresco : frío"
+- **Productor-producto:** "gallina : huevo = vaca : leche"
+
+### Estrategia para analogías
+
+1. **Identifica la relación exacta** entre el primer par. No "A y B están relacionados", sino "B es el cuadrado de A".
+2. **Verifica la dirección:** "$A$ es a $B$" puede ser "$A$ transforma en $B$" y no al revés.
+3. **Aplica la misma relación** al tercer término para encontrar $X$.
+4. **Descarta por eliminación:** si dos opciones parecen válidas, tu relación es demasiado vaga — precísala.
+
+**Ejemplo:** $9 : 3 = 64 : \_\_\_$
+
+Posible relación 1: "9 dividido entre 3 da 3" → $64 \div 3 \approx 21.3$ — no es un número limpio.
+
+Posible relación 2: "$\sqrt{9} = 3$" → $\sqrt{64} = 8$ — número limpio y elegante. ✓ Respuesta: 8.
+
+**Trampa:** "9 es el triple de 3" → $64 \times 3 = 192$, número inusual para una pregunta de examen.
+
+## 9. Estrategias generales — Protocolo de diagnóstico
+
+Cuando enfrentes una serie desconocida, aplica este protocolo en orden:
+
+**Paso 1 — Primeras diferencias:** resta cada término del siguiente. ¿Son constantes? → Aritmética.
+
+**Paso 2 — Razones:** divide cada término entre el anterior. ¿Son constantes? → Geométrica.
+
+**Paso 3 — Segundas diferencias:** calcula diferencias de las diferencias. ¿Constantes? → Cuadrática (orden 2).
+
+**Paso 4 — Patrón cíclico:** ¿la regla alterna cada dos términos? → Separar en sub-series.
+
+**Paso 5 — Relación con anteriores:** ¿el término actual es combinación de los dos anteriores? → Recursiva.
+
+**Paso 6 — Si son letras:** convertir a números (A=1...Z=26), aplicar pasos 1-5, reconvertir.
+
+### Tabla de trampas frecuentes
+
+| Trampa | Error típico | Cómo evitarla |
+|---|---|---|
+| $2, 4, 8, 16$ vista como aritmética | Diferencias parecen seguir un patrón propio | Siempre verifica también los cocientes |
+| Aplicar fórmula sin verificar | Usar $a_1 + (n-1)d$ sin confirmar que es aritmética | Comprueba con mínimo 3 diferencias consecutivas |
+| Error en la posición $n$ | Confundir "el siguiente" con "el $n$-ésimo" | Cuenta los términos dados y ubica su posición |
+| Sumar diferencia incorrecta en orden 2 | En lugar de la *siguiente* diferencia, sumar la *última* diferencia de orden 1 | Reconstruye la tabla de diferencias paso a paso |
+| Series alfabéticas que superan la Z | Olvidar el ciclo modular (A-Z = posiciones 1-26) | Si el número supera 26, resta 26; si baja de 1, suma 26 |
+| Analogía con relación ambigua | $4:8$ podría ser $\times 2$ o $+4$ | Verifica cuál relación se aplica también al tercer término sin producir números extraños |

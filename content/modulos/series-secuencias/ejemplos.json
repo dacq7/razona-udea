@@ -1,1 +1,62 @@
-[]
+[
+  {
+    "id": "ej1-series-aritmetica-siguiente",
+    "enunciado": "Dada la serie $4, 11, 18, 25, 32, \\ldots$, ¿cuál es el siguiente término y cuál es el valor del término en la posición 10?",
+    "pasos": [
+      "Paso 1 — Verificar que es aritmética: calcular diferencias consecutivas. $11 - 4 = 7$, $18 - 11 = 7$, $25 - 18 = 7$, $32 - 25 = 7$. La diferencia es constante $d = 7$. Confirmado: es una progresión aritmética.",
+      "Paso 2 — Término siguiente: $32 + 7 = 39$.",
+      "Paso 3 — Término en la posición 10: aplicar la fórmula $a_n = a_1 + (n-1) \\cdot d$ con $a_1 = 4$, $d = 7$, $n = 10$.",
+      "Paso 4 — Calcular: $a_{10} = 4 + (10 - 1) \\cdot 7 = 4 + 9 \\cdot 7 = 4 + 63 = 67$.",
+      "Paso 5 — Verificar el resultado contando: $4, 11, 18, 25, 32, 39, 46, 53, 60, 67$. El término 10 es efectivamente 67. ✓"
+    ],
+    "conclusion": "El siguiente término es $39$ y el décimo término es $a_{10} = 67$."
+  },
+  {
+    "id": "ej2-series-geometrica-formula",
+    "enunciado": "La serie $5, 15, 45, 135, \\ldots$ es una progresión geométrica. Calcula el séptimo término usando la fórmula.",
+    "pasos": [
+      "Paso 1 — Verificar que es geométrica: calcular razones. $15/5 = 3$, $45/15 = 3$, $135/45 = 3$. La razón es constante $r = 3$. Confirmado: es una progresión geométrica.",
+      "Paso 2 — Identificar los datos: $a_1 = 5$, $r = 3$, $n = 7$.",
+      "Paso 3 — Aplicar la fórmula: $a_n = a_1 \\cdot r^{n-1}$, entonces $a_7 = 5 \\cdot 3^{7-1} = 5 \\cdot 3^6$.",
+      "Paso 4 — Calcular $3^6$: $3^1 = 3$, $3^2 = 9$, $3^3 = 27$, $3^4 = 81$, $3^5 = 243$, $3^6 = 729$.",
+      "Paso 5 — Resultado: $a_7 = 5 \\cdot 729 = 3645$."
+    ],
+    "conclusion": "El séptimo término de la progresión es $a_7 = 3645$."
+  },
+  {
+    "id": "ej3-series-orden-superior",
+    "enunciado": "Determina el siguiente término de la serie $2, 5, 10, 17, 26, 37, \\ldots$",
+    "pasos": [
+      "Paso 1 — Calcular primeras diferencias: $5-2=3$, $10-5=5$, $17-10=7$, $26-17=9$, $37-26=11$. No son constantes (3, 5, 7, 9, 11...).",
+      "Paso 2 — Calcular segundas diferencias: $5-3=2$, $7-5=2$, $9-7=2$, $11-9=2$. Las segundas diferencias son constantes = 2. La serie es de segundo orden (cuadrática).",
+      "Paso 3 — Construir de abajo hacia arriba: extender las segundas diferencias con un 2 más. La siguiente primera diferencia: $11 + 2 = 13$.",
+      "Paso 4 — El siguiente término de la serie: $37 + 13 = 50$.",
+      "Paso 5 — Verificar: el término general es $a_n = n^2 + 1$. Para $n=7$: $7^2 + 1 = 49 + 1 = 50$. ✓"
+    ],
+    "conclusion": "El siguiente término es $50$. La serie sigue el patrón $a_n = n^2 + 1$, con segundas diferencias constantes iguales a 2."
+  },
+  {
+    "id": "ej4-series-alfabetica",
+    "enunciado": "Encuentra el siguiente elemento de la serie alfabética: $C, F, J, O, U, \\ldots$",
+    "pasos": [
+      "Paso 1 — Convertir letras a posiciones en el alfabeto (A=1, B=2, ..., Z=26): C=3, F=6, J=10, O=15, U=21.",
+      "Paso 2 — La secuencia numérica es $3, 6, 10, 15, 21, \\ldots$. Calcular primeras diferencias: $6-3=3$, $10-6=4$, $15-10=5$, $21-15=6$. Las diferencias son $3, 4, 5, 6, \\ldots$ — crecen de 1 en 1.",
+      "Paso 3 — Las segundas diferencias son constantes = 1. La siguiente primera diferencia es $6 + 1 = 7$.",
+      "Paso 4 — La siguiente posición numérica: $21 + 7 = 28$. Como $28 > 26$, aplicar módulo: $28 - 26 = 2$.",
+      "Paso 5 — La posición 2 corresponde a la letra $B$."
+    ],
+    "conclusion": "El siguiente elemento es $B$. La serie tiene diferencias crecientes (3, 4, 5, 6, 7...) que llevan a la posición 28, que al superar el alfabeto (26 letras) da vuelta a la posición 2 = B."
+  },
+  {
+    "id": "ej5-series-analogia-compleja",
+    "enunciado": "Completa la analogía: $8 : 2 = 125 : \\_\\_\\_$",
+    "pasos": [
+      "Paso 1 — Identificar la relación entre 8 y 2. Intento 1: ¿división? $8 \\div 2 = 4$, pero $125 \\div 4 = 31.25$ (no limpio). Intento 2: ¿raíz cúbica? $\\sqrt[3]{8} = 2$ porque $2^3 = 8$. ✓",
+      "Paso 2 — Verificar la relación: $2^3 = 8$ confirma que 2 es la raíz cúbica de 8.",
+      "Paso 3 — Aplicar la misma relación al tercer término: necesito $\\sqrt[3]{125}$.",
+      "Paso 4 — Calcular: $5^3 = 125$, por lo tanto $\\sqrt[3]{125} = 5$.",
+      "Paso 5 — Verificar coherencia: la relación '$B$ es la raíz cúbica de $A$' aplica en ambos pares: $8:2$ y $125:5$. ✓"
+    ],
+    "conclusion": "La respuesta es $5$. La relación es '$B$ es la raíz cúbica de $A$': $\\sqrt[3]{8} = 2$ y $\\sqrt[3]{125} = 5$."
+  }
+]
