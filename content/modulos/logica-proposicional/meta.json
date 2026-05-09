@@ -1,0 +1,8 @@
+{
+  "slug": "logica-proposicional",
+  "titulo": "Lógica Proposicional y Conjuntos",
+  "descripcion": "Conectivos lógicos, tablas de verdad y operaciones entre conjuntos. La base del razonamiento formal.",
+  "icono": "GitBranch",
+  "orden_recomendado": 1,
+  "color": "teal"
+}

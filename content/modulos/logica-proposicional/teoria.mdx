@@ -1,0 +1,81 @@
+# Lógica Proposicional y Conjuntos
+
+La lógica proposicional estudia cómo combinar afirmaciones para razonar de forma válida. Una **proposición** es cualquier afirmación que puede ser verdadera (V) o falsa (F), pero no ambas.
+
+## Conectivos lógicos
+
+Los conectivos permiten construir proposiciones compuestas a partir de proposiciones simples $p$, $q$, $r$...
+
+| Nombre | Símbolo | Se lee | Es verdadero cuando... |
+|--------|---------|--------|------------------------|
+| Negación | $\neg p$ | "no p" | $p$ es falso |
+| Conjunción | $p \land q$ | "p y q" | ambos son verdaderos |
+| Disyunción | $p \lor q$ | "p o q" | al menos uno es verdadero |
+| Condicional | $p \rightarrow q$ | "si p entonces q" | no ocurre que p sea V y q sea F |
+| Bicondicional | $p \leftrightarrow q$ | "p si y solo si q" | $p$ y $q$ tienen el mismo valor |
+
+### El condicional $p \rightarrow q$
+
+Es la proposición más importante del examen y la que más confunde. La única forma en que $p \rightarrow q$ es **falso** es cuando $p$ es verdadero y $q$ es falso.
+
+$$
+\begin{array}{c|c|c}
+p & q & p \rightarrow q \\
+\hline
+V & V & V \\
+V & F & \mathbf{F} \\
+F & V & V \\
+F & F & V \\
+\end{array}
+$$
+
+**Ejemplo:** "Si estudio, apruebo." Si estudias y no apruebas → la afirmación es falsa. En cualquier otro caso es verdadera (incluso si no estudias y apruebas de casualidad).
+
+### Leyes de De Morgan
+
+Útiles para negar conjunciones y disyunciones:
+
+$$\neg(p \land q) \equiv \neg p \lor \neg q$$
+$$\neg(p \lor q) \equiv \neg p \land \neg q$$
+
+**Regla fácil de recordar:** Al negar, cambias $\land$ por $\lor$ (o viceversa) y niegas cada parte.
+
+## Argumentos lógicos válidos
+
+El examen pide reconocer si una conclusión se sigue correctamente de las premisas.
+
+**Modus Ponens:** Si tienes $p \rightarrow q$ y $p$, puedes concluir $q$.
+
+**Modus Tollens:** Si tienes $p \rightarrow q$ y $\neg q$, puedes concluir $\neg p$.
+
+**Silogismo hipotético:** Si $p \rightarrow q$ y $q \rightarrow r$, entonces $p \rightarrow r$.
+
+## Teoría de conjuntos
+
+Un **conjunto** es una colección de elementos. Se denota con letras mayúsculas.
+
+### Operaciones básicas
+
+| Operación | Símbolo | Resultado |
+|-----------|---------|-----------|
+| Unión | $A \cup B$ | Todo lo que está en $A$ **o** en $B$ (o en ambos) |
+| Intersección | $A \cap B$ | Solo lo que está en $A$ **y** también en $B$ |
+| Complemento | $A'$ o $\overline{A}$ | Todo lo del universo $U$ que **no** está en $A$ |
+| Diferencia | $A - B$ | Lo que está en $A$ pero **no** en $B$ |
+
+### Fórmula de inclusión-exclusión
+
+Para problemas de conteo con dos conjuntos:
+
+$$|A \cup B| = |A| + |B| - |A \cap B|$$
+
+Si además sabes el total del universo $|U|$, los que no pertenecen a ninguno son:
+
+$$|A \cup B|^c = |U| - |A \cup B|$$
+
+### Cuantificadores
+
+| Afirmación | Negación |
+|-----------|---------|
+| "Todos los X son Y" ($\forall x$) | "Existe algún X que no es Y" ($\exists x: \neg$) |
+| "Existe algún X que es Y" ($\exists x$) | "Ningún X es Y" ($\forall x: \neg$) |

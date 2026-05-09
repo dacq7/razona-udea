@@ -62,5 +62,101 @@
         "explicacion": "Es trampa: 26 es el número que practica ALGUNO de los dos deportes ($|F \\cup B|$), no el que no practica ninguno. Se olvidó restar del total."
       }
     ]
+  },
+  {
+    "id": "prac3-logica-de-morgan",
+    "dificultad": 2,
+    "enunciado": "¿Cuál de las siguientes proposiciones es lógicamente equivalente a $\\neg(p \\land q)$?",
+    "pista": "Aplica la primera Ley de De Morgan: la negación de una conjunción es equivalente a la disyunción de las negaciones.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "$\\neg p \\land \\neg q$",
+        "es_correcta": false,
+        "explicacion": "Es trampa frecuente: es la forma incorrecta de De Morgan para una conjunción. La negación de 'p Y q' no es 'no-p Y no-q'. Esta forma equivale a $\\neg(p \\lor q)$ (De Morgan para disyunción)."
+      },
+      {
+        "letra": "B",
+        "texto": "$p \\lor q$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: se eliminó la negación sin distribuirla. $p \\lor q$ y $\\neg(p \\land q)$ no son equivalentes. Para p=V, q=V: $p \\lor q = V$ pero $\\neg(p \\land q) = \\neg V = F$."
+      },
+      {
+        "letra": "C",
+        "texto": "$\\neg p \\lor \\neg q$",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Por la primera Ley de De Morgan: $\\neg(p \\land q) \\equiv \\neg p \\lor \\neg q$. Al negar una conjunción, el conectivo AND se convierte en OR y se niegan cada uno de los términos."
+      },
+      {
+        "letra": "D",
+        "texto": "$p \\rightarrow \\neg q$",
+        "es_correcta": false,
+        "explicacion": "Es trampa sofisticada: aunque la implicación $p \\rightarrow \\neg q$ y $\\neg(p \\land q)$ se parecen, no son equivalentes en todos los casos. Para p=F, q=F: $p \\rightarrow \\neg q = F \\rightarrow V = V$, mientras que $\\neg(p \\land q) = \\neg(F) = V$. Parecen iguales aquí, pero la equivalencia no se sostiene en general."
+      }
+    ]
+  },
+  {
+    "id": "prac4-logica-cuantificadores",
+    "dificultad": 2,
+    "enunciado": "Si la afirmación 'Todos los políticos son corruptos' es verdadera, ¿cuál es su negación lógica correcta?",
+    "pista": "Recuerda: la negación de 'Todos los X son Y' no es 'Ningún X es Y', sino una afirmación existencial.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Ningún político es corrupto.",
+        "es_correcta": false,
+        "explicacion": "Es trampa clásica: 'Ningún...' es la negación extrema pero no la negación lógica. La negación de 'Todos son X' no requiere que ninguno lo sea — basta con que uno no lo sea. 'Ningún político es corrupto' es una afirmación mucho más fuerte que la negación."
+      },
+      {
+        "letra": "B",
+        "texto": "Existe al menos un político que no es corrupto.",
+        "es_correcta": true,
+        "explicacion": "Es correcto. La negación de un cuantificador universal ('Todos') es un cuantificador existencial negado: $\\neg(\\forall x: P(x)) \\equiv \\exists x: \\neg P(x)$. Solo hace falta encontrar un contraejemplo para negar la afirmación universal."
+      },
+      {
+        "letra": "C",
+        "texto": "Todos los políticos son honestos.",
+        "es_correcta": false,
+        "explicacion": "Es trampa: cambia 'corruptos' por su antónimo pero mantiene el cuantificador 'Todos'. Esto no es una negación lógica — es una afirmación opuesta y más fuerte, que requiere prueba propia."
+      },
+      {
+        "letra": "D",
+        "texto": "Algunos políticos son corruptos y otros no.",
+        "es_correcta": false,
+        "explicacion": "Es trampa: esta opción afirma DOS cosas a la vez (algunos son corruptos Y algunos no). La negación lógica solo necesita que exista al menos uno que no lo sea. No hace ninguna afirmación sobre los demás."
+      }
+    ]
+  },
+  {
+    "id": "prac5-logica-diferencia-conjuntos",
+    "dificultad": 3,
+    "enunciado": "Dados los conjuntos $A = \\{a, b, c, d\\}$ y $B = \\{c, d, e, f\\}$, ¿cuál es $A - B$?",
+    "pista": "La diferencia $A - B$ contiene solo los elementos de $A$ que NO aparecen en $B$. Es como 'restarle' a A lo que comparte con B.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "$\\{a, b\\}$",
+        "es_correcta": true,
+        "explicacion": "Es correcto. $A - B$ = elementos en A que no están en B. De A = {a, b, c, d}, los elementos c y d también están en B, así que se excluyen. Quedan {a, b}."
+      },
+      {
+        "letra": "B",
+        "texto": "$\\{e, f\\}$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: {e, f} es $B - A$ (lo que está en B pero no en A). Se confundió el orden de la diferencia. $A - B \\neq B - A$ en general."
+      },
+      {
+        "letra": "C",
+        "texto": "$\\{c, d\\}$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: {c, d} es $A \\cap B$ (la intersección). Son precisamente los elementos que A y B comparten — que es exactamente lo que se EXCLUYE en la diferencia $A - B$."
+      },
+      {
+        "letra": "D",
+        "texto": "$\\{a, b, e, f\\}$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: {a, b, e, f} es la diferencia simétrica $A \\triangle B$ = $(A - B) \\cup (B - A)$. Incluye lo que está exclusivamente en A ({a, b}) y lo que está exclusivamente en B ({e, f}), que es una operación diferente."
+      }
+    ]
   }
 ]

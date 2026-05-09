@@ -6,7 +6,7 @@ import { SimulacroProgress } from "./SimulacroProgress"
 import { OpcionesGrid } from "@/components/ejercicios/OpcionesGrid"
 import { FeedbackPanel } from "@/components/ejercicios/FeedbackPanel"
 import { MathText } from "@/components/ejercicios/MathText"
-import { calcularPorcentaje, formatTime } from "@/lib/utils"
+import { calcularPorcentaje, formatTime, shuffle, shuffleOpciones } from "@/lib/utils"
 import {
   getProgress,
   updateModuloEtapa,
@@ -17,11 +17,12 @@ import {
 import type { EjercicioSimulacro, ModuloProgreso, SimulacroEnCurso } from "@/types"
 
 const DURACION = 300 // 5 minutes
+const SESION_SIZE = 5
 
 interface Props {
   slug: string
   titulo: string
-  ejercicios: EjercicioSimulacro[]
+  ejercicios: EjercicioSimulacro[] // full bank from server
 }
 
 type Letra = 'A' | 'B' | 'C' | 'D'
@@ -33,24 +34,24 @@ export function SimulacroModuloController({ slug, titulo, ejercicios }: Props) {
   const [respuestas, setRespuestas] = useState<Record<string, Letra>>({})
   const [inicioTimestamp, setInicioTimestamp] = useState<number | null>(null)
   const [sesionAnterior, setSesionAnterior] = useState<SimulacroEnCurso | null>(null)
-  // Computed once when sesionAnterior is set (in mount effect) to avoid Date.now() during render
   const [tiempoRestanteSesion, setTiempoRestanteSesion] = useState(0)
   const [respuestasFinales, setRespuestasFinales] = useState<Record<string, Letra> | null>(null)
+  // Session exercises: shuffled subset of bank (set in iniciarSimulacro / continuarSesion)
+  const [ejerciciosEnSesion, setEjerciciosEnSesion] = useState<EjercicioSimulacro[]>([])
 
-  // Refs for async-safe access in timer callbacks
+  // Refs for async-safe access in callbacks and timers
   const respuestasRef = useRef<Record<string, Letra>>({})
   const inicioTimestampRef = useRef<number | null>(null)
-  const ejerciciosRef = useRef(ejercicios)
+  // Tracks the session exercises (not the full bank prop)
+  const ejerciciosRef = useRef<EjercicioSimulacro[]>([])
   const slugRef = useRef(slug)
   const advanceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
-  // Keep prop refs in sync (ejercicios/slug are stable server props, but belt-and-suspenders)
-  useEffect(() => { ejerciciosRef.current = ejercicios }, [ejercicios])
+  // Sync refs with state via useEffect (react-hooks/refs compliance)
   useEffect(() => { slugRef.current = slug }, [slug])
-  // Keep inicioTimestamp ref in sync with state (set directly in iniciarSimulacro too)
   useEffect(() => { inicioTimestampRef.current = inicioTimestamp }, [inicioTimestamp])
+  useEffect(() => { ejerciciosRef.current = ejerciciosEnSesion }, [ejerciciosEnSesion])
 
-  // All data accessed via refs or stable setter references — no external deps needed
   const finalizarSesion = useCallback((
     respuestasArg: Record<string, Letra>,
     inicioTs?: number
@@ -96,6 +97,12 @@ export function SimulacroModuloController({ slug, titulo, ejercicios }: Props) {
 
     const elapsed = Math.floor((Date.now() - session.inicio_timestamp) / 1000)
     if (elapsed >= session.duracion_segundos) {
+      // Restore exercise order before finalizing so scoring uses the right set
+      const exerciseMap = new Map(ejercicios.map((e) => [e.id, e]))
+      const restored = session.preguntas_ids
+        .map((id) => exerciseMap.get(id))
+        .filter((e): e is EjercicioSimulacro => e !== undefined)
+      ejerciciosRef.current = restored
       clearSimulacroEnCurso()
       finalizarSesion(session.respuestas as Record<string, Letra>, session.inicio_timestamp)
       return
@@ -103,7 +110,7 @@ export function SimulacroModuloController({ slug, titulo, ejercicios }: Props) {
     setTiempoRestanteSesion(Math.max(0, DURACION - elapsed))
     setSesionAnterior(session)
     setFase('confirmando')
-  }, [slug, finalizarSesion])
+  }, [slug, ejercicios, finalizarSesion])
 
   // Auto-save every 30s while en_curso
   useEffect(() => {
@@ -130,22 +137,26 @@ export function SimulacroModuloController({ slug, titulo, ejercicios }: Props) {
     }
   }, [])
 
-  // Passes current answers explicitly — timer fires async, closure would be stale
   const handleTimeUp = useCallback(() => {
     finalizarSesion(respuestasRef.current)
   }, [finalizarSesion])
 
   function iniciarSimulacro() {
+    const sesion = shuffle(ejercicios)
+      .slice(0, Math.min(SESION_SIZE, ejercicios.length))
+      .map(shuffleOpciones)
     const ts = Date.now()
-    inicioTimestampRef.current = ts // set directly so auto-save effect has it before re-render
+    inicioTimestampRef.current = ts
     respuestasRef.current = {}
+    ejerciciosRef.current = sesion // set directly so callbacks have it before re-render
+    setEjerciciosEnSesion(sesion)
     setInicioTimestamp(ts)
     setRespuestas({})
     setPreguntaActual(0)
     saveSimulacroEnCurso({
       inicio_timestamp: ts,
       duracion_segundos: DURACION,
-      preguntas_ids: ejercicios.map((e) => e.id),
+      preguntas_ids: sesion.map((e) => e.id),
       respuestas: {},
       modulo_slug: slug,
     })
@@ -154,12 +165,20 @@ export function SimulacroModuloController({ slug, titulo, ejercicios }: Props) {
 
   function continuarSesion(session: SimulacroEnCurso) {
     const resps = session.respuestas as Record<string, Letra>
+    // Restore shuffled exercise order; options in original JSON order (see ADR-022)
+    const exerciseMap = new Map(ejercicios.map((e) => [e.id, e]))
+    const restored = session.preguntas_ids
+      .map((id) => exerciseMap.get(id))
+      .filter((e): e is EjercicioSimulacro => e !== undefined)
+
     inicioTimestampRef.current = session.inicio_timestamp
     respuestasRef.current = resps
+    ejerciciosRef.current = restored
+    setEjerciciosEnSesion(restored)
     setInicioTimestamp(session.inicio_timestamp)
     setRespuestas(resps)
-    const firstUnanswered = session.preguntas_ids.findIndex((id) => !resps[id])
-    setPreguntaActual(firstUnanswered >= 0 ? firstUnanswered : session.preguntas_ids.length - 1)
+    const firstUnanswered = restored.findIndex((e) => !resps[e.id])
+    setPreguntaActual(firstUnanswered >= 0 ? firstUnanswered : restored.length - 1)
     setFase('en_curso')
   }
 
@@ -171,7 +190,6 @@ export function SimulacroModuloController({ slug, titulo, ejercicios }: Props) {
     respuestasRef.current = newResp
     setRespuestas(newResp)
 
-    // Auto-advance after 400ms — newResp passed explicitly to avoid closure bug
     advanceTimerRef.current = setTimeout(() => {
       if (preguntaActual < ejerciciosRef.current.length - 1) {
         setPreguntaActual((prev) => prev + 1)
@@ -188,8 +206,10 @@ export function SimulacroModuloController({ slug, titulo, ejercicios }: Props) {
     setRespuestas({})
     setInicioTimestamp(null)
     setRespuestasFinales(null)
+    setEjerciciosEnSesion([])
     respuestasRef.current = {}
     inicioTimestampRef.current = null
+    ejerciciosRef.current = []
   }
 
   // ── RENDER ──────────────────────────────────────────────────────────────
@@ -201,7 +221,7 @@ export function SimulacroModuloController({ slug, titulo, ejercicios }: Props) {
         <p className="text-sm text-muted-foreground">
           Tienes un simulacro anterior con{" "}
           <span className="font-medium text-foreground">{formatTime(tiempoRestanteSesion)}</span> restantes y{" "}
-          {Object.keys(sesionAnterior.respuestas).length}/{ejercicios.length} preguntas respondidas.
+          {Object.keys(sesionAnterior.respuestas).length}/{sesionAnterior.preguntas_ids.length} preguntas respondidas.
         </p>
         <div className="flex flex-col sm:flex-row gap-3">
           <button
@@ -226,7 +246,7 @@ export function SimulacroModuloController({ slug, titulo, ejercicios }: Props) {
       <div className="rounded-lg border bg-card p-6 space-y-4">
         <h2 className="font-semibold text-lg">Simulacro: {titulo}</h2>
         <ul className="text-sm text-muted-foreground space-y-1">
-          <li>• {ejercicios.length} preguntas</li>
+          <li>• {Math.min(SESION_SIZE, ejercicios.length)} preguntas</li>
           <li>• 5 minutos</li>
           <li>• Sin pistas</li>
           <li>• Feedback completo al finalizar</li>
@@ -242,16 +262,16 @@ export function SimulacroModuloController({ slug, titulo, ejercicios }: Props) {
   }
 
   if (fase === 'terminado' && respuestasFinales) {
-    const aciertos = ejercicios.filter((e) => {
+    const aciertos = ejerciciosEnSesion.filter((e) => {
       const letraCorrecta = e.opciones.find((o) => o.es_correcta)?.letra
       return respuestasFinales[e.id] === letraCorrecta
     }).length
-    const porcentaje = calcularPorcentaje(aciertos, ejercicios.length)
+    const porcentaje = calcularPorcentaje(aciertos, ejerciciosEnSesion.length)
 
     return (
       <div className="space-y-6">
         <div className="rounded-lg border bg-card p-6 text-center space-y-3">
-          <p className="text-4xl font-bold tabular-nums">{aciertos}/{ejercicios.length}</p>
+          <p className="text-4xl font-bold tabular-nums">{aciertos}/{ejerciciosEnSesion.length}</p>
           <p className="text-muted-foreground">{porcentaje}% de respuestas correctas</p>
           <p className={porcentaje >= 60 ? "text-success font-medium" : "text-muted-foreground"}>
             {porcentaje >= 80 ? "¡Dominio excelente!" : porcentaje >= 60 ? "¡Buen resultado!" : "Sigue practicando, ¡lo lograrás!"}
@@ -259,7 +279,7 @@ export function SimulacroModuloController({ slug, titulo, ejercicios }: Props) {
         </div>
 
         <div className="space-y-4">
-          {ejercicios.map((e, i) => {
+          {ejerciciosEnSesion.map((e, i) => {
             const letraSeleccionada = respuestasFinales[e.id]
             return (
               <div key={e.id} className="space-y-2">
@@ -302,14 +322,13 @@ export function SimulacroModuloController({ slug, titulo, ejercicios }: Props) {
   }
 
   // en_curso
-  const pregunta = ejercicios[preguntaActual]
+  const pregunta = ejerciciosEnSesion[preguntaActual]
   if (!pregunta || inicioTimestamp === null) return null
 
   return (
     <div className="space-y-4">
-      {/* Timer + progress row */}
       <div className="flex items-center justify-between gap-3 flex-wrap">
-        <SimulacroProgress actual={preguntaActual + 1} total={ejercicios.length} />
+        <SimulacroProgress actual={preguntaActual + 1} total={ejerciciosEnSesion.length} />
         <SimulacroTimer
           inicioTimestamp={inicioTimestamp}
           duracionSegundos={DURACION}
@@ -317,14 +336,12 @@ export function SimulacroModuloController({ slug, titulo, ejercicios }: Props) {
         />
       </div>
 
-      {/* Enunciado */}
       <div className="rounded-lg border bg-card p-4">
         <p className="text-sm leading-relaxed font-medium">
           <MathText text={pregunta.enunciado} />
         </p>
       </div>
 
-      {/* Opciones sin feedback inmediato — respuesta seleccionada queda resaltada neutral */}
       <OpcionesGrid
         opciones={pregunta.opciones}
         seleccionada={respuestas[pregunta.id] ?? null}

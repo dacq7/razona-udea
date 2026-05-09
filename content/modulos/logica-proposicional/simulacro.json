@@ -60,5 +60,98 @@
         "explicacion": "Error conceptual: la validez lógica es formal, no factual. Un argumento válido garantiza que SI las premisas son verdaderas, ENTONCES la conclusión lo es."
       }
     ]
+  },
+  {
+    "id": "sim3-logica-conjuntos-conteo",
+    "modulo_slug": "logica-proposicional",
+    "enunciado": "En una encuesta: 25 personas prefieren café (C), 20 prefieren té (T), 10 prefieren ambos. Si 5 personas no prefieren ninguno, ¿cuántas personas respondieron la encuesta?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "35",
+        "es_correcta": false,
+        "explicacion": "$|C \\cup T| = 25 + 20 - 10 = 35$. Pero este es solo el número que prefiere al menos uno. Se olvidó sumar las 5 personas que no prefieren ninguno: $35 + 5 = 40$."
+      },
+      {
+        "letra": "B",
+        "texto": "40",
+        "es_correcta": true,
+        "explicacion": "$|C \\cup T| = 25 + 20 - 10 = 35$ (los que prefieren al menos uno). Total = $35 + 5 = 40$ (sumando los que no prefieren ninguno). Correcto."
+      },
+      {
+        "letra": "C",
+        "texto": "45",
+        "es_correcta": false,
+        "explicacion": "Error: $25 + 20 = 45$ sin restar la intersección. Al no restar los 10 que prefieren ambos, se cuenta a esas personas dos veces."
+      },
+      {
+        "letra": "D",
+        "texto": "50",
+        "es_correcta": false,
+        "explicacion": "Error: $25 + 20 + 5 = 50$, sumando todo sin aplicar inclusión-exclusión. Se cuenta el grupo de ambos dos veces ($+10$ extra) y no se descuenta."
+      }
+    ]
+  },
+  {
+    "id": "sim4-logica-negacion-universal",
+    "modulo_slug": "logica-proposicional",
+    "enunciado": "¿Cuál de las siguientes es la negación lógica correcta de 'Todos los triángulos tienen tres lados'?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Ningún triángulo tiene tres lados.",
+        "es_correcta": false,
+        "explicacion": "Es la negación extrema pero no la negación lógica mínima. 'Ningún...' es una afirmación propia que requiere verificación independiente. La negación lógica de 'Todos' solo necesita que exista un contraejemplo."
+      },
+      {
+        "letra": "B",
+        "texto": "Existe algún triángulo que no tiene tres lados.",
+        "es_correcta": true,
+        "explicacion": "Correcto. $\\neg(\\forall x: P(x)) \\equiv \\exists x: \\neg P(x)$. La negación de 'todos los triángulos tienen tres lados' es 'existe al menos un triángulo que no tiene tres lados'. (En la realidad esta afirmación es falsa, pero lógicamente es la negación correcta.)"
+      },
+      {
+        "letra": "C",
+        "texto": "Todos los triángulos no tienen tres lados.",
+        "es_correcta": false,
+        "explicacion": "Ambiguo y equivalente a 'Ningún triángulo tiene tres lados', que es la negación extrema incorrecta. Mantiene el cuantificador 'todos' en vez de cambiarlo al existencial."
+      },
+      {
+        "letra": "D",
+        "texto": "Algunos triángulos tienen tres lados y otros no.",
+        "es_correcta": false,
+        "explicacion": "Esta afirmación dice DOS cosas a la vez. La negación lógica solo requiere que exista al menos uno sin tres lados — no hace ninguna afirmación sobre cuántos sí tienen tres lados."
+      }
+    ]
+  },
+  {
+    "id": "sim5-logica-bicondicional",
+    "modulo_slug": "logica-proposicional",
+    "enunciado": "¿En cuál de los siguientes casos el bicondicional $p \\leftrightarrow q$ es FALSO?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "$p = V$, $q = V$",
+        "es_correcta": false,
+        "explicacion": "$V \\leftrightarrow V = V$. El bicondicional es verdadero cuando ambas proposiciones tienen el mismo valor de verdad."
+      },
+      {
+        "letra": "B",
+        "texto": "$p = F$, $q = F$",
+        "es_correcta": false,
+        "explicacion": "$F \\leftrightarrow F = V$. También es verdadero cuando ambas son falsas — el bicondicional expresa equivalencia de valores, no necesariamente verdad."
+      },
+      {
+        "letra": "C",
+        "texto": "$p = V$, $q = F$",
+        "es_correcta": true,
+        "explicacion": "$V \\leftrightarrow F = F$. El bicondicional es falso exactamente cuando las dos proposiciones tienen valores distintos. 'p si y solo si q' requiere que ambas sean iguales."
+      },
+      {
+        "letra": "D",
+        "texto": "El bicondicional $p \\leftrightarrow q$ nunca es falso",
+        "es_correcta": false,
+        "explicacion": "Falso. El bicondicional sí puede ser falso — precisamente cuando $p$ y $q$ tienen valores distintos (uno V y el otro F, en cualquier combinación)."
+      }
+    ]
   }
 ]

@@ -6,7 +6,7 @@ import { SimulacroTimer } from "./SimulacroTimer"
 import { NavigationDots } from "./NavigationDots"
 import { OpcionesGrid } from "@/components/ejercicios/OpcionesGrid"
 import { MathText } from "@/components/ejercicios/MathText"
-import { formatTime } from "@/lib/utils"
+import { formatTime, shuffle, shuffleOpciones } from "@/lib/utils"
 import {
   getSimulacroEnCurso,
   saveSimulacroEnCurso,
@@ -23,15 +23,6 @@ type Fase = 'bienvenida' | 'confirmando' | 'en_curso' | 'terminado'
 
 interface Props {
   ejercicios: EjercicioSimulacro[]
-}
-
-function shuffle<T>(array: T[]): T[] {
-  const arr = [...array]
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[arr[i], arr[j]] = [arr[j], arr[i]]
-  }
-  return arr
 }
 
 export function SimulacroFinalController({ ejercicios }: Props) {
@@ -181,7 +172,7 @@ export function SimulacroFinalController({ ejercicios }: Props) {
   }, [finalizarSesion])
 
   function iniciarSimulacro() {
-    const shuffled = shuffle(ejercicios)
+    const shuffled = shuffle(ejercicios).map(shuffleOpciones)
     const ts = Date.now()
     inicioTimestampRef.current = ts
     respuestasRef.current = {}

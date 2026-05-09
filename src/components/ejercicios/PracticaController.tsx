@@ -2,7 +2,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { PreguntaInteractiva } from "./PreguntaInteractiva"
-import { calcularPorcentaje } from "@/lib/utils"
+import { calcularPorcentaje, shuffle, shuffleOpciones } from "@/lib/utils"
 import { getProgress, updateModuloEtapa } from "@/lib/storage"
 import type { EjercicioPractica, ModuloProgreso } from "@/types"
 
@@ -22,9 +22,13 @@ export function PracticaController({ slug, ejercicios }: Props) {
   const [haRespondido, setHaRespondido] = useState(false)
   const [resultados, setResultados] = useState<Resultado[]>([])
   const [sesionTerminada, setSesionTerminada] = useState(false)
+  // Lazy initializer: shuffle bank, take first 5, shuffle options within each
+  const [ejerciciosSesion, setEjerciciosSesion] = useState<EjercicioPractica[]>(() =>
+    shuffle(ejercicios).slice(0, Math.min(5, ejercicios.length)).map(shuffleOpciones)
+  )
 
-  const total = ejercicios.length
-  const pregunta = ejercicios[preguntaActual]
+  const total = ejerciciosSesion.length
+  const pregunta = ejerciciosSesion[preguntaActual]
 
   function handleSelect(letra: 'A' | 'B' | 'C' | 'D') {
     if (haRespondido) return
@@ -65,6 +69,9 @@ export function PracticaController({ slug, ejercicios }: Props) {
   }
 
   function reintentar() {
+    setEjerciciosSesion(
+      shuffle(ejercicios).slice(0, Math.min(5, ejercicios.length)).map(shuffleOpciones)
+    )
     setPreguntaActual(0)
     setSeleccionada(null)
     setPistaRevelada(false)

@@ -1,0 +1,55 @@
+# Lógica y Conjuntos — Versión fácil
+
+## Proposiciones: afirmaciones que son V o F
+
+Una proposición es como una pregunta de Sí o No. "El cielo es azul" → Verdadero. "2 + 2 = 5" → Falso. Eso es todo.
+
+## Los conectivos son como botones de combinación
+
+Imagina que tienes dos interruptores: $p$ y $q$.
+
+**Negación ($\neg p$):** "Lo contrario de p." Si p está encendido (V), $\neg p$ está apagado (F). Simple.
+
+**Conjunción ($p \land q$ = "p Y q"):** Como una puerta que se abre solo si los DOS seguros están desbloqueados. Si uno está cerrado, no pasa.
+
+**Disyunción ($p \lor q$ = "p O q"):** Como una puerta que se abre si AL MENOS UNO está desbloqueado. Solo está cerrada si los dos están bloqueados a la vez.
+
+**Condicional ($p \rightarrow q$ = "Si p entonces q"):** Este es el más importante. Piénsalo así: es una promesa. "Si llueve, llevo paraguas." La promesa solo se rompe (= Falso) si llueve Y no llevas paraguas. En todos los demás casos, la promesa se cumple.
+
+| Llueve ($p$) | Paraguas ($q$) | ¿Cumpliste la promesa? |
+|---|---|---|
+| Sí | Sí | ✅ Sí |
+| Sí | No | ❌ ¡No cumpliste! |
+| No | Sí | ✅ Sí (te protegiste de más, pero no rompiste la promesa) |
+| No | No | ✅ Sí (no llovió, así que la promesa no aplica) |
+
+**Bicondicional ($p \leftrightarrow q$):** "Son iguales." Verdadero cuando los dos tienen el mismo valor (los dos V o los dos F).
+
+## De Morgan: cómo negar combinaciones
+
+Hay dos reglas mágicas:
+- Negar "p Y q" = "No p" O "No q"
+- Negar "p O q" = "No p" Y "No q"
+
+Truco: al negar, el "Y" se convierte en "O" y viceversa, y niegas cada parte.
+
+## Modus Tollens (el más útil del examen)
+
+Si sabes: "Si estudias → apruebas" y también sabes "No aprobaste"... entonces concluyes "No estudiaste." Eso es modus tollens.
+
+## Conjuntos: grupos de cosas
+
+- **Unión** ($A \cup B$): todo lo que hay en el grupo A o en el grupo B (o en los dos).
+- **Intersección** ($A \cap B$): solo lo que está en los DOS grupos al mismo tiempo.
+- **Complemento** ($A'$): todo lo que NO está en el grupo A.
+- **Diferencia** ($A - B$): lo que está en A pero no en B. Como sacar del grupo A los que también están en B.
+
+**Fórmula estrella:** Si tienes dos grupos que se mezclan:
+$$\text{Total en A o B} = \text{En A} + \text{En B} - \text{En ambos}$$
+
+(Restas "en ambos" porque los contaste dos veces.)
+
+## Cuantificadores: "todos" vs "alguno"
+
+- "**Todos** los estudiantes pasaron" → Para negarla: "**Algún** estudiante no pasó"
+- "**Algún** estudiante pasó" → Para negarla: "**Ningún** estudiante pasó"
