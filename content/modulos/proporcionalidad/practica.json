@@ -1,1 +1,386 @@
-[]
+[
+  {
+    "id": "prac1-proporcionalidad-razon",
+    "dificultad": 1,
+    "enunciado": "En un grupo hay 15 mujeres y 9 hombres. ¿Cuál es la razón de mujeres a hombres en su forma más simple?",
+    "pista": "Simplifica la razón dividiendo ambos números por su MCD.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "15:9",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 15:9 es la razón sin simplificar. $\\text{MCD}(15,9) = 3$. La razón simplificada se obtiene dividiendo ambos por 3: $15 \\div 3 = 5$ y $9 \\div 3 = 3$, dando 5:3."
+      },
+      {
+        "letra": "B",
+        "texto": "5:3",
+        "es_correcta": true,
+        "explicacion": "Es correcto. $\\text{MCD}(15, 9) = 3$. Dividiendo: $15 \\div 3 = 5$ y $9 \\div 3 = 3$. La razón simplificada es $5:3$."
+      },
+      {
+        "letra": "C",
+        "texto": "3:5",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 3:5 es la razón de hombres a mujeres (el orden invertido). La pregunta pide la razón de mujeres a hombres, que es 5:3."
+      },
+      {
+        "letra": "D",
+        "texto": "1:3",
+        "es_correcta": false,
+        "explicacion": "Es trampa: este resultado podría venir de simplificar solo uno de los dos números o de un error aritmético. El MCD de 15 y 9 es 3, no 5."
+      }
+    ]
+  },
+  {
+    "id": "prac2-proporcionalidad-porcentaje-basico",
+    "dificultad": 1,
+    "enunciado": "¿Cuánto es el 35% de 280?",
+    "pista": "Multiplica 280 por 0.35 (que es 35 dividido entre 100).",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "98",
+        "es_correcta": true,
+        "explicacion": "Es correcto. $280 \\times 0.35 = 280 \\times \\dfrac{35}{100} = \\dfrac{9800}{100} = 98$."
+      },
+      {
+        "letra": "B",
+        "texto": "35",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 35 es el propio porcentaje, no el resultado. El porcentaje siempre se aplica sobre una cantidad base (280 en este caso). $35\\%$ de 280 ≠ 35."
+      },
+      {
+        "letra": "C",
+        "texto": "80",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 80 podría resultar de calcular $280 \\times \\dfrac{35}{100}$ como $280 \\div 3.5 = 80$. El error es dividir en vez de multiplicar: $280 \\times 0.35 = 98$, no $280 \\div 0.35 = 800$."
+      },
+      {
+        "letra": "D",
+        "texto": "112",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $112 = 280 \\times 0.40$, resultado de confundir 35% con 40%. Verificación: $280 \\times 0.35 = 98$."
+      }
+    ]
+  },
+  {
+    "id": "prac3-proporcionalidad-que-porcentaje",
+    "dificultad": 1,
+    "enunciado": "35 es el ___% de 140.",
+    "pista": "Para hallar qué porcentaje representa una cantidad de otra, divide la parte entre el total y multiplica por 100.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "4%",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $4\\% = \\dfrac{4}{100} \\times 140 = 5.6 \\neq 35$. Posiblemente se dividió $\\dfrac{140}{35} = 4$, invirtiendo la fracción. La fórmula correcta es $\\dfrac{35}{140} \\times 100$."
+      },
+      {
+        "letra": "B",
+        "texto": "25%",
+        "es_correcta": true,
+        "explicacion": "Es correcto. $\\dfrac{35}{140} \\times 100 = 0.25 \\times 100 = 25\\%$. Verificación: $140 \\times 0.25 = 35$ ✓."
+      },
+      {
+        "letra": "C",
+        "texto": "40%",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $40\\% = \\dfrac{140}{35} \\times 10 = 40$... en realidad $\\dfrac{140}{35} = 4$, no 40. O bien: $\\dfrac{35}{140} \\approx 0.25$, y confundir con $0.40$. El cálculo correcto da exactamente 25%."
+      },
+      {
+        "letra": "D",
+        "texto": "35%",
+        "es_correcta": false,
+        "explicacion": "Es trampa: confundir el número que aparece en el enunciado (35) con la respuesta porcentual. El 35 es la parte, no el porcentaje. $\\dfrac{35}{140} \\times 100 = 25\\%$, no $35\\%$."
+      }
+    ]
+  },
+  {
+    "id": "prac4-proporcionalidad-regla-directa",
+    "dificultad": 2,
+    "enunciado": "Si 5 libros cuestan $\\$45.000$, ¿cuánto cuestan 8 libros del mismo tipo?",
+    "pista": "Identifica si es proporción directa (más libros, más costo). Usa la regla de tres directa.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "$\\$56.250$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $\\$56.250$ resulta de $45.000 \\times \\dfrac{8}{6.4}$... o de aplicar algún cálculo incorrecto. El precio por libro es $45.000 \\div 5 = \\$9.000$; 8 libros cuestan $8 \\times 9.000 = \\$72.000$."
+      },
+      {
+        "letra": "B",
+        "texto": "$\\$72.000$",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Proporción directa: a mayor número de libros, mayor costo. Precio por libro: $\\$45.000 \\div 5 = \\$9.000$. Para 8 libros: $8 \\times \\$9.000 = \\$72.000$."
+      },
+      {
+        "letra": "C",
+        "texto": "$\\$36.000$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $\\$36.000 = \\$45.000 \\times \\dfrac{5}{8}$... que corresponde a aplicar una regla de tres INVERSA. Más libros cuestan más, no menos. La proporción es directa."
+      },
+      {
+        "letra": "D",
+        "texto": "$\\$65.000$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: puede resultar de calcular $45.000 + (45.000 \\times 0.45)$ o alguna aproximación incorrecta. El método correcto: precio unitario $= \\$9.000$; 8 unidades = $\\$72.000$."
+      }
+    ]
+  },
+  {
+    "id": "prac5-proporcionalidad-regla-inversa",
+    "dificultad": 2,
+    "enunciado": "4 obreros terminan una obra en 15 días. ¿Cuántos días tardarán 6 obreros en terminar la misma obra, trabajando al mismo ritmo?",
+    "pista": "Más obreros → menos días. Es proporción inversa: el producto obreros × días es constante.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "22.5 días",
+        "es_correcta": false,
+        "explicacion": "Es trampa — error de aplicar regla de tres DIRECTA cuando es inversa: $\\dfrac{4 \\times 15}{6}$ invertido como $\\dfrac{6 \\times 15}{4} = 22.5$. Con más obreros la obra no puede tardar más días. La proporción es inversa: $4 \\times 15 = 6 \\times x \\Rightarrow x = 10$."
+      },
+      {
+        "letra": "B",
+        "texto": "10 días",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Proporción inversa: $4 \\times 15 = 6 \\times x \\Rightarrow x = \\dfrac{60}{6} = 10$ días. Con 50% más de obreros, el tiempo disminuye en la misma proporción."
+      },
+      {
+        "letra": "C",
+        "texto": "12 días",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 12 podría surgir de $15 - (15 \\times \\frac{1}{5}) = 15 - 3 = 12$, pensando que 2 obreros extra representan 2/6 del total... pero ese no es el método. La regla correcta: $x = \\frac{4 \\times 15}{6} = 10$."
+      },
+      {
+        "letra": "D",
+        "texto": "6 días",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 6 días coincide numéricamente con el número de obreros, lo cual es una coincidencia confusa. El cálculo correcto es $\\frac{4 \\times 15}{6} = 10$, no 6."
+      }
+    ]
+  },
+  {
+    "id": "prac6-proporcionalidad-tipo-proporcion",
+    "dificultad": 2,
+    "enunciado": "Un carro viaja a velocidad constante. Si la velocidad aumenta, el tiempo para recorrer la misma distancia...",
+    "pista": "La relación entre velocidad y tiempo es: Distancia = Velocidad × Tiempo. Si la distancia es fija, ¿qué tipo de relación hay entre velocidad y tiempo?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Aumenta, porque a mayor velocidad se necesita más tiempo.",
+        "es_correcta": false,
+        "explicacion": "Es trampa — confunde la relación. A mayor velocidad se recorre más distancia en el mismo tiempo, no se necesita más tiempo. Para una distancia fija, más velocidad significa MENOS tiempo."
+      },
+      {
+        "letra": "B",
+        "texto": "Disminuye, porque velocidad y tiempo son inversamente proporcionales.",
+        "es_correcta": true,
+        "explicacion": "Es correcto. $d = v \\times t$. Si $d$ es constante: $v \\times t = d = \\text{cte}$. Al aumentar $v$, $t$ debe disminuir para mantener el producto constante. Es proporción inversa."
+      },
+      {
+        "letra": "C",
+        "texto": "Se mantiene igual, porque la distancia no cambia.",
+        "es_correcta": false,
+        "explicacion": "Es trampa — el hecho de que la distancia sea fija no significa que el tiempo sea fijo. Al contrario: la distancia fija es la constante del producto $v \\times t$, por eso cuando $v$ aumenta, $t$ debe disminuir."
+      },
+      {
+        "letra": "D",
+        "texto": "Se duplica si la velocidad se duplica.",
+        "es_correcta": false,
+        "explicacion": "Es trampa — exactamente lo contrario ocurre. Si la velocidad se duplica, el tiempo se reduce a la MITAD (no se duplica), porque su producto debe mantenerse constante."
+      }
+    ]
+  },
+  {
+    "id": "prac7-proporcionalidad-aumento",
+    "dificultad": 2,
+    "enunciado": "Un producto costaba $\\$60.000$ y su precio aumentó un 25%. ¿Cuánto cuesta ahora?",
+    "pista": "Un aumento del 25% significa multiplicar por 1.25. Alternativamente, calcula el 25% del precio y súmalo.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "$\\$75.000$",
+        "es_correcta": true,
+        "explicacion": "Es correcto. $\\$60.000 \\times 1.25 = \\$75.000$. O bien: $25\\%$ de $\\$60.000 = \\$15.000$; precio nuevo = $\\$60.000 + \\$15.000 = \\$75.000$."
+      },
+      {
+        "letra": "B",
+        "texto": "$\\$85.000$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $\\$85.000 = \\$60.000 + \\$25.000$. Error de confundir el 25% con la cantidad fija de \\$25.000. El 25% debe calcularse sobre el precio ($25\\%$ de $\\$60.000 = \\$15.000$), no tomarse como una cifra absoluta."
+      },
+      {
+        "letra": "C",
+        "texto": "$\\$63.000$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $\\$63.000 = \\$60.000 \\times 1.05$, que sería un aumento del 5%, no del 25%. O bien $\\$60.000 + \\$3.000$ por algún cálculo erróneo del porcentaje."
+      },
+      {
+        "letra": "D",
+        "texto": "$\\$15.000$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $\\$15.000$ es el valor del aumento (el 25% de $\\$60.000$), pero el precio nuevo es el original más el aumento: $\\$60.000 + \\$15.000 = \\$75.000$."
+      }
+    ]
+  },
+  {
+    "id": "prac8-proporcionalidad-descuento",
+    "dificultad": 2,
+    "enunciado": "Un artículo tiene precio original $\\$120.000$. Tiene un descuento del 30%. ¿Cuánto pagas?",
+    "pista": "Un descuento del 30% significa que pagas el 70% del precio original. Multiplica por 0.70.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "$\\$90.000$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $\\$90.000 = \\$120.000 \\times 0.75$, que sería un descuento del 25%, no del 30%. $30\\%$ de $\\$120.000 = \\$36.000$; precio final = $\\$120.000 - \\$36.000 = \\$84.000$."
+      },
+      {
+        "letra": "B",
+        "texto": "$\\$36.000$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $\\$36.000$ es el VALOR del descuento (30% de \\$120.000), no el precio que se paga. El precio final es $\\$120.000 - \\$36.000 = \\$84.000$."
+      },
+      {
+        "letra": "C",
+        "texto": "$\\$96.000$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $\\$96.000 = \\$120.000 \\times 0.80$, que sería un descuento del 20%, no del 30%. El descuento del 30% deja pagando el 70% del precio."
+      },
+      {
+        "letra": "D",
+        "texto": "$\\$84.000$",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Descuento del 30%: se paga el $70\\%$ del precio. $\\$120.000 \\times 0.70 = \\$84.000$. Verificación: descuento = $\\$120.000 \\times 0.30 = \\$36.000$; precio = $\\$120.000 - \\$36.000 = \\$84.000$ ✓."
+      }
+    ]
+  },
+  {
+    "id": "prac9-proporcionalidad-descuentos-sucesivos",
+    "dificultad": 2,
+    "enunciado": "Un televisor cuesta $\\$500.000$. Le aplican primero un descuento del 20% y luego otro del 10% sobre el precio resultante. ¿Cuánto se paga?",
+    "pista": "Aplica los descuentos uno a uno (no los sumes). Primero calcula el precio tras el 20%; luego aplica el 10% sobre ese nuevo precio.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "$\\$350.000$",
+        "es_correcta": false,
+        "explicacion": "Es trampa — error de sumar los descuentos: $20\\% + 10\\% = 30\\%$; $\\$500.000 \\times 0.70 = \\$350.000$. Los descuentos sucesivos se aplican secuencialmente, no se suman. El descuento real es del 28%, no del 30%."
+      },
+      {
+        "letra": "B",
+        "texto": "$\\$360.000$",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Paso 1: $\\$500.000 \\times 0.80 = \\$400.000$. Paso 2: $\\$400.000 \\times 0.90 = \\$360.000$. Descuento efectivo: $1 - 0.80 \\times 0.90 = 1 - 0.72 = 28\\%$."
+      },
+      {
+        "letra": "C",
+        "texto": "$\\$400.000$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $\\$400.000$ es el precio después de solo el primer descuento (20%). No se aplicó el segundo descuento del 10%."
+      },
+      {
+        "letra": "D",
+        "texto": "$\\$450.000$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $\\$450.000 = \\$500.000 \\times 0.90$, resultado de aplicar solo el segundo descuento (10%) sin aplicar el primero (20%). Ambos descuentos deben aplicarse en orden."
+      }
+    ]
+  },
+  {
+    "id": "prac10-proporcionalidad-regla-compuesta",
+    "dificultad": 3,
+    "enunciado": "3 máquinas producen 120 piezas en 4 horas. ¿Cuántas piezas producen 5 máquinas en 6 horas?",
+    "pista": "Usa la regla de tres compuesta. Determina si cada magnitud (máquinas, horas) es directa o inversamente proporcional al resultado (piezas).",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "200 piezas",
+        "es_correcta": false,
+        "explicacion": "Es trampa: puede resultar de aplicar solo una de las dos razones — por ejemplo solo el ajuste de horas: $120 \\times \\dfrac{6}{4} = 180$... tampoco da 200. O de calcular $120 \\times \\dfrac{5}{3} = 200$ (solo ajuste de máquinas, sin ajustar horas). Deben multiplicarse ambas razones."
+      },
+      {
+        "letra": "B",
+        "texto": "240 piezas",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $240 = 120 \\times 2$, posiblemente de multiplicar solo por la razón $\\dfrac{6}{4} \\times \\dfrac{4}{3}$... o de algún error combinado. El cálculo correcto: $120 \\times \\dfrac{5}{3} \\times \\dfrac{6}{4} = 120 \\times 2.5 = 300$."
+      },
+      {
+        "letra": "C",
+        "texto": "300 piezas",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Máquinas (directa): $\\dfrac{5}{3}$. Horas (directa): $\\dfrac{6}{4}$. Resultado: $120 \\times \\dfrac{5}{3} \\times \\dfrac{6}{4} = 120 \\times \\dfrac{30}{12} = 120 \\times 2.5 = 300$."
+      },
+      {
+        "letra": "D",
+        "texto": "180 piezas",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $180 = 120 \\times \\dfrac{6}{4}$, resultado de aplicar solo la razón de horas y olvidar el ajuste por máquinas. Ambas variaciones (5 máquinas vs. 3, y 6 h vs. 4 h) deben considerarse."
+      }
+    ]
+  },
+  {
+    "id": "prac11-proporcionalidad-regla-compuesta-inversa",
+    "dificultad": 3,
+    "enunciado": "6 obreros construyen un muro trabajando 8 horas al día durante 5 días. ¿Cuántos días tardarán 4 obreros trabajando 10 horas al día en construir el mismo muro?",
+    "pista": "La magnitud a calcular son los días. Determina si cada magnitud que cambia (obreros, horas/día) es directa o inversamente proporcional a los días.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "8 días",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $8$ días podría resultar de aplicar solo la razón de obreros (inversa) sin considerar las horas: $5 \\times \\dfrac{6}{4} = 7.5 \\approx 8$. Debe incluirse la razón de horas también: $5 \\times \\dfrac{6}{4} \\times \\dfrac{8}{10} = 6$."
+      },
+      {
+        "letra": "B",
+        "texto": "6 días",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Obreros (inversa respecto a días): menos obreros → más días → razón $\\dfrac{6}{4}$. Horas/día (inversa respecto a días): más horas → menos días → razón $\\dfrac{8}{10}$. Resultado: $5 \\times \\dfrac{6}{4} \\times \\dfrac{8}{10} = 5 \\times \\dfrac{48}{40} = 5 \\times 1.2 = 6$."
+      },
+      {
+        "letra": "C",
+        "texto": "10 días",
+        "es_correcta": false,
+        "explicacion": "Es trampa — error de aplicar razón directa donde debe ser inversa: se calcula $5 \\times \\dfrac{4}{6} \\times \\dfrac{10}{8} = 5 \\times 0.833 \\approx 4.17$, que no da 10. El 10 podría venir de aplicar ambas razones directas: $5 \\times \\dfrac{4}{6} \\times \\dfrac{8}{10}$... tampoco. Verificación definitiva: si la respuesta fuera 10 días, el trabajo total sería $4 \\text{ obreros} \\times 10 \\text{ h/día} \\times 10 \\text{ días} = 400$ horas-hombre, pero el muro solo requiere $6 \\times 8 \\times 5 = 240$ horas-hombre. 400 ≠ 240, entonces 10 días es incorrecto."
+      },
+      {
+        "letra": "D",
+        "texto": "12 días",
+        "es_correcta": false,
+        "explicacion": "Es trampa — error de aplicar la razón de horas como directa en lugar de inversa: $5 \\times \\dfrac{6}{4} \\times \\dfrac{10}{8} = 5 \\times 1.5 \\times 1.25 = 9.375$, que se redondea a 9 o se confunde con 10... tampoco da 12 exacto. El 12 podría surgir de $5 \\times \\dfrac{6}{4} \\times \\dfrac{8}{5} = 6$... tampoco. Verificación definitiva: si la respuesta fuera 12 días, el trabajo total sería $4 \\times 10 \\times 12 = 480$ horas-hombre, pero el muro solo requiere $6 \\times 8 \\times 5 = 240$. 480 ≠ 240, entonces 12 días duplica el trabajo necesario."
+      }
+    ]
+  },
+  {
+    "id": "prac12-proporcionalidad-compensacion",
+    "dificultad": 3,
+    "enunciado": "El precio de un producto aumenta un 20%. Para que el ingreso total (precio × cantidad vendida) permanezca igual, ¿en qué porcentaje debe reducirse la cantidad vendida?",
+    "pista": "Si el precio se multiplica por 1.20, la cantidad debe multiplicarse por su recíproco (1/1.20) para que el producto no cambie. La reducción es 1 - 1/1.20.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "20%",
+        "es_correcta": false,
+        "explicacion": "Es trampa intuitiva: si el precio sube 20%, no basta bajar la cantidad un 20% para compensar. Si baja 20%: nuevo ingreso = $1.20P \\times 0.80Q = 0.96PQ < PQ$. Se pierde ingreso. La reducción correcta es $\\dfrac{1}{6} \\approx 16.67\\%$."
+      },
+      {
+        "letra": "B",
+        "texto": "$16.\\overline{6}\\%$ (aproximadamente 16.67%)",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Nuevo precio = $1.20P$. Para mantener el ingreso: $1.20P \\times Q_2 = P \\times Q_1$. Entonces $Q_2 = \\dfrac{Q_1}{1.20} = \\dfrac{5}{6}Q_1$. Reducción = $1 - \\dfrac{5}{6} = \\dfrac{1}{6} \\approx 16.67\\%$."
+      },
+      {
+        "letra": "C",
+        "texto": "25%",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 25% es la reducción necesaria cuando el precio BAJA un 20% (para compensar, la cantidad debe subir $\\dfrac{1}{0.80} - 1 = 25\\%$). Aquí el precio SUBE 20%, por lo que la reducción es menor: $\\dfrac{1}{6} \\approx 16.67\\%$."
+      },
+      {
+        "letra": "D",
+        "texto": "10%",
+        "es_correcta": false,
+        "explicacion": "Es trampa: podría resultar de dividir el aumento entre 2 ($20\\% \\div 2 = 10\\%$) sin fundamento matemático. La reducción correcta se calcula como $1 - \\dfrac{1}{1.20} = \\dfrac{1}{6} \\approx 16.67\\%$."
+      }
+    ]
+  }
+]

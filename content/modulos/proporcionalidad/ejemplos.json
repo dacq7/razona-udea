@@ -1,1 +1,57 @@
-[]
+[
+  {
+    "id": "ej1-proporcionalidad-regla-tres-directa",
+    "enunciado": "Si 8 metros de tela cuestan $\\$56.000$, ¿cuánto cuestan 15 metros de la misma tela?",
+    "pasos": [
+      "Paso 1 — Identificar la proporcionalidad: más metros → mayor precio → proporción directa.",
+      "Paso 2 — Plantear la regla de tres: $\\dfrac{8 \\text{ m}}{\\$56.000} = \\dfrac{15 \\text{ m}}{x}$.",
+      "Paso 3 — Aplicar productos cruzados: $8 \\times x = 56.000 \\times 15$.",
+      "Paso 4 — Despejar: $x = \\dfrac{56.000 \\times 15}{8} = \\dfrac{840.000}{8} = \\$105.000$."
+    ],
+    "conclusion": "Los 15 metros cuestan $\\mathbf{\\$105.000}$. Alternativa: precio por metro = $56.000 \\div 8 = \\$7.000$; luego $7.000 \\times 15 = \\$105.000$."
+  },
+  {
+    "id": "ej2-proporcionalidad-regla-tres-inversa",
+    "enunciado": "12 obreros construyen una bodega en 20 días. ¿Cuántos días tardarán 15 obreros (al mismo ritmo) en construir la misma bodega?",
+    "pasos": [
+      "Paso 1 — Identificar la proporcionalidad: más obreros → menos días → proporción INVERSA.",
+      "Paso 2 — En proporción inversa el producto es constante: $\\text{obreros}_1 \\times \\text{días}_1 = \\text{obreros}_2 \\times \\text{días}_2$.",
+      "Paso 3 — Sustituir: $12 \\times 20 = 15 \\times x$.",
+      "Paso 4 — Despejar: $x = \\dfrac{12 \\times 20}{15} = \\dfrac{240}{15} = 16$ días."
+    ],
+    "conclusion": "Los 15 obreros tardan $\\mathbf{16}$ días. El error clásico (usar regla directa) daría 25 días, lo cual es absurdo: más obreros no pueden tardar más."
+  },
+  {
+    "id": "ej3-proporcionalidad-regla-tres-compuesta",
+    "enunciado": "4 impresoras imprimen 600 páginas en 3 horas. ¿Cuántas páginas imprimen 7 impresoras en 5 horas?",
+    "pasos": [
+      "Paso 1 — Magnitud a calcular: páginas.",
+      "Paso 2 — Impresoras: 4 → 7. Más impresoras → más páginas → DIRECTA. Razón: $\\dfrac{7}{4}$.",
+      "Paso 3 — Horas: 3 → 5. Más horas → más páginas → DIRECTA. Razón: $\\dfrac{5}{3}$.",
+      "Paso 4 — Resultado: $600 \\times \\dfrac{7}{4} \\times \\dfrac{5}{3} = 600 \\times \\dfrac{35}{12} = \\dfrac{21000}{12} = 1750$ páginas."
+    ],
+    "conclusion": "$\\mathbf{1750}$ páginas. Verificación parcial: $600 \\times \\frac{7}{4} = 1050$ (solo por impresoras), $1050 \\times \\frac{5}{3} = 1750$ (ajustando horas)."
+  },
+  {
+    "id": "ej4-proporcionalidad-descuentos-sucesivos",
+    "enunciado": "Un televisor cuesta $\\$800.000$. Le aplican primero un descuento del 25% y luego un 10% sobre el precio resultante. ¿Cuánto se paga?",
+    "pasos": [
+      "Paso 1 — Primer descuento (25%): $\\$800.000 \\times 0.75 = \\$600.000$.",
+      "Paso 2 — Segundo descuento (10% sobre el nuevo precio): $\\$600.000 \\times 0.90 = \\$540.000$.",
+      "Paso 3 — Descuento efectivo total: $1 - (0.75 \\times 0.90) = 1 - 0.675 = 32.5\\%$, no $35\\%$.",
+      "Paso 4 — Si se sumaran los descuentos (error frecuente): $35\\%$ de $\\$800.000 = \\$280.000$ → precio = $\\$520.000 \\neq \\$540.000$."
+    ],
+    "conclusion": "El precio final es $\\mathbf{\\$540.000}$ (descuento real: 32.5%). Sumar los descuentos porcentuales sobreestima el ahorro."
+  },
+  {
+    "id": "ej5-proporcionalidad-probabilidad",
+    "enunciado": "Una bolsa tiene 5 bolas rojas, 3 azules y 2 verdes. Se saca una al azar. ¿Cuál es la probabilidad de sacar roja o azul?",
+    "pasos": [
+      "Paso 1 — Total de casos posibles: $5 + 3 + 2 = 10$ bolas.",
+      "Paso 2 — 'Roja' y 'azul' son mutuamente excluyentes (una bola no puede ser ambas).",
+      "Paso 3 — $P(\\text{roja}) = \\dfrac{5}{10}$, $P(\\text{azul}) = \\dfrac{3}{10}$.",
+      "Paso 4 — $P(\\text{roja o azul}) = \\dfrac{5}{10} + \\dfrac{3}{10} = \\dfrac{8}{10} = \\dfrac{4}{5}$."
+    ],
+    "conclusion": "La probabilidad es $\\dfrac{4}{5} = 80\\%$. Los eventos excluyentes se suman; los eventos independientes se multiplican."
+  }
+]

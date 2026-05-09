@@ -1,3 +1,197 @@
 # Proporcionalidad y Porcentajes
 
-Contenido en desarrollo. ¡Vuelve pronto!
+Este módulo cubre los temas que el examen UdeA presenta con mayor frecuencia en contextos "de la vida real": precios, descuentos, obras, velocidad, probabilidad. El dominio de la regla de tres compuesta y los descuentos sucesivos marca la diferencia entre un resultado bueno y uno excelente.
+
+## 1. Razones y proporciones
+
+Una **razón** es la comparación de dos cantidades mediante la división. Se escribe $a : b$ o $\frac{a}{b}$.
+
+**Simplificación:** $\frac{15}{9} = \frac{5}{3}$ (dividiendo por MCD = 3). La razón simplificada es $5:3$.
+
+Una **proporción** es la igualdad de dos razones:
+
+$$\frac{a}{b} = \frac{c}{d}$$
+
+**Propiedad fundamental (productos cruzados):** En una proporción, el producto de los extremos es igual al producto de los medios:
+
+$$a \times d = b \times c$$
+
+Esto permite encontrar cualquier término desconocido. Si $\frac{3}{x} = \frac{9}{12}$, entonces $3 \times 12 = 9 \times x$, así $x = \frac{36}{9} = 4$.
+
+## 2. Proporción directa
+
+Dos magnitudes son **directamente proporcionales** si al multiplicar una por un factor, la otra se multiplica por el mismo factor.
+
+**Indicadores en el enunciado:** "a mayor... mayor", precio vs. cantidad comprada, distancia recorrida vs. tiempo a velocidad constante, materiales vs. producción.
+
+**Tabla ejemplo:**
+
+| Horas trabajadas | 2 | 4 | 6 | 8 |
+|-----------------|---|---|---|---|
+| Piezas producidas | 30 | 60 | 90 | 120 |
+
+La razón $\frac{\text{piezas}}{\text{horas}} = 15$ es constante.
+
+**Fórmula:** $\frac{x_1}{y_1} = \frac{x_2}{y_2}$, o equivalentemente, $x_1 \cdot y_2 = x_2 \cdot y_1$.
+
+## 3. Proporción inversa
+
+Dos magnitudes son **inversamente proporcionales** si al multiplicar una por un factor, la otra se divide por ese mismo factor (su producto es constante).
+
+**Indicadores en el enunciado:** "a mayor... menor", número de obreros vs. días para terminar una obra, velocidad vs. tiempo para recorrer una distancia fija.
+
+**Tabla ejemplo:**
+
+| Obreros | 2 | 4 | 8 |
+|---------|---|---|---|
+| Días | 24 | 12 | 6 |
+
+El producto $\text{obreros} \times \text{días} = 48$ es constante.
+
+**Fórmula:** $x_1 \cdot y_1 = x_2 \cdot y_2$
+
+## 4. Regla de tres simple
+
+La regla de tres permite encontrar un valor desconocido cuando se conocen tres valores relacionados.
+
+### Regla de tres directa
+
+Si $x$ e $y$ son directamente proporcionales:
+
+$$\frac{x_1}{y_1} = \frac{x_2}{y_2} \implies y_2 = \frac{y_1 \cdot x_2}{x_1}$$
+
+**Ejemplo:** Si 5 kg de fruta cuestan \$12.500, ¿cuánto cuestan 8 kg?
+
+$$y_2 = \frac{12\,500 \times 8}{5} = \$20\,000$$
+
+### Regla de tres inversa
+
+Si $x$ e $y$ son inversamente proporcionales:
+
+$$x_1 \cdot y_1 = x_2 \cdot y_2 \implies y_2 = \frac{x_1 \cdot y_1}{x_2}$$
+
+**Ejemplo:** 4 obreros terminan una obra en 15 días. ¿Cuántos días tardan 6 obreros?
+
+$$y_2 = \frac{4 \times 15}{6} = 10 \text{ días}$$
+
+**Error frecuente:** aplicar regla de tres directa cuando la proporcionalidad es inversa. Para identificar: si al aumentar uno el otro disminuye → inversa. Si ambos aumentan o disminuyen juntos → directa.
+
+## 5. Regla de tres compuesta
+
+Cuando intervienen **3 o más magnitudes** que afectan el resultado, se usa la regla de tres compuesta.
+
+**Método paso a paso:**
+
+1. Identifica la magnitud que quieres calcular (el resultado).
+2. Para cada magnitud que cambia, determina si es **directa** o **inversamente** proporcional al resultado.
+3. Si es **directa**: escribe la razón $\frac{\text{nuevo}}{\text{viejo}}$.
+4. Si es **inversa**: escribe la razón **invertida** $\frac{\text{viejo}}{\text{nuevo}}$.
+5. Multiplica el valor original del resultado por todos esos cocientes.
+
+**Ejemplo:** 3 máquinas producen 120 piezas en 4 horas. ¿Cuántas piezas producen 5 máquinas en 6 horas?
+
+| Magnitud | Antes | Después | ¿Directa? | Razón |
+|----------|-------|---------|-----------|-------|
+| Máquinas | 3 | 5 | Sí (más máquinas, más piezas) | $\frac{5}{3}$ |
+| Horas | 4 | 6 | Sí (más horas, más piezas) | $\frac{6}{4}$ |
+
+$$\text{Piezas}_2 = 120 \times \frac{5}{3} \times \frac{6}{4} = 120 \times \frac{30}{12} = 120 \times 2.5 = 300$$
+
+**Ejemplo con inversa:** 6 obreros construyen un muro trabajando 8 h/día en 5 días. ¿Cuántos días tardan 4 obreros trabajando 10 h/día?
+
+| Magnitud | Antes | Después | ¿Directa al resultado (días)? | Razón |
+|----------|-------|---------|-------------------------------|-------|
+| Obreros | 6 | 4 | Inversa (menos obreros → más días) | $\frac{6}{4}$ |
+| Horas/día | 8 | 10 | Inversa (más horas → menos días) | $\frac{8}{10}$ |
+
+$$\text{Días}_2 = 5 \times \frac{6}{4} \times \frac{8}{10} = 5 \times \frac{48}{40} = 5 \times 1.2 = 6 \text{ días}$$
+
+## 6. Porcentajes
+
+### Cálculo básico
+
+- **X% de Y:** $Y \times \frac{X}{100}$. Ej: $30\%$ de $250 = 250 \times 0.30 = 75$.
+- **¿Qué % de Y es X?:** $\frac{X}{Y} \times 100$. Ej: ¿Qué % de 140 es 35? $\frac{35}{140} \times 100 = 25\%$.
+- **Aumento de X%:** multiplica por $(1 + \frac{X}{100})$. Ej: aumentar \$80 en 15% → $80 \times 1.15 = \$92$.
+- **Descuento de X%:** multiplica por $(1 - \frac{X}{100})$. Ej: descontar 30% de \$120 → $120 \times 0.70 = \$84$.
+
+### Descuentos sucesivos
+
+**Un error gravísimo y frecuente:** aplicar la suma de los descuentos al precio original.
+
+Si hay un descuento del 20% seguido de uno del 10%:
+
+❌ Incorrecto: $30\%$ de descuento total.  
+✅ Correcto: $\text{Precio} \times 0.80 \times 0.90 = \text{Precio} \times 0.72$
+
+El descuento efectivo es $28\%$, no $30\%$. El segundo descuento se aplica sobre el precio **ya reducido**, no sobre el original.
+
+**Fórmula para descuentos sucesivos $d_1$ y $d_2$:**
+
+$$\text{Factor} = \left(1 - \frac{d_1}{100}\right) \times \left(1 - \frac{d_2}{100}\right)$$
+
+## 7. Variaciones porcentuales no simétricas
+
+**Principio clave:** los porcentajes no son simétricos. Un aumento de $X\%$ y luego una disminución de $X\%$ NO devuelven al valor original.
+
+**Demostración:** Precio original = 100.
+- Aumenta 50%: $100 \times 1.50 = 150$
+- Baja 50%: $150 \times 0.50 = 75$
+
+Se perdió un 25%, no se llegó al punto de partida.
+
+**¿Por qué?** El 50% de bajada se calcula sobre 150, que es mayor que el original 100.
+
+**Variación porcentual neta:**
+
+$$\text{Variación} = (1 + \frac{a}{100}) \times (1 - \frac{b}{100}) - 1$$
+
+Ejemplo: aumenta 40%, baja 40%: $(1.40)(0.60) = 0.84$. Variación = $-16\%$ (pérdida del 16%).
+
+## 8. Compensaciones multiplicativas
+
+Si dos magnitudes forman un **producto constante** (p. ej., precio × cantidad = ingreso fijo), al cambiar una, la otra debe ajustarse para compensar.
+
+**Si la magnitud A aumenta en $a\%$:** el nuevo factor es $(1 + \frac{a}{100})$. Para que el producto no cambie, la magnitud B debe multiplicarse por $\frac{1}{1 + a/100}$.
+
+Reducción porcentual de B: $1 - \frac{1}{1 + a/100} = \frac{a/100}{1 + a/100}$
+
+**Ejemplo:** El precio sube 20% ($\times 1.20$). La cantidad debe bajar en:
+
+$$1 - \frac{1}{1.20} = 1 - \frac{5}{6} = \frac{1}{6} \approx 16.67\%$$
+
+**Si A baja en $b\%$:** B debe subir en $\frac{b/100}{1 - b/100}$ para compensar.
+
+**Ejemplo:** El precio baja 25% ($\times 0.75$). La cantidad debe subir en:
+
+$$\frac{1}{0.75} - 1 = \frac{4}{3} - 1 = \frac{1}{3} \approx 33.33\%$$
+
+**Nota:** el porcentaje de compensación siempre es asimétrico — si A sube X%, B no baja X% para compensar (sino menos); si A baja X%, B debe subir más de X%.
+
+## 9. Probabilidad simple
+
+La **probabilidad** mide qué tan probable es que ocurra un evento.
+
+$$P(A) = \frac{\text{casos favorables}}{\text{casos totales}}$$
+
+Siempre $0 \leq P(A) \leq 1$. $P(A) = 0$ es imposible; $P(A) = 1$ es seguro.
+
+### Evento complementario
+
+$$P(A') = 1 - P(A)$$
+
+Si la probabilidad de que llueva es 0.3, la de que no llueva es $1 - 0.3 = 0.7$.
+
+### Eventos mutuamente excluyentes (no pueden ocurrir a la vez)
+
+$$P(A \text{ o } B) = P(A) + P(B)$$
+
+Al lanzar un dado: $P(\text{sacar 2 o 5}) = \frac{1}{6} + \frac{1}{6} = \frac{2}{6} = \frac{1}{3}$
+
+### Eventos independientes (uno no afecta al otro)
+
+$$P(A \text{ y } B) = P(A) \times P(B)$$
+
+Lanzar dos monedas: $P(\text{cara y cara}) = \frac{1}{2} \times \frac{1}{2} = \frac{1}{4}$
+
+**Error frecuente:** sumar probabilidades de eventos independientes en vez de multiplicarlas.
