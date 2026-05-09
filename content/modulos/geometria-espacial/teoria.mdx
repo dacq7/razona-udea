@@ -1,3 +1,268 @@
 # Razonamiento Geométrico y Espacial
 
-Contenido en desarrollo. ¡Vuelve pronto!
+La geometría en el examen UdeA no exige demostrar teoremas — exige aplicar fórmulas correctamente, leer figuras con precisión y razonar sobre transformaciones espaciales. Los errores más frecuentes no son de concepto sino de descuido: usar diámetro donde va radio, olvidar el factor $1/3$ en un cono, o contar el mismo triángulo dos veces.
+
+## 1. Polígonos planos: definiciones y propiedades
+
+Un **polígono** es una figura plana cerrada formada por segmentos rectos llamados lados.
+
+### Triángulos
+
+Un **triángulo** tiene 3 lados y 3 ángulos interiores que siempre suman $180°$.
+
+**Clasificación por ángulos:**
+
+| Tipo | Característica |
+|---|---|
+| Acutángulo | Los tres ángulos son menores de $90°$ |
+| Rectángulo | Tiene exactamente un ángulo de $90°$ (ángulo recto) |
+| Obtusángulo | Tiene exactamente un ángulo mayor de $90°$ |
+
+**Clasificación por lados:**
+
+| Tipo | Característica |
+|---|---|
+| Equilátero | Los tres lados son iguales; los tres ángulos miden $60°$ |
+| Isósceles | Dos lados son iguales; los ángulos opuestos a esos lados son iguales |
+| Escaleno | Los tres lados son diferentes; los tres ángulos son diferentes |
+
+**Propiedad clave:** en cualquier triángulo, el lado mayor está opuesto al ángulo mayor. Si un triángulo tiene un ángulo de $90°$, el lado opuesto a ese ángulo (la **hipotenusa**) es el mayor de los tres.
+
+### Cuadriláteros
+
+Un **cuadrilátero** tiene 4 lados y sus ángulos interiores siempre suman $360°$.
+
+| Figura | Propiedades |
+|---|---|
+| Cuadrado | 4 lados iguales, 4 ángulos rectos ($90°$) |
+| Rectángulo | 2 pares de lados iguales, 4 ángulos rectos |
+| Rombo | 4 lados iguales, ángulos opuestos iguales (no necesariamente $90°$) |
+| Paralelogramo | 2 pares de lados paralelos e iguales, ángulos opuestos iguales |
+| Trapecio | Exactamente un par de lados paralelos (bases mayor $B$ y menor $b$) |
+
+### Suma de ángulos internos de un polígono
+
+Para un polígono de $n$ lados:
+
+$$\text{Suma de ángulos internos} = (n-2) \cdot 180°$$
+
+| Polígono | $n$ | Suma de ángulos |
+|---|---|---|
+| Triángulo | 3 | $(3-2) \cdot 180° = 180°$ |
+| Cuadrilátero | 4 | $(4-2) \cdot 180° = 360°$ |
+| Pentágono | 5 | $(5-2) \cdot 180° = 540°$ |
+| Hexágono | 6 | $(6-2) \cdot 180° = 720°$ |
+
+En un **polígono regular** (todos los lados y ángulos iguales), cada ángulo interno mide $\dfrac{(n-2) \cdot 180°}{n}$.
+
+## 2. Perímetro
+
+El **perímetro** es la longitud total del borde de una figura — la suma de todos sus lados.
+
+| Figura | Perímetro |
+|---|---|
+| Cuadrado de lado $l$ | $P = 4l$ |
+| Rectángulo de base $b$ y altura $h$ | $P = 2(b + h)$ |
+| Triángulo de lados $a$, $b$, $c$ | $P = a + b + c$ |
+| Polígono regular de $n$ lados de longitud $l$ | $P = n \cdot l$ |
+| Círculo de radio $r$ | $C = 2\pi r$ (se llama circunferencia) |
+
+**Trampa frecuente:** confundir perímetro con área. El perímetro se mide en unidades lineales (cm, m), el área en unidades cuadradas ($\text{cm}^2$, $\text{m}^2$).
+
+## 3. Áreas de figuras planas
+
+El **área** mide la superficie encerrada por una figura.
+
+| Figura | Fórmula del área |
+|---|---|
+| Cuadrado | $A = l^2$ |
+| Rectángulo | $A = base \times altura$ |
+| Triángulo | $A = \dfrac{base \times altura}{2}$ |
+| Paralelogramo | $A = base \times altura$ |
+| Trapecio | $A = \dfrac{(B + b) \times h}{2}$ |
+| Círculo | $A = \pi r^2$ |
+
+**Observaciones importantes:**
+
+- En el **triángulo**, la altura es la distancia perpendicular desde el vértice opuesto hasta la base (no necesariamente un lado del triángulo).
+- En el **trapecio**, $B$ es la base mayor, $b$ es la base menor, $h$ es la altura perpendicular entre las dos bases.
+- En el **círculo**, $r$ es el radio (la mitad del diámetro). **Error clásico:** usar el diámetro $d$ en lugar de $r$. Si el problema da el diámetro, divide entre 2 antes de aplicar la fórmula.
+
+### Áreas de figuras compuestas
+
+Cuando una figura se puede descomponer en figuras más simples, se calcula el área de cada parte y se suman (o restan si hay partes quitadas).
+
+**Ejemplo:** un terreno en forma de L se puede dividir en dos rectángulos.
+
+## 4. Teorema de Pitágoras
+
+En un **triángulo rectángulo** (con un ángulo de $90°$), si los lados que forman el ángulo recto se llaman **catetos** ($a$ y $b$) y el lado opuesto al ángulo recto se llama **hipotenusa** ($c$), entonces:
+
+$$a^2 + b^2 = c^2$$
+
+### Cuándo aplicarlo
+
+- Cuando tienes un triángulo rectángulo y conoces 2 de los 3 lados.
+- Para encontrar una distancia "en línea recta" en problemas de planos o coordenadas.
+- Para verificar si un triángulo es rectángulo: si $a^2 + b^2 = c^2$ con $c$ el lado más largo, sí lo es.
+
+### Aplicación inversa
+
+Para encontrar un cateto dado el otro cateto y la hipotenusa:
+
+$$a = \sqrt{c^2 - b^2}$$
+
+**Ternas pitagóricas frecuentes** (valores exactos sin raíces):
+
+| Cateto 1 | Cateto 2 | Hipotenusa |
+|---|---|---|
+| 3 | 4 | 5 |
+| 5 | 12 | 13 |
+| 8 | 15 | 17 |
+| 6 | 8 | 10 (múltiplo de 3-4-5) |
+| 9 | 12 | 15 (múltiplo de 3-4-5) |
+
+**Error crítico:** poner un cateto en el lugar de la hipotenusa. La hipotenusa siempre es el lado **más largo** — el que está frente al ángulo de $90°$.
+
+## 5. Cuerpos sólidos: volumen y área superficial
+
+El **volumen** mide el espacio tridimensional encerrado por un cuerpo.
+
+| Cuerpo | Volumen | Área superficial |
+|---|---|---|
+| Cubo de lado $l$ | $V = l^3$ | $A = 6l^2$ |
+| Prisma rectangular ($l \times a \times h$) | $V = l \cdot a \cdot h$ | $A = 2(la + lh + ah)$ |
+| Cilindro | $V = \pi r^2 h$ | $A = 2\pi r^2 + 2\pi r h$ |
+| Esfera | $V = \dfrac{4}{3}\pi r^3$ | $A = 4\pi r^2$ |
+| Pirámide de base $A_b$ y altura $h$ | $V = \dfrac{A_b \cdot h}{3}$ | (depende de la forma de la base) |
+| Cono | $V = \dfrac{\pi r^2 h}{3}$ | $A = \pi r^2 + \pi r l$ (donde $l$ es la generatriz) |
+
+**Notas críticas:**
+
+- **Pirámide y cono:** llevan el factor $\dfrac{1}{3}$. Error clásico: olvidar dividir entre 3.
+- **Cilindro:** $r$ es el radio de la base circular, $h$ es la altura. Si el problema da el diámetro, dividirlo entre 2 primero.
+- **Esfera:** solo depende del radio. El volumen crece al cubo del radio.
+
+## 6. Razonamiento espacial: rotaciones y simetrías
+
+### Rotaciones
+
+Rotar una figura significa girarla alrededor de un punto central sin cambiar su forma.
+
+| Rotación | Efecto |
+|---|---|
+| $90°$ (un cuarto de vuelta) | Lo que apuntaba arriba, ahora apunta a la derecha (sentido horario) o a la izquierda (antihorario) |
+| $180°$ (media vuelta) | La figura queda invertida (como si la voltearas boca abajo) |
+| $270°$ (tres cuartos) | Equivale a $90°$ en sentido contrario |
+| $360°$ (vuelta completa) | La figura regresa a su posición original |
+
+**Estrategia práctica:** imagina el objeto como una flecha. En una rotación horaria de $90°$, si la flecha apuntaba arriba, ahora apunta a la derecha. A $180°$ apunta abajo. A $270°$ apunta a la izquierda. A $360°$ vuelve a apuntar arriba.
+
+### Simetría axial
+
+Una figura tiene **simetría axial** (o de reflexión) si existe un eje tal que al doblar la figura por ese eje, ambas mitades coinciden exactamente.
+
+- Cuadrado: 4 ejes de simetría (2 por los lados, 2 por las diagonales).
+- Rectángulo: 2 ejes (por los lados; las diagonales no son ejes de simetría).
+- Triángulo equilátero: 3 ejes.
+- Círculo: infinitos ejes.
+
+### Simetría central
+
+Una figura tiene **simetría central** respecto a un punto $O$ si para cada punto $P$ de la figura existe un punto $P'$ también en la figura tal que $O$ es el punto medio de $PP'$. Visualmente es una rotación de $180°$.
+
+## 7. Conteo de figuras
+
+Un tipo frecuente en el examen UdeA: contar cuántas figuras (triángulos, cuadrados) hay en un diagrama compuesto, incluyendo las formadas por combinación de partes.
+
+### Estrategia sistemática: contar por tamaños
+
+En lugar de contar al azar, organiza el conteo por tamaño de figura:
+
+**Ejemplo — triángulos en una tira de $n$ triángulos pequeños:**
+
+Para una tira de 4 triángulos en fila:
+- Triángulos de tamaño 1 (individuales): 4
+- Triángulos de tamaño 2 (formados por 2 consecutivos): 3
+- Triángulos de tamaño 3 (formados por 3 consecutivos): 2
+- Triángulos de tamaño 4 (el completo): 1
+- **Total:** $4 + 3 + 2 + 1 = 10$
+
+**Ejemplo — cuadrados en una cuadrícula $n \times n$:**
+
+El número total de cuadrados (de todos los tamaños) en una cuadrícula $n \times n$ es:
+
+$$\text{Total} = \sum_{k=1}^{n} (n - k + 1)^2 = 1^2 + 2^2 + 3^2 + \cdots + n^2$$
+
+Para $n = 3$: $1^2 + 2^2 + 3^2 = 1 + 4 + 9 = 14$ cuadrados.
+
+### Error clásico
+
+Contar solo los cuadrados/triángulos pequeños individuales y olvidar los compuestos (los formados por la combinación de varios pequeños). Siempre pregúntate: "¿puedo combinar estas piezas para formar una figura más grande del mismo tipo?"
+
+## 8. Ruedas, poleas y engranajes
+
+Este tema combina geometría con razonamiento mecánico y es muy frecuente en el examen UdeA.
+
+### Ruedas conectadas por correa (poleas)
+
+Cuando dos ruedas están conectadas por una correa o cadena, el punto de contacto de la correa se mueve a la misma velocidad en ambas ruedas. Esto significa:
+
+$$v_{\text{lineal}} = \omega_1 \cdot r_1 = \omega_2 \cdot r_2$$
+
+donde $\omega$ es la velocidad angular (vueltas por segundo) y $r$ es el radio.
+
+Por lo tanto:
+
+$$\frac{\omega_1}{\omega_2} = \frac{r_2}{r_1}$$
+
+**Regla práctica:** la rueda más grande gira **más lento**, la más pequeña gira **más rápido**. La relación es inversamente proporcional al radio.
+
+**Ejemplo:** rueda A con radio 20 cm conectada a rueda B con radio 5 cm. Por cada vuelta de A, B da $20/5 = 4$ vueltas.
+
+El **sentido de rotación** con correa: ambas ruedas giran en el mismo sentido (si la correa es recta).
+
+### Engranajes en contacto directo
+
+Dos engranajes que se tocan directamente comparten la misma velocidad lineal en el punto de contacto. La relación de transmisión se basa en el número de dientes:
+
+$$\frac{\text{vueltas}_1}{\text{vueltas}_2} = \frac{\text{dientes}_2}{\text{dientes}_1}$$
+
+**Regla práctica:** el engranaje con **más dientes** gira **más lento**.
+
+**Sentido de rotación:** dos engranajes en contacto directo giran en **sentidos opuestos**. En una cadena de $N$ engranajes en contacto:
+- Si $N$ es **impar**, el primero y el último giran en el **mismo** sentido.
+- Si $N$ es **par**, el primero y el último giran en **sentidos opuestos**.
+
+**Ejemplo:** engranaje A con 30 dientes engrana con B (12 dientes). Por cada vuelta de A, B da $30/12 = 2.5$ vueltas. Si A gira en sentido horario, B gira en sentido antihorario.
+
+### Relación de transmisión
+
+$$\text{Relación de transmisión} = \frac{\text{dientes del engranaje conductor}}{\text{dientes del engranaje conducido}} = \frac{\text{vueltas del conducido}}{\text{vueltas del conductor}}$$
+
+Una relación mayor que 1 significa que el conducido gira más rápido que el conductor (reducción de torque, aumento de velocidad). Menor que 1 es lo contrario.
+
+### Bicicleta como ejemplo
+
+El plato (engranaje grande, conectado a los pedales) y el piñón (engranaje pequeño, en la rueda trasera) están conectados por cadena. Cuando el plato tiene más dientes que el piñón, cada pedalada produce más de una vuelta de la rueda trasera — la bicicleta avanza más rápido.
+
+## 9. Series geométricas espaciales
+
+Algunos problemas presentan figuras que crecen en patrón regular.
+
+**Ejemplo 1 — cuadrados en una cuadrícula creciente:**
+
+Figura 1: $1 \times 1$ (1 cuadrado). Figura 2: $2 \times 2$ (4 cuadrados). Figura 3: $3 \times 3$ (9 cuadrados).
+
+El número de cuadrados en la figura $n$ es $n^2$.
+
+**Ejemplo 2 — cuadrados en el perímetro de la figura $n$:**
+
+En una cuadrícula $n \times n$:
+- Cuadrados totales: $n^2$
+- Cuadrados interiores: $(n-2)^2$ (para $n \geq 3$)
+- Cuadrados en el perímetro: $n^2 - (n-2)^2 = 4(n-1)$
+
+Para $n = 4$: cuadrados totales = 16, interiores = 4, en perímetro = 12.
+
+**Estrategia:** determinar si se pide el total de cuadrados o solo los del borde/interior, y aplicar la fórmula correcta.

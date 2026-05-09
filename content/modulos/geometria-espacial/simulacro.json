@@ -1,1 +1,250 @@
-[]
+[
+  {
+    "id": "sim1-geometria-espacial-trapecio-area",
+    "modulo_slug": "geometria-espacial",
+    "enunciado": "Un trapecio tiene base mayor de 14 cm, base menor de 8 cm y altura de 6 cm. ¿Cuál es su área?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "$66 \\text{ cm}^2$",
+        "es_correcta": true,
+        "explicacion": "Correcto. Área del trapecio $= \\dfrac{(B + b) \\times h}{2} = \\dfrac{(14 + 8) \\times 6}{2} = \\dfrac{22 \\times 6}{2} = \\dfrac{132}{2} = 66 \\text{ cm}^2$."
+      },
+      {
+        "letra": "B",
+        "texto": "$132 \\text{ cm}^2$",
+        "es_correcta": false,
+        "explicacion": "Error: $132 = (14 + 8) \\times 6$, que olvida dividir entre 2. La fórmula del trapecio es $\\dfrac{(B+b) \\times h}{2}$, siempre con la división. Área correcta: $132 / 2 = 66 \\text{ cm}^2$."
+      },
+      {
+        "letra": "C",
+        "texto": "$84 \\text{ cm}^2$",
+        "es_correcta": false,
+        "explicacion": "Error: $84 = 14 \\times 6$, que usa solo la base mayor ignorando la base menor. El trapecio promedia sus dos bases: $\\dfrac{(14+8)}{2} \\times 6 = 11 \\times 6 = 66 \\text{ cm}^2$."
+      },
+      {
+        "letra": "D",
+        "texto": "$48 \\text{ cm}^2$",
+        "es_correcta": false,
+        "explicacion": "Error: $48 = 8 \\times 6$, que usa solo la base menor. La fórmula del trapecio requiere AMBAS bases: $\\dfrac{(14+8) \\times 6}{2} = 66 \\text{ cm}^2$."
+      }
+    ]
+  },
+  {
+    "id": "sim2-geometria-espacial-pitagoras-cateto",
+    "modulo_slug": "geometria-espacial",
+    "enunciado": "Un triángulo rectángulo tiene una hipotenusa de 17 cm y un cateto de 8 cm. ¿Cuánto mide el otro cateto?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "9 cm",
+        "es_correcta": false,
+        "explicacion": "Error: $9 = 17 - 8$, que resta los lados directamente. Pitágoras no se aplica restando: $b = \\sqrt{17^2 - 8^2} = \\sqrt{289 - 64} = \\sqrt{225} = 15$ cm."
+      },
+      {
+        "letra": "B",
+        "texto": "15 cm",
+        "es_correcta": true,
+        "explicacion": "Correcto. $b = \\sqrt{c^2 - a^2} = \\sqrt{17^2 - 8^2} = \\sqrt{289 - 64} = \\sqrt{225} = 15$ cm. Esta es la terna pitagórica $8$-$15$-$17$."
+      },
+      {
+        "letra": "C",
+        "texto": "$\\sqrt{353}$ cm",
+        "es_correcta": false,
+        "explicacion": "Error: $\\sqrt{353} = \\sqrt{17^2 + 8^2} = \\sqrt{289 + 64}$, que SUMA en lugar de restar. Cuando buscas un cateto conociendo la hipotenusa, debes RESTAR: $\\sqrt{17^2 - 8^2} = \\sqrt{225} = 15$ cm."
+      },
+      {
+        "letra": "D",
+        "texto": "19 cm",
+        "es_correcta": false,
+        "explicacion": "Error: $19 = 17 + 8 - 6$ o algún cálculo sin base. La terna pitagórica correcta es $8$-$15$-$17$: $8^2 + 15^2 = 64 + 225 = 289 = 17^2$. El cateto desconocido es 15 cm."
+      }
+    ]
+  },
+  {
+    "id": "sim3-geometria-espacial-angulo-poligono",
+    "modulo_slug": "geometria-espacial",
+    "enunciado": "En un hexágono regular, ¿cuánto mide cada ángulo interior?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "$60°$",
+        "es_correcta": false,
+        "explicacion": "Error: $60°$ es el ángulo interior de un TRIÁNGULO equilátero (o el ángulo central de un hexágono), no el interior. Para el hexágono: suma de ángulos $= (6-2) \\times 180° = 720°$. Cada ángulo: $720° / 6 = 120°$."
+      },
+      {
+        "letra": "B",
+        "texto": "$120°$",
+        "es_correcta": true,
+        "explicacion": "Correcto. Suma de ángulos internos del hexágono: $(6-2) \\times 180° = 4 \\times 180° = 720°$. En un hexágono regular (todos iguales): $720° / 6 = 120°$ cada uno."
+      },
+      {
+        "letra": "C",
+        "texto": "$108°$",
+        "es_correcta": false,
+        "explicacion": "Error: $108°$ es el ángulo interior de un PENTÁGONO regular ($n=5$: suma $= 540°$, cada ángulo $= 108°$). Para el hexágono ($n=6$): suma $= (6-2) \\times 180° = 720°$, cada ángulo $= 120°$."
+      },
+      {
+        "letra": "D",
+        "texto": "$135°$",
+        "es_correcta": false,
+        "explicacion": "Error: $135°$ es el ángulo interior de un OCTÁGONO regular ($n=8$: suma $= 1080°$, cada ángulo $= 135°$). Para el hexágono: $(6-2) \\times 180° / 6 = 720° / 6 = 120°$."
+      }
+    ]
+  },
+  {
+    "id": "sim4-geometria-espacial-engranajes-dientes",
+    "modulo_slug": "geometria-espacial",
+    "enunciado": "Dos engranajes están en contacto directo: el engranaje A tiene 45 dientes y el engranaje B tiene 15 dientes. Si A da 2 vueltas, ¿cuántas vueltas da B?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "2/3 de vuelta",
+        "es_correcta": false,
+        "explicacion": "Error: confunde la dirección de la relación. B tiene menos dientes, por lo que gira MÁS rápido que A. La relación es $\\text{vueltas}_B = \\text{vueltas}_A \\times \\dfrac{\\text{dientes}_A}{\\text{dientes}_B} = 2 \\times \\dfrac{45}{15} = 6$ vueltas."
+      },
+      {
+        "letra": "B",
+        "texto": "6 vueltas",
+        "es_correcta": true,
+        "explicacion": "Correcto. $\\text{vueltas}_B = 2 \\times \\dfrac{45}{15} = 2 \\times 3 = 6$ vueltas. B tiene 3 veces menos dientes que A, por lo tanto gira 3 veces más rápido."
+      },
+      {
+        "letra": "C",
+        "texto": "30 vueltas",
+        "es_correcta": false,
+        "explicacion": "Error: $30 = 2 \\times 15 = \\text{vueltas}_A \\times \\text{dientes}_B$. Se multiplicó por el número de dientes de B en lugar de usar la razón. La relación correcta: $\\text{vueltas}_B = 2 \\times (45/15) = 6$ vueltas."
+      },
+      {
+        "letra": "D",
+        "texto": "2 vueltas",
+        "es_correcta": false,
+        "explicacion": "Error: asumir que los dos engranajes dan el mismo número de vueltas ignora la diferencia de dientes. La velocidad es inversamente proporcional al número de dientes: B (con menos dientes) gira más rápido. $\\text{vueltas}_B = 2 \\times 45/15 = 6$."
+      }
+    ]
+  },
+  {
+    "id": "sim5-geometria-espacial-engranajes-sentido",
+    "modulo_slug": "geometria-espacial",
+    "enunciado": "Cuatro engranajes están conectados en cadena: A engrana con B, B con C, y C con D. Si A gira en sentido horario, ¿en qué sentido gira D?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Horario, porque el número de engranajes es par y el último gira igual que el primero",
+        "es_correcta": false,
+        "explicacion": "Error: con un número PAR de engranajes en cadena, el primero y el último giran en sentidos OPUESTOS (no iguales). A→B opuesto, B→C opuesto, C→D opuesto. Tres inversiones = sentido opuesto al original. D gira antihorario."
+      },
+      {
+        "letra": "B",
+        "texto": "Antihorario, porque con 4 engranajes el sentido se invierte en total",
+        "es_correcta": true,
+        "explicacion": "Correcto. Cada contacto invierte el sentido: A (horario) → B (antihorario) → C (horario) → D (antihorario). Con 4 engranajes hay 3 inversiones. 3 es impar, por lo que el sentido final es opuesto al inicial. D gira antihorario."
+      },
+      {
+        "letra": "C",
+        "texto": "Horario, porque el sentido se conserva en cada contacto",
+        "es_correcta": false,
+        "explicacion": "Error de concepto: en engranajes en contacto DIRECTO, el sentido se INVIERTE en cada contacto (giran en sentidos opuestos). Solo con correa o cadena se conserva el sentido. D gira antihorario."
+      },
+      {
+        "letra": "D",
+        "texto": "Depende del número de dientes de cada engranaje",
+        "es_correcta": false,
+        "explicacion": "Error: el sentido de rotación en engranajes directos solo depende del número de engranajes en la cadena (si es par o impar), no del número de dientes de cada uno. Con 4 engranajes, D gira antihorario independientemente del tamaño."
+      }
+    ]
+  },
+  {
+    "id": "sim6-geometria-espacial-volumen-cilindro",
+    "modulo_slug": "geometria-espacial",
+    "enunciado": "Un recipiente cilíndrico tiene un diámetro de 10 cm y una altura de 8 cm. ¿Cuál es su volumen? (Usar $\\pi \\approx 3.14$)",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "$2512 \\text{ cm}^3$",
+        "es_correcta": false,
+        "explicacion": "Error clásico: se usó el diámetro (10) en lugar del radio (5) en la fórmula. $\\pi \\times 10^2 \\times 8 = 2512$. El radio es $10/2 = 5$ cm. Volumen correcto: $3.14 \\times 5^2 \\times 8 = 628 \\text{ cm}^3$."
+      },
+      {
+        "letra": "B",
+        "texto": "$628 \\text{ cm}^3$",
+        "es_correcta": true,
+        "explicacion": "Correcto. Radio $= 10/2 = 5$ cm. $V = \\pi r^2 h = 3.14 \\times 5^2 \\times 8 = 3.14 \\times 25 \\times 8 = 3.14 \\times 200 = 628 \\text{ cm}^3$."
+      },
+      {
+        "letra": "C",
+        "texto": "$251.2 \\text{ cm}^3$",
+        "es_correcta": false,
+        "explicacion": "Error: $251.2 = 3.14 \\times 5^2 \\times 8 / \\pi$... no corresponde a un cálculo directo. Posiblemente se dividió innecesariamente entre $\\pi$ o se confundió con el área lateral. El volumen es $3.14 \\times 25 \\times 8 = 628 \\text{ cm}^3$."
+      },
+      {
+        "letra": "D",
+        "texto": "$314 \\text{ cm}^3$",
+        "es_correcta": false,
+        "explicacion": "Error: $314 = 3.14 \\times 5^2 \\times 4$, que usa la mitad de la altura (4 en lugar de 8). La altura del cilindro es 8 cm completos. $V = 3.14 \\times 25 \\times 8 = 628 \\text{ cm}^3$."
+      }
+    ]
+  },
+  {
+    "id": "sim7-geometria-espacial-conteo-triangulos",
+    "modulo_slug": "geometria-espacial",
+    "enunciado": "Considera un triángulo grande dividido en una tira de 4 triángulos pequeños iguales en fila (alternando entre triángulos con punta hacia arriba y punta hacia abajo). ¿Cuántos triángulos en total se pueden contar (de todos los tamaños)?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "4",
+        "es_correcta": false,
+        "explicacion": "Error: 4 son solo los triángulos individuales pequeños. Hay que contar también los de mayor tamaño formados por combinaciones. Triángulos de tamaño 1: 4. De tamaño 2: 3. De tamaño 3: 2. De tamaño 4: 1. Total: $4+3+2+1=10$."
+      },
+      {
+        "letra": "B",
+        "texto": "10",
+        "es_correcta": true,
+        "explicacion": "Correcto. En una tira de $n$ triángulos, el total es $n + (n-1) + \\cdots + 1 = \\dfrac{n(n+1)}{2}$. Para $n=4$: $\\dfrac{4 \\times 5}{2} = 10$. Desglose: tamaño 1 (4 pequeños) + tamaño 2 (3) + tamaño 3 (2) + tamaño 4 (el grande completo: 1). Total = 10."
+      },
+      {
+        "letra": "C",
+        "texto": "7",
+        "es_correcta": false,
+        "explicacion": "Error: $7 = 4 + 3$, que suma solo triángulos de tamaño 1 y 2, olvidando los de tamaño 3 y 4. Hay también $2$ triángulos de tamaño 3 y $1$ de tamaño 4. Total correcto: $4+3+2+1=10$."
+      },
+      {
+        "letra": "D",
+        "texto": "16",
+        "es_correcta": false,
+        "explicacion": "Error: $16 = 4^2$, que aplica la fórmula de cuadrados ($n^2$) en lugar de la de triángulos en tira ($n(n+1)/2$). Para triángulos en fila de 4: total $= 4+3+2+1 = 10$, no $4^2 = 16$."
+      }
+    ]
+  },
+  {
+    "id": "sim8-geometria-espacial-area-compuesta-resta",
+    "modulo_slug": "geometria-espacial",
+    "enunciado": "Un terreno rectangular mide 20 m de largo por 15 m de ancho. En una esquina se reservó un área cuadrada de 5 m × 5 m para un jardín. ¿Cuál es el área útil restante del terreno?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "$275 \\text{ m}^2$",
+        "es_correcta": true,
+        "explicacion": "Correcto. Área total del terreno: $20 \\times 15 = 300 \\text{ m}^2$. Área del jardín cuadrado: $5 \\times 5 = 25 \\text{ m}^2$. Área útil: $300 - 25 = 275 \\text{ m}^2$."
+      },
+      {
+        "letra": "B",
+        "texto": "$300 \\text{ m}^2$",
+        "es_correcta": false,
+        "explicacion": "Error: $300 = 20 \\times 15$ es el área total sin restar el jardín. El problema pide el área RESTANTE después de reservar el jardín de $5 \\times 5 = 25 \\text{ m}^2$. Área útil: $300 - 25 = 275 \\text{ m}^2$."
+      },
+      {
+        "letra": "C",
+        "texto": "$280 \\text{ m}^2$",
+        "es_correcta": false,
+        "explicacion": "Error: $280 = 300 - 20$, que restó el largo del terreno en lugar del área del jardín. El jardín es cuadrado de $5 \\times 5 = 25 \\text{ m}^2$, no 20. Área útil: $300 - 25 = 275 \\text{ m}^2$."
+      },
+      {
+        "letra": "D",
+        "texto": "$250 \\text{ m}^2$",
+        "es_correcta": false,
+        "explicacion": "Error: $250 = 300 - 50$, que usa el perímetro del jardín ($4 \\times 5 = 20$... no, $4 \\times 5 = 20$) o algún valor incorrecto de 50. El área del jardín cuadrado es $5^2 = 25 \\text{ m}^2$, no 50. Área útil: $300 - 25 = 275 \\text{ m}^2$."
+      }
+    ]
+  }
+]

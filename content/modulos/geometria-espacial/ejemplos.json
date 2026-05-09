@@ -1,1 +1,60 @@
-[]
+[
+  {
+    "id": "ej1-geometria-area-rectangulo",
+    "enunciado": "Un salón rectangular mide 12 m de largo por 8 m de ancho. Se quiere colocar baldosa en todo el piso. ¿Cuántos metros cuadrados de baldosa se necesitan?",
+    "pasos": [
+      "Paso 1 — Identificar la figura y la fórmula: el piso es un rectángulo. El área del rectángulo es $A = base \\times altura$.",
+      "Paso 2 — Identificar los datos: base = 12 m, altura = 8 m.",
+      "Paso 3 — Calcular: $A = 12 \\times 8 = 96 \\text{ m}^2$.",
+      "Paso 4 — Verificar las unidades: el área se expresa en metros cuadrados ($\\text{m}^2$), no en metros. El perímetro del salón sería $2(12 + 8) = 40$ m (diferente concepto)."
+    ],
+    "conclusion": "Se necesitan $96 \\text{ m}^2$ de baldosa. El área del rectángulo es simplemente base por altura."
+  },
+  {
+    "id": "ej2-geometria-pitagoras-cateto",
+    "enunciado": "Una escalera de 13 m de longitud está apoyada contra una pared vertical. La base de la escalera está a 5 m de la pared. ¿A qué altura de la pared llega la escalera?",
+    "pasos": [
+      "Paso 1 — Identificar el triángulo rectángulo: la escalera forma la hipotenusa ($c = 13$ m), la distancia al suelo es un cateto ($a = 5$ m), y la altura en la pared es el cateto que buscamos ($b$).",
+      "Paso 2 — Verificar que la escalera es la hipotenusa: la hipotenusa es siempre el lado más largo y el opuesto al ángulo recto. La escalera (13 m) es el lado más largo. ✓",
+      "Paso 3 — Aplicar el teorema de Pitágoras para el cateto desconocido: $b = \\sqrt{c^2 - a^2} = \\sqrt{13^2 - 5^2} = \\sqrt{169 - 25} = \\sqrt{144}$.",
+      "Paso 4 — Calcular: $\\sqrt{144} = 12$. (Esta es la terna pitagórica 5-12-13.)",
+      "Paso 5 — Verificar: $5^2 + 12^2 = 25 + 144 = 169 = 13^2$. ✓"
+    ],
+    "conclusion": "La escalera llega a $12$ m de altura. Se aplica el teorema de Pitágoras con la escalera como hipotenusa: $b = \\sqrt{13^2 - 5^2} = 12$ m."
+  },
+  {
+    "id": "ej3-geometria-volumen-cilindro",
+    "enunciado": "Un tanque cilíndrico tiene un radio de base de 3 m y una altura de 5 m. ¿Cuántos metros cúbicos de agua puede almacenar? (Usar $\\pi \\approx 3.14$)",
+    "pasos": [
+      "Paso 1 — Identificar la figura y la fórmula: el tanque es un cilindro. El volumen del cilindro es $V = \\pi r^2 h$.",
+      "Paso 2 — Identificar los datos: radio $r = 3$ m (no el diámetro), altura $h = 5$ m.",
+      "Paso 3 — Calcular el área de la base circular: $\\pi r^2 = 3.14 \\times 3^2 = 3.14 \\times 9 = 28.26 \\text{ m}^2$.",
+      "Paso 4 — Calcular el volumen: $V = 28.26 \\times 5 = 141.3 \\text{ m}^3$.",
+      "Paso 5 — Verificar: si el radio fuera el diámetro (error común), se obtendría $V = 3.14 \\times 6^2 \\times 5 = 565.2$ m³, que es 4 veces mayor — es la señal de un error de radio vs. diámetro."
+    ],
+    "conclusion": "El tanque puede almacenar $V \\approx 141.3 \\text{ m}^3$ de agua. La fórmula del cilindro es $\\pi r^2 h$, usando el radio (no el diámetro)."
+  },
+  {
+    "id": "ej4-geometria-conteo-triangulos",
+    "enunciado": "Considera un triángulo grande dividido en 4 triángulos pequeños iguales por sus líneas medianas (se unen los puntos medios de los tres lados, creando un triángulo central invertido y 3 triángulos en las esquinas). ¿Cuántos triángulos en total se pueden contar?",
+    "pasos": [
+      "Paso 1 — Identificar los triángulos de tamaño mínimo: hay 4 triángulos pequeños (3 en las esquinas + 1 en el centro invertido).",
+      "Paso 2 — Buscar triángulos de tamaño mediano (formados por 2 triángulos pequeños): podemos combinar el triángulo central con cada uno de los 3 de esquina. Eso da 3 triángulos medianos. También hay que considerar triángulos de esquina opuesta... pero en esta configuración, los triángulos medianos son exactamente los 3 que se forman entre el central y cada esquina.",
+      "Paso 3 — Triángulo de tamaño grande (el completo): 1 solo (el triángulo original completo).",
+      "Paso 4 — Sumar: $4 + 3 + 1 = 8$ triángulos en total.",
+      "Paso 5 — Verificar que no hay duplicados: los 4 pequeños (tamaño 1), los 3 medianos (tamaño 2 — cada uno formado por el central + una esquina), y el grande completo (tamaño 4 — los 4 juntos). Total = 8."
+    ],
+    "conclusion": "Hay $8$ triángulos en total: 4 pequeños, 3 medianos (central + cada esquina) y 1 grande (el triángulo completo). La clave es contar sistemáticamente por tamaños."
+  },
+  {
+    "id": "ej5-geometria-engranajes-vueltas",
+    "enunciado": "El engranaje A tiene 24 dientes y está en contacto directo con el engranaje B, que tiene 8 dientes. Si el engranaje A da 5 vueltas, ¿cuántas vueltas da el engranaje B? ¿En qué sentido gira B si A gira en sentido horario?",
+    "pasos": [
+      "Paso 1 — Plantear la relación de transmisión: en engranajes en contacto directo, la relación es $\\text{vueltas}_A \\times \\text{dientes}_A = \\text{vueltas}_B \\times \\text{dientes}_B$.",
+      "Paso 2 — Sustituir: $5 \\times 24 = \\text{vueltas}_B \\times 8$. Entonces $\\text{vueltas}_B = \\dfrac{5 \\times 24}{8} = \\dfrac{120}{8} = 15$.",
+      "Paso 3 — Verificar la lógica: B tiene menos dientes (8 vs. 24), así que debe girar más rápido. $15 > 5$. ✓ La razón es $24/8 = 3$: por cada vuelta de A, B da 3 vueltas.",
+      "Paso 4 — Sentido de rotación: en engranajes en contacto directo, giran en sentidos opuestos. Si A gira en sentido horario, B gira en sentido antihorario."
+    ],
+    "conclusion": "El engranaje B da $15$ vueltas cuando A da 5 vueltas. B gira en sentido antihorario (opuesto a A). La razón de transmisión es $24/8 = 3$: el engranaje más pequeño gira 3 veces más rápido que el grande."
+  }
+]

@@ -1,1 +1,386 @@
-[]
+[
+  {
+    "id": "prac1-geometria-espacial-perimetro-cuadrado",
+    "dificultad": 1,
+    "enunciado": "Un jardín cuadrado tiene un perímetro de 36 m. ¿Cuánto mide cada lado y cuál es su área?",
+    "pista": "El perímetro de un cuadrado es $4 \\times lado$. Despeja el lado, luego usa $A = lado^2$.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Lado = 9 m, Área = 81 m²",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Lado $= 36 \\div 4 = 9$ m. Área $= 9^2 = 81 \\text{ m}^2$."
+      },
+      {
+        "letra": "B",
+        "texto": "Lado = 9 m, Área = 36 m²",
+        "es_correcta": false,
+        "explicacion": "Es trampa: el lado de 9 m es correcto, pero el área de 36 m² confunde el perímetro con el área. El área del cuadrado es $lado^2 = 9^2 = 81 \\text{ m}^2$, no el perímetro."
+      },
+      {
+        "letra": "C",
+        "texto": "Lado = 6 m, Área = 36 m²",
+        "es_correcta": false,
+        "explicacion": "Es trampa: si el lado fuera 6 m, el perímetro sería $4 \\times 6 = 24$ m, no 36 m. Error de no dividir el perímetro entre 4. El lado correcto es $36 \\div 4 = 9$ m."
+      },
+      {
+        "letra": "D",
+        "texto": "Lado = 9 m, Área = 18 m²",
+        "es_correcta": false,
+        "explicacion": "Es trampa: el área de 18 m² resulta de dividir 36 entre 2 en lugar de calcular $9^2$. El área del cuadrado es siempre $lado^2 = 81 \\text{ m}^2$, no la mitad del perímetro."
+      }
+    ]
+  },
+  {
+    "id": "prac2-geometria-espacial-area-triangulo",
+    "dificultad": 1,
+    "enunciado": "Un triángulo tiene una base de 10 cm y una altura de 6 cm. ¿Cuál es su área?",
+    "pista": "El área del triángulo es $\\dfrac{base \\times altura}{2}$. No olvides dividir entre 2.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "$60 \\text{ cm}^2$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $60 = 10 \\times 6$, que es el área de un rectángulo de esas dimensiones, no del triángulo. El triángulo tiene la mitad del área del rectángulo que lo contiene: $\\dfrac{10 \\times 6}{2} = 30 \\text{ cm}^2$."
+      },
+      {
+        "letra": "B",
+        "texto": "$32 \\text{ cm}^2$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $32 = (10 + 6) \\times 2$, que es el perímetro de algo sin relación. El área del triángulo es $\\dfrac{base \\times altura}{2} = \\dfrac{10 \\times 6}{2} = 30 \\text{ cm}^2$."
+      },
+      {
+        "letra": "C",
+        "texto": "$30 \\text{ cm}^2$",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Área del triángulo $= \\dfrac{base \\times altura}{2} = \\dfrac{10 \\times 6}{2} = \\dfrac{60}{2} = 30 \\text{ cm}^2$."
+      },
+      {
+        "letra": "D",
+        "texto": "$16 \\text{ cm}^2$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $16 = (10 + 6)/1$ o algún cálculo sin base matemática. El área del triángulo usa base y altura multiplicadas y divididas entre 2: $\\dfrac{10 \\times 6}{2} = 30 \\text{ cm}^2$."
+      }
+    ]
+  },
+  {
+    "id": "prac3-geometria-espacial-area-circulo",
+    "dificultad": 1,
+    "enunciado": "Una fuente circular tiene un diámetro de 8 m. ¿Cuál es el área de su superficie? (Usar $\\pi \\approx 3.14$)",
+    "pista": "Recuerda que el radio es la mitad del diámetro. La fórmula del área usa el radio, no el diámetro.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "$200.96 \\text{ m}^2$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $200.96 = 3.14 \\times 8^2 = 3.14 \\times 64$, que usa el diámetro (8) en lugar del radio (4). El error clásico: la fórmula es $\\pi r^2$, con $r = \\text{diámetro}/2 = 4$ m. Área correcta: $3.14 \\times 4^2 = 50.24 \\text{ m}^2$."
+      },
+      {
+        "letra": "B",
+        "texto": "$50.24 \\text{ m}^2$",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Radio $r = 8 \\div 2 = 4$ m. Área $= \\pi r^2 = 3.14 \\times 4^2 = 3.14 \\times 16 = 50.24 \\text{ m}^2$."
+      },
+      {
+        "letra": "C",
+        "texto": "$25.12 \\text{ m}$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $25.12 = 3.14 \\times 8 = 2\\pi r$, que es la circunferencia (el perímetro del círculo), no el área. Además, la unidad sería metros, no metros cuadrados. El área es $\\pi r^2 = 50.24 \\text{ m}^2$."
+      },
+      {
+        "letra": "D",
+        "texto": "$12.56 \\text{ m}^2$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $12.56 = 3.14 \\times 4 = \\pi \\times r$, que omite el cuadrado del radio. La fórmula es $\\pi r^2$, no $\\pi r$: $3.14 \\times 4^2 = 50.24 \\text{ m}^2$."
+      }
+    ]
+  },
+  {
+    "id": "prac4-geometria-espacial-pitagoras-hipotenusa",
+    "dificultad": 2,
+    "enunciado": "Un triángulo rectángulo tiene catetos de 9 cm y 12 cm. ¿Cuánto mide la hipotenusa?",
+    "pista": "La hipotenusa es el lado más largo del triángulo rectángulo. Aplica $c = \\sqrt{a^2 + b^2}$. Verifica si los valores forman una terna pitagórica conocida.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "15 cm",
+        "es_correcta": true,
+        "explicacion": "Es correcto. $c = \\sqrt{9^2 + 12^2} = \\sqrt{81 + 144} = \\sqrt{225} = 15$ cm. Esta es la terna pitagórica $9$-$12$-$15$ (múltiplo de $3$-$4$-$5$: $9=3\\times3$, $12=3\\times4$, $15=3\\times5$)."
+      },
+      {
+        "letra": "B",
+        "texto": "21 cm",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $21 = 9 + 12$, que suma los catetos en lugar de aplicar Pitágoras. La hipotenusa no es la suma de los catetos sino $\\sqrt{a^2 + b^2} = \\sqrt{81 + 144} = \\sqrt{225} = 15$ cm."
+      },
+      {
+        "letra": "C",
+        "texto": "$\\sqrt{225}$ sin simplificar ≈ 14.1 cm",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $\\sqrt{225}$ sí es simplificable exactamente. $225 = 15^2$, entonces $\\sqrt{225} = 15$ exacto, no aproximado. La raíz no deja un número irracional en este caso."
+      },
+      {
+        "letra": "D",
+        "texto": "$\\sqrt{81} + \\sqrt{144} = 9 + 12 = 21$ cm",
+        "es_correcta": false,
+        "explicacion": "Es trampa de álgebra: $\\sqrt{a^2 + b^2} \\neq \\sqrt{a^2} + \\sqrt{b^2} = a + b$. La raíz de una suma NO es la suma de las raíces. La hipotenusa es $\\sqrt{9^2 + 12^2} = \\sqrt{225} = 15$ cm."
+      }
+    ]
+  },
+  {
+    "id": "prac5-geometria-espacial-pitagoras-distancia",
+    "dificultad": 2,
+    "enunciado": "Dos puntos en un plano están ubicados en coordenadas $(0, 0)$ y $(6, 8)$. ¿Cuál es la distancia en línea recta entre ellos?",
+    "pista": "La distancia entre dos puntos forma la hipotenusa de un triángulo rectángulo. Los catetos son las diferencias en $x$ y en $y$.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "14",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $14 = 6 + 8$, que suma las diferencias de coordenadas sin aplicar Pitágoras. La distancia en línea recta es $\\sqrt{6^2 + 8^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10$."
+      },
+      {
+        "letra": "B",
+        "texto": "10",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Cateto horizontal = $6 - 0 = 6$. Cateto vertical = $8 - 0 = 8$. Distancia (hipotenusa) $= \\sqrt{6^2 + 8^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10$. Esta es la terna pitagórica $6$-$8$-$10$."
+      },
+      {
+        "letra": "C",
+        "texto": "7",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $7 = (6 + 8) / 2$, que promedia los catetos. La distancia en línea recta requiere aplicar Pitágoras: $\\sqrt{6^2 + 8^2} = \\sqrt{100} = 10$."
+      },
+      {
+        "letra": "D",
+        "texto": "$\\sqrt{14}$",
+        "es_correcta": false,
+        "explicacion": "Es trampa de álgebra: $\\sqrt{6 + 8} = \\sqrt{14}$, que suma sin elevar al cuadrado. La fórmula correcta es $\\sqrt{6^2 + 8^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10$, no $\\sqrt{6+8}$."
+      }
+    ]
+  },
+  {
+    "id": "prac6-geometria-espacial-area-compuesta",
+    "dificultad": 2,
+    "enunciado": "Un terreno tiene forma de L: la parte vertical es un rectángulo de 10 m de largo por 4 m de ancho, y la parte horizontal es un rectángulo de 6 m de largo por 4 m de ancho. Los dos rectángulos comparten un lado. ¿Cuál es el área total del terreno?",
+    "pista": "Divide la figura en sus dos rectángulos. Calcula el área de cada uno y súmalas. No hay áreas que restar porque los dos rectángulos son partes diferentes sin superposición.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "$64 \\text{ m}^2$",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Rectángulo 1: $10 \\times 4 = 40 \\text{ m}^2$. Rectángulo 2: $6 \\times 4 = 24 \\text{ m}^2$. Área total: $40 + 24 = 64 \\text{ m}^2$."
+      },
+      {
+        "letra": "B",
+        "texto": "$96 \\text{ m}^2$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $96 = (10 + 6) \\times (4 + 4) / \\text{algo}$... no tiene base clara. Posiblemente se tomó $(10 + 6) \\times 6 = 96$ o $(16) \\times 6$. El área correcta es $10 \\times 4 + 6 \\times 4 = 40 + 24 = 64 \\text{ m}^2$."
+      },
+      {
+        "letra": "C",
+        "texto": "$40 \\text{ m}^2$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $40 = 10 \\times 4$, que es solo el área del rectángulo más grande. Se olvidó sumar el área del segundo rectángulo ($6 \\times 4 = 24 \\text{ m}^2$). Área total: $40 + 24 = 64 \\text{ m}^2$."
+      },
+      {
+        "letra": "D",
+        "texto": "$48 \\text{ m}^2$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $48 = 16 \\times 4 - \\text{algo}$, o posiblemente $(10 + 6 - \\text{solapamiento?}) \\times 4 = 12 \\times 4$. No hay solapamiento en una figura en L — los dos rectángulos son regiones distintas. Área total: $10 \\times 4 + 6 \\times 4 = 64 \\text{ m}^2$."
+      }
+    ]
+  },
+  {
+    "id": "prac7-geometria-espacial-volumen-cubo",
+    "dificultad": 2,
+    "enunciado": "Una caja cúbica tiene un lado de 5 cm. ¿Cuál es su volumen y cuál es su área superficial total?",
+    "pista": "Volumen del cubo: $l^3$. Área superficial: el cubo tiene 6 caras cuadradas iguales, cada una con área $l^2$.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Volumen = 125 cm³, Área = 150 cm²",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Volumen $= 5^3 = 125 \\text{ cm}^3$. Área superficial $= 6 \\times 5^2 = 6 \\times 25 = 150 \\text{ cm}^2$."
+      },
+      {
+        "letra": "B",
+        "texto": "Volumen = 15 cm³, Área = 25 cm²",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $15 = 5 \\times 3$ (multiplicó por 3 en lugar de elevar al cubo) y $25 = 5^2$ (una sola cara). El volumen del cubo es $5^3 = 125 \\text{ cm}^3$ y el área superficial es $6 \\times 25 = 150 \\text{ cm}^2$."
+      },
+      {
+        "letra": "C",
+        "texto": "Volumen = 125 cm³, Área = 25 cm²",
+        "es_correcta": false,
+        "explicacion": "Es trampa: el volumen es correcto ($5^3 = 125$), pero el área de 25 cm² es solo la de UNA cara ($5^2 = 25$). El cubo tiene 6 caras: área total $= 6 \\times 25 = 150 \\text{ cm}^2$."
+      },
+      {
+        "letra": "D",
+        "texto": "Volumen = 25 cm³, Área = 150 cm²",
+        "es_correcta": false,
+        "explicacion": "Es trampa: el área es correcta ($6 \\times 25 = 150$), pero el volumen de 25 cm³ confunde el cuadrado con el cubo. Volumen del cubo $= l^3 = 5^3 = 125 \\text{ cm}^3$, no $l^2 = 25$."
+      }
+    ]
+  },
+  {
+    "id": "prac8-geometria-espacial-volumen-cono",
+    "dificultad": 2,
+    "enunciado": "Un cono tiene un radio de base de 6 cm y una altura de 10 cm. ¿Cuál es su volumen? (Usar $\\pi \\approx 3.14$)",
+    "pista": "El volumen del cono lleva un factor $\\dfrac{1}{3}$ que no debe olvidarse. Compara con el cilindro de la misma base y altura.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "$1130.4 \\text{ cm}^3$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $1130.4 = 3.14 \\times 6^2 \\times 10 = 3.14 \\times 36 \\times 10$, que es el volumen del CILINDRO con la misma base y altura. El cono es $\\dfrac{1}{3}$ de ese cilindro: $V = \\dfrac{1130.4}{3} = 376.8 \\text{ cm}^3$."
+      },
+      {
+        "letra": "B",
+        "texto": "$376.8 \\text{ cm}^3$",
+        "es_correcta": true,
+        "explicacion": "Es correcto. $V = \\dfrac{\\pi r^2 h}{3} = \\dfrac{3.14 \\times 6^2 \\times 10}{3} = \\dfrac{3.14 \\times 36 \\times 10}{3} = \\dfrac{1130.4}{3} = 376.8 \\text{ cm}^3$."
+      },
+      {
+        "letra": "C",
+        "texto": "$188.4 \\text{ cm}^3$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $188.4 = \\dfrac{3.14 \\times 6 \\times 10}{1} = 188.4$... posiblemente se usó el radio sin elevar al cuadrado ($\\pi r h / 3 = 3.14 \\times 6 \\times 10 / 3$). La fórmula correcta es $\\pi r^2 h / 3$: el radio va al cuadrado."
+      },
+      {
+        "letra": "D",
+        "texto": "$565.2 \\text{ cm}^3$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $565.2 = 3.14 \\times 6^2 \\times 10 / 2$, que divide entre 2 en lugar de 3. El factor del cono es $\\dfrac{1}{3}$, no $\\dfrac{1}{2}$. Tres conos llenan un cilindro de la misma base y altura."
+      }
+    ]
+  },
+  {
+    "id": "prac9-geometria-espacial-volumen-piramide",
+    "dificultad": 2,
+    "enunciado": "Una pirámide de base cuadrada tiene un lado de base de 6 m y una altura de 9 m. ¿Cuál es su volumen?",
+    "pista": "El área de la base cuadrada es $lado^2$. El volumen de la pirámide es $\\dfrac{\\text{área base} \\times altura}{3}$. No olvides el factor $\\dfrac{1}{3}$.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "$324 \\text{ m}^3$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $324 = 6^2 \\times 9 = 36 \\times 9$, que es el volumen del PRISMA cuadrado con esa base y altura. La pirámide equivale a $\\dfrac{1}{3}$ de ese prisma: $V = 324 / 3 = 108 \\text{ m}^3$."
+      },
+      {
+        "letra": "B",
+        "texto": "$108 \\text{ m}^3$",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Área base $= 6^2 = 36 \\text{ m}^2$. Volumen $= \\dfrac{36 \\times 9}{3} = \\dfrac{324}{3} = 108 \\text{ m}^3$."
+      },
+      {
+        "letra": "C",
+        "texto": "$162 \\text{ m}^3$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $162 = 36 \\times 9 / 2$, que divide entre 2 en lugar de 3. El factor de la pirámide es siempre $\\dfrac{1}{3}$, no $\\dfrac{1}{2}$."
+      },
+      {
+        "letra": "D",
+        "texto": "$54 \\text{ m}^3$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $54 = 6 \\times 9 = \\text{lado} \\times \\text{altura}$, sin elevar el lado de la base al cuadrado. El área de la base cuadrada es $6^2 = 36 \\text{ m}^2$, no 6. Volumen correcto: $36 \\times 9 / 3 = 108 \\text{ m}^3$."
+      }
+    ]
+  },
+  {
+    "id": "prac10-geometria-espacial-conteo-cuadrados",
+    "dificultad": 3,
+    "enunciado": "En una cuadrícula de 3 × 3 (9 cuadrados pequeños iguales), ¿cuántos cuadrados en total se pueden contar, incluyendo los de todos los tamaños?",
+    "pista": "Cuenta por tamaños: primero los cuadrados 1×1, luego los 2×2, luego el 3×3 completo. Un cuadrado 2×2 puede empezar en cualquiera de las 4 esquinas de la cuadrícula.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "9",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 9 es solo el número de cuadrados pequeños (1×1). El examen siempre incluye los cuadrados de mayor tamaño. Hay además $2 \\times 2 = 4$ cuadrados de tamaño 2×2 y 1 cuadrado de tamaño 3×3. Total: $9 + 4 + 1 = 14$."
+      },
+      {
+        "letra": "B",
+        "texto": "14",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Cuadrados 1×1: $3^2 = 9$. Cuadrados 2×2: $2^2 = 4$ (pueden empezar en la esquina sup. izq., sup. der., inf. izq. o inf. der.). Cuadrados 3×3: $1^2 = 1$. Total: $9 + 4 + 1 = 14$. Fórmula general para cuadrícula $n \\times n$: $1^2 + 2^2 + \\cdots + n^2$."
+      },
+      {
+        "letra": "C",
+        "texto": "10",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $10 = 9 + 1$, que suma los 9 pequeños y el 1 grande, olvidando los cuadrados de tamaño intermedio 2×2. Los cuadrados 2×2 son 4 en una cuadrícula 3×3. Total correcto: $9 + 4 + 1 = 14$."
+      },
+      {
+        "letra": "D",
+        "texto": "13",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $13 = 9 + 4$ omite el cuadrado completo 3×3, o $13 = 9 + 3 + 1$ cuenta solo 3 cuadrados 2×2 en lugar de 4. Los cuadrados 2×2 que caben en una cuadrícula 3×3 son $(3-2+1)^2 = 4$. Total correcto: $9 + 4 + 1 = 14$."
+      }
+    ]
+  },
+  {
+    "id": "prac11-geometria-espacial-rotacion",
+    "dificultad": 3,
+    "enunciado": "Una figura tiene forma de letra 'L': la parte vertical va de abajo hacia arriba (lados izquierdo, superior e inferior hacia la derecha), y la parte horizontal va hacia la derecha desde la base. Si se rota la figura 90° en sentido horario, ¿cómo queda orientada la figura resultante?",
+    "pista": "Imagina la punta superior de la L como una flecha. Al rotar 90° en sentido horario, lo que apuntaba arriba ahora apunta a la derecha. Traza mentalmente cada parte de la figura.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "La parte larga va hacia la derecha y la parte corta va hacia arriba (forma de Γ invertida o J rotada)",
+        "es_correcta": false,
+        "explicacion": "Es trampa: describe una rotación antihoraria (90° hacia la izquierda). En una rotación horaria de 90°, lo que estaba a la izquierda va abajo, lo que estaba arriba va a la derecha."
+      },
+      {
+        "letra": "B",
+        "texto": "La parte larga va hacia abajo y la parte corta va hacia la izquierda (forma de L invertida o ⌐)",
+        "es_correcta": false,
+        "explicacion": "Es trampa: describe una rotación de 180°. En una rotación de 90° horaria, la figura no queda completamente invertida."
+      },
+      {
+        "letra": "C",
+        "texto": "La parte larga va hacia arriba y la parte corta va hacia la derecha (forma de ⌐ o L girada 90° al lado derecho)",
+        "es_correcta": true,
+        "explicacion": "Es correcto. En una rotación de 90° horaria, el extremo superior (que apuntaba arriba) pasa a apuntar a la derecha. La parte vertical de la L se convierte en la parte superior horizontal, y la parte horizontal de la L se convierte en la parte vertical derecha. Resultado: la L queda con la parte larga horizontal arriba y la parte corta colgando hacia la derecha."
+      },
+      {
+        "letra": "D",
+        "texto": "La figura queda exactamente igual",
+        "es_correcta": false,
+        "explicacion": "Es trampa: solo las figuras con simetría rotacional (como el cuadrado o el círculo) quedan iguales al rotar 90°. La letra L no tiene simetría rotacional de 90° — cambia de apariencia con cada cuarto de vuelta."
+      }
+    ]
+  },
+  {
+    "id": "prac12-geometria-espacial-engranajes-sistema",
+    "dificultad": 3,
+    "enunciado": "Tres engranajes están en contacto en cadena: el engranaje A (20 dientes) engrana con B (40 dientes), y B engrana con C (10 dientes). Si A gira en sentido horario dando 6 vueltas, ¿cuántas vueltas da C y en qué sentido?",
+    "pista": "Aplica la relación de transmisión en dos pasos: primero A→B, luego B→C. Para el sentido: engranajes en contacto directo giran en sentidos opuestos, y el sentido alterna en cada contacto.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "C da 12 vueltas en sentido horario",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Paso 1 (A→B): vueltas de B $= 6 \\times \\dfrac{20}{40} = 6 \\times 0.5 = 3$ vueltas. B gira antihorario (opuesto a A). Paso 2 (B→C): vueltas de C $= 3 \\times \\dfrac{40}{10} = 3 \\times 4 = 12$ vueltas. C gira horario (opuesto a B, igual que A — cadena de 3 engranajes: el primero y el último tienen el mismo sentido)."
+      },
+      {
+        "letra": "B",
+        "texto": "C da 3 vueltas en sentido antihorario",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 3 son las vueltas de B, no de C. No se completó el segundo paso de la cadena (B→C). Vueltas de C $= \\text{vueltas de B} \\times \\dfrac{\\text{dientes de B}}{\\text{dientes de C}} = 3 \\times \\dfrac{40}{10} = 12$ vueltas."
+      },
+      {
+        "letra": "C",
+        "texto": "C da 12 vueltas en sentido antihorario",
+        "es_correcta": false,
+        "explicacion": "Es trampa: el número de vueltas (12) es correcto, pero el sentido no. Con 3 engranajes en cadena (número impar), el primero y el último giran en el mismo sentido. A va horario → C va horario."
+      },
+      {
+        "letra": "D",
+        "texto": "C da 6 vueltas en sentido horario",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 6 son las vueltas de A. Se ignoró el efecto de los engranajes B y C. La relación correcta: vueltas de B $= 6 \\times (20/40) = 3$; vueltas de C $= 3 \\times (40/10) = 12$."
+      }
+    ]
+  }
+]
