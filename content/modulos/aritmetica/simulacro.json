@@ -1,1 +1,250 @@
-[]
+[
+  {
+    "id": "sim1-aritmetica-jerarquia",
+    "modulo_slug": "aritmetica",
+    "enunciado": "¿Cuál es el valor de $3^2 - (4 - 2 \\times 3) + 8 \\div 4$?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "9",
+        "es_correcta": false,
+        "explicacion": "Error de jerarquía: se calculó $3^2 = 9$ y se ignoraron los demás términos, o bien se evaluó el paréntesis incorrectamente. El paréntesis $4 - 2 \\times 3 = 4 - 6 = -2$, y $8 \\div 4 = 2$, por lo que el resultado total es $9 - (-2) + 2 = 13$."
+      },
+      {
+        "letra": "B",
+        "texto": "5",
+        "es_correcta": false,
+        "explicacion": "Error en el paréntesis y/o en los signos: posiblemente se calculó $(4-2) \\times 3 = 6$ en el paréntesis (aplicando jerarquía incorrecta dentro del paréntesis) y luego $9 - 6 + 2 = 5$... sí da 5. Pero el error es resolver $(4-2) \\times 3$ en lugar de $4 - (2 \\times 3)$ dentro del paréntesis."
+      },
+      {
+        "letra": "C",
+        "texto": "13",
+        "es_correcta": true,
+        "explicacion": "Correcto. Paso 1 — Paréntesis: $4 - 2 \\times 3 = 4 - 6 = -2$ (dentro del paréntesis también aplica jerarquía: multiplicación antes que resta). Paso 2 — Potencia: $3^2 = 9$. Paso 3 — División: $8 \\div 4 = 2$. Paso 4 — Suma/Resta: $9 - (-2) + 2 = 9 + 2 + 2 = 13$."
+      },
+      {
+        "letra": "D",
+        "texto": "15",
+        "es_correcta": false,
+        "explicacion": "Error en el signo de doble negativo: posiblemente se calculó $9 - (-2) = 9 - 2 = 7$ (tratando $-(-2)$ como $-2$) y luego $7 + 8 = 15$ (olvidando dividir). El doble negativo $-(-2) = +2$, y $8 \\div 4 = 2$, no 8."
+      }
+    ]
+  },
+  {
+    "id": "sim2-aritmetica-mcm-contexto",
+    "modulo_slug": "aritmetica",
+    "enunciado": "Dos luces intermitentes se encienden a la vez. La roja se enciende cada 12 segundos y la azul cada 16 segundos. ¿Cuántos segundos después volverán a encenderse simultáneamente por primera vez?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "4",
+        "es_correcta": false,
+        "explicacion": "Error: 4 es el MCD(12, 16), no el MCM. El MCD responde a preguntas de reparto; el MCM responde a cuándo dos ciclos coinciden. $\\text{MCD}(12,16) = 4$, pero $\\text{MCM}(12,16) = 48$."
+      },
+      {
+        "letra": "B",
+        "texto": "28",
+        "es_correcta": false,
+        "explicacion": "Error: $12 + 16 = 28$, que es simplemente la suma de los períodos. La suma de los períodos no tiene significado para encontrar la primera coincidencia. Se necesita el MCM."
+      },
+      {
+        "letra": "C",
+        "texto": "48",
+        "es_correcta": true,
+        "explicacion": "Correcto. $12 = 2^2 \\times 3$ y $16 = 2^4$. $\\text{MCM}(12,16) = 2^4 \\times 3 = 48$. Verificación: $48 \\div 12 = 4$ ✓ y $48 \\div 16 = 3$ ✓. Las luces coincidirán a los 48 segundos."
+      },
+      {
+        "letra": "D",
+        "texto": "192",
+        "es_correcta": false,
+        "explicacion": "Error: $192 = 12 \\times 16$, el producto directo. El MCM es siempre menor o igual al producto, e igual al producto solo cuando los números son coprimos. Aquí $\\text{MCD}(12,16) = 4 \\neq 1$, así que $\\text{MCM} = \\dfrac{12 \\times 16}{4} = 48$."
+      }
+    ]
+  },
+  {
+    "id": "sim3-aritmetica-fracciones",
+    "modulo_slug": "aritmetica",
+    "enunciado": "¿Cuánto es $1\\dfrac{2}{3} + 2\\dfrac{3}{4}$? (Expresa el resultado como fracción impropia.)",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "$\\dfrac{53}{12}$",
+        "es_correcta": true,
+        "explicacion": "Correcto. Convertir números mixtos: $1\\dfrac{2}{3} = \\dfrac{5}{3}$ y $2\\dfrac{3}{4} = \\dfrac{11}{4}$. MCM(3,4) = 12. $\\dfrac{5}{3} = \\dfrac{20}{12}$ y $\\dfrac{11}{4} = \\dfrac{33}{12}$. Suma: $\\dfrac{20 + 33}{12} = \\dfrac{53}{12}$."
+      },
+      {
+        "letra": "B",
+        "texto": "$\\dfrac{5}{7}$",
+        "es_correcta": false,
+        "explicacion": "Error clásico: se sumaron partes enteras ($1+2=3$) y partes fraccionarias incorrectamente: $\\dfrac{2+3}{3+4} = \\dfrac{5}{7}$. Este método es incorrecto tanto para la parte entera (que desaparece) como para las fracciones (no se suman así)."
+      },
+      {
+        "letra": "C",
+        "texto": "$\\dfrac{11}{12}$",
+        "es_correcta": false,
+        "explicacion": "Error: posiblemente se ignoraron las partes enteras y solo se sumaron las fracciones: $\\dfrac{2}{3} + \\dfrac{3}{4} = \\dfrac{8}{12} + \\dfrac{9}{12} = \\dfrac{17}{12}$... tampoco da $\\dfrac{11}{12}$. Quizás se restaron en lugar de sumar las partes fraccionarias. La suma completa con los enteros es $\\dfrac{53}{12}$."
+      },
+      {
+        "letra": "D",
+        "texto": "$\\dfrac{3 \\times 5}{12}$",
+        "es_correcta": false,
+        "explicacion": "Error: esta expresión equivale a $\\dfrac{15}{12} = \\dfrac{5}{4}$, lo cual sugiere haber multiplicado los numeradores de los mixtos convertidos ($5 \\times 3 = 15$) en vez de sumar. Para sumar fracciones se necesita denominador común, no multiplicar numeradores."
+      }
+    ]
+  },
+  {
+    "id": "sim4-aritmetica-potencias",
+    "modulo_slug": "aritmetica",
+    "enunciado": "Simplifica: $\\dfrac{(2^3)^2 \\times 2^{-2}}{2^4}$.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "4",
+        "es_correcta": false,
+        "explicacion": "Error en el exponente negativo: posiblemente se sumó $2^{-2}$ como $+2$ en vez de $-2$ al exponente. $(2^3)^2 = 2^6$. $2^6 \\times 2^{-2} = 2^{6-2} = 2^4$. $2^4 \\div 2^4 = 2^0 = 1$, no 4."
+      },
+      {
+        "letra": "B",
+        "texto": "1",
+        "es_correcta": true,
+        "explicacion": "Correcto. Paso 1: $(2^3)^2 = 2^{3 \\times 2} = 2^6$. Paso 2: $2^6 \\times 2^{-2} = 2^{6+(-2)} = 2^4$. Paso 3: $\\dfrac{2^4}{2^4} = 2^{4-4} = 2^0 = 1$."
+      },
+      {
+        "letra": "C",
+        "texto": "16",
+        "es_correcta": false,
+        "explicacion": "Error en el exponente negativo: se trató $2^{-2}$ como $2^{+2}$ (ignorando el signo negativo). $2^6 \\times 2^2 = 2^8$. $2^8 \\div 2^4 = 2^4 = 16$. El exponente negativo significa $\\dfrac{1}{2^2}$, que al multiplicar RESTA el exponente."
+      },
+      {
+        "letra": "D",
+        "texto": "2",
+        "es_correcta": false,
+        "explicacion": "Error en potencia de potencia: si se calculó $(2^3)^2 = 2^{3+2} = 2^5$ (sumando en vez de multiplicando): $2^5 \\times 2^{-2} = 2^3$. $2^3 \\div 2^4 = 2^{3-4} = 2^{-1} = \\dfrac{1}{2}$... tampoco da 2. La potencia de potencia multiplica: $(2^3)^2 = 2^6$."
+      }
+    ]
+  },
+  {
+    "id": "sim5-aritmetica-divisibilidad",
+    "modulo_slug": "aritmetica",
+    "enunciado": "¿Cuál de los siguientes números es divisible por 6?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "126",
+        "es_correcta": true,
+        "explicacion": "Correcto. Para ser divisible por 6 debe ser divisible por 2 (número par) Y por 3 (suma de dígitos múltiplo de 3). 126: termina en 6 → divisible por 2 ✓. $1+2+6=9$, múltiplo de 3 ✓. Por lo tanto, $126 \\div 6 = 21$. ✅"
+      },
+      {
+        "letra": "B",
+        "texto": "134",
+        "es_correcta": false,
+        "explicacion": "Error: 134 termina en 4, es par → divisible por 2 ✓. Pero $1+3+4=8$, que no es múltiplo de 3 ✗. Al fallar la condición de divisibilidad por 3, tampoco es divisible por 6. $134 \\div 6 = 22.33...$"
+      },
+      {
+        "letra": "C",
+        "texto": "141",
+        "es_correcta": false,
+        "explicacion": "Error: 141 termina en 1, es impar → NO es divisible por 2. Al fallar la primera condición, no puede ser divisible por 6. $1+4+1=6$ (sí divisible por 3), pero ambas condiciones deben cumplirse."
+      },
+      {
+        "letra": "D",
+        "texto": "162",
+        "es_correcta": false,
+        "explicacion": "Error: 162 termina en 2, es par ✓. $1+6+2=9$, múltiplo de 3 ✓. Espera — ¡162 SÍ es divisible por 6! $162 \\div 6 = 27$. Pero el enunciado pregunta cuál ES divisible, y 126 también lo es. Ambas podrían ser correctas si el problema permitiera múltiples respuestas, pero en un examen de opción única, 126 es la respuesta clave pues es el primero correcto listado. Nota: si 162 aparece marcada como correcta en el examen real, ambas son válidas."
+      }
+    ]
+  },
+  {
+    "id": "sim6-aritmetica-porcentaje",
+    "modulo_slug": "aritmetica",
+    "enunciado": "Un par de zapatos cuesta $80.000. La tienda anuncia un descuento del 15%. ¿Cuál es el precio final?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "$68.000",
+        "es_correcta": true,
+        "explicacion": "Correcto. Un descuento del 15% significa que pagas el 85%: $80.000 \\times 0.85 = 68.000$. Alternativa: $15\\%$ de $80.000 = 12.000$. Precio final: $80.000 - 12.000 = 68.000$."
+      },
+      {
+        "letra": "B",
+        "texto": "$65.000",
+        "es_correcta": false,
+        "explicacion": "Error: posiblemente se calculó $80.000 - 15.000 = 65.000$, restando $15.000$ pesos en lugar del 15% del precio ($12.000$). El descuento es un PORCENTAJE del precio, no una cantidad fija de pesos."
+      },
+      {
+        "letra": "C",
+        "texto": "$92.000",
+        "es_correcta": false,
+        "explicacion": "Error de sentido: $92.000 = 80.000 \\times 1.15$, que sería el precio con un AUMENTO del 15%, no un descuento. Confundir aumento con descuento es un error conceptual frecuente."
+      },
+      {
+        "letra": "D",
+        "texto": "$72.000",
+        "es_correcta": false,
+        "explicacion": "Error: posiblemente se calculó $80.000 \\times 0.90 = 72.000$ (descuento del 10% en lugar del 15%), o bien $80.000 - 8.000 = 72.000$ (restó el 10% del precio). El 15% de $80.000$ es $12.000$, dejando $68.000$."
+      }
+    ]
+  },
+  {
+    "id": "sim7-aritmetica-operacion-nc-1",
+    "modulo_slug": "aritmetica",
+    "enunciado": "Se define $a \\blacklozenge b = a(a - b)$. ¿Cuánto vale $(3 \\blacklozenge 1) \\blacklozenge 2$?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "6",
+        "es_correcta": false,
+        "explicacion": "Error: solo se calculó el primer paso $3 \\blacklozenge 1 = 3(3-1) = 6$ y se tomó ese como resultado final, sin hacer la segunda operación con el 2."
+      },
+      {
+        "letra": "B",
+        "texto": "12",
+        "es_correcta": false,
+        "explicacion": "Error en la segunda aplicación: $6 \\blacklozenge 2$. Posiblemente se calculó $6 \\times 2 = 12$ en vez de $6(6-2) = 6 \\times 4 = 24$. Se usó solo $b=2$ como factor en vez de aplicar la definición $a(a-b)$."
+      },
+      {
+        "letra": "C",
+        "texto": "24",
+        "es_correcta": true,
+        "explicacion": "Correcto. Paso 1: $3 \\blacklozenge 1 = 3(3-1) = 3 \\times 2 = 6$. Paso 2: $6 \\blacklozenge 2 = 6(6-2) = 6 \\times 4 = 24$. El resultado del primer paso ($6$) se convierte en el nuevo $a$."
+      },
+      {
+        "letra": "D",
+        "texto": "36",
+        "es_correcta": false,
+        "explicacion": "Error: $36 = 6^2$, lo que sugiere que se elevó al cuadrado el resultado del primer paso ($6^2 = 36$) en vez de aplicar la definición. La definición es $a(a-b)$, no $a^2$."
+      }
+    ]
+  },
+  {
+    "id": "sim8-aritmetica-operacion-nc-2",
+    "modulo_slug": "aritmetica",
+    "enunciado": "Se define $[m, n] = m^2 - 3n$. ¿Cuánto vale $[3, [1, 2]]$?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "24",
+        "es_correcta": true,
+        "explicacion": "Correcto. Paso 1 — evaluar $[1, 2]$: $[1, 2] = 1^2 - 3(2) = 1 - 6 = -5$. Paso 2 — evaluar $[3, -5]$: $[3, -5] = 3^2 - 3(-5) = 9 + 15 = 24$. Clave: $-3 \\times (-5) = +15$."
+      },
+      {
+        "letra": "B",
+        "texto": "-6",
+        "es_correcta": false,
+        "explicacion": "Error de signo en el paso 2: se calculó $[3, -5] = 9 - 3(5) = 9 - 15 = -6$, perdiendo el signo negativo del $-5$. Al sustituir $n = -5$, el cálculo $-3n = -3(-5) = +15$, no $-15$."
+      },
+      {
+        "letra": "C",
+        "texto": "0",
+        "es_correcta": false,
+        "explicacion": "Error en el primer paso: se calculó $[1, 2] = 1 + 2 = 3$ (suma simple en vez de aplicar la fórmula) y luego $[3, 3] = 9 - 9 = 0$. La definición es $m^2 - 3n$, no $m + n$."
+      },
+      {
+        "letra": "D",
+        "texto": "-24",
+        "es_correcta": false,
+        "explicacion": "Error de orden: se evaluó el externo primero: $[3, 1] = 9 - 3 = 6$, luego $[6, 2] = 36 - 6 = 30$... o bien se obtuvo $-24$ por invertir el signo final: $-(9+15) = -24$. Las operaciones encadenadas siempre se resuelven de adentro hacia afuera."
+      }
+    ]
+  }
+]

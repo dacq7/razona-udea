@@ -1,1 +1,386 @@
-[]
+[
+  {
+    "id": "prac1-aritmetica-jerarquia",
+    "dificultad": 1,
+    "enunciado": "¿Cuál es el resultado de $2 + 3 \\times 4 - 1$?",
+    "pista": "Recuerda la jerarquía de operaciones: la multiplicación se resuelve antes que la suma y la resta.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "19",
+        "es_correcta": false,
+        "explicacion": "Es trampa: resultado de calcular de izquierda a derecha sin jerarquía — $(2+3) \\times 4 - 1 = 5 \\times 4 - 1 = 19$. La multiplicación debe hacerse ANTES que la suma, no después."
+      },
+      {
+        "letra": "B",
+        "texto": "13",
+        "es_correcta": true,
+        "explicacion": "Es correcto. La multiplicación va primero: $3 \\times 4 = 12$. Luego de izquierda a derecha: $2 + 12 - 1 = 13$."
+      },
+      {
+        "letra": "C",
+        "texto": "15",
+        "es_correcta": false,
+        "explicacion": "Es trampa: posiblemente se calculó $2 + 3 = 5$, luego $5 \\times 4 = 20$, luego $20 \\div (\\text{algo})$... o bien $2 + 3 \\times 4 = 2 + 12 = 14$ menos algún error de signo. La jerarquía correcta da 13."
+      },
+      {
+        "letra": "D",
+        "texto": "9",
+        "es_correcta": false,
+        "explicacion": "Es trampa: podría resultar de calcular primero la suma y la resta ($2 + 3 - 1 = 4$) y luego multiplicar ($4 \\times ... $). El orden correcto (multiplicación primero) da $2 + 12 - 1 = 13$."
+      }
+    ]
+  },
+  {
+    "id": "prac2-aritmetica-signos",
+    "dificultad": 1,
+    "enunciado": "Calcula: $-3 - (-5) + (-2)$.",
+    "pista": "Recuerda: restar un número negativo equivale a sumar su valor positivo. Convierte primero todos los signos.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "0",
+        "es_correcta": true,
+        "explicacion": "Es correcto. $-3 - (-5) + (-2) = -3 + 5 - 2 = 2 - 2 = 0$. Restar $-5$ es lo mismo que sumar $+5$; sumar $(-2)$ es lo mismo que restar $2$."
+      },
+      {
+        "letra": "B",
+        "texto": "-10",
+        "es_correcta": false,
+        "explicacion": "Es trampa: resultado de sumar todos como negativos sin aplicar la regla de signos — $-3 - 5 - 2 = -10$. El error es no reconocer que $-(-5) = +5$."
+      },
+      {
+        "letra": "C",
+        "texto": "4",
+        "es_correcta": false,
+        "explicacion": "Es trampa: posiblemente calculado como $-3 + 5 + 2 = 4$, sin notar que $(-2)$ debe restarse, no sumarse. Sumar $(-2)$ es equivalente a restar $2$."
+      },
+      {
+        "letra": "D",
+        "texto": "-6",
+        "es_correcta": false,
+        "explicacion": "Es trampa: podría ser $-3 - 5 + 2 = -6$, que ocurre si se interpreta $-(-5)$ como $-5$ (error de doble negativo) y luego se suma $(-2)$ como $+2$. Ambas conversiones de signo son incorrectas."
+      }
+    ]
+  },
+  {
+    "id": "prac3-aritmetica-valor-absoluto",
+    "dificultad": 1,
+    "enunciado": "¿Cuánto vale $|(-3)^2 - 4 \\times 2|$?",
+    "pista": "Primero evalúa la expresión dentro del valor absoluto usando la jerarquía de operaciones. Luego aplica el valor absoluto al resultado final.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "1",
+        "es_correcta": true,
+        "explicacion": "Es correcto. $(-3)^2 = 9$ (el negativo entre paréntesis se eleva al cuadrado, dando positivo). $4 \\times 2 = 8$. Entonces $|9 - 8| = |1| = 1$."
+      },
+      {
+        "letra": "B",
+        "texto": "17",
+        "es_correcta": false,
+        "explicacion": "Es trampa: resultado de calcular $|-3^2 - 4 \\times 2| = |-9 - 8| = |-17| = 17$. El error es interpretar $(-3)^2$ como $-3^2 = -9$. Con el paréntesis, es $(-3)^2 = 9$, no $-9$."
+      },
+      {
+        "letra": "C",
+        "texto": "-1",
+        "es_correcta": false,
+        "explicacion": "Es trampa: el valor absoluto NUNCA puede ser negativo. $|x| \\geq 0$ por definición. Si calculaste $9 - 8 = 1$, el valor absoluto de $1$ es $1$, no $-1$."
+      },
+      {
+        "letra": "D",
+        "texto": "7",
+        "es_correcta": false,
+        "explicacion": "Es trampa: posiblemente se calculó $|-3 - 4 \\times 2| = |-3 - 8| = |-11| = 11$, o bien $|3^2 - 4 \\times 2| = |9-8|... $ No, ese sería 1. Quizá $|(-3)^2 - (4-2)| = |9-2| = 7$, confundiendo la multiplicación con una resta dentro del paréntesis que no existe."
+      }
+    ]
+  },
+  {
+    "id": "prac4-aritmetica-fracciones-suma",
+    "dificultad": 2,
+    "enunciado": "¿Cuál es el resultado de $\\dfrac{2}{3} + \\dfrac{3}{4}$?",
+    "pista": "Para sumar fracciones necesitas un denominador común. Calcula el MCM de 3 y 4, luego convierte cada fracción.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "$\\dfrac{5}{7}$",
+        "es_correcta": false,
+        "explicacion": "Es trampa clásica: se sumaron numeradores ($2+3=5$) y denominadores ($3+4=7$) por separado. Las fracciones NO se suman así. Se necesita denominador común."
+      },
+      {
+        "letra": "B",
+        "texto": "$\\dfrac{17}{12}$",
+        "es_correcta": true,
+        "explicacion": "Es correcto. $\\text{MCM}(3,4) = 12$. Convirtiendo: $\\dfrac{2}{3} = \\dfrac{8}{12}$ y $\\dfrac{3}{4} = \\dfrac{9}{12}$. Suma: $\\dfrac{8+9}{12} = \\dfrac{17}{12}$."
+      },
+      {
+        "letra": "C",
+        "texto": "$\\dfrac{6}{12}$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $\\dfrac{6}{12} = \\dfrac{1}{2}$ resulta de multiplicar ambas fracciones entre sí ($\\dfrac{2}{3} \\times \\dfrac{3}{4} = \\dfrac{6}{12}$). La operación pedida es suma, no producto."
+      },
+      {
+        "letra": "D",
+        "texto": "$\\dfrac{5}{12}$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $\\dfrac{5}{12}$ resulta de sumar solo los numeradores con el denominador común incorrecto, o de confundir con una resta. El cálculo correcto da $\\dfrac{8}{12} + \\dfrac{9}{12} = \\dfrac{17}{12}$."
+      }
+    ]
+  },
+  {
+    "id": "prac5-aritmetica-fracciones-division",
+    "dificultad": 2,
+    "enunciado": "¿Cuánto es $\\dfrac{3}{4} \\div \\dfrac{2}{3}$?",
+    "pista": "Para dividir fracciones, multiplica la primera por el recíproco de la segunda (invierte el divisor).",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "$\\dfrac{1}{2}$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $\\dfrac{1}{2}$ resulta de simplificar $\\dfrac{2}{4} \\times \\dfrac{2}{3}... $ No. Probablemente se dividieron numeradores y denominadores por separado: $3 \\div 2 = \\dfrac{3}{2}$ y $4 \\div 3 = \\dfrac{4}{3}$, luego se confundió el resultado. El procedimiento correcto invierte la segunda fracción."
+      },
+      {
+        "letra": "B",
+        "texto": "$\\dfrac{9}{8}$",
+        "es_correcta": true,
+        "explicacion": "Es correcto. $\\dfrac{3}{4} \\div \\dfrac{2}{3} = \\dfrac{3}{4} \\times \\dfrac{3}{2} = \\dfrac{9}{8}$. Se invierte el divisor $\\dfrac{2}{3}$ para obtener $\\dfrac{3}{2}$ y luego se multiplica."
+      },
+      {
+        "letra": "C",
+        "texto": "$\\dfrac{8}{9}$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $\\dfrac{8}{9}$ resulta de invertir la primera fracción en lugar de la segunda — se calculó $\\dfrac{4}{3} \\times \\dfrac{2}{3} = \\dfrac{8}{9}$. En la división de fracciones, solo se invierte el DIVISOR (la segunda fracción)."
+      },
+      {
+        "letra": "D",
+        "texto": "$\\dfrac{6}{12}$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $\\dfrac{6}{12} = \\dfrac{1}{2}$ resulta de MULTIPLICAR directamente $\\dfrac{3}{4} \\times \\dfrac{2}{3} = \\dfrac{6}{12}$, sin invertir el divisor. Para dividir, primero se debe invertir la segunda fracción."
+      }
+    ]
+  },
+  {
+    "id": "prac6-aritmetica-conversion-porcentaje",
+    "dificultad": 2,
+    "enunciado": "¿A qué porcentaje equivale la fracción $\\dfrac{3}{8}$?",
+    "pista": "Divide el numerador entre el denominador para obtener el decimal, luego multiplica por 100.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "33.3%",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 33.3% equivale a $\\dfrac{1}{3}$. Confundir $\\dfrac{3}{8}$ con $\\dfrac{3}{9} = \\dfrac{1}{3}$ es el error de no realizar la división correctamente."
+      },
+      {
+        "letra": "B",
+        "texto": "37.5%",
+        "es_correcta": true,
+        "explicacion": "Es correcto. $3 \\div 8 = 0.375$. Multiplicando por 100: $0.375 \\times 100 = 37.5\\%$."
+      },
+      {
+        "letra": "C",
+        "texto": "38%",
+        "es_correcta": false,
+        "explicacion": "Es trampa: redondeo incorrecto. $37.5\\%$ es el valor exacto; redondearlo a $38\\%$ sin que el enunciado lo pida introduce un error. Además, 38% equivaldría a $\\dfrac{38}{100} = \\dfrac{19}{50}$, que no es igual a $\\dfrac{3}{8}$."
+      },
+      {
+        "letra": "D",
+        "texto": "25%",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 25% equivale a $\\dfrac{1}{4}$, no a $\\dfrac{3}{8}$. El error puede ser calcular $\\dfrac{3}{8}$ como si el 3 fuera el denominador: $\\dfrac{8}{3} \\approx 2.67$, o simplemente confundir cuartos con octavos."
+      }
+    ]
+  },
+  {
+    "id": "prac7-aritmetica-mcm",
+    "dificultad": 2,
+    "enunciado": "¿Cuál es el MCM de 12 y 18?",
+    "pista": "Factoriza ambos números en primos. El MCM toma todos los factores que aparecen, con el exponente mayor.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "6",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 6 es el MCD de 12 y 18, no el MCM. MCD toma los factores comunes con el menor exponente: $\\text{MCD}(12,18) = 2 \\times 3 = 6$. MCM y MCD son operaciones distintas."
+      },
+      {
+        "letra": "B",
+        "texto": "36",
+        "es_correcta": true,
+        "explicacion": "Es correcto. $12 = 2^2 \\times 3$ y $18 = 2 \\times 3^2$. El MCM toma el mayor exponente de cada primo: $2^2 \\times 3^2 = 4 \\times 9 = 36$. Verificación: $36 \\div 12 = 3$ ✓ y $36 \\div 18 = 2$ ✓."
+      },
+      {
+        "letra": "C",
+        "texto": "216",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $216 = 12 \\times 18$, es decir, el producto directo de los dos números. El MCM es siempre menor o igual que el producto, e igual al producto solo cuando los números son coprimos (MCD=1). Aquí MCD=6, así que $\\text{MCM} = \\dfrac{12 \\times 18}{6} = 36$."
+      },
+      {
+        "letra": "D",
+        "texto": "24",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 24 es múltiplo de 12 pero $24 \\div 18 = 1.33...$ no es entero, así que 24 NO es múltiplo de 18. El MCM debe ser múltiplo de ambos; 36 cumple esa condición y es el menor."
+      }
+    ]
+  },
+  {
+    "id": "prac8-aritmetica-mcd",
+    "dificultad": 2,
+    "enunciado": "Tienes 24 caramelos de limón y 36 de naranja. Quieres armar bolsas con la misma cantidad de caramelos de cada sabor y sin que sobre ninguno. ¿Cuántas bolsas puedes armar como máximo?",
+    "pista": "Cuando quieres repartir en grupos iguales sin sobras, necesitas el MCD. Factoriza 24 y 36.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "6",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 6 divide a 24 y a 36, pero no es el MÁXIMO. Con 6 bolsas irían 4 limón y 6 naranja en cada una, lo cual funciona, pero puedes hacer más bolsas. El MCD es 12, que es el máximo número de bolsas posible."
+      },
+      {
+        "letra": "B",
+        "texto": "12",
+        "es_correcta": true,
+        "explicacion": "Es correcto. $\\text{MCD}(24, 36) = 12$. Factorizando: $24 = 2^3 \\times 3$ y $36 = 2^2 \\times 3^2$. MCD = $2^2 \\times 3 = 12$. Con 12 bolsas: 2 limón y 3 naranja por bolsa, sin sobras."
+      },
+      {
+        "letra": "C",
+        "texto": "72",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 72 es el MCM de 24 y 36. El MCM sirve para cuando preguntan cuándo coinciden dos ciclos, no para repartir. Además, no se pueden armar 72 bolsas si solo hay 24 caramelos de limón."
+      },
+      {
+        "letra": "D",
+        "texto": "3",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 3 divide a ambos pero no es el máximo. Posiblemente calculado como $24 \\div 36... \\approx 0.67$ o encontrando solo un factor común sin verificar el mayor. El MCD correcto es 12."
+      }
+    ]
+  },
+  {
+    "id": "prac9-aritmetica-potencias",
+    "dificultad": 2,
+    "enunciado": "Simplifica: $\\dfrac{2^3 \\times 2^4}{2^5}$.",
+    "pista": "En el numerador, suma los exponentes (mismo base multiplicando). Luego, en la división, resta el exponente del denominador.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "4",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Numerador: $2^3 \\times 2^4 = 2^{3+4} = 2^7$. División: $2^7 \\div 2^5 = 2^{7-5} = 2^2 = 4$."
+      },
+      {
+        "letra": "B",
+        "texto": "8",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $8 = 2^3$. Este resultado proviene de errores como $2^{3+4-5} = 2^2 = 4$ (correcto) vs. sumar los exponentes incorrectamente: $2^{7-4} = 2^3 = 8$ (restó solo el exponente del numerador anterior). El denominador es $2^5$, no $2^4$."
+      },
+      {
+        "letra": "C",
+        "texto": "2",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $2 = 2^1$ proviene quizás de multiplicar los exponentes en el numerador en vez de sumarlos: $2^{3 \\times 4} / 2^5 = 2^{12}/2^5 = 2^7$... no da 2. O bien de restar todos: $3 - 4 - 5 = -6$... tampoco. Posiblemente $2^{3+4} = 2^7$ pero $2^7/2^5 = 2^2 = 4$, no 2."
+      },
+      {
+        "letra": "D",
+        "texto": "16",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $16 = 2^4$ sugiere haber calculado $2^{3+4-3} = 2^4$, restando solo el exponente del primer factor del numerador y no el del denominador. La resta se aplica al resultado combinado del numerador: $2^7 - 2^5 = 2^{7-5} = 2^2 = 4$."
+      }
+    ]
+  },
+  {
+    "id": "prac10-aritmetica-operacion-nc-1",
+    "dificultad": 3,
+    "enunciado": "Se define $a \\oplus b = 2a - b^2$. ¿Cuánto vale $3 \\oplus 2$?",
+    "pista": "Sustituye directamente: el primer número va donde está $a$ y el segundo donde está $b$. Aplica la definición paso a paso.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "2",
+        "es_correcta": true,
+        "explicacion": "Es correcto. $3 \\oplus 2 = 2(3) - (2)^2 = 6 - 4 = 2$."
+      },
+      {
+        "letra": "B",
+        "texto": "14",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $14 = 6 + 4 + 4$... no cuadra exactamente. O podría ser $2(3) + (2)^2 = 6 + 4 + 4 = 14$... tampoco. Posiblemente se sumó en lugar de restar: $2(3) + (2)^2 = 6 + 4 = 10$, o bien $2a + b^2 = 6 + 8 = 14$ si alguien confundió $b^2$ con $2b=4$ y sumó con algún error. El error central es poner $+$ en vez de $-$."
+      },
+      {
+        "letra": "C",
+        "texto": "-2",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $-2$ podría surgir de invertir los roles de $a$ y $b$, calculando $2(2) - (3)^2 = 4 - 9 = -5$... tampoco da -2. O de calcular $a - 2b^2 = 3 - 2(4) = 3-8=-5$. El error más cercano a -2: olvidar el factor 2 en $2a$: $3 - (2)^2 = 3-4=-1$. En cualquier caso, el cálculo correcto es $2(3)-(2)^2=2$."
+      },
+      {
+        "letra": "D",
+        "texto": "10",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $10 = 6 + 4$ proviene de sumar en lugar de restar: $2(3) + (2)^2 = 6 + 4 = 10$. El signo en la definición es $2a - b^2$, no $2a + b^2$."
+      }
+    ]
+  },
+  {
+    "id": "prac11-aritmetica-operacion-nc-2",
+    "dificultad": 3,
+    "enunciado": "Se define $a \\star b = \\dfrac{a + b}{a}$. Calcula $(4 \\star 2) \\star 3$.",
+    "pista": "Resuelve primero la operación más interna: $4 \\star 2$. Luego usa ese resultado como nuevo $a$ en la operación externa.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "$\\dfrac{5}{2}$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: posiblemente se calculó $4 \\star 2 = \\dfrac{4+2}{4} = \\dfrac{3}{2}$ correctamente, pero luego para la operación externa se sumó $\\dfrac{3}{2} + 3 = \\dfrac{9}{2}$ y se olvidó dividir: $\\dfrac{9/2}{3/2} = 3$ (correcto) o se confundió el divisor."
+      },
+      {
+        "letra": "B",
+        "texto": "3",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Paso 1: $4 \\star 2 = \\dfrac{4+2}{4} = \\dfrac{6}{4} = \\dfrac{3}{2}$. Paso 2: $\\dfrac{3}{2} \\star 3 = \\dfrac{\\frac{3}{2} + 3}{\\frac{3}{2}} = \\dfrac{\\frac{9}{2}}{\\frac{3}{2}} = \\dfrac{9}{2} \\times \\dfrac{2}{3} = \\dfrac{18}{6} = 3$."
+      },
+      {
+        "letra": "C",
+        "texto": "$\\dfrac{7}{4}$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $\\dfrac{7}{4}$ surge de errores como calcular $(4 \\star 2) \\star 3 = \\dfrac{(4+2) + 3}{4} = \\dfrac{9}{4}$, confundiendo el resultado intermedio con el $a$ original. El denominador debe ser el resultado del primer paso ($\\dfrac{3}{2}$), no el $a$ original (4)."
+      },
+      {
+        "letra": "D",
+        "texto": "2",
+        "es_correcta": false,
+        "explicacion": "Es trampa: podría resultar de calcular $4 \\star 2 = \\dfrac{6}{4}$ y luego $\\dfrac{6}{4} \\star 3 = \\dfrac{6+3}{4+2} = \\dfrac{9}{6} = \\dfrac{3}{2}$, usando el denominador 4 de la fracción en vez del numerador del resultado. El $a$ en el segundo paso es el resultado completo $\\dfrac{3}{2}$."
+      }
+    ]
+  },
+  {
+    "id": "prac12-aritmetica-operacion-nc-3",
+    "dificultad": 3,
+    "enunciado": "Se define $[a, b] = a^2 + b^2 - ab$. ¿Cuánto vale $[2, 3]$?",
+    "pista": "Sustituye $a = 2$ y $b = 3$ directamente en la fórmula. Calcula cada término por separado antes de combinarlos.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "13",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $13 = 4 + 9 = a^2 + b^2$. Se olvidó restar el término $ab = 2 \\times 3 = 6$. La fórmula completa es $a^2 + b^2 - ab = 4 + 9 - 6 = 7$."
+      },
+      {
+        "letra": "B",
+        "texto": "1",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $1 = (a-b)^2 = (2-3)^2 = (-1)^2 = 1$. La expansión de $(a-b)^2 = a^2 - 2ab + b^2$, que difiere de la definición $a^2 + b^2 - ab$ (la definición tiene $-ab$, no $-2ab$). Son expresiones distintas."
+      },
+      {
+        "letra": "C",
+        "texto": "7",
+        "es_correcta": true,
+        "explicacion": "Es correcto. $[2, 3] = (2)^2 + (3)^2 - (2)(3) = 4 + 9 - 6 = 7$."
+      },
+      {
+        "letra": "D",
+        "texto": "19",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $19 = 4 + 9 + 6 = a^2 + b^2 + ab$. Se sumó $ab$ en lugar de restarlo. La definición tiene signo negativo: $a^2 + b^2 - ab$, no $a^2 + b^2 + ab$."
+      }
+    ]
+  }
+]

@@ -1,3 +1,165 @@
 # Aritmética y Operaciones
 
-Contenido en desarrollo. ¡Vuelve pronto!
+La aritmética es la base de todo el razonamiento cuantitativo del examen UdeA. Dominar la jerarquía de operaciones, los criterios de divisibilidad y las operaciones no convencionales es indispensable para no perder puntos por errores de cálculo.
+
+## 1. Jerarquía de operaciones
+
+Cuando una expresión tiene varios operadores, el orden en que se evalúan importa. La regla es **PAPOMUDAS** (Paréntesis, Potencias, Multiplicación/División, Adición/Sustracción):
+
+1. **Pa**réntesis — de adentro hacia afuera
+2. **Po**tencias y raíces
+3. **Mu**ltiplicación y **D**ivisión — de izquierda a derecha
+4. **A**dición y **S**ustracción — de izquierda a derecha
+
+**Ejemplo:** $2 + 3 \times 4 - 1$
+
+Incorrecto (izquierda a derecha): $(2+3) \times 4 - 1 = 19$ ❌  
+Correcto: $2 + (3 \times 4) - 1 = 2 + 12 - 1 = 13$ ✅
+
+**Ejemplo con potencias:** $3 + 2^3 \times (5 - 2)$
+
+Paso 1 — Paréntesis: $5-2=3$ | Paso 2 — Potencia: $2^3=8$ | Paso 3 — Producto: $8 \times 3=24$ | Paso 4 — Suma: $3+24=27$
+
+### Signos negativos
+
+Reglas fundamentales:
+- $(-) \times (-) = (+)$ y $(-) \times (+) = (-)$
+- $a - (-b) = a + b$ (restar un negativo es sumar)
+
+**Error clásico:** $-3^2 \neq (-3)^2$. La expresión $-3^2$ significa $-(3^2) = -9$; en cambio, $(-3)^2 = 9$. El paréntesis hace toda la diferencia.
+
+**Valor absoluto:** $|x|$ da la distancia de $x$ al cero. $|-7| = 7$, $|3| = 3$. Siempre es no negativo.
+
+## 2. Divisibilidad y factorización
+
+### Criterios de divisibilidad
+
+| Divisor | Criterio | Ejemplo |
+|---------|---------|---------|
+| 2 | Último dígito par | 348 ÷ 2 ✅ |
+| 3 | Suma de dígitos divisible por 3 | 312: 3+1+2=6 ✅ |
+| 4 | Últimos dos dígitos divisibles por 4 | 328: 28÷4=7 ✅ |
+| 5 | Termina en 0 o 5 | 245 ✅ |
+| 6 | Divisible por 2 **y** por 3 | 312: es par y 3+1+2=6 ✅ |
+| 8 | Últimos tres dígitos divisibles por 8 | 1024: 024=24, 24÷8=3 ✅ |
+| 9 | Suma de dígitos divisible por 9 | 729: 7+2+9=18 ✅ |
+| 10 | Termina en 0 | 450 ✅ |
+| 11 | Suma alternada de dígitos da 0 o múltiplo de 11 | 121: 1−2+1=0 ✅ |
+
+### Factorización en primos
+
+Todo número entero positivo mayor que 1 se escribe de forma única como producto de primos.
+
+$60 = 2^2 \times 3 \times 5 \qquad 84 = 2^2 \times 3 \times 7$
+
+### Máximo Común Divisor (MCD)
+
+El MCD es el mayor número que divide exactamente a todos los dados.
+
+**Método:** Factores primos **comunes** con el **menor** exponente.
+
+$$\text{MCD}(60, 84) = 2^2 \times 3 = 12$$
+
+**¿Cuándo se usa?** Para simplificar fracciones, repartir en grupos iguales sin sobrar.
+
+### Mínimo Común Múltiplo (MCM)
+
+El MCM es el menor número que es múltiplo de todos los dados.
+
+**Método:** **Todos** los factores primos que aparecen, con el **mayor** exponente.
+
+$$\text{MCM}(60, 84) = 2^2 \times 3 \times 5 \times 7 = 420$$
+
+**¿Cuándo se usa?** Para encontrar cuándo dos eventos cíclicos coinciden: buses, medicamentos, señales.
+
+## 3. Fracciones y conversiones
+
+### Suma y resta
+
+Se necesita **denominador común** (MCM de los denominadores):
+
+$$\frac{2}{3} + \frac{3}{4} = \frac{8}{12} + \frac{9}{12} = \frac{17}{12}$$
+
+### Multiplicación y división
+
+- **Multiplicación:** numerador × numerador, denominador × denominador. Simplifica antes si puedes.
+- **División:** multiplica por el recíproco (invierte la segunda fracción).
+
+$$\frac{3}{4} \div \frac{2}{3} = \frac{3}{4} \times \frac{3}{2} = \frac{9}{8}$$
+
+**Error frecuente:** invertir la fracción equivocada. Siempre se invierte el divisor (la segunda).
+
+### Conversión fracción ↔ decimal ↔ porcentaje
+
+- **Fracción a decimal:** divide numerador entre denominador. $\frac{3}{8} = 3 \div 8 = 0.375$
+- **Decimal a porcentaje:** multiplica por 100. $0.375 \times 100 = 37.5\%$
+- **Porcentaje a fracción:** divide entre 100 y simplifica. $35\% = \frac{35}{100} = \frac{7}{20}$
+
+**Aumentos y descuentos:** Aumentar en $p\%$ equivale a multiplicar por $(1 + \frac{p}{100})$. Disminuir en $p\%$ equivale a multiplicar por $(1 - \frac{p}{100})$.
+
+Ejemplo: Un precio de \$80 sube un 15%: $80 \times 1.15 = \$92$.
+
+## 4. Potenciación y radicación
+
+### Propiedades de las potencias
+
+| Propiedad | Fórmula | Ejemplo |
+|-----------|---------|---------|
+| Producto, mismo base | $a^m \times a^n = a^{m+n}$ | $2^3 \times 2^4 = 2^7 = 128$ |
+| División, mismo base | $a^m \div a^n = a^{m-n}$ | $3^5 \div 3^2 = 3^3 = 27$ |
+| Potencia de potencia | $(a^m)^n = a^{mn}$ | $(2^3)^2 = 2^6 = 64$ |
+| Producto elevado | $(ab)^n = a^n b^n$ | $(2 \times 3)^2 = 4 \times 9 = 36$ |
+| Exponente cero | $a^0 = 1$ $(a \neq 0)$ | $7^0 = 1$ |
+| Exponente negativo | $a^{-n} = \frac{1}{a^n}$ | $2^{-3} = \frac{1}{8}$ |
+
+### Conversión de bases — clave para el examen
+
+Reconocer que $4 = 2^2$, $8 = 2^3$, $16 = 2^4$, $9 = 3^2$, $27 = 3^3$ permite simplificar expresiones aparentemente complejas:
+
+$$\frac{4^3 \times 2^2}{8^2} = \frac{(2^2)^3 \times 2^2}{(2^3)^2} = \frac{2^6 \times 2^2}{2^6} = 2^2 = 4$$
+
+### Raíces
+
+$\sqrt{a} = a^{1/2}$, $\sqrt[3]{a} = a^{1/3}$. Cuadrados perfectos útiles: $\sqrt{36}=6$, $\sqrt{49}=7$, $\sqrt{144}=12$, $\sqrt{225}=15$.
+
+### Notación científica
+
+$a \times 10^n$ donde $1 \leq a < 10$. Desplazar la coma a la derecha suma al exponente; a la izquierda lo resta.
+
+$45\,000 = 4.5 \times 10^4 \qquad 0.003 = 3 \times 10^{-3}$
+
+## 5. Operaciones no convencionales
+
+**Este tema aparece en casi todos los exámenes UdeA y es donde más se pierde puntaje.** El examen define un símbolo nuevo ($\triangle$, $\star$, $\diamond$, $\oplus$, $[\cdot]$, etc.) y describe cómo opera. Tu trabajo es aplicar la definición exactamente — sin inventar propiedades.
+
+### Estrategia en 3 pasos
+
+1. **Lee la definición con cuidado.** Identifica qué posición ocupa cada variable.
+2. **Sustituye letra por letra.** No combines con operaciones que "parecen" la misma.
+3. **Calcula de adentro hacia afuera.** En operaciones encadenadas, el resultado interior se convierte en nuevo argumento.
+
+**Ejemplo 1 — Operación simple:**
+
+Dada $a \triangle b = a^2 - 2b$, calcula $3 \triangle 4$.
+
+$$3 \triangle 4 = (3)^2 - 2(4) = 9 - 8 = 1$$
+
+**Ejemplo 2 — Operación encadenada:**
+
+Con la misma definición, calcula $(2 \triangle 3) \triangle 1$.
+
+Paso 1: $2 \triangle 3 = (2)^2 - 2(3) = 4 - 6 = -2$
+
+Paso 2: $(-2) \triangle 1 = (-2)^2 - 2(1) = 4 - 2 = 2$
+
+**Error más frecuente:** En el Paso 2, calcular $-2^2 = -4$ en lugar de $(-2)^2 = 4$. Cuando el resultado de la primera operación es negativo, el paréntesis es obligatorio al elevarlo.
+
+### Operaciones no conmutativas
+
+Si la definición es $a \star b = \frac{a+b}{a}$, entonces $a \star b \neq b \star a$ en general. El orden importa: el primer número va donde dice $a$, el segundo donde dice $b$, siempre.
+
+Comprueba: $4 \star 2 = \frac{4+2}{4} = \frac{3}{2}$, pero $2 \star 4 = \frac{2+4}{2} = 3$. Distintos resultados.
+
+### Definiciones con tres variables
+
+Algunas definiciones usan $[a, b, c] = 2a - b + c^2$. Sustituye en el mismo orden que el enunciado; si el examen pide $[1, 3, 2]$: $a=1$, $b=3$, $c=2$, resultado $= 2(1) - 3 + 4 = 3$.

@@ -1,1 +1,57 @@
-[]
+[
+  {
+    "id": "ej1-aritmetica-jerarquia",
+    "enunciado": "Evalúa paso a paso: $2 + 3 \\times (4 - 1)^2 \\div 3$.",
+    "pasos": [
+      "Paso 1 — Paréntesis: $4 - 1 = 3$.",
+      "Paso 2 — Potencia: $3^2 = 9$.",
+      "Paso 3 — Multiplicación y división (izquierda a derecha): $3 \\times 9 = 27$, luego $27 \\div 3 = 9$.",
+      "Paso 4 — Suma: $2 + 9 = 11$."
+    ],
+    "conclusion": "El resultado es $\\mathbf{11}$. El error más frecuente es hacer $2+3=5$ primero — la multiplicación siempre va antes que la suma."
+  },
+  {
+    "id": "ej2-aritmetica-mcm-contexto",
+    "enunciado": "Una farmacia recibe pedido del medicamento A cada 8 días y del medicamento B cada 12 días. Si hoy llegaron ambos a la vez, ¿cuántos días pasarán antes de que vuelvan a coincidir?",
+    "pasos": [
+      "Paso 1 — Reconocer que se necesita el MCM: queremos el menor número de días que sea múltiplo de 8 y de 12 simultáneamente.",
+      "Paso 2 — Factorizar: $8 = 2^3$ y $12 = 2^2 \\times 3$.",
+      "Paso 3 — MCM: tomar todos los factores primos con el mayor exponente. $\\text{MCM}(8, 12) = 2^3 \\times 3 = 8 \\times 3 = 24$.",
+      "Paso 4 — Verificar: $24 \\div 8 = 3$ ✓ y $24 \\div 12 = 2$ ✓. Ambos dividen exactamente."
+    ],
+    "conclusion": "Los pedidos coincidirán nuevamente en $\\mathbf{24}$ días. Si el problema fuera repartir en grupos iguales, se usaría el MCD en su lugar."
+  },
+  {
+    "id": "ej3-aritmetica-fracciones",
+    "enunciado": "Simplifica: $\\dfrac{5}{6} - \\dfrac{3}{4} + \\dfrac{1}{3}$.",
+    "pasos": [
+      "Paso 1 — Encontrar el MCM de los denominadores 6, 4 y 3: $\\text{MCM}(6,4,3) = 12$.",
+      "Paso 2 — Convertir cada fracción al denominador 12: $\\dfrac{5}{6} = \\dfrac{10}{12}$, $\\dfrac{3}{4} = \\dfrac{9}{12}$, $\\dfrac{1}{3} = \\dfrac{4}{12}$.",
+      "Paso 3 — Operar: $\\dfrac{10}{12} - \\dfrac{9}{12} + \\dfrac{4}{12} = \\dfrac{10 - 9 + 4}{12} = \\dfrac{5}{12}$.",
+      "Paso 4 — Verificar que la fracción está simplificada: $\\text{MCD}(5,12) = 1$, ya está en su mínima expresión."
+    ],
+    "conclusion": "El resultado es $\\dfrac{5}{12}$. La clave es siempre buscar el MCM de los denominadores antes de operar."
+  },
+  {
+    "id": "ej4-aritmetica-potencias",
+    "enunciado": "Simplifica: $\\dfrac{3^5 \\times 9^2}{27^2}$.",
+    "pasos": [
+      "Paso 1 — Convertir todo a base 3: $9 = 3^2$ y $27 = 3^3$.",
+      "Paso 2 — Reescribir la expresión: $\\dfrac{3^5 \\times (3^2)^2}{(3^3)^2} = \\dfrac{3^5 \\times 3^4}{3^6}$.",
+      "Paso 3 — Aplicar propiedades: numerador = $3^{5+4} = 3^9$. División: $3^9 \\div 3^6 = 3^{9-6} = 3^3$.",
+      "Paso 4 — Calcular: $3^3 = 27$."
+    ],
+    "conclusion": "El resultado es $\\mathbf{27}$. La estrategia clave es convertir todas las bases a la misma potencia de un primo antes de aplicar las propiedades."
+  },
+  {
+    "id": "ej5-aritmetica-operacion-nc",
+    "enunciado": "Se define la operación $a \\triangle b = a^2 - 2b$. Calcula $(3 \\triangle 4) \\triangle 2$.",
+    "pasos": [
+      "Paso 1 — Resolver la operación interna $3 \\triangle 4$: sustituye $a = 3$ y $b = 4$ en la definición. $3 \\triangle 4 = (3)^2 - 2(4) = 9 - 8 = 1$.",
+      "Paso 2 — El resultado $1$ se convierte en el nuevo valor de $a$ en la operación externa.",
+      "Paso 3 — Resolver $1 \\triangle 2$: sustituye $a = 1$ y $b = 2$. $1 \\triangle 2 = (1)^2 - 2(2) = 1 - 4 = -3$.",
+      "Paso 4 — Verificar que no cometiste el error clásico: el $1$ en $a^2 = 1^2 = 1$, no $1^2 = 2$."
+    ],
+    "conclusion": "El resultado es $\\mathbf{-3}$. En operaciones encadenadas, el resultado del primer cálculo se convierte en argumento del segundo — nunca olvides identificar qué posición ocupa (¿$a$ o $b$?)."
+  }
+]
