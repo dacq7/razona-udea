@@ -1,0 +1,66 @@
+[
+  {
+    "id": "prac1-logica-negacion-disjuncion",
+    "dificultad": 1,
+    "enunciado": "Sea $p$ = 'El examen es difícil' (Verdadero) y $q$ = 'Estudié mucho' (Falso). ¿Cuál es el valor de verdad de $\\neg p \\lor q$?",
+    "pista": "Primero aplica la negación a $p$, luego evalúa la disyunción con los valores resultantes.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Verdadero, porque $p$ es verdadero.",
+        "es_correcta": false,
+        "explicacion": "Es trampa: la proposición tiene $\\neg p$, no $p$. Al negar $p = V$ obtenemos $\\neg p = F$. No se puede usar el valor de $p$ directamente."
+      },
+      {
+        "letra": "B",
+        "texto": "Falso.",
+        "es_correcta": true,
+        "explicacion": "Es correcto. $\\neg p = \\neg V = F$. Luego $\\neg p \\lor q = F \\lor F = F$. La disyunción solo es verdadera si al menos uno de sus términos es verdadero, y aquí ambos son falsos."
+      },
+      {
+        "letra": "C",
+        "texto": "Verdadero, porque la disyunción ($\\lor$) siempre es verdadera si alguno de sus términos lo es.",
+        "es_correcta": false,
+        "explicacion": "Es trampa parcialmente cierta pero mal aplicada: la disyunción es verdadera cuando AL MENOS UNO es verdadero. Aquí $\\neg p = F$ y $q = F$, así que ninguno lo es."
+      },
+      {
+        "letra": "D",
+        "texto": "Verdadero, porque $\\neg q$ es verdadero.",
+        "es_correcta": false,
+        "explicacion": "Es trampa: la proposición contiene $\\neg p$, no $\\neg q$. Aunque $\\neg q = V$ (ya que $q = F$), ese término no aparece en la proposición $\\neg p \\lor q$."
+      }
+    ]
+  },
+  {
+    "id": "prac2-logica-conjuntos-conteo",
+    "dificultad": 1,
+    "enunciado": "En un colegio de 30 estudiantes, 18 practican fútbol y 15 practican baloncesto. Si 7 practican ambos deportes, ¿cuántos estudiantes no practican ninguno de los dos?",
+    "pista": "Usa la fórmula de inclusión-exclusión: $|A \\cup B| = |A| + |B| - |A \\cap B|$. Luego resta del total.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "4",
+        "es_correcta": true,
+        "explicacion": "Es correcto. $|F \\cup B| = 18 + 15 - 7 = 26$. Los que no practican ninguno = $30 - 26 = 4$."
+      },
+      {
+        "letra": "B",
+        "texto": "7",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 7 es el número de estudiantes que practica AMBOS deportes ($|F \\cap B|$), no el que no practica ninguno. Son conceptos distintos."
+      },
+      {
+        "letra": "C",
+        "texto": "11",
+        "es_correcta": false,
+        "explicacion": "Es trampa: posiblemente resulta de un cálculo erróneo. El error es no aplicar la fórmula de inclusión-exclusión correctamente."
+      },
+      {
+        "letra": "D",
+        "texto": "26",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 26 es el número que practica ALGUNO de los dos deportes ($|F \\cup B|$), no el que no practica ninguno. Se olvidó restar del total."
+      }
+    ]
+  }
+]
