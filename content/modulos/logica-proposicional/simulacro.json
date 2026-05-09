@@ -1,0 +1,64 @@
+[
+  {
+    "id": "sim1-logica-condicional",
+    "modulo_slug": "logica-proposicional",
+    "enunciado": "Dados $p = V$, $q = F$ y $r = F$, ¿cuál es el valor de verdad de $(p \\lor q) \\rightarrow r$?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Verdadero",
+        "es_correcta": false,
+        "explicacion": "$p \\lor q = V \\lor F = V$. Luego $V \\rightarrow F = F$. El condicional es falso cuando el antecedente es V y el consecuente es F."
+      },
+      {
+        "letra": "B",
+        "texto": "Falso",
+        "es_correcta": true,
+        "explicacion": "$p \\lor q = V$. Luego $(p \\lor q) \\rightarrow r = V \\rightarrow F = F$. La única forma en que el condicional es falso: antecedente V y consecuente F."
+      },
+      {
+        "letra": "C",
+        "texto": "No puede determinarse con los valores dados",
+        "es_correcta": false,
+        "explicacion": "Sí puede determinarse. Todos los valores ($p, q, r$) están dados y la operación es determinista. No existe ambigüedad."
+      },
+      {
+        "letra": "D",
+        "texto": "Verdadero, porque $p$ es verdadero",
+        "es_correcta": false,
+        "explicacion": "Error: $p$ aparece dentro de $(p \\lor q)$, que sí es V. Pero eso es el ANTECEDENTE del condicional. El consecuente $r = F$ hace que el condicional sea Falso."
+      }
+    ]
+  },
+  {
+    "id": "sim2-logica-argumento",
+    "modulo_slug": "logica-proposicional",
+    "enunciado": "Un argumento tiene las premisas: (1) Si estudias, apruebas. (2) No aprobaste. Conclusión: No estudiaste. ¿Es este argumento válido?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "No, porque de no aprobar no se puede concluir nada sobre el estudio",
+        "es_correcta": false,
+        "explicacion": "Incorrecto. Precisamente de $p \\rightarrow q$ y $\\neg q$ SÍ se puede concluir $\\neg p$ — esa es la regla del Modus Tollens."
+      },
+      {
+        "letra": "B",
+        "texto": "Sí, porque sigue la forma del Modus Tollens",
+        "es_correcta": true,
+        "explicacion": "Correcto. Modus Tollens: de $p \\rightarrow q$ y $\\neg q$, se concluye $\\neg p$. Aquí p = 'estudias', q = 'apruebas'. Argumento válido."
+      },
+      {
+        "letra": "C",
+        "texto": "No, porque podrían existir otras razones para no aprobar",
+        "es_correcta": false,
+        "explicacion": "Esta objeción es pragmática, no lógica. La validez de un argumento deductivo no depende de si existen otras causas en el mundo real."
+      },
+      {
+        "letra": "D",
+        "texto": "Sí, pero solo si la premisa (1) es verdadera en la realidad",
+        "es_correcta": false,
+        "explicacion": "Error conceptual: la validez lógica es formal, no factual. Un argumento válido garantiza que SI las premisas son verdaderas, ENTONCES la conclusión lo es."
+      }
+    ]
+  }
+]

@@ -7,6 +7,7 @@ interface Props {
   opciones: Opcion[]
   seleccionada: 'A' | 'B' | 'C' | 'D' | null
   haRespondido: boolean
+  showFeedback?: boolean
   onSelect: (letra: 'A' | 'B' | 'C' | 'D') => void
 }
 
@@ -15,19 +16,21 @@ type Variant = 'default' | 'selected' | 'correct' | 'wrong' | 'dimmed'
 function getVariant(
   opcion: Opcion,
   seleccionada: 'A' | 'B' | 'C' | 'D' | null,
-  haRespondido: boolean
+  haRespondido: boolean,
+  showFeedback: boolean
 ): Variant {
   if (!haRespondido) return seleccionada === opcion.letra ? 'selected' : 'default'
+  if (!showFeedback) return seleccionada === opcion.letra ? 'selected' : 'dimmed'
   if (opcion.es_correcta) return 'correct'
   if (seleccionada === opcion.letra) return 'wrong'
   return 'dimmed'
 }
 
-export function OpcionesGrid({ opciones, seleccionada, haRespondido, onSelect }: Props) {
+export function OpcionesGrid({ opciones, seleccionada, haRespondido, showFeedback = true, onSelect }: Props) {
   return (
     <div className="flex flex-col gap-2">
       {opciones.map((opcion) => {
-        const variant = getVariant(opcion, seleccionada, haRespondido)
+        const variant = getVariant(opcion, seleccionada, haRespondido, showFeedback)
 
         return (
           <button
