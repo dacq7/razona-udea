@@ -1,0 +1,8 @@
+{
+  "slug": "geometria-espacial",
+  "titulo": "Razonamiento Geométrico y Espacial",
+  "descripcion": "Figuras planas, sólidos, perímetros, áreas y visualización espacial.",
+  "icono": "Shapes",
+  "orden_recomendado": 5,
+  "color": "rose"
+}

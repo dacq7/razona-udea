@@ -1,0 +1,8 @@
+{
+  "slug": "control-variables",
+  "titulo": "Control de Variables y Combinatoria",
+  "descripcion": "Principios de conteo, permutaciones, combinaciones y control experimental.",
+  "icono": "Shuffle",
+  "orden_recomendado": 7,
+  "color": "orange"
+}

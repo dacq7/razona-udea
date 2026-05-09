@@ -1,0 +1,8 @@
+{
+  "slug": "aritmetica",
+  "titulo": "Aritmética y Operaciones",
+  "descripcion": "Operaciones fundamentales, divisibilidad, potencias y raíces. El núcleo del cálculo numérico.",
+  "icono": "Calculator",
+  "orden_recomendado": 2,
+  "color": "blue"
+}

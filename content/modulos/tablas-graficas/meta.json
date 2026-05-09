@@ -1,0 +1,8 @@
+{
+  "slug": "tablas-graficas",
+  "titulo": "Análisis de Tablas y Gráficas",
+  "descripcion": "Lectura e interpretación de datos presentados en tablas, gráficos de barras, líneas y torta.",
+  "icono": "BarChart2",
+  "orden_recomendado": 4,
+  "color": "amber"
+}

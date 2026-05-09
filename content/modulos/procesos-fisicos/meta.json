@@ -1,0 +1,8 @@
+{
+  "slug": "procesos-fisicos",
+  "titulo": "Procesos Físicos",
+  "descripcion": "Interpretación de fenómenos físicos mediante gráficas y razonamiento cuantitativo.",
+  "icono": "Zap",
+  "orden_recomendado": 8,
+  "color": "cyan"
+}
