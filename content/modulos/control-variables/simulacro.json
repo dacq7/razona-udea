@@ -1,1 +1,250 @@
-[]
+[
+  {
+    "id": "sim1-control-variables-perm-vs-comb",
+    "modulo_slug": "control-variables",
+    "enunciado": "De 9 candidatos se deben elegir el primer, segundo y tercer clasificado de un concurso (con premios distintos para cada posición). ¿De cuántas formas distintas pueden asignarse los tres primeros puestos?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "84",
+        "es_correcta": false,
+        "explicacion": "$84 = C(9, 3) = \\dfrac{9!}{3! \\cdot 6!} = 84$. Esto sería correcto si los tres puestos fueran equivalentes (por ejemplo, elegir 3 finalistas sin diferenciar quién gana qué). Como los premios del 1.°, 2.° y 3.° son distintos, el orden importa: $P(9, 3) = 9 \\times 8 \\times 7 = 504$."
+      },
+      {
+        "letra": "B",
+        "texto": "504",
+        "es_correcta": true,
+        "explicacion": "$P(9, 3) = 9 \\times 8 \\times 7 = 504$. Para el 1.er lugar hay 9 candidatos; para el 2.° quedan 8; para el 3.° quedan 7. El orden importa porque cada posición tiene un premio distinto — ser primero es diferente a ser tercero."
+      },
+      {
+        "letra": "C",
+        "texto": "729",
+        "es_correcta": false,
+        "explicacion": "$729 = 9^3$, que permitiría que la misma persona ocupe las tres posiciones a la vez (repetición). Como cada posición es para un candidato diferente, no hay repetición: $P(9, 3) = 9 \\times 8 \\times 7 = 504$."
+      },
+      {
+        "letra": "D",
+        "texto": "252",
+        "es_correcta": false,
+        "explicacion": "$252 = C(10, 5)$ o alguna combinación sin relación. El cálculo correcto para 3 posiciones distintas de 9 candidatos es $P(9, 3) = 9 \\times 8 \\times 7 = 504$."
+      }
+    ]
+  },
+  {
+    "id": "sim2-control-variables-perm-repeticion-palabra",
+    "modulo_slug": "control-variables",
+    "enunciado": "¿Cuántas palabras distintas (con o sin significado) se pueden formar usando todas las letras de la palabra COCINA?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "720",
+        "es_correcta": false,
+        "explicacion": "$720 = 6!$, que asume que las 6 letras son todas distintas. Pero COCINA tiene la letra C repetida dos veces (C, O, C, I, N, A). Al dividir por $2!$ para cancelar los arreglos idénticos de las dos C's: $\\dfrac{720}{2} = 360$."
+      },
+      {
+        "letra": "B",
+        "texto": "360",
+        "es_correcta": true,
+        "explicacion": "COCINA = C, O, C, I, N, A: $n = 6$ letras, con C repetida 2 veces. $P_{\\text{rep}} = \\dfrac{6!}{2!} = \\dfrac{720}{2} = 360$ palabras distintas. Dividir entre $2!$ cancela los arreglos que son idénticos por intercambiar las dos C's."
+      },
+      {
+        "letra": "C",
+        "texto": "180",
+        "es_correcta": false,
+        "explicacion": "$180 = 6! / (2! \\cdot 2!) = 720 / 4$, que dividiría como si hubiera dos pares de letras repetidas. COCINA solo tiene un par repetido (C aparece 2 veces; O, I, N, A aparecen solo una vez). La fórmula correcta: $6! / 2! = 360$."
+      },
+      {
+        "letra": "D",
+        "texto": "120",
+        "es_correcta": false,
+        "explicacion": "$120 = 5!$, que contaría como si solo hubiera 5 letras distintas. COCINA tiene 6 letras (no 5). La fórmula correcta para 6 letras con C repetida dos veces: $\\dfrac{6!}{2!} = 360$."
+      }
+    ]
+  },
+  {
+    "id": "sim3-control-variables-combinacion-grande",
+    "modulo_slug": "control-variables",
+    "enunciado": "Un entrenador debe seleccionar un equipo de 5 jugadores de un grupo de 12 (todos los jugadores tendrán el mismo rol en el campo). ¿Cuántos equipos distintos puede conformar?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "95040",
+        "es_correcta": false,
+        "explicacion": "$95040 = P(12, 5) = 12 \\times 11 \\times 10 \\times 9 \\times 8$. Esto aplicaría si los 5 roles fueran distintos (portero, defensa, mediocampista...). Como todos tienen el mismo rol, el orden no importa: hay que dividir por $5! = 120$, lo que da $C(12, 5) = 95040 / 120 = 792$."
+      },
+      {
+        "letra": "B",
+        "texto": "792",
+        "es_correcta": true,
+        "explicacion": "$C(12, 5) = \\dfrac{12!}{5! \\cdot 7!} = \\dfrac{12 \\times 11 \\times 10 \\times 9 \\times 8}{5 \\times 4 \\times 3 \\times 2 \\times 1} = \\dfrac{95040}{120} = 792$ equipos posibles. El orden no importa porque todos los jugadores tienen el mismo rol."
+      },
+      {
+        "letra": "C",
+        "texto": "60",
+        "es_correcta": false,
+        "explicacion": "$60 = P(5, 3)$ o $C(5,3) \\times \\text{algo}$. No corresponde al cálculo de $C(12, 5)$. El número correcto de equipos de 5 de 12 jugadores (sin orden) es $C(12, 5) = 792$."
+      },
+      {
+        "letra": "D",
+        "texto": "3960",
+        "es_correcta": false,
+        "explicacion": "$3960 = C(12, 5) \\times 5 = 792 \\times 5$, o alguna variación incorrecta. No hay razón para multiplicar por 5 adicional. El resultado directo de $C(12, 5)$ es 792 equipos."
+      }
+    ]
+  },
+  {
+    "id": "sim4-control-variables-producto-avanzado",
+    "modulo_slug": "control-variables",
+    "enunciado": "Una contraseña consta de 2 letras del alfabeto (26 letras) seguidas de 3 dígitos (0-9). No se permite repetir letras ni dígitos entre sí. ¿Cuántas contraseñas distintas es posible crear?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "468000",
+        "es_correcta": true,
+        "explicacion": "Se aplica el principio del producto en 5 etapas independientes (sin repetición): letras: $26 \\times 25$; dígitos: $10 \\times 9 \\times 8$. Total: $26 \\times 25 \\times 10 \\times 9 \\times 8 = 650 \\times 720 = 468{,}000$ contraseñas."
+      },
+      {
+        "letra": "B",
+        "texto": "676000",
+        "es_correcta": false,
+        "explicacion": "$676000 = 26^2 \\times 10^3 / \\text{algo}$... posiblemente $26 \\times 26 \\times 10 \\times 10 \\times 10 = 676{,}000$, que permite repetir letras y dígitos. El problema prohíbe repetir: letras $26 \\times 25$ (no $26^2$) y dígitos $10 \\times 9 \\times 8$ (no $10^3$). Correcto: $26 \\times 25 \\times 10 \\times 9 \\times 8 = 468{,}000$."
+      },
+      {
+        "letra": "C",
+        "texto": "58500",
+        "es_correcta": false,
+        "explicacion": "$58500 = 26 \\times 25 \\times 90 = 650 \\times 90$. Aquí los dígitos estarían calculados como $10 \\times 9 = 90$ (solo 2 dígitos en vez de 3). La contraseña tiene 3 dígitos: $10 \\times 9 \\times 8 = 720$. Total correcto: $650 \\times 720 = 468{,}000$."
+      },
+      {
+        "letra": "D",
+        "texto": "1300000",
+        "es_correcta": false,
+        "explicacion": "$1{,}300{,}000 = 26 \\times 25 \\times 2000$ o alguna combinación incorrecta. No corresponde al cálculo correcto de $26 \\times 25 \\times 10 \\times 9 \\times 8 = 468{,}000$ contraseñas."
+      }
+    ]
+  },
+  {
+    "id": "sim5-control-variables-acertijo-4personas",
+    "modulo_slug": "control-variables",
+    "enunciado": "Cuatro deportistas — Alejandro, Bruno, Camila y Diana — practican deportes diferentes: natación, ciclismo, atletismo y tenis. Pista 1: Alejandro no practica natación ni ciclismo. Pista 2: Bruno practica atletismo. Pista 3: Camila no practica atletismo ni ciclismo. ¿Qué deporte practica Diana?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Natación",
+        "es_correcta": false,
+        "explicacion": "La natación es de Camila. Deducción: Bruno → atletismo (Pista 2). Alejandro: no natación, no ciclismo, no atletismo (ya de Bruno) → Alejandro practica tenis. Camila: no atletismo, no ciclismo (Pista 3), no tenis (ya de Alejandro) → Camila practica natación. Diana → ciclismo (el único que queda)."
+      },
+      {
+        "letra": "B",
+        "texto": "Atletismo",
+        "es_correcta": false,
+        "explicacion": "El atletismo es de Bruno (Pista 2 lo dice directamente). Diana practica el deporte que queda después de asignar los otros tres: Bruno → atletismo, Alejandro → tenis (único posible dado Pistas 1 y 2), Camila → natación (Pista 3 descarta atletismo y ciclismo). Diana → ciclismo."
+      },
+      {
+        "letra": "C",
+        "texto": "Ciclismo",
+        "es_correcta": true,
+        "explicacion": "Correcto. Paso a paso: Bruno → atletismo (Pista 2). Alejandro: Pista 1 descarta natación y ciclismo; atletismo es de Bruno → Alejandro practica tenis. Camila: Pista 3 descarta atletismo y ciclismo; tenis es de Alejandro → Camila practica natación. Diana → ciclismo (el único deporte sin asignar)."
+      },
+      {
+        "letra": "D",
+        "texto": "Tenis",
+        "es_correcta": false,
+        "explicacion": "El tenis es de Alejandro. La Pista 1 descarta natación y ciclismo para Alejandro; el atletismo ya es de Bruno → por eliminación, Alejandro practica tenis. Diana queda con el único deporte sin asignar: ciclismo."
+      }
+    ]
+  },
+  {
+    "id": "sim6-control-variables-probabilidad-combinatoria",
+    "modulo_slug": "control-variables",
+    "enunciado": "De un grupo de 4 mujeres y 3 hombres se seleccionan al azar 2 personas para un comité. ¿Cuál es la probabilidad de que el comité tenga exactamente 1 mujer y 1 hombre?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "$\\dfrac{4}{7}$",
+        "es_correcta": true,
+        "explicacion": "Casos totales: $C(7, 2) = 21$. Casos favorables (1 mujer de 4 Y 1 hombre de 3): $C(4,1) \\times C(3,1) = 4 \\times 3 = 12$. Probabilidad: $\\dfrac{12}{21} = \\dfrac{4}{7} \\approx 57.1\\%$."
+      },
+      {
+        "letra": "B",
+        "texto": "$\\dfrac{6}{21}$",
+        "es_correcta": false,
+        "explicacion": "$6 = C(4, 2)$, que cuenta los pares de 2 mujeres (no 1 mujer + 1 hombre). El número de formas de elegir exactamente 1 mujer Y 1 hombre es $C(4,1) \\times C(3,1) = 4 \\times 3 = 12$, no 6. Probabilidad correcta: $12/21 = 4/7$."
+      },
+      {
+        "letra": "C",
+        "texto": "$\\dfrac{12}{49}$",
+        "es_correcta": false,
+        "explicacion": "$12/49$: el numerador 12 es correcto ($C(4,1) \\times C(3,1) = 12$), pero el denominador 49 no. El total de formas de elegir 2 de 7 personas es $C(7, 2) = 21$, no $7^2 = 49$ (que contaría con orden y con repetición). Correcto: $12/21 = 4/7$."
+      },
+      {
+        "letra": "D",
+        "texto": "$\\dfrac{3}{7}$",
+        "es_correcta": false,
+        "explicacion": "$3/7$: podría surgir de $3/(3+4) = 3/7$ (la proporción de hombres en el grupo) o de otro cálculo sin base. La probabilidad de elegir exactamente 1 mujer y 1 hombre de un grupo mixto se calcula con combinaciones: $C(4,1) \\times C(3,1) / C(7,2) = 12/21 = 4/7$."
+      }
+    ]
+  },
+  {
+    "id": "sim7-control-variables-identificar-variable",
+    "modulo_slug": "control-variables",
+    "enunciado": "Un equipo de investigación compara el efecto de tres dietas distintas sobre el peso de ratones de laboratorio. Usan 30 ratones de la misma raza y edad, distribuidos en 3 grupos iguales (10 por dieta). La temperatura, el nivel de ejercicio y las horas de luz son idénticos para todos los grupos. Después de 8 semanas miden el peso de cada ratón. ¿Cuál es la variable independiente del experimento?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "El peso de los ratones al final del experimento",
+        "es_correcta": false,
+        "explicacion": "El peso al final es la variable dependiente — lo que se mide como resultado para saber si las dietas tuvieron efecto. La variable independiente es la que el investigador manipula deliberadamente para ver qué pasa con la dependiente."
+      },
+      {
+        "letra": "B",
+        "texto": "El tipo de dieta administrada a cada grupo",
+        "es_correcta": true,
+        "explicacion": "Correcto. El tipo de dieta es la variable independiente: el investigador decide de forma deliberada qué dieta recibe cada grupo. Es la causa que se prueba. El peso final (la variable dependiente) se mide para ver qué efecto tiene el tipo de dieta."
+      },
+      {
+        "letra": "C",
+        "texto": "La temperatura del ambiente donde viven los ratones",
+        "es_correcta": false,
+        "explicacion": "La temperatura es una variable de control — se mantiene igual en todos los grupos para que no interfiera en los resultados. Las variables de control no se manipulan ni se miden como resultado; se fijan para aislar el efecto de la variable independiente (el tipo de dieta)."
+      },
+      {
+        "letra": "D",
+        "texto": "La raza y la edad de los ratones",
+        "es_correcta": false,
+        "explicacion": "La raza y la edad son variables de control estandarizadas: se mantienen iguales (misma raza, misma edad) para que no introduzcan variación ajena al experimento. La variable que el investigador cambia entre grupos — y que es la causa que se investiga — es el tipo de dieta."
+      }
+    ]
+  },
+  {
+    "id": "sim8-control-variables-combinacion-fija",
+    "modulo_slug": "control-variables",
+    "enunciado": "De un grupo de 5 personas (Ana, Beatriz, Carlos, Diego y Elena), se forman grupos de 3 para un proyecto. ¿En cuántos de esos grupos aparece Ana como integrante?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "10",
+        "es_correcta": false,
+        "explicacion": "$10 = C(5, 3)$, que es el total de grupos posibles de 3 personas de 5, sin ninguna restricción. El problema pide solo los grupos que incluyen a Ana, no todos los grupos posibles."
+      },
+      {
+        "letra": "B",
+        "texto": "6",
+        "es_correcta": true,
+        "explicacion": "Si Ana siempre está en el grupo, solo hay que elegir 2 personas más de las 4 restantes (Beatriz, Carlos, Diego y Elena). Grupos que incluyen a Ana: $C(4, 2) = \\dfrac{4 \\times 3}{2 \\times 1} = 6$. Verificación: grupos sin Ana = $C(4, 3) = 4$. Total: $6 + 4 = 10 = C(5, 3)$ ✓"
+      },
+      {
+        "letra": "C",
+        "texto": "4",
+        "es_correcta": false,
+        "explicacion": "$4 = C(4, 3)$, que cuenta los grupos de 3 personas que NO incluyen a Ana (elegidas de las 4 restantes). El número de grupos que sí incluyen a Ana es el complemento: $C(5,3) - C(4,3) = 10 - 4 = 6$, o directamente $C(4, 2) = 6$."
+      },
+      {
+        "letra": "D",
+        "texto": "3",
+        "es_correcta": false,
+        "explicacion": "$3 = r - 1 = 3 - 1$ o simplemente la cantidad de personas que acompañan a Ana en UN grupo dado. Ese número (3) es el tamaño del grupo, no la cantidad de grupos posibles. Los grupos que incluyen a Ana son $C(4, 2) = 6$."
+      }
+    ]
+  }
+]

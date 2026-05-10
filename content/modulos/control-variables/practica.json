@@ -1,1 +1,386 @@
-[]
+[
+  {
+    "id": "prac1-control-variables-producto-basico",
+    "dificultad": 1,
+    "enunciado": "Una tienda de ropa tiene 3 camisas y 4 pantalones. Si se elige exactamente una camisa y un pantalón, ¿cuántos outfits distintos se pueden armar?",
+    "pista": "Hay dos decisiones independientes: elegir camisa Y elegir pantalón. La palabra 'y' indica que se aplica el principio del producto.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "7",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $3 + 4 = 7$ aplica el principio de la suma, que se usa cuando se elige UNA SOLA de las opciones (camisa O pantalón). Aquí se elige una camisa Y un pantalón al mismo tiempo, lo que exige multiplicar: $3 \\times 4 = 12$ outfits."
+      },
+      {
+        "letra": "B",
+        "texto": "12",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Se aplica el principio del producto: $3$ camisas $\\times$ $4$ pantalones $= 12$ outfits distintos. Para cada una de las 3 camisas hay 4 opciones de pantalón, lo que genera $3 \\times 4 = 12$ combinaciones."
+      },
+      {
+        "letra": "C",
+        "texto": "24",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $24 = 3 \\times 4 \\times 2$ o $24 = 4!$. No hay una tercera categoría de prenda en este problema. El producto correcto es solo $3 \\times 4 = 12$."
+      },
+      {
+        "letra": "D",
+        "texto": "1",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 1 sería el número de outfits si solo hubiera una camisa y un pantalón disponibles. Con 3 camisas y 4 pantalones, el principio del producto da $3 \\times 4 = 12$ combinaciones posibles."
+      }
+    ]
+  },
+  {
+    "id": "prac2-control-variables-suma-basica",
+    "dificultad": 1,
+    "enunciado": "Para viajar de Bogotá a Cartagena hay disponibles 3 vuelos directos o 2 rutas en bus. Si una persona viaja usando solo un medio de transporte (no los dos), ¿cuántas opciones de viaje distintas tiene?",
+    "pista": "La persona viaja en avión O en bus, no en ambos a la vez. La palabra 'o' entre alternativas excluyentes indica principio de la suma.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "6",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $3 \\times 2 = 6$ aplica el principio del producto, que sería correcto si la persona tomara AMBOS transportes (¡avión Y bus al mismo tiempo!). Como solo se usa uno, las opciones son mutuamente excluyentes y se suman: $3 + 2 = 5$."
+      },
+      {
+        "letra": "B",
+        "texto": "5",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Se aplica el principio de la suma: $3$ vuelos $+$ $2$ rutas de bus $= 5$ opciones distintas. Las alternativas son excluyentes (vuelo O bus, no ambos), así que se cuentan por separado y se suman."
+      },
+      {
+        "letra": "C",
+        "texto": "3",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 3 es solo el número de vuelos disponibles, ignorando las 2 rutas de bus. El total de opciones incluye todas las posibilidades de transporte: $3 + 2 = 5$."
+      },
+      {
+        "letra": "D",
+        "texto": "2",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 2 es solo el número de tipos de transporte (avión o bus), no el total de opciones. Hay 3 vuelos distintos y 2 rutas distintas, para un total de $3 + 2 = 5$ opciones."
+      }
+    ]
+  },
+  {
+    "id": "prac3-control-variables-producto-triple",
+    "dificultad": 1,
+    "enunciado": "Un sistema de alarma de seguridad requiere una clave de tres niveles: el primero se escoge entre 4 símbolos, el segundo entre 5 colores y el tercero entre 3 formas geométricas. ¿Cuántas claves distintas se pueden crear?",
+    "pista": "Hay tres decisiones independientes en secuencia. Aplica el principio del producto multiplicando las opciones de cada nivel.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "12",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $12 = 4 + 5 + 3$ aplica suma en vez de producto. Como se eligen los tres niveles simultáneamente (símbolo Y color Y forma), se multiplican: $4 \\times 5 \\times 3 = 60$."
+      },
+      {
+        "letra": "B",
+        "texto": "60",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Principio del producto con tres etapas independientes: $4 \\times 5 \\times 3 = 60$ claves distintas. Para cada uno de los 4 símbolos hay 5 colores posibles ($4 \\times 5 = 20$ combinaciones), y para cada una de esas 20 hay 3 formas ($20 \\times 3 = 60$)."
+      },
+      {
+        "letra": "C",
+        "texto": "20",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $20 = 4 \\times 5$, que multiplica solo los dos primeros niveles y olvida el tercer nivel (3 formas geométricas). El producto correcto incluye los tres: $4 \\times 5 \\times 3 = 60$."
+      },
+      {
+        "letra": "D",
+        "texto": "120",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $120 = 5!$ o $4 \\times 5 \\times 6$ (usando 6 en vez de 3). Las opciones del tercer nivel son 3, no 6. El cálculo correcto es $4 \\times 5 \\times 3 = 60$."
+      }
+    ]
+  },
+  {
+    "id": "prac4-control-variables-permutacion-simple",
+    "dificultad": 2,
+    "enunciado": "En una biblioteca hay 6 libros distintos de matemáticas que deben colocarse en un estante en fila. ¿De cuántas formas distintas pueden ordenarse los 6 libros?",
+    "pista": "La posición de cada libro en el estante importa: el libro en el primer lugar no es lo mismo que el mismo libro en el sexto. Aplica la fórmula de permutación de $n$ elementos: $P(n) = n!$",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "36",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $36 = 6^2$, que elevaría al cuadrado en vez de calcular el factorial. El número de formas de ordenar 6 libros distintos es $6! = 6 \\times 5 \\times 4 \\times 3 \\times 2 \\times 1 = 720$."
+      },
+      {
+        "letra": "B",
+        "texto": "720",
+        "es_correcta": true,
+        "explicacion": "Es correcto. $P(6) = 6! = 6 \\times 5 \\times 4 \\times 3 \\times 2 \\times 1 = 720$ arreglos distintos. En la primera posición del estante van 6 opciones; en la segunda, 5 libros restantes; y así sucesivamente."
+      },
+      {
+        "letra": "C",
+        "texto": "30",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $30 = P(6, 2) = 6 \\times 5$, que solo tomaría 2 libros de 6. Aquí se colocan los 6 libros (no se elige un subconjunto), así que el cálculo es el factorial completo: $6! = 720$."
+      },
+      {
+        "letra": "D",
+        "texto": "21",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $21 = C(7, 2)$ o $21 = 6 + 5 + 4 + 3 + 2 + 1$ (suma aritmética). Para ordenar libros en posiciones distintas se usa permutación, no combinación ni suma: $6! = 720$."
+      }
+    ]
+  },
+  {
+    "id": "prac5-control-variables-perm-repeticion",
+    "dificultad": 2,
+    "enunciado": "¿Cuántas palabras distintas (con o sin significado en español) se pueden formar usando todas las letras de la palabra CACAO?",
+    "pista": "Identifica cuántas veces se repite cada letra en CACAO. Luego aplica la fórmula $P_{\\text{rep}} = \\dfrac{n!}{n_1! \\cdot n_2!}$ para evitar contar como distintos los arreglos que son idénticos.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "120",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $120 = 5!$, que asume que las 5 letras son todas distintas. Pero CACAO tiene letras repetidas (C aparece 2 veces, A aparece 2 veces), lo que reduce el número de palabras distintas. Correcto: $\\dfrac{5!}{2! \\cdot 2!} = \\dfrac{120}{4} = 30$."
+      },
+      {
+        "letra": "B",
+        "texto": "30",
+        "es_correcta": true,
+        "explicacion": "Es correcto. CACAO = C, A, C, A, O: $n = 5$ letras, con C repetida 2 veces y A repetida 2 veces. $P_{\\text{rep}} = \\dfrac{5!}{2! \\cdot 2!} = \\dfrac{120}{2 \\times 2} = \\dfrac{120}{4} = 30$ palabras distintas."
+      },
+      {
+        "letra": "C",
+        "texto": "60",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $60 = 5! / 2!$, que divide solo por una de las dos letras repetidas. CACAO tiene dos pares de letras repetidas: C aparece 2 veces Y A aparece 2 veces. Hay que dividir por $2! \\cdot 2! = 4$: $120 / 4 = 30$."
+      },
+      {
+        "letra": "D",
+        "texto": "20",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $20 = C(6, 3)$ o $5! / 3! = 20$, que dividiría como si hubiera 3 letras iguales. En CACAO no hay tripletes — solo dos pares (C y A). La fórmula correcta: $\\dfrac{5!}{2! \\cdot 2!} = 30$."
+      }
+    ]
+  },
+  {
+    "id": "prac6-control-variables-permutacion-parcial",
+    "dificultad": 2,
+    "enunciado": "En un concurso de oratoria participan 7 estudiantes. El jurado otorgará medalla de oro, plata y bronce (una para cada posición, sin empates). ¿De cuántas formas distintas pueden asignarse las tres medallas?",
+    "pista": "El orden importa: recibir oro es distinto a recibir plata. Se eligen 3 de 7, con orden. Aplica $P(n, r) = \\dfrac{n!}{(n-r)!}$ o directamente $n \\times (n-1) \\times (n-2)$ para las tres posiciones.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "35",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $35 = C(7, 3) = \\dfrac{7!}{3! \\cdot 4!} = 35$, que sería la respuesta si el orden no importara (por ejemplo, elegir 3 finalistas sin diferenciar quién gana cuál medalla). Pero aquí oro, plata y bronce son distintos: el orden importa. Correcto: $P(7, 3) = 7 \\times 6 \\times 5 = 210$."
+      },
+      {
+        "letra": "B",
+        "texto": "210",
+        "es_correcta": true,
+        "explicacion": "Es correcto. $P(7, 3) = 7 \\times 6 \\times 5 = 210$. Para el oro hay 7 candidatos; para la plata quedan 6; para el bronce quedan 5. El producto de las tres posiciones da el total de asignaciones distintas."
+      },
+      {
+        "letra": "C",
+        "texto": "21",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $21 = C(7, 2) = 21$, que elegiría solo 2 personas de 7 y sin orden. Aquí se asignan 3 medallas distintas a 3 personas distintas: $P(7, 3) = 7 \\times 6 \\times 5 = 210$."
+      },
+      {
+        "letra": "D",
+        "texto": "343",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $343 = 7^3$, que permitiría que la misma persona reciba las tres medallas. Como cada medalla es para una persona distinta, no se repiten candidatos: $P(7, 3) = 7 \\times 6 \\times 5 = 210$."
+      }
+    ]
+  },
+  {
+    "id": "prac7-control-variables-combinacion-simple",
+    "dificultad": 2,
+    "enunciado": "Un estudiante debe elegir 4 materias de un catálogo de 6 disponibles (todas tienen el mismo crédito y no hay orden de preferencia). ¿Cuántas selecciones distintas de 4 materias puede hacer?",
+    "pista": "El conjunto de materias elegidas es lo que importa, no el orden en que las anotas. Aplica la fórmula de combinación $C(n, r) = \\dfrac{n!}{r!(n-r)!}$.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "360",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $360 = P(6, 4) = \\dfrac{6!}{2!} = 360$, que aplica permutación suponiendo que el orden de selección importa. Pero {Matemáticas, Física, Química, Biología} es la misma selección que {Biología, Química, Física, Matemáticas}. El orden no importa → combinación: $C(6, 4) = 15$."
+      },
+      {
+        "letra": "B",
+        "texto": "15",
+        "es_correcta": true,
+        "explicacion": "Es correcto. $C(6, 4) = \\dfrac{6!}{4! \\cdot 2!} = \\dfrac{6 \\times 5}{2 \\times 1} = \\dfrac{30}{2} = 15$ selecciones distintas. Nota: $C(6, 4) = C(6, 2)$ por simetría — elegir 4 de 6 equivale a elegir cuáles 2 se quedan fuera."
+      },
+      {
+        "letra": "C",
+        "texto": "30",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $30 = 6 \\times 5 = P(6, 2)$, que cuenta con orden 2 elementos de 6. Aquí se eligen 4 materias sin orden: $C(6, 4) = \\dfrac{6 \\times 5}{2} = 15$. El factor $2! = 2$ en el denominador cancela el orden."
+      },
+      {
+        "letra": "D",
+        "texto": "24",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $24 = 4! = P(4)$, que es el número de formas de ordenar las 4 materias YA elegidas. No cuenta cuántas selecciones distintas hay. El número de selecciones posibles es $C(6, 4) = 15$."
+      }
+    ]
+  },
+  {
+    "id": "prac8-control-variables-perm-vs-comb",
+    "dificultad": 2,
+    "enunciado": "De un grupo de 8 estudiantes, se seleccionan 3 para conformar un comité de trabajo sin roles diferenciados (todos tienen la misma responsabilidad). ¿Cuántas formas diferentes hay de conformar el comité?",
+    "pista": "Pregúntate: ¿importa el orden en que se seleccionan los 3 estudiantes? ¿El comité {Ana, Beatriz, Carlos} es diferente al comité {Carlos, Ana, Beatriz}?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "336",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $336 = P(8, 3) = 8 \\times 7 \\times 6 = 336$. Este sería el resultado si los 3 cargos fueran distintos (como presidente, secretario y tesorero), donde el orden de asignación importa. Como el comité es sin roles, {Ana, Beatriz, Carlos} es el mismo comité que {Carlos, Beatriz, Ana}. Hay que dividir por $3! = 6$: $336 / 6 = 56$."
+      },
+      {
+        "letra": "B",
+        "texto": "56",
+        "es_correcta": true,
+        "explicacion": "Es correcto. $C(8, 3) = \\dfrac{8!}{3! \\cdot 5!} = \\dfrac{8 \\times 7 \\times 6}{3 \\times 2 \\times 1} = \\dfrac{336}{6} = 56$ comités posibles. El orden no importa porque todos los miembros tienen el mismo rol."
+      },
+      {
+        "letra": "C",
+        "texto": "24",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $24 = 8 \\times 3$ (multiplicar $n$ por $r$) o $24 = P(4, 3)$. Ninguno tiene base para este problema. La fórmula correcta es $C(8, 3) = \\dfrac{8!}{3! \\cdot 5!} = 56$."
+      },
+      {
+        "letra": "D",
+        "texto": "28",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $28 = C(8, 2) = \\dfrac{8!}{2! \\cdot 6!} = 28$, que elegiría solo 2 personas de 8 en lugar de 3. El valor de $r$ en este problema es 3, no 2: $C(8, 3) = 56$."
+      }
+    ]
+  },
+  {
+    "id": "prac9-control-variables-combinacion-aplicada",
+    "dificultad": 2,
+    "enunciado": "Una empresa tiene 10 empleados y desea seleccionar un subgrupo de 4 para liderar un proyecto. Los 4 elegidos tendrán el mismo nivel de responsabilidad (sin jerarquía entre ellos). ¿Cuántos subgrupos posibles hay?",
+    "pista": "No hay roles ni jerarquía entre los 4 elegidos → el orden no importa → combinación. Aplica $C(10, 4) = \\dfrac{10!}{4! \\cdot 6!}$.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "5040",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $5040 = P(10, 4) = 10 \\times 9 \\times 8 \\times 7 = 5040$, que aplica permutación suponiendo que el orden importa. Como los 4 tienen el mismo nivel, hay que dividir por $4! = 24$: $C(10, 4) = 5040 / 24 = 210$ subgrupos."
+      },
+      {
+        "letra": "B",
+        "texto": "210",
+        "es_correcta": true,
+        "explicacion": "Es correcto. $C(10, 4) = \\dfrac{10!}{4! \\cdot 6!} = \\dfrac{10 \\times 9 \\times 8 \\times 7}{4 \\times 3 \\times 2 \\times 1} = \\dfrac{5040}{24} = 210$ subgrupos distintos."
+      },
+      {
+        "letra": "C",
+        "texto": "252",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $252 = C(10, 5) = \\dfrac{10!}{5! \\cdot 5!}$, que elegiría 5 personas de 10 en lugar de 4. El subgrupo a elegir es de 4 personas, no 5: $C(10, 4) = 210$."
+      },
+      {
+        "letra": "D",
+        "texto": "40",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $40 = 10 \\times 4$, que multiplica $n$ por $r$ sin aplicar combinatoria. Esta operación no tiene fundamento matemático en problemas de conteo. La fórmula correcta es $C(10, 4) = 210$."
+      }
+    ]
+  },
+  {
+    "id": "prac10-control-variables-acertijo-logico",
+    "dificultad": 3,
+    "enunciado": "Tres amigas — Luisa, María y Natalia — tienen cada una una mascota diferente: un perro, un gato o un conejo. Pista 1: Luisa no tiene gato. Pista 2: María no tiene perro ni conejo. Pista 3: Natalia no tiene perro. ¿Cuál es la mascota de Luisa?",
+    "pista": "Construye una tabla con las 3 personas en filas y las 3 mascotas en columnas. Marca con ✗ lo que cada pista descarta. Cuando en una fila solo quede una opción sin ✗, esa es la mascota.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "Gato",
+        "es_correcta": false,
+        "explicacion": "Es trampa: la Pista 1 dice explícitamente que Luisa no tiene gato (✗ en Luisa/gato). Esta opción contradice directamente la pista. Aplicando las pistas en orden: María (sin perro ni conejo) → María tiene gato; Natalia (sin perro, sin gato) → Natalia tiene conejo; Luisa → perro."
+      },
+      {
+        "letra": "B",
+        "texto": "Conejo",
+        "es_correcta": false,
+        "explicacion": "Es trampa: el conejo es la mascota de Natalia. De la Pista 2, María no tiene perro ni conejo → María tiene gato. De la Pista 3, Natalia no tiene perro; como el gato es de María → Natalia tiene conejo. A Luisa le queda el perro."
+      },
+      {
+        "letra": "C",
+        "texto": "Perro",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Paso a paso: Pista 2 elimina perro y conejo para María → María tiene gato (única opción). Pista 3 elimina perro para Natalia; el gato ya es de María → Natalia tiene conejo. Pista 1 elimina gato para Luisa; el gato y el conejo ya están asignados → Luisa tiene perro."
+      },
+      {
+        "letra": "D",
+        "texto": "No puede determinarse con las pistas dadas",
+        "es_correcta": false,
+        "explicacion": "Es trampa: las tres pistas son suficientes para determinar la mascota de cada una. La Pista 2 asigna directamente el gato a María (única opción que queda), lo que desencadena el resto de la deducción. El resultado es único y determinable."
+      }
+    ]
+  },
+  {
+    "id": "prac11-control-variables-experimento",
+    "dificultad": 3,
+    "enunciado": "Una investigadora quiere estudiar si el tipo de luz (solar, LED o incandescente) afecta el crecimiento de plantas. Planta semillas idénticas en tres grupos (uno por tipo de luz). El riego, el tipo de suelo, la temperatura y los nutrientes son iguales en los tres grupos. Al final mide la altura de las plantas. ¿Cuál es la variable dependiente en este experimento?",
+    "pista": "La variable dependiente es la que se mide como resultado del experimento — lo que 'depende' de lo que cambiaste. Pregúntate: ¿qué observas al final para saber si el tratamiento tuvo efecto?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "La temperatura del ambiente",
+        "es_correcta": false,
+        "explicacion": "Es trampa: la temperatura es una variable de control — se mantiene igual en los tres grupos deliberadamente para no contaminar los resultados. Una variable de control no cambia ni se mide como resultado; se fija para aislar el efecto de la variable independiente."
+      },
+      {
+        "letra": "B",
+        "texto": "El tipo de luz (solar, LED o incandescente)",
+        "es_correcta": false,
+        "explicacion": "Es trampa: el tipo de luz es la variable independiente — la que la investigadora manipula a propósito para ver qué efecto tiene. La variable independiente es la causa que se prueba, no el resultado que se mide."
+      },
+      {
+        "letra": "C",
+        "texto": "La altura de las plantas al final del experimento",
+        "es_correcta": true,
+        "explicacion": "Es correcto. La altura de las plantas es la variable dependiente: es lo que se mide al final del experimento para saber si el tipo de luz tuvo algún efecto. Depende de (cambia en función de) la variable independiente (tipo de luz)."
+      },
+      {
+        "letra": "D",
+        "texto": "El tipo de suelo usado en cada grupo",
+        "es_correcta": false,
+        "explicacion": "Es trampa: el tipo de suelo es una variable de control — se mantiene igual en todos los grupos para que no interfiera en los resultados. Lo que se mide como resultado (la variable dependiente) es la altura de las plantas."
+      }
+    ]
+  },
+  {
+    "id": "prac12-control-variables-probabilidad",
+    "dificultad": 3,
+    "enunciado": "Una urna contiene 4 bolas rojas y 6 bolas azules. Se extraen 2 bolas al azar sin reposición. ¿Cuál es la probabilidad de que ambas bolas extraídas sean rojas?",
+    "pista": "Probabilidad = casos favorables / casos totales. Usa combinaciones para contar: los casos totales son todas las formas de sacar 2 bolas de 10; los favorables, las formas de sacar 2 rojas de las 4 rojas disponibles.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "$\\dfrac{1}{6}$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $1/6$ no corresponde al cálculo correcto. Los casos favorables son $C(4, 2) = 6$ y los totales son $C(10, 2) = 45$. La probabilidad es $\\dfrac{6}{45} = \\dfrac{2}{15}$, no $\\dfrac{1}{6}$."
+      },
+      {
+        "letra": "B",
+        "texto": "$\\dfrac{2}{15}$",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Casos totales: $C(10, 2) = \\dfrac{10 \\times 9}{2} = 45$ formas de sacar 2 bolas de 10. Casos favorables (2 rojas de 4): $C(4, 2) = \\dfrac{4 \\times 3}{2} = 6$. Probabilidad: $\\dfrac{6}{45} = \\dfrac{2}{15} \\approx 13.3\\%$."
+      },
+      {
+        "letra": "C",
+        "texto": "$\\dfrac{4}{10} \\times \\dfrac{4}{9} = \\dfrac{16}{90} = \\dfrac{8}{45}$",
+        "es_correcta": false,
+        "explicacion": "Es trampa sutil: la primera fracción es correcta ($4/10$ rojas en el primer intento), pero la segunda usa 4 en el numerador en vez de 3. Al extraer sin reposición, si la primera bola fue roja, quedan solo 3 bolas rojas de 9 totales. La fracción correcta para el segundo evento es $3/9$, no $4/9$: $\\dfrac{4}{10} \\times \\dfrac{3}{9} = \\dfrac{12}{90} = \\dfrac{2}{15}$."
+      },
+      {
+        "letra": "D",
+        "texto": "$\\dfrac{4}{10} \\times \\dfrac{4}{10} = \\dfrac{16}{100} = \\dfrac{4}{25}$",
+        "es_correcta": false,
+        "explicacion": "Es trampa: esta fórmula asume extracción CON reposición ($4/10$ dos veces). Pero el problema dice sin reposición: tras sacar la primera bola roja, solo quedan 3 rojas de 9 bolas totales. Correcto sin reposición: $\\dfrac{4}{10} \\times \\dfrac{3}{9} = \\dfrac{2}{15}$."
+      }
+    ]
+  }
+]

@@ -1,3 +1,195 @@
 # Control de Variables y Combinatoria
 
-Contenido en desarrollo. ¡Vuelve pronto!
+La combinatoria responde una pregunta fundamental: **¿de cuántas formas distintas se puede hacer algo?** Este módulo cubre desde el conteo más básico (menús y outfits) hasta técnicas precisas (permutaciones y combinaciones), acertijos de deducción lógica y la identificación correcta de variables en un experimento.
+
+El error más costoso en este módulo no es de cálculo, sino de **clasificación**: usar permutaciones donde corresponde una combinación, o viceversa. Antes de aplicar cualquier fórmula, debes responder: ¿importa el orden o no?
+
+## 1. Principio del producto (regla del producto)
+
+Cuando una tarea se divide en **pasos independientes** y cada paso tiene un número fijo de opciones, el total de formas de completar la tarea es el **producto** de las opciones de cada paso.
+
+$$\text{Total} = n_1 \times n_2 \times n_3 \times \cdots \times n_k$$
+
+**Ejemplo:** Para armar un outfit se elige entre 3 camisas, 4 pantalones y 2 pares de zapatos. El total de combinaciones posibles es:
+
+$$3 \times 4 \times 2 = 24 \text{ outfits distintos}$$
+
+**Palabras clave:** la conjunción "y" entre las elecciones. "Elegir camisa **y** pantalón **y** zapatos."
+
+**Cuándo aplica:** los pasos son **independientes** — la elección en un paso no restringe las opciones del siguiente.
+
+**Aplicación a códigos y placas:**
+
+- Placa de 3 letras seguidas de 3 dígitos (con repetición permitida): $26 \times 26 \times 26 \times 10 \times 10 \times 10 = 17{,}576{,}000$ placas.
+- Sin repetir letras ni dígitos: $26 \times 25 \times 24 \times 10 \times 9 \times 8 = 11{,}232{,}000$ placas.
+
+## 2. Principio de la suma
+
+Cuando se trata de **alternativas excluyentes** (se hace A o B, no ambas a la vez), el total de opciones es la **suma** de las opciones de cada alternativa.
+
+$$\text{Total} = n_A + n_B$$
+
+**Ejemplo:** Para viajar de Medellín a Bogotá hay 3 vuelos disponibles y 5 horarios de bus. Si eliges solo un medio de transporte, hay $3 + 5 = 8$ opciones distintas.
+
+**Palabras clave:** la conjunción "o" entre alternativas que no se pueden combinar.
+
+**Distinción crítica:**
+
+| Escenario | Operación | Por qué |
+|-----------|-----------|---------|
+| "Elige camisa **y** pantalón" | Producto $(\times)$ | Se hacen ambas elecciones |
+| "Viaja en bus **o** en avión" | Suma $(+)$ | Se hace solo una de las dos |
+
+## 3. Permutaciones (el orden importa)
+
+Una **permutación** es un arreglo **ordenado** de elementos. El orden importa: {A, B, C} y {C, B, A} son permutaciones distintas.
+
+### Permutaciones de $n$ elementos distintos
+
+Si se ordenan **todos** los elementos de un conjunto de $n$ elementos distintos:
+
+$$P(n) = n! = n \times (n-1) \times (n-2) \times \cdots \times 2 \times 1$$
+
+**Ejemplo:** ¿De cuántas formas pueden formarse en fila 5 personas distintas?
+
+$$P(5) = 5! = 5 \times 4 \times 3 \times 2 \times 1 = 120 \text{ filas distintas}$$
+
+### Permutaciones de $n$ tomados de $r$ en $r$
+
+Si se ordenan solo $r$ elementos de un total de $n$ (sin repetición):
+
+$$P(n, r) = \frac{n!}{(n-r)!}$$
+
+**Ejemplo:** De 8 personas se elige un podio (1.°, 2.° y 3.° lugar). El orden importa porque primero no es igual que tercero:
+
+$$P(8, 3) = \frac{8!}{(8-3)!} = \frac{8!}{5!} = 8 \times 7 \times 6 = 336 \text{ podios distintos}$$
+
+### ¿Cuándo importa el orden?
+
+El orden importa cuando los elementos en posiciones distintas **representan cosas distintas**: ganador vs. segundo lugar, el primer dígito de un código vs. el tercero, el presidente de un comité vs. el secretario.
+
+**Señales de permutación:** ranking, podio, contraseñas con posiciones fijas, asientos asignados, cargos jerárquicos.
+
+## 4. Combinaciones (el orden NO importa)
+
+Una **combinación** es una selección de elementos donde el orden no cuenta. El comité {Ana, Beatriz, Carlos} es el mismo que {Carlos, Ana, Beatriz}.
+
+$$C(n, r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}$$
+
+**Ejemplo:** De 8 personas se elige un comité de 3. El orden no importa (un comité es un comité, sin jerarquía):
+
+$$C(8, 3) = \frac{8!}{3! \cdot 5!} = \frac{8 \times 7 \times 6}{3 \times 2 \times 1} = \frac{336}{6} = 56 \text{ comités posibles}$$
+
+**Señales de combinación:** comité sin roles, equipo sin jerarquía, selección de $r$ cosas de $n$ cuando no hay orden, mano de cartas, ingredientes de una receta.
+
+### Distinción CRÍTICA: permutación vs. combinación
+
+| Situación | ¿Qué aplica? | Por qué |
+|-----------|-------------|---------|
+| Ordenar 5 libros en un estante | Permutación | La posición de cada libro importa |
+| Elegir 3 libros para llevar de viaje | Combinación | Solo importa cuáles se llevan |
+| Asignar presidente, tesorero y secretario de 10 personas | Permutación | Los cargos son distintos entre sí |
+| Elegir un equipo de 3 de 10 personas (sin cargos) | Combinación | No hay jerarquía entre los elegidos |
+| PIN de 4 dígitos sin repetición | Permutación | El código 1234 ≠ 4321 |
+
+**El denominador $r!$ en la fórmula de combinaciones** es exactamente el factor que "cancela" el orden: divide entre todas las formas de ordenar los $r$ elementos elegidos, que son equivalentes para nuestro propósito.
+
+**Relación entre permutación y combinación:** $P(n, r) = C(n, r) \times r!$ — la permutación cuenta lo mismo que la combinación pero multiplicado por todos los ordenamientos posibles de los elegidos.
+
+## 5. Permutaciones con repetición
+
+Cuando hay **elementos repetidos** entre los $n$ elementos a ordenar, muchas permutaciones producen el mismo resultado. Hay que dividir entre la cantidad de reordenamientos que son idénticos.
+
+Si entre los $n$ elementos hay $n_1$ iguales de un tipo, $n_2$ de otro, etc.:
+
+$$P_{\text{rep}} = \frac{n!}{n_1! \cdot n_2! \cdot n_3! \cdots}$$
+
+**Ejemplo:** ¿Cuántas palabras distintas se forman con las letras de "BANANA"?
+
+- Total de letras: $n = 6$
+- B: 1 vez, A: 3 veces, N: 2 veces
+
+$$P_{\text{rep}} = \frac{6!}{1! \cdot 3! \cdot 2!} = \frac{720}{1 \cdot 6 \cdot 2} = \frac{720}{12} = 60 \text{ palabras distintas}$$
+
+**Trampa frecuente:** calcular $6! = 720$ sin dividir por las repeticiones. Esto cuenta como distintas arreglos que son idénticos (por ejemplo, si las tres A fueran distinguibles como $A_1$, $A_2$, $A_3$, habría $3! = 6$ formas de ordenarlas que producen la misma "palabra").
+
+## 6. Combinaciones con repetición
+
+Cuando se eligen $r$ elementos de $n$ tipos distintos y se **permite repetir** el mismo tipo:
+
+$$CR(n, r) = \binom{n + r - 1}{r}$$
+
+**Ejemplo:** Una heladería tiene 5 sabores. Se piden 3 bolas pudiendo repetir sabor. ¿Cuántas combinaciones posibles hay?
+
+$$CR(5, 3) = \binom{5 + 3 - 1}{3} = \binom{7}{3} = 35 \text{ combinaciones}$$
+
+Este tipo aparece con menos frecuencia en el examen UdeA que las combinaciones simples, pero es importante reconocerlo cuando el problema permite seleccionar el mismo elemento más de una vez.
+
+## 7. Tablas de doble entrada y acertijos lógicos
+
+Uno de los tipos de problema más frecuentes en el examen UdeA: se dan pistas sobre quién tiene qué atributo, y hay que deducir la asignación completa por eliminación.
+
+**Estrategia en 3 pasos:**
+
+1. **Dibuja una tabla** con las personas en las filas y los atributos en las columnas.
+2. **Marca con ✗** las combinaciones que una pista descarta directamente, y con **✓** las que una pista afirma.
+3. **Deduce por eliminación:** cuando en una fila o columna solo queda una celda sin ✗, esa es la asignación. Cada asignación confirmada genera nuevas ✗ en la misma fila y columna.
+
+**Ejemplo resuelto:** Ana, Beatriz y Carlos usan colores distintos: rojo, azul y verde.
+- Pista 1: Ana no usa rojo.
+- Pista 2: Beatriz no usa azul.
+- Pista 3: Carlos usa verde.
+
+|         | Rojo | Azul | Verde |
+|---------|------|------|-------|
+| Ana     | ✗    |      |       |
+| Beatriz |      | ✗    |       |
+| Carlos  |      |      | ✓     |
+
+De la Pista 3: Carlos = verde. Tachar verde para Ana y Beatriz. Como Ana tiene ✗ en rojo y ✗ en verde, solo le queda azul. Beatriz tiene ✗ en azul y ✗ en verde → Beatriz = rojo.
+
+|         | Rojo | Azul | Verde |
+|---------|------|------|-------|
+| Ana     | ✗    | ✓    | ✗     |
+| Beatriz | ✓    | ✗    | ✗     |
+| Carlos  | ✗    | ✗    | ✓     |
+
+**Error frecuente:** intentar resolver el acertijo mentalmente sin construir la tabla. Esto lleva a saltar inferencias y a contradicciones que no se detectan fácilmente.
+
+## 8. Control de variables en experimentos
+
+En el método científico, un experimento investiga si una variable **causa** cambios en otra. Identificar correctamente los tipos de variable es fundamental para interpretar y diseñar experimentos.
+
+| Tipo de variable | Definición | Ejemplo |
+|-----------------|------------|---------|
+| **Independiente** | La que el investigador manipula deliberadamente | Temperatura del agua |
+| **Dependiente** | La que se mide; cambia como resultado | Velocidad de disolución del azúcar |
+| **De control** | Se mantiene constante para no contaminar los resultados | Tipo de azúcar, cantidad de agua, agitación |
+
+**Clave para identificar la variable dependiente:** pregunta "¿qué estoy midiendo al final del experimento como resultado?" La variable dependiente cambia **porque** cambió la independiente.
+
+**Principio de una sola variable:** para que un experimento sea válido, solo la variable independiente debe cambiar entre los grupos. Si dos cosas cambian a la vez, no se puede saber cuál de ellas causó el efecto.
+
+**Ejemplo:** Un experimento prueba si el tipo de fertilizante afecta el crecimiento de plantas. Se tienen 4 grupos con fertilizantes diferentes; cada grupo se riega con la misma cantidad de agua y recibe la misma luz solar. Aquí:
+- Variable independiente: tipo de fertilizante (lo que cambia entre grupos)
+- Variable dependiente: crecimiento de las plantas (lo que se mide)
+- Variables de control: cantidad de agua, horas de luz, tipo de suelo, temperatura
+
+**Trampa frecuente en el examen:** confundir la variable independiente con la dependiente. Recuerda que la independiente es la **causa** (la que el investigador controla y varía intencionalmente), y la dependiente es el **efecto** (la que cambia como consecuencia).
+
+## 9. Probabilidad combinatoria
+
+La **probabilidad clásica** usa técnicas de conteo para calcular qué tan probable es un evento:
+
+$$P(\text{evento}) = \frac{\text{casos favorables}}{\text{casos totales}}$$
+
+Cuando los casos son conjuntos de elementos elegidos sin importar el orden, se usan combinaciones para contar.
+
+**Ejemplo:** De un grupo de 4 mujeres y 3 hombres se eligen 2 personas al azar para un comité. ¿Cuál es la probabilidad de que ambas sean mujeres?
+
+- Casos totales (2 personas de 7): $C(7, 2) = \dfrac{7!}{2! \cdot 5!} = 21$
+- Casos favorables (2 mujeres de 4): $C(4, 2) = \dfrac{4!}{2! \cdot 2!} = 6$
+
+$$P(\text{ambas mujeres}) = \frac{6}{21} = \frac{2}{7} \approx 28.6\%$$
+
+**Regla clave:** el denominador usa la fórmula para seleccionar del **grupo completo** (sin restricciones). El numerador usa las fórmulas restringidas al **subconjunto de interés** (solo mujeres, solo cartas de un palo, etc.). Si el evento tiene varias partes (por ejemplo, exactamente 1 hombre y 1 mujer), se multiplican los conteos de cada parte.

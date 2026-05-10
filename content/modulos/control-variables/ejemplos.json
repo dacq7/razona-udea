@@ -1,1 +1,59 @@
-[]
+[
+  {
+    "id": "ej1-control-variables-producto",
+    "enunciado": "Un restaurante ofrece un menú de tres tiempos: 3 entradas, 5 platos principales y 2 postres. ¿Cuántas combinaciones distintas de menú completo (entrada + plato + postre) son posibles?",
+    "pasos": [
+      "Paso 1 — Identificar las etapas de decisión: hay 3 decisiones independientes (entrada, plato y postre). Son independientes porque la elección de entrada no restringe las opciones de plato.",
+      "Paso 2 — Aplicar el principio del producto: cuando hay $k$ etapas independientes con $n_1, n_2, \\ldots, n_k$ opciones cada una, el total es $n_1 \\times n_2 \\times \\cdots \\times n_k$.",
+      "Paso 3 — Calcular: $\\text{Total} = 3 \\times 5 \\times 2 = 30$ combinaciones de menú.",
+      "Paso 4 — Verificación intuitiva: para cada una de las 3 entradas hay 5 opciones de plato principal, lo que da $3 \\times 5 = 15$ combinaciones. A cada una de esas 15 combinaciones se le puede añadir cualquiera de los 2 postres: $15 \\times 2 = 30$."
+    ],
+    "conclusion": "Existen $3 \\times 5 \\times 2 = \\mathbf{30}$ combinaciones distintas de menú completo. Se aplica el principio del producto porque las tres elecciones son independientes y se realizan todas (entrada Y plato Y postre)."
+  },
+  {
+    "id": "ej2-control-variables-permutacion",
+    "enunciado": "Cinco estudiantes — Ana, Beatriz, Carlos, Diego y Elena — deben formarse en una fila para la foto del grado. ¿De cuántas formas distintas pueden ordenarse?",
+    "pasos": [
+      "Paso 1 — Identificar si el orden importa: la posición de cada persona en la fila es diferente (el primero está a la izquierda, el último a la derecha). Dos arreglos donde Ana y Beatriz intercambian posición son distintos. Esto es una permutación.",
+      "Paso 2 — Contar las opciones para cada posición: en la primera posición pueden ir cualquiera de las 5 personas. En la segunda, cualquiera de las 4 restantes. En la tercera, 3. En la cuarta, 2. En la quinta, la única que queda: 1.",
+      "Paso 3 — Aplicar la fórmula: $P(5) = 5! = 5 \\times 4 \\times 3 \\times 2 \\times 1$.",
+      "Paso 4 — Calcular: $5! = 120$ formas distintas."
+    ],
+    "conclusion": "Las 5 personas pueden ordenarse de $5! = \\mathbf{120}$ formas distintas. Se usa permutación porque el orden en la fila sí importa — una persona en primera posición y otra en quinta representan ubicaciones diferentes."
+  },
+  {
+    "id": "ej3-control-variables-combinacion",
+    "enunciado": "De un grupo de 8 investigadores se debe elegir un comité de 3 personas para revisar un proyecto. Todos los miembros del comité tienen la misma responsabilidad (sin roles diferenciados). ¿Cuántos comités distintos se pueden formar?",
+    "pasos": [
+      "Paso 1 — Determinar si el orden importa: como todos los miembros del comité tienen el mismo rol, el comité {Ana, Beatriz, Carlos} es idéntico al comité {Carlos, Ana, Beatriz}. El orden NO importa. Esto es una combinación.",
+      "Paso 2 — Aplicar la fórmula: $C(n, r) = \\dfrac{n!}{r!(n-r)!}$, con $n = 8$ y $r = 3$.",
+      "Paso 3 — Calcular el numerador: $8! / 5! = 8 \\times 7 \\times 6 = 336$ (se simplifica el $5!$ de arriba con el $(n-r)! = 5!$ de abajo).",
+      "Paso 4 — Calcular el denominador: $r! = 3! = 3 \\times 2 \\times 1 = 6$.",
+      "Paso 5 — Dividir: $C(8, 3) = 336 \\div 6 = 56$ comités distintos."
+    ],
+    "conclusion": "Se pueden formar $C(8,3) = \\mathbf{56}$ comités distintos. Si los tres cargos fueran diferentes (presidente, secretario, tesorero), el resultado sería $P(8, 3) = 336$ — seis veces más, porque el orden de asignación importaría."
+  },
+  {
+    "id": "ej4-control-variables-perm-repeticion",
+    "enunciado": "¿Cuántas palabras distintas (con o sin significado) se pueden formar usando todas las letras de la palabra BANANA?",
+    "pasos": [
+      "Paso 1 — Identificar las letras y sus repeticiones: B-A-N-A-N-A. Total de letras: $n = 6$. Frecuencias: B aparece 1 vez, A aparece 3 veces, N aparece 2 veces.",
+      "Paso 2 — Si todas las letras fueran distintas, habría $6! = 720$ arreglos. Pero como hay letras repetidas, muchos arreglos son idénticos (por ejemplo, intercambiar las tres A's entre sí no genera una palabra nueva).",
+      "Paso 3 — Aplicar la fórmula de permutación con repetición: $P_{\\text{rep}} = \\dfrac{n!}{n_1! \\cdot n_2! \\cdot n_3!} = \\dfrac{6!}{1! \\cdot 3! \\cdot 2!}$.",
+      "Paso 4 — Calcular: $\\dfrac{720}{1 \\times 6 \\times 2} = \\dfrac{720}{12} = 60$ palabras distintas."
+    ],
+    "conclusion": "Con las letras de BANANA se forman $\\mathbf{60}$ palabras distintas. El denominador ($1! \\cdot 3! \\cdot 2! = 12$) cancela todos los reordenamientos de letras repetidas que producirían la misma palabra."
+  },
+  {
+    "id": "ej5-control-variables-acertijo",
+    "enunciado": "Tres amigas — Ana, Beatriz y Carolina — eligieron cada una una ciudad para vacacionar: París, Roma o Tokio. Las tres ciudades son distintas para cada amiga. Pista 1: Ana no fue a París. Pista 2: Beatriz no fue a Roma. Pista 3: Carolina fue a Tokio. ¿A qué ciudad fue cada una?",
+    "pasos": [
+      "Paso 1 — Construir la tabla de doble entrada con las 3 personas en filas y las 3 ciudades en columnas.",
+      "Paso 2 — Aplicar la Pista 3: Carolina fue a Tokio → ✓ en Carolina/Tokio. Como cada ciudad es para una sola amiga, tachar Tokio para Ana y Beatriz: ✗ en Ana/Tokio y ✗ en Beatriz/Tokio.",
+      "Paso 3 — Aplicar la Pista 1: Ana no fue a París → ✗ en Ana/París. La tabla de Ana ahora tiene ✗ en París y ✗ en Tokio. Solo queda Roma → Ana fue a Roma.",
+      "Paso 4 — Deducir por eliminación: Roma ya está asignada a Ana → ✗ en Beatriz/Roma. La Pista 2 ya indicaba ✗ en Beatriz/Roma (coincide). La tabla de Beatriz tiene ✗ en Roma y ✗ en Tokio → solo queda París → Beatriz fue a París.",
+      "Paso 5 — Verificar consistencia: Ana=Roma, Beatriz=París, Carolina=Tokio. Las tres ciudades son distintas ✓. Pista 1: Ana no fue a París ✓ (fue a Roma). Pista 2: Beatriz no fue a Roma ✓ (fue a París). Pista 3: Carolina fue a Tokio ✓."
+    ],
+    "conclusion": "Ana fue a **Roma**, Beatriz fue a **París** y Carolina fue a **Tokio**. La clave es construir la tabla y deducir paso a paso, sin intentar adivinar directamente."
+  }
+]

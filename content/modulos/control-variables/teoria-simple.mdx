@@ -1,3 +1,123 @@
 # Control de Variables y Combinatoria — Versión fácil
 
-Contenido en desarrollo. ¡Vuelve pronto!
+## La pregunta más importante del módulo: ¿importa el orden?
+
+Antes de hacer cualquier cálculo, hazte esta pregunta: **¿{A, B, C} es lo mismo que {C, B, A} en este problema?**
+
+- Si son lo mismo (un equipo, un comité, un grupo sin roles) → **Combinación** (orden NO importa).
+- Si son distintos (el primero gana medalla de oro, el orden del código importa) → **Permutación** (orden SÍ importa).
+
+Esa distinción vale más que todas las fórmulas juntas.
+
+## Principio del producto: cuando haces varias cosas A LA VEZ
+
+Si tienes que elegir camisa (3 opciones) Y pantalón (4 opciones) Y zapatos (2 opciones), **multiplicas**:
+
+$$3 \times 4 \times 2 = 24 \text{ outfits posibles}$$
+
+**Truco para recordar:** la palabra "y" entre las elecciones → multiplicar.
+
+**¿Por qué?** Por cada camisa, puedes combinar 4 pantalones → $3 \times 4 = 12$ combinaciones. Por cada una de esas 12, puedes elegir 2 zapatos → $12 \times 2 = 24$. Cada decisión multiplica las posibilidades.
+
+## Principio de la suma: cuando eliges UNA de varias opciones
+
+Si puedes viajar en bus (5 horarios) O en avión (3 vuelos) — no en los dos al mismo tiempo — **sumas**:
+
+$$5 + 3 = 8 \text{ opciones de viaje}$$
+
+**Truco:** la palabra "o" entre alternativas que no se combinan → sumar.
+
+**Error clásico:** multiplicar $5 \times 3 = 15$. Eso sería correcto si tomaras bus Y avión en el mismo viaje. Como solo usas uno, sumas las opciones de cada uno.
+
+## Permutaciones: cuando el orden importa
+
+Imagina que ordenas 5 personas en una fila para una foto. La persona que va de primera NO es igual a la que va de última. El lugar que ocupas cambia lo que significa.
+
+- Primero puede ir cualquiera de las 5 → 5 opciones.
+- Segundo, cualquiera de las 4 restantes → 4 opciones.
+- Tercero: 3 opciones. Cuarto: 2 opciones. Quinto: 1 opción.
+- Total: $5 \times 4 \times 3 \times 2 \times 1 = 120$ filas distintas.
+
+Eso se escribe como $5! = 120$ (se lee "5 factorial").
+
+**¿Y si no ordenas todos, sino solo algunos?** Por ejemplo, elegir medalla de oro, plata y bronce de un grupo de 8 personas:
+
+$$8 \times 7 \times 6 = 336 \text{ posibilidades}$$
+
+Empiezas desde 8 y bajas tantos pasos como posiciones haya (3 medallas → 3 pasos).
+
+**Señales de que el orden importa:** podio, medallas, contraseña, asientos asignados con número, cargos con nombre diferente (presidente, secretario, tesorero).
+
+## Combinaciones: cuando el orden NO importa
+
+Ahora imagina elegir un equipo de 3 personas de ese mismo grupo de 8. A nadie le importa en qué orden los nombraste — {Juan, Luisa, Pedro} es el mismo equipo que {Pedro, Juan, Luisa}.
+
+$$C(8, 3) = \frac{8 \times 7 \times 6}{3 \times 2 \times 1} = \frac{336}{6} = 56 \text{ equipos posibles}$$
+
+**¿Por qué divides entre $3 \times 2 \times 1 = 6$?** Porque cada grupo de 3 personas puede nombrarse de 6 formas distintas y todas representan el mismo equipo. Al dividir, cancelas esas repeticiones.
+
+**Señales de que el orden NO importa:** equipo sin roles, comité sin jerarquía, grupo de trabajo, selección de ingredientes, mano de cartas.
+
+### Comparación directa con el mismo problema
+
+- "Medalla de oro, plata y bronce de 8 personas" → **Permutación**: $8 \times 7 \times 6 = 336$
+- "Equipo de 3 de 8 personas (sin roles)" → **Combinación**: $336 \div 6 = 56$
+
+La permutación siempre da igual o más que la combinación, porque cuenta más situaciones distintas.
+
+## Permutaciones con letras repetidas
+
+Si quieres saber cuántas palabras distintas forman las letras de "CACAO" (C, A, C, A, O):
+- 5 letras en total.
+- Si todas fueran distintas: $5! = 120$ palabras.
+- Pero hay 2 C's idénticas y 2 A's idénticas → muchas palabras se repiten.
+
+$$\frac{5!}{2! \cdot 2!} = \frac{120}{4} = 30 \text{ palabras distintas}$$
+
+**Truco:** divide entre el factorial de cuántas veces se repite cada letra. Las C's se repiten 2 veces → divide entre $2!$. Las A's también → divide entre otro $2!$.
+
+## Acertijos de tabla: deducir por eliminación
+
+Cuando el problema dice "Ana no usa rojo", "Beatriz no usa azul", etc., **dibuja una tabla** y marca con ✗ lo que no puede ser.
+
+Ejemplo: Ana, Beatriz y Carlos tienen mascotas distintas: perro, gato, conejo.
+- Beatriz no tiene perro → ✗ en Beatriz/perro.
+- Carlos tiene gato → ✓ en Carlos/gato; ✗ gato para los demás.
+- Ana no tiene gato (ya es de Carlos) → le queda perro o conejo. Como Beatriz tampoco tiene perro, Ana toma perro. Beatriz queda con conejo.
+
+**La tabla te guía sola — no intentes adivinar saltándote pasos.**
+
+**Error frecuente:** ver "Beatriz no tiene perro" y concluir que Beatriz tiene gato (olvidando que aún podría tener conejo). Las pistas solo eliminan opciones — no asignan directamente, excepto cuando dicen explícitamente "X tiene Y".
+
+## Control de variables: ¿qué cambias y qué mides?
+
+En un experimento hay tres tipos de variables:
+
+1. **La que cambias a propósito** → **variable independiente** (la causa que pruebas).
+2. **La que mides como resultado** → **variable dependiente** (el efecto que observas).
+3. **Las que mantienes iguales** → **variables de control** (para no "ensuciar" el resultado).
+
+**Ejemplo cotidiano:** quieres saber si escuchar música afecta tu velocidad de lectura.
+- Cambias a propósito: música vs. silencio → variable independiente.
+- Mides: páginas leídas por minuto → variable dependiente.
+- Mantienes igual: hora del día, cantidad de sueño, dificultad del texto → variables de control.
+
+**La regla de oro:** solo una cosa puede cambiar entre los grupos de comparación. Si cambian dos cosas a la vez (música Y temperatura), no puedes saber cuál causó el efecto.
+
+**Truco para no confundirlas:** la variable independiente es la que tú decides cambiar antes de empezar. La dependiente es la que "esperas a ver qué pasa" al final.
+
+## Probabilidad: contar para calcular
+
+La probabilidad clásica es:
+
+$$P = \frac{\text{lo que quieres que pase}}{\text{todo lo que puede pasar}}$$
+
+Cuando los casos son grupos de personas u objetos, usas combinaciones para contar.
+
+**Ejemplo:** De una bolsa con 3 bolas rojas y 5 azules sacas 2. ¿Probabilidad de que ambas sean rojas?
+
+- Formas de sacar 2 de 8: $C(8, 2) = 28$ (denominador — todos los casos posibles).
+- Formas de sacar 2 rojas de las 3 disponibles: $C(3, 2) = 3$ (numerador — los favorables).
+- Probabilidad: $\dfrac{3}{28}$
+
+**Importante:** el denominador cuenta **todas** las formas de sacar 2 bolas sin importar el color. El numerador cuenta solo las que cumplen la condición (ambas rojas). Siempre empieza por el denominador — es el universo completo de posibilidades.
