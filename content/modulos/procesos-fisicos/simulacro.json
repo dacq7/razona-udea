@@ -1,1 +1,250 @@
-[]
+[
+  {
+    "id": "sim1-procesos-fisicos-encuentro-distancia",
+    "modulo_slug": "procesos-fisicos",
+    "enunciado": "Las ciudades A y B distan 300 km. Un auto sale de A hacia B a 90 km/h y, simultáneamente, otro sale de B hacia A a 60 km/h. ¿A cuántos kilómetros de la ciudad A se produce el encuentro?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "150 km",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $150 = 300/2$, que asume que ambos autos recorren distancias iguales. Eso solo ocurre si van a la misma velocidad. Como el auto de A va más rápido (90 km/h vs. 60 km/h), recorre más distancia en el mismo tiempo. Distancia correcta desde A: $90 \\times 2 = 180$ km."
+      },
+      {
+        "letra": "B",
+        "texto": "180 km",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Velocidad relativa: $90 + 60 = 150$ km/h. Tiempo de encuentro: $300/150 = 2$ horas. Distancia recorrida por el auto de A: $90 \\times 2 = 180$ km desde A. Verificación: auto de B recorrió $60 \\times 2 = 120$ km. Total: $180 + 120 = 300$ km ✓."
+      },
+      {
+        "letra": "C",
+        "texto": "120 km",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $120 = 60 \\times 2$, que es la distancia recorrida por el auto que sale de B (la distancia desde B, no desde A). La pregunta pide la distancia desde A, que corresponde al auto más rápido: $90 \\times 2 = 180$ km desde A."
+      },
+      {
+        "letra": "D",
+        "texto": "90 km",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $90 = 90 \\times 1$ (velocidad del auto A multiplicada por 1 hora). El tiempo de encuentro no es 1 hora — se calcula como $300/(90+60) = 300/150 = 2$ horas. Distancia correcta: $90 \\times 2 = 180$ km desde A."
+      }
+    ]
+  },
+  {
+    "id": "sim2-procesos-fisicos-persecucion",
+    "modulo_slug": "procesos-fisicos",
+    "enunciado": "Un automóvil sale de la ciudad a 80 km/h. Una moto sale de la misma ciudad 1 hora después, en la misma dirección, a 100 km/h. ¿Cuántas horas después de partir la moto alcanza al automóvil?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "4 horas",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Ventaja del auto cuando sale la moto: $80 \\times 1 = 80$ km. Velocidad relativa: $100 - 80 = 20$ km/h. Tiempo de alcance: $80/20 = 4$ horas. Verificación: moto recorre $100 \\times 4 = 400$ km; auto (que lleva 5h en total) recorre $80 \\times 5 = 400$ km ✓."
+      },
+      {
+        "letra": "B",
+        "texto": "1 hora",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 1 hora es el tiempo de ventaja inicial del auto, no el tiempo que tarda la moto en alcanzarlo. Para calcular el tiempo de alcance hay que dividir la distancia de ventaja entre la velocidad relativa: $80 / (100 - 80) = 80/20 = 4$ horas."
+      },
+      {
+        "letra": "C",
+        "texto": "5 horas",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $5 = 80/(100-80) + 1 = 4 + 1$, que suma el tiempo de ventaja inicial al tiempo de alcance. El tiempo de alcance es solo el tiempo que transcurre DESDE que sale la moto hasta que alcanza al auto: $80/20 = 4$ horas."
+      },
+      {
+        "letra": "D",
+        "texto": "8 horas",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $8 = 80/10$, que usa una velocidad relativa de 10 km/h en vez de 20 km/h. Error posible: calcular $100/10 = 10$ o $80+20 = 100 \\rightarrow 100-90=10$. La velocidad relativa correcta es $100 - 80 = 20$ km/h. Tiempo: $80/20 = 4$ horas."
+      }
+    ]
+  },
+  {
+    "id": "sim3-procesos-fisicos-trabajo-tasa",
+    "modulo_slug": "procesos-fisicos",
+    "enunciado": "Carlos puede terminar un informe en 4 horas trabajando solo. Diana puede terminarlo en 12 horas. Si trabajan juntos desde el principio, ¿cuántas horas tardan en terminar el informe?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "8 horas",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $8 = (4 + 12)/2$, que promedia los tiempos individuales. Trabajar juntos no promedia los tiempos — suma las tasas. Tasa conjunta: $1/4 + 1/12 = 3/12 + 1/12 = 4/12 = 1/3$. Tiempo: 3 horas — menos que cualquiera de los dos solos."
+      },
+      {
+        "letra": "B",
+        "texto": "16 horas",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $16 = 4 + 12$, que suma los tiempos. Juntos, Carlos y Diana terminan el informe más rápido que cualquiera solo, no más lento. La fórmula correcta: $t = \\dfrac{4 \\times 12}{4 + 12} = \\dfrac{48}{16} = 3$ horas."
+      },
+      {
+        "letra": "C",
+        "texto": "3 horas",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Tasa de Carlos: $1/4$ del informe/hora. Tasa de Diana: $1/12$ del informe/hora. Tasa conjunta: $1/4 + 1/12 = 3/12 + 1/12 = 4/12 = 1/3$. Tiempo: $t = 3$ horas. Fórmula directa: $t = \\dfrac{4 \\times 12}{4 + 12} = \\dfrac{48}{16} = 3$ horas ✓."
+      },
+      {
+        "letra": "D",
+        "texto": "6 horas",
+        "es_correcta": false,
+        "explicacion": "Es trampa por error en suma de fracciones: si se calcula $1/4 + 1/12$ incorrectamente como $2/12 = 1/6$ (confundiendo $1/4$ con $1/12$ en el denominador), se obtiene $t = 6$ horas. El cálculo correcto: $1/4 = 3/12$, entonces $3/12 + 1/12 = 4/12 = 1/3$, y $t = 3$ horas."
+      }
+    ]
+  },
+  {
+    "id": "sim4-procesos-fisicos-llenado-vaciado",
+    "modulo_slug": "procesos-fisicos",
+    "enunciado": "Un grifo llena un depósito en 3 horas. Una válvula de escape lo vacía en 5 horas. Si el grifo y la válvula operan simultáneamente con el depósito vacío al inicio, ¿cuántas horas tarda el depósito en llenarse completamente?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "4 horas",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $4 = (3 + 5)/2$, que promedia los tiempos. La válvula de escape reduce la tasa de llenado, así que el tiempo real es mayor que si solo estuviera el grifo (3h). La tasa neta: $1/3 - 1/5 = 5/15 - 3/15 = 2/15$. Tiempo: $15/2 = 7.5$ horas."
+      },
+      {
+        "letra": "B",
+        "texto": "7.5 horas",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Tasa de llenado del grifo: $+1/3$ del depósito/hora. Tasa de vaciado de la válvula: $-1/5$ del depósito/hora. Tasa neta: $1/3 - 1/5 = 5/15 - 3/15 = 2/15$. Tiempo para llenarse: $t = 1/(2/15) = 15/2 = 7.5$ horas."
+      },
+      {
+        "letra": "C",
+        "texto": "1.875 horas",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $1.875 = 15/8 = 1/(1/3 + 1/5)$. Este cálculo suma las tasas en vez de restarlas, tratando la válvula de escape como un segundo grifo de llenado. La válvula vacía el depósito, así que su tasa debe restarse: $1/3 - 1/5 = 2/15$. Tiempo correcto: $15/2 = 7.5$ horas."
+      },
+      {
+        "letra": "D",
+        "texto": "8 horas",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $8 = 3 + 5$, que suma los tiempos individuales. La tasa neta de llenado se calcula con las tasas (no los tiempos): $1/3 - 1/5 = 2/15$, lo que da un tiempo de $15/2 = 7.5$ horas."
+      }
+    ]
+  },
+  {
+    "id": "sim5-procesos-fisicos-mezcla-concentracion",
+    "modulo_slug": "procesos-fisicos",
+    "enunciado": "Se mezclan 4 litros de solución al 30% de sal con 6 litros de solución al 10% de sal. ¿Cuál es la concentración de sal en la mezcla resultante?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "20%",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $(30\\% + 10\\%)/2 = 20\\%$, que promedia las concentraciones sin ponderar por volumen. Como hay más litros al 10% (6 L) que al 30% (4 L), la mezcla se acerca más al 10%. Correcto: $(4 \\times 30 + 6 \\times 10)/(4+6) = (120 + 60)/10 = 18\\%$."
+      },
+      {
+        "letra": "B",
+        "texto": "18%",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Sal de la primera solución: $4 \\times 0.30 = 1.20$ L. Sal de la segunda: $6 \\times 0.10 = 0.60$ L. Sal total: $1.80$ L. Volumen total: $10$ L. Concentración: $1.80/10 = 0.18 = 18\\%$. Razonabilidad: 18% está entre 10% y 30%, más cerca del 10% (mayor volumen). ✓"
+      },
+      {
+        "letra": "C",
+        "texto": "12%",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $12\\% = (4 \\times 0.30)/10 = 1.20/10$, que solo cuenta el aporte de sal de la primera solución e ignora la segunda. La mezcla incluye ambas: $4 \\times 0.30 + 6 \\times 0.10 = 1.20 + 0.60 = 1.80$ L de sal en 10 L → $18\\%$."
+      },
+      {
+        "letra": "D",
+        "texto": "22%",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $22\\% = (6 \\times 0.30 + 4 \\times 0.10)/10 = (1.80 + 0.40)/10 = 2.20/10$. Este resultado viene de intercambiar los volúmenes: usar 6 L para la solución al 30% y 4 L para la al 10% (al revés del enunciado). El orden correcto es 4 L al 30% y 6 L al 10%, lo que da $18\\%$."
+      }
+    ]
+  },
+  {
+    "id": "sim6-procesos-fisicos-velocidad-promedio",
+    "modulo_slug": "procesos-fisicos",
+    "enunciado": "Una persona viaja de A a B (100 km) a 100 km/h y regresa de B a A (100 km) a 50 km/h. ¿Cuál es la velocidad promedio en todo el trayecto de ida y vuelta?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "75 km/h",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $(100 + 50)/2 = 75$ km/h. Esta media aritmética solo es válida cuando los tiempos a cada velocidad son iguales. Aquí las distancias son iguales (no los tiempos): el trayecto a 50 km/h dura 2 horas frente a 1 hora del trayecto a 100 km/h. El segmento lento domina el promedio: $v = 200/3 \\approx 66.7$ km/h."
+      },
+      {
+        "letra": "B",
+        "texto": "$\\dfrac{200}{3}$ km/h $\\approx$ 66.7 km/h",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Tiempo de ida: $100/100 = 1$ hora. Tiempo de vuelta: $100/50 = 2$ horas. Distancia total: $200$ km. Tiempo total: $3$ horas. Velocidad promedio: $200/3 \\approx 66.7$ km/h. Media armónica: $\\dfrac{2 \\times 100 \\times 50}{100 + 50} = \\dfrac{10000}{150} = \\dfrac{200}{3}$ ✓."
+      },
+      {
+        "letra": "C",
+        "texto": "100 km/h",
+        "es_correcta": false,
+        "explicacion": "Es trampa: usar solo la velocidad de ida (la mayor). La velocidad promedio debe considerar ambos trayectos. La vuelta a 50 km/h dura el doble de tiempo que la ida, lo que reduce significativamente el promedio: $200/3 \\approx 66.7$ km/h."
+      },
+      {
+        "letra": "D",
+        "texto": "50 km/h",
+        "es_correcta": false,
+        "explicacion": "Es trampa: usar solo la velocidad de vuelta (la menor). Aunque la vuelta dura el doble que la ida, el promedio no cae hasta el mínimo. La velocidad promedio real incorpora ambos trayectos: $d_{\\text{total}}/t_{\\text{total}} = 200/3 \\approx 66.7$ km/h."
+      }
+    ]
+  },
+  {
+    "id": "sim7-procesos-fisicos-promedio-ponderado",
+    "modulo_slug": "procesos-fisicos",
+    "enunciado": "En un curso universitario, la teoría vale el 40% de la nota y la práctica el 60%. Laura obtuvo 3.0 en teoría y 4.5 en práctica. ¿Cuál es su nota final en el curso?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "3.75",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $(3.0 + 4.5)/2 = 3.75$, que promedia directamente sin considerar los pesos. La práctica vale 60% y la teoría 40% — no son iguales. Nota ponderada: $3.0 \\times 0.40 + 4.5 \\times 0.60 = 1.20 + 2.70 = 3.90$."
+      },
+      {
+        "letra": "B",
+        "texto": "3.90",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Nota ponderada $= 3.0 \\times 0.40 + 4.5 \\times 0.60 = 1.20 + 2.70 = 3.90$. La práctica (4.5) tiene mayor peso (60%), por lo que la nota final se acerca más a 4.5 que a 3.0. Verificación: $0.40 + 0.60 = 1.00$ ✓."
+      },
+      {
+        "letra": "C",
+        "texto": "3.60",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $3.60 = 3.0 \\times 0.60 + 4.5 \\times 0.40 = 1.80 + 1.80$. Este resultado viene de intercambiar los pesos: asigna el 60% a la teoría (la nota más baja) y el 40% a la práctica (la nota más alta). Los pesos correctos son: teoría = 40%, práctica = 60%. Nota correcta: $3.90$."
+      },
+      {
+        "letra": "D",
+        "texto": "4.5",
+        "es_correcta": false,
+        "explicacion": "Es trampa: tomar directamente la nota de práctica (la de mayor peso). Aunque la práctica tiene el 60% del peso, la teoría contribuye con el 40% restante y arrastra la nota hacia abajo. Nota ponderada: $3.0 \\times 0.40 + 4.5 \\times 0.60 = 1.20 + 2.70 = 3.90$."
+      }
+    ]
+  },
+  {
+    "id": "sim8-procesos-fisicos-rendimiento-cadena",
+    "modulo_slug": "procesos-fisicos",
+    "enunciado": "Una fábrica procesa materia prima en tres etapas. En la primera etapa se pierde el 10% del material (eficiencia 90%). En la segunda se pierde el 20% (eficiencia 80%). En la tercera se pierde el 5% (eficiencia 95%). Si ingresan 1000 kg de materia prima, ¿cuántos kilogramos de producto final se obtienen?",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "900 kg",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $900 = 1000 \\times 0.90$, que solo aplica la primera etapa e ignora las otras dos. El rendimiento total multiplica las tres eficiencias: $1000 \\times 0.90 \\times 0.80 \\times 0.95 = 684$ kg."
+      },
+      {
+        "letra": "B",
+        "texto": "650 kg",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $650 = 1000 \\times (1 - 0.35) = 1000 \\times 0.65$, que suma las pérdidas porcentuales ($10\\% + 20\\% + 5\\% = 35\\%$) y las aplica todas sobre los 1000 kg iniciales. Pero el 20% de la segunda etapa se aplica sobre los 900 kg que quedan (no sobre 1000). El cálculo correcto multiplica eficiencias: $1000 \\times 0.90 \\times 0.80 \\times 0.95 = 684$ kg."
+      },
+      {
+        "letra": "C",
+        "texto": "684 kg",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Se multiplican las eficiencias en cadena: $1000 \\times 0.90 = 900$ kg (tras la 1ª etapa). $900 \\times 0.80 = 720$ kg (tras la 2ª etapa). $720 \\times 0.95 = 684$ kg (tras la 3ª etapa). Rendimiento total: $0.90 \\times 0.80 \\times 0.95 = 0.684 = 68.4\\%$."
+      },
+      {
+        "letra": "D",
+        "texto": "720 kg",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $720 = 1000 \\times 0.90 \\times 0.80$, que aplica solo las dos primeras etapas y olvida la tercera (eficiencia 95%). La tercera etapa reduce 720 kg a $720 \\times 0.95 = 684$ kg. El resultado final correcto es 684 kg."
+      }
+    ]
+  }
+]

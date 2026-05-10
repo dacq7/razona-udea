@@ -1,3 +1,173 @@
 # Procesos Físicos
 
-Contenido en desarrollo. ¡Vuelve pronto!
+Este módulo aplica aritmética y proporcionalidad a situaciones físicas del mundo real: vehículos en movimiento, tareas colaborativas, mezclas, llenado de depósitos y promedios con pesos distintos. No requiere física avanzada — requiere leer el problema con cuidado, identificar la fórmula correcta y no caer en las trampas más frecuentes (calcular velocidad promedio como media aritmética, sumar tiempos en vez de tasas, ignorar el vaciado en un llenado).
+
+## 1. Velocidad, tiempo y distancia
+
+La relación fundamental entre estas tres cantidades es:
+
+$$v = \frac{d}{t} \qquad d = v \cdot t \qquad t = \frac{d}{v}$$
+
+**Truco mnemotécnico:** dibuja un triángulo con $d$ arriba, $v$ y $t$ abajo. Para obtener cualquiera de las tres, tapa la que buscas: si tapas $d$ ves $v \times t$; si tapas $v$ ves $d \div t$; si tapas $t$ ves $d \div v$.
+
+**Conversión de unidades km/h ↔ m/s:**
+
+$$1 \text{ km/h} = \frac{1000 \text{ m}}{3600 \text{ s}} = \frac{1}{3.6} \text{ m/s}$$
+
+| Para convertir | Operación |
+|---|---|
+| km/h → m/s | Dividir entre 3.6 |
+| m/s → km/h | Multiplicar por 3.6 |
+
+**Ejemplo:** 90 km/h = 90 ÷ 3.6 = 25 m/s. Verificación: 25 × 3.6 = 90 ✓
+
+**Error frecuente:** confundir qué variable se busca. Si el problema da $v$ y $t$ y pide $d$, la operación es multiplicar — no dividir. Siempre identifica la incógnita antes de calcular.
+
+## 2. Movimiento de dos objetos
+
+### Encuentro (sentidos contrarios)
+
+Cuando dos objetos salen al mismo tiempo (o en momentos distintos) en **sentidos contrarios**, su **velocidad relativa** es la suma de sus velocidades:
+
+$$v_{\text{rel}} = v_1 + v_2$$
+
+Tiempo de encuentro: $t = \dfrac{d}{v_1 + v_2}$
+
+**Ejemplo:** Dos trenes salen de ciudades A y B (300 km de distancia) al mismo tiempo, en sentidos contrarios. Tren A a 80 km/h, tren B a 70 km/h. Se encuentran a las $t = 300/(80+70) = 2$ horas. Tren A avanzó $80 \times 2 = 160$ km desde A.
+
+### Persecución (mismo sentido)
+
+Cuando un objeto persigue a otro que lleva ventaja en la **misma dirección**, la velocidad relativa es la **diferencia**:
+
+$$v_{\text{rel}} = v_{\text{rápido}} - v_{\text{lento}}$$
+
+Tiempo para alcanzar: $t = \dfrac{d_{\text{ventaja}}}{v_{\text{rápido}} - v_{\text{lento}}}$
+
+**Ejemplo:** Un ciclista lleva 30 minutos de ventaja a 20 km/h cuando sale un auto a 50 km/h. Ventaja del ciclista: $20 \times 0.5 = 10$ km. Tiempo del auto para alcanzarlo: $10 / (50-20) = 10/30 = 1/3$ hora = 20 minutos.
+
+**Resumen de los dos escenarios:**
+
+| Escenario | Velocidad relativa | Cuándo sumar o restar |
+|---|---|---|
+| Sentidos contrarios (encuentro) | $v_1 + v_2$ | **Suman** — se acercan más rápido |
+| Mismo sentido (persecución) | $v_1 - v_2$ | **Restan** — el avance se reduce poco a poco |
+
+**Error crítico:** usar suma cuando corresponde diferencia, o viceversa. Identifica primero si los objetos se acercan o si uno persigue al otro.
+
+## 3. Trabajo y eficiencia
+
+Si una persona (o máquina) completa un trabajo en $t$ horas, su **tasa de trabajo** es $\dfrac{1}{t}$ del trabajo por hora.
+
+Cuando dos personas (o máquinas) trabajan juntas, sus tasas se **suman**:
+
+$$\text{Tasa conjunta} = \frac{1}{t_1} + \frac{1}{t_2}$$
+
+Tiempo total trabajando juntos:
+
+$$t = \frac{t_1 \cdot t_2}{t_1 + t_2}$$
+
+**Ejemplo:** Ana pinta una pared en 6 horas; Carlos, en 4 horas. Tasa Ana = $1/6$, Tasa Carlos = $1/4$. Tasa conjunta = $1/6 + 1/4 = 2/12 + 3/12 = 5/12$. Tiempo juntos: $12/5 = 2.4$ horas.
+
+**Error clásico:** sumar los tiempos ($6 + 4 = 10$ horas). Al trabajar juntos, la tarea se termina en **menos** tiempo que cada uno solo — siempre. Si obtienes más tiempo del que tarda el más rápido, cometiste un error.
+
+**Escala con más personas (horas-hombre):** si 3 personas hacen un trabajo en 8 horas, el total son $3 \times 8 = 24$ horas-hombre. Si trabajan 4 personas, tardan $24/4 = 6$ horas. El producto (personas × tiempo) se mantiene constante cuando la tarea no cambia.
+
+## 4. Llenado y vaciado de recipientes
+
+Tiene exactamente la misma estructura matemática que el trabajo. Si un grifo llena un depósito en $t_1$ horas, su tasa es $1/t_1$ depósitos por hora.
+
+**Dos grifos llenando:** tasa total = $\dfrac{1}{t_1} + \dfrac{1}{t_2}$, tiempo = $\dfrac{t_1 t_2}{t_1 + t_2}$.
+
+**Un grifo llenando y una fuga vaciando:** la fuga tiene tasa negativa.
+
+$$\text{Tasa neta} = \frac{1}{t_{\text{llena}}} - \frac{1}{t_{\text{vacía}}}$$
+
+Si la tasa neta es positiva, el depósito se llena (aunque más lento). Si es negativa, el grifo no puede vencer a la fuga y el depósito nunca se llena.
+
+**Ejemplo:** Grifo A llena en 4 horas (tasa $= 1/4$). Fuga vacía en 12 horas (tasa $= 1/12$). Tasa neta: $1/4 - 1/12 = 3/12 - 1/12 = 2/12 = 1/6$. Tiempo para llenarse: 6 horas.
+
+**Error frecuente:** ignorar la fuga o sumarla en vez de restarla. La fuga **resta** capacidad de llenado — siempre usa signo negativo para el vaciado.
+
+## 5. Mezclas
+
+La **concentración** de una solución es la fracción (o porcentaje) de soluto en el total:
+
+$$c = \frac{\text{cantidad de soluto}}{\text{volumen total}} \times 100\%$$
+
+Cuando mezclas dos soluciones con volúmenes $V_1$ y $V_2$ y concentraciones $c_1$ y $c_2$:
+
+$$c_{\text{mezcla}} = \frac{V_1 c_1 + V_2 c_2}{V_1 + V_2}$$
+
+**Ejemplo:** 3 litros al 40% mezclados con 7 litros al 20%. Soluto total: $3 \times 0.40 + 7 \times 0.20 = 1.20 + 1.40 = 2.60$ litros. Concentración: $2.60 / 10 = 26\%$.
+
+**Uso inverso (encontrar qué agregar):** si quieres obtener una concentración específica agregando agua (0%) o solución pura (100%), plantea la ecuación y despeja el volumen desconocido.
+
+**Error clásico:** calcular la concentración final como $(c_1 + c_2)/2$. Esto solo es correcto cuando los volúmenes son iguales. En cualquier otro caso, hay que ponderar por volumen.
+
+## 6. Promedios ponderados
+
+Cuando los valores tienen **pesos distintos**, el promedio no es la media aritmética. La fórmula correcta es:
+
+$$\bar{x} = \frac{\sum w_i \cdot x_i}{\sum w_i}$$
+
+donde $w_i$ es el peso (o porcentaje) de cada valor $x_i$.
+
+**Ejemplo:** Nota final con tres componentes: Parcial 1 = 3.5 (20%), Parcial 2 = 4.0 (30%), Final = 4.5 (50%).
+
+$$\bar{x} = \frac{3.5 \times 0.20 + 4.0 \times 0.30 + 4.5 \times 0.50}{0.20 + 0.30 + 0.50} = \frac{0.70 + 1.20 + 2.25}{1} = 4.15$$
+
+**Error frecuente:** calcular $(3.5 + 4.0 + 4.5)/3 = 4.0$. El examen final vale el 50% — tiene el doble de importancia que el Parcial 1 — y ese peso debe reflejarse en el cálculo.
+
+## 7. Velocidad promedio en trayectos
+
+La velocidad promedio se define como:
+
+$$v_{\text{prom}} = \frac{d_{\text{total}}}{t_{\text{total}}}$$
+
+**Esta NO es la media aritmética de las velocidades.** El error más frecuente del módulo.
+
+**Ejemplo:** Alguien hace un recorrido de ida (180 km) a 90 km/h y vuelta (180 km) a 60 km/h.
+
+- Tiempo de ida: $180/90 = 2$ horas.
+- Tiempo de vuelta: $180/60 = 3$ horas.
+- Distancia total: $360$ km. Tiempo total: $5$ horas.
+- Velocidad promedio: $360/5 = \mathbf{72}$ km/h — **no** $\dfrac{90+60}{2} = 75$ km/h.
+
+**¿Por qué la media aritmética falla?** Porque el trayecto más lento (60 km/h) ocupa **más tiempo** que el más rápido, de modo que "arrastra" el promedio hacia abajo más de lo que aparece en una simple suma.
+
+**Fórmula para el caso especial de misma distancia en ambos trayectos** (media armónica):
+
+$$v_{\text{prom}} = \frac{2 v_1 v_2}{v_1 + v_2}$$
+
+Para el ejemplo: $\dfrac{2 \times 90 \times 60}{90 + 60} = \dfrac{10800}{150} = 72$ km/h ✓
+
+**Regla de seguridad:** siempre calcula $d_{\text{total}} / t_{\text{total}}$. La media armónica es útil como atajo, pero la definición nunca falla.
+
+## 8. Procesos secuenciales y rendimiento
+
+En una cadena de procesos donde cada etapa tiene una **eficiencia** (fracción del material que pasa al siguiente paso), el rendimiento total es el **producto** de las eficiencias individuales:
+
+$$R_{\text{total}} = \eta_1 \times \eta_2 \times \eta_3 \times \cdots$$
+
+**Ejemplo:** Proceso de 3 etapas con eficiencias 90%, 80% y 95%. Si entran 1000 kg:
+
+$$R = 1000 \times 0.90 \times 0.80 \times 0.95 = 1000 \times 0.684 = 684 \text{ kg}$$
+
+**Error frecuente:** sumar las pérdidas ($10\% + 20\% + 5\% = 35\%$) y restar del total: $1000 \times 0.65 = 650$ kg. Esto subestima la salida porque aplica todas las pérdidas sobre los 1000 kg iniciales en vez de aplicarlas secuencialmente.
+
+## 9. Razonamiento físico cualitativo
+
+Algunos problemas del examen no piden calcular, sino identificar cómo cambia una cantidad cuando cambia otra.
+
+**Relaciones directas:** cuando una cantidad aumenta, la otra también aumenta.
+
+- Velocidad constante: si el tiempo aumenta → la distancia aumenta. ($d = v \cdot t$)
+- Fuerza neta constante: si la masa aumenta → la aceleración disminuye. ($a = F/m$, relación inversa)
+
+**Relaciones inversas:** cuando una cantidad aumenta, la otra disminuye.
+
+- A mayor número de trabajadores, menor tiempo para completar la tarea (producto constante: trabajadores × tiempo).
+- A mayor concentración inicial, menos agua adicional se necesita para diluir a una concentración objetivo.
+- En persecución: a mayor diferencia de velocidades, menor tiempo de alcance.
+
+**Estrategia para preguntas cualitativas:** escribe la fórmula relevante y observa cómo cambia la variable buscada cuando cambias la variable dada, manteniendo las demás constantes. No necesitas calcular — solo analizar el signo de la relación (directa o inversa).

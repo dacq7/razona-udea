@@ -1,3 +1,119 @@
 # Procesos Físicos — Versión fácil
 
-Contenido en desarrollo. ¡Vuelve pronto!
+## La trampa número uno del módulo: velocidad promedio
+
+Antes de empezar con todo, aprende esto de memoria: **la velocidad promedio NO es la media aritmética de las velocidades**. Esa trampa aparece en casi todos los exámenes. La respuesta siempre es: distancia total ÷ tiempo total. Ya.
+
+## Velocidad, tiempo y distancia: el triángulo mágico
+
+Hay solo una fórmula: $d = v \times t$ (distancia = velocidad × tiempo). Todo lo demás viene de ella:
+
+- ¿Cuánto tiempo tardé? → $t = d \div v$
+- ¿A qué velocidad iba? → $v = d \div t$
+
+**Truco:** dibuja una fracción: $d$ arriba, $v \times t$ abajo. Tapa lo que buscas. Si tapas $v$, ves $d/t$. Si tapas $t$, ves $d/v$. Si tapas $d$, ves $v \times t$.
+
+**Conversión km/h ↔ m/s:** divide entre 3.6 para pasar de km/h a m/s. Multiplica por 3.6 para el camino inverso. Ejemplo: 72 km/h ÷ 3.6 = 20 m/s.
+
+## Dos vehículos: ¿se acercan o uno persigue al otro?
+
+**Se acercan (sentidos contrarios):** los velocidades se SUMAN.
+- "Se acercan a 150 km/h" significa que cada hora se acercan 150 km.
+- Tiempo de encuentro = distancia ÷ (v₁ + v₂)
+
+**Persecución (mismo sentido):** las velocidades se RESTAN.
+- Si uno va a 80 y otro a 60, el rápido gana solo 20 km por hora.
+- Tiempo para alcanzar = ventaja inicial ÷ (v_rápido − v_lento)
+
+**Regla rápida:** ¿se van a ver algún día? → suman. ¿El de atrás quiere atrapar al de adelante? → restan.
+
+**Error peligroso:** hacer al revés: sumar cuando deben restar o restar cuando deben sumar. Antes de calcular, visualiza mentalmente cuál de los dos escenarios es.
+
+## Trabajo en equipo: pensar en tasas, no en tiempos
+
+Si Ana termina un trabajo en 6 horas, completa $\frac{1}{6}$ del trabajo cada hora. Si Carlos lo termina en 4 horas, completa $\frac{1}{4}$ por hora.
+
+Trabajando juntos, completan $\frac{1}{6} + \frac{1}{4}$ por hora. Para sumarlas: busca denominador común.
+
+$$\frac{1}{6} + \frac{1}{4} = \frac{2}{12} + \frac{3}{12} = \frac{5}{12} \text{ del trabajo por hora}$$
+
+Tiempo total = $\frac{12}{5} = 2.4$ horas.
+
+**Fórmula rápida:** $t = \dfrac{t_1 \times t_2}{t_1 + t_2}$
+
+**Error clásico:** sumar los tiempos → $6 + 4 = 10$ horas. ¡MAL! Juntos siempre tardan MENOS que el más rápido solo.
+
+## Llenar y vaciar depósitos: igual que el trabajo
+
+Misma lógica. Un grifo que llena en 4 horas tiene tasa $\frac{1}{4}$ por hora. Una fuga que vacía en 12 horas tiene tasa $\frac{1}{12}$ por hora. Pero como vacía, su tasa va con signo negativo:
+
+$$\text{Tasa neta} = \frac{1}{4} - \frac{1}{12} = \frac{3}{12} - \frac{1}{12} = \frac{2}{12} = \frac{1}{6}$$
+
+Tiempo para llenarse = 6 horas.
+
+**Truco para acordarte del signo:** llenar = entra agua = positivo. Vaciar = sale agua = negativo. Nunca sumes la fuga al llenado.
+
+## Mezclas: no promedies, pondera
+
+Si mezclas 2 litros de jugo al 30% de azúcar con 3 litros al 50%, la concentración final NO es (30+50)/2 = 40%. Eso sería si tuvieras cantidades iguales. Como tienes más del de 50%, la mezcla se acerca más al 50%.
+
+La fórmula correcta:
+$$c_{\text{final}} = \frac{V_1 \times c_1 + V_2 \times c_2}{V_1 + V_2} = \frac{2 \times 30 + 3 \times 50}{2 + 3} = \frac{60 + 150}{5} = \frac{210}{5} = 42\%$$
+
+**Regla:** primero calcula cuánto soluto (azúcar, sal, ácido...) hay en total. Luego divide entre el volumen total.
+
+**¿Cuánto agua agregar para diluir?** Plantea la ecuación y despeja. Si tienes 5 litros al 60% y quieres llegar al 40%:
+
+$\frac{5 \times 0.60}{5 + x} = 0.40 \Rightarrow 3 = 2 + 0.40x \Rightarrow x = 2.5$ litros de agua.
+
+## Promedios con pesos: la nota que no es lo que parece
+
+Si el examen final vale el 50% y un parcial vale el 20%, no puedes promediar directamente. Cada nota tiene que multiplicarse por su peso:
+
+**Nota = (calificación1 × peso1) + (calificación2 × peso2) + ...**
+
+Ejemplo: Parcial 1 = 3.5 (20%), Parcial 2 = 4.0 (30%), Final = 4.5 (50%):
+
+$$\text{Nota} = 3.5 \times 0.20 + 4.0 \times 0.30 + 4.5 \times 0.50 = 0.70 + 1.20 + 2.25 = 4.15$$
+
+Si promedias sin pesos: $(3.5+4.0+4.5)/3 = 4.0$. Diferencia significativa. Siempre pondera.
+
+## Velocidad promedio: la trampa favorita del examen
+
+**Situación 1: mismos tiempos en ambos trayectos.**
+Si vas 1 hora a 60 km/h y luego 1 hora a 40 km/h, recorres $60 + 40 = 100$ km en 2 horas. Velocidad promedio = $100/2 = 50$ km/h. Aquí sí coincide con la media aritmética porque los tiempos son iguales.
+
+**Situación 2: mismas distancias en ambos trayectos (el caso trampa).**
+Si vas 60 km a 60 km/h (1 hora) y luego 60 km a 40 km/h (1.5 horas):
+- Distancia total: 120 km
+- Tiempo total: 2.5 horas
+- Velocidad promedio: $120/2.5 = \mathbf{48}$ km/h — NO 50 km/h.
+
+¿Por qué 48 y no 50? Porque pasas más tiempo yendo a 40 km/h (1.5h) que a 60 km/h (1h). El segmento lento "pesa más" en el promedio de tiempo, y eso arrastra la velocidad promedio hacia abajo.
+
+**Regla infalible:** siempre calcula distancia total ÷ tiempo total. Nunca sumes velocidades y dividas entre 2 cuando las distancias (no los tiempos) son iguales.
+
+## Rendimiento en cadena: multiplica las eficiencias
+
+Si una fábrica tiene 3 etapas y cada una pierde algo:
+- Etapa 1: conserva el 90% (pierde 10%)
+- Etapa 2: conserva el 80% (pierde 20%)
+- Etapa 3: conserva el 95% (pierde 5%)
+
+El rendimiento total no es $1 - (10\%+20\%+5\%) = 65\%$ de lo que entró. El cálculo correcto es multiplicar las eficiencias en cadena:
+
+$$R = 0.90 \times 0.80 \times 0.95 = 0.684 = 68.4\%$$
+
+Si entran 1000 kg, salen 684 kg.
+
+**¿Por qué el error de sumar las pérdidas da menos?** Porque el 20% de la etapa 2 no se aplica sobre los 1000 kg originales — se aplica sobre los 900 kg que quedan después de la etapa 1. Al sumar porcentajes directamente, estás sobreestimando las pérdidas.
+
+## Razonamiento cualitativo: ¿más grande → más o menos?
+
+Cuando el problema pregunta "si X aumenta, ¿qué pasa con Y?", identifica si es relación directa o inversa:
+
+- **Directa:** $d = v \cdot t$ → si $v$ aumenta (con $t$ fijo), $d$ aumenta.
+- **Inversa:** $t = d/v$ → si $v$ aumenta (con $d$ fija), $t$ disminuye.
+- **Inversa en trabajo:** más trabajadores = menos tiempo. El producto (personas × tiempo) es constante.
+
+Para responder, escribe la fórmula, sustituye mentalmente "aumenta" por un número más grande, y observa si la respuesta sube o baja.

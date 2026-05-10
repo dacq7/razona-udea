@@ -1,1 +1,62 @@
-[]
+[
+  {
+    "id": "ej1-procesos-fisicos-velocidad-basica",
+    "enunciado": "Un automóvil viaja de Medellín a Bogotá, una distancia de 420 km, a velocidad constante de 105 km/h. ¿Cuánto tiempo tarda en llegar?",
+    "pasos": [
+      "Paso 1 — Identificar los datos: distancia $d = 420$ km, velocidad $v = 105$ km/h. La incógnita es el tiempo $t$.",
+      "Paso 2 — Seleccionar la fórmula: de $d = v \\cdot t$ se despeja $t = d / v$.",
+      "Paso 3 — Calcular: $t = 420 / 105 = 4$ horas.",
+      "Paso 4 — Verificar: $v \\cdot t = 105 \\times 4 = 420$ km ✓. Las unidades también cuadran: km ÷ (km/h) = horas."
+    ],
+    "conclusion": "El automóvil tarda $\\mathbf{4}$ **horas** en llegar. La clave fue despejar $t$ de la relación $d = v \\cdot t$."
+  },
+  {
+    "id": "ej2-procesos-fisicos-encuentro",
+    "enunciado": "Las ciudades A y B distan 300 km. Un auto sale de A hacia B a 80 km/h y, simultáneamente, otro auto sale de B hacia A a 70 km/h. ¿Cuántas horas tardan en encontrarse y a qué distancia de A ocurre el encuentro?",
+    "pasos": [
+      "Paso 1 — Identificar el escenario: los dos autos se desplazan en **sentidos contrarios**, así que se aproximan a una velocidad relativa igual a la suma de sus velocidades.",
+      "Paso 2 — Calcular la velocidad relativa: $v_{\\text{rel}} = 80 + 70 = 150$ km/h. Cada hora, la distancia entre ellos se reduce 150 km.",
+      "Paso 3 — Calcular el tiempo de encuentro: $t = d / v_{\\text{rel}} = 300 / 150 = 2$ horas.",
+      "Paso 4 — Calcular la distancia desde A: el auto de A ha viajado $d_A = 80 \\times 2 = 160$ km desde A.",
+      "Paso 5 — Verificar: el auto de B viajó $d_B = 70 \\times 2 = 140$ km. Suma: $160 + 140 = 300$ km ✓"
+    ],
+    "conclusion": "Los autos se encuentran a las **2 horas** y el encuentro ocurre a **160 km de A** (140 km de B)."
+  },
+  {
+    "id": "ej3-procesos-fisicos-trabajo-combinado",
+    "enunciado": "María puede completar un informe en 6 horas trabajando sola. Juan puede completar el mismo informe en 4 horas trabajando solo. ¿Cuánto tiempo tardan si trabajan juntos?",
+    "pasos": [
+      "Paso 1 — Calcular la tasa de trabajo individual: María completa $1/6$ del informe por hora; Juan, $1/4$ por hora.",
+      "Paso 2 — Sumar las tasas: tasa conjunta $= 1/6 + 1/4$. Denominador común 12: $= 2/12 + 3/12 = 5/12$ del informe por hora.",
+      "Paso 3 — Calcular el tiempo: si avanzan $5/12$ por hora, tardan $12/5 = 2.4$ horas en completar el informe.",
+      "Paso 4 — Verificar con la fórmula directa: $t = \\dfrac{t_1 \\cdot t_2}{t_1 + t_2} = \\dfrac{6 \\times 4}{6 + 4} = \\dfrac{24}{10} = 2.4$ h ✓",
+      "Paso 5 — Comprobación de sentido: 2.4 h < 4 h (tiempo de Juan solo). Correcto: juntos son más rápidos que cualquiera de los dos por separado."
+    ],
+    "conclusion": "Trabajando juntos tardan **2.4 horas** (2 horas y 24 minutos). El error clásico es sumar los tiempos ($6 + 4 = 10$ h) en vez de las tasas."
+  },
+  {
+    "id": "ej4-procesos-fisicos-mezcla",
+    "enunciado": "Se mezclan 3 litros de café al 40% de azúcar con 7 litros de café al 20% de azúcar. ¿Cuál es la concentración de azúcar en la mezcla resultante?",
+    "pasos": [
+      "Paso 1 — Calcular la cantidad de azúcar en cada solución: en la primera: $3 \\times 0.40 = 1.20$ litros de azúcar. En la segunda: $7 \\times 0.20 = 1.40$ litros de azúcar.",
+      "Paso 2 — Calcular el azúcar total: $1.20 + 1.40 = 2.60$ litros de azúcar en la mezcla.",
+      "Paso 3 — Calcular el volumen total: $3 + 7 = 10$ litros.",
+      "Paso 4 — Calcular la concentración de la mezcla: $c = 2.60 / 10 = 0.26 = 26\\%$.",
+      "Paso 5 — Verificar la razonabilidad: la concentración resultante (26%) está entre 20% y 40%, y más cerca del 20% porque hay más volumen de la solución diluida (7 L vs. 3 L). ✓"
+    ],
+    "conclusion": "La mezcla tiene una concentración de **26% de azúcar**. El error clásico es promediar directamente: $(40\\% + 20\\%)/2 = 30\\%$, que ignora que hay más del 20%."
+  },
+  {
+    "id": "ej5-procesos-fisicos-velocidad-promedio",
+    "enunciado": "Una persona hace un viaje de ida de 180 km a 90 km/h y regresa los mismos 180 km a 60 km/h. ¿Cuál es su velocidad promedio en todo el trayecto? (Nota: la respuesta NO es 75 km/h.)",
+    "pasos": [
+      "Paso 1 — Calcular el tiempo de ida: $t_{\\text{ida}} = 180 / 90 = 2$ horas.",
+      "Paso 2 — Calcular el tiempo de vuelta: $t_{\\text{vuelta}} = 180 / 60 = 3$ horas.",
+      "Paso 3 — Calcular la distancia total: $d_{\\text{total}} = 180 + 180 = 360$ km.",
+      "Paso 4 — Calcular el tiempo total: $t_{\\text{total}} = 2 + 3 = 5$ horas.",
+      "Paso 5 — Aplicar la definición de velocidad promedio: $v_{\\text{prom}} = d_{\\text{total}} / t_{\\text{total}} = 360 / 5 = 72$ km/h.",
+      "Paso 6 — ¿Por qué no 75? La media aritmética $(90 + 60)/2 = 75$ km/h solo funciona cuando los tiempos son iguales en ambos trayectos. Aquí el trayecto a 60 km/h dura 3 horas y el de 90 km/h solo 2 horas — el segmento más lento domina el promedio total."
+    ],
+    "conclusion": "La velocidad promedio real es **72 km/h**, no 75 km/h. Siempre usa $v_{\\text{prom}} = d_{\\text{total}} / t_{\\text{total}}$. La media armónica $\\dfrac{2 \\times 90 \\times 60}{90 + 60} = \\dfrac{10800}{150} = 72$ km/h confirma el resultado."
+  }
+]

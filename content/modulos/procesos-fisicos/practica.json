@@ -1,1 +1,386 @@
-[]
+[
+  {
+    "id": "prac1-procesos-fisicos-distancia",
+    "dificultad": 1,
+    "enunciado": "Un tren viaja a 90 km/h durante 2.5 horas. ¿Cuántos kilómetros recorre en ese tiempo?",
+    "pista": "Usa la fórmula $d = v \\cdot t$. Identifica cuál de las tres variables es la incógnita antes de calcular.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "36 km",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $36 = 90 / 2.5$, que divide velocidad entre tiempo en vez de multiplicar. Para calcular la distancia recorrida, la fórmula es $d = v \\times t = 90 \\times 2.5 = 225$ km."
+      },
+      {
+        "letra": "B",
+        "texto": "225 km",
+        "es_correcta": true,
+        "explicacion": "Es correcto. $d = v \\times t = 90 \\text{ km/h} \\times 2.5 \\text{ h} = 225$ km. Las unidades también cuadran: km/h × h = km."
+      },
+      {
+        "letra": "C",
+        "texto": "180 km",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $180 = 90 \\times 2$, que usa 2 horas enteras en vez de 2.5 horas. La media hora extra equivale a $90 \\times 0.5 = 45$ km adicionales: $180 + 45 = 225$ km."
+      },
+      {
+        "letra": "D",
+        "texto": "92.5 km",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $92.5 = 90 + 2.5$, que suma velocidad y tiempo en vez de multiplicarlos. La distancia se calcula con producto: $d = v \\times t = 90 \\times 2.5 = 225$ km."
+      }
+    ]
+  },
+  {
+    "id": "prac2-procesos-fisicos-conversion-unidades",
+    "dificultad": 1,
+    "enunciado": "Un ciclista profesional alcanza una velocidad de 36 km/h en una etapa llana. ¿A cuántos metros por segundo equivale esa velocidad?",
+    "pista": "Para convertir de km/h a m/s, recuerda que 1 km = 1000 m y 1 h = 3600 s. La operación equivale a dividir entre 3.6.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "10 m/s",
+        "es_correcta": true,
+        "explicacion": "Es correcto. $36 \\text{ km/h} = 36 \\times \\dfrac{1000 \\text{ m}}{3600 \\text{ s}} = \\dfrac{36000}{3600} = 10$ m/s. Equivalentemente: $36 \\div 3.6 = 10$ m/s."
+      },
+      {
+        "letra": "B",
+        "texto": "100 m/s",
+        "es_correcta": false,
+        "explicacion": "Es trampa: error al convertir. $100 = 36 \\times 1000 / 360$, que divide entre 360 en vez de 3600. La hora tiene 3600 segundos (60 min × 60 s), no 360. Correcto: $36000/3600 = 10$ m/s."
+      },
+      {
+        "letra": "C",
+        "texto": "129.6 m/s",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $129.6 = 36 \\times 3.6$, que multiplica en vez de dividir. Para pasar de km/h a m/s se divide entre 3.6 (porque los metros son más pequeños que los kilómetros y los segundos son más cortos que las horas). Correcto: $36 \\div 3.6 = 10$ m/s."
+      },
+      {
+        "letra": "D",
+        "texto": "0.01 m/s",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $0.01 = 36 / 3600$, que convierte la hora a segundos pero olvida convertir el kilómetro a metros. La conversión completa es $36 \\times 1000 / 3600 = 36000 / 3600 = 10$ m/s."
+      }
+    ]
+  },
+  {
+    "id": "prac3-procesos-fisicos-tasa-trabajo",
+    "dificultad": 1,
+    "enunciado": "Una máquina completa la producción de un lote en 8 horas trabajando continuamente. Si la máquina trabaja durante 3 horas, ¿qué fracción del lote ha completado?",
+    "pista": "Calcula la tasa de producción por hora (fracción del lote por hora) y luego multiplícala por las 3 horas trabajadas.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "$\\dfrac{1}{3}$ del lote",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $1/3$ corresponde a calcular $1/3$ de la producción total (dividir entre 3 horas directamente sin considerar la velocidad de la máquina). La tasa de la máquina es $1/8$ del lote por hora, así que en 3 horas produce $3/8$, no $1/3$."
+      },
+      {
+        "letra": "B",
+        "texto": "$\\dfrac{3}{8}$ del lote",
+        "es_correcta": true,
+        "explicacion": "Es correcto. La tasa de producción es $1/8$ del lote por hora. En 3 horas: $3 \\times (1/8) = 3/8$ del lote. Verificación: $3/8 < 1$ (menos de un lote completo) y $3/8 < 8/8$ (menos de lo que haría en las 8 horas completas). ✓"
+      },
+      {
+        "letra": "C",
+        "texto": "$24$ lotes",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $24 = 8 \\times 3$, que multiplica el tiempo total por las horas trabajadas sin calcular la tasa. La tasa es $1/8$ del lote por hora (no 8 lotes por hora). En 3 horas se produce $3/8$, no 24."
+      },
+      {
+        "letra": "D",
+        "texto": "$\\dfrac{5}{8}$ del lote",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $5/8 = 1 - 3/8$, que calcula la fracción **restante** (lo que falta por producir) en vez de la fracción ya producida. En 3 horas la máquina produjo $3/8$ del lote; quedan $5/8$ por producir."
+      }
+    ]
+  },
+  {
+    "id": "prac4-procesos-fisicos-encuentro",
+    "dificultad": 2,
+    "enunciado": "Dos ciudades distan 300 km. Un automóvil sale de la ciudad A a 80 km/h y, al mismo tiempo, otro sale de la ciudad B a 70 km/h, ambos viajando en sentidos contrarios. ¿Cuántas horas tardan en encontrarse?",
+    "pista": "Cuando dos vehículos viajan en sentidos contrarios, se acercan a una velocidad igual a la SUMA de sus velocidades. El tiempo de encuentro es la distancia dividida entre esa velocidad relativa.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "2 horas",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Velocidad relativa: $80 + 70 = 150$ km/h (se suman porque viajan en sentidos contrarios). Tiempo: $t = 300 / 150 = 2$ horas. Verificación: A recorrió $80 \\times 2 = 160$ km, B recorrió $70 \\times 2 = 140$ km, total: $160 + 140 = 300$ km ✓."
+      },
+      {
+        "letra": "B",
+        "texto": "30 horas",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $30 = 300 / (80 - 70) = 300 / 10$. Este cálculo resta las velocidades como si fuera una persecución (mismo sentido). Como los autos viajan en sentidos contrarios, se suman: $80 + 70 = 150$ km/h, y $t = 300 / 150 = 2$ horas."
+      },
+      {
+        "letra": "C",
+        "texto": "3.75 horas",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $3.75 = 300 / 80$, que usa solo la velocidad del auto A e ignora que el auto B también avanza. En 3.75 horas, B habría recorrido $70 \\times 3.75 = 262.5$ km, sumando $300 + 262.5 > 300$ km — se habrían cruzado mucho antes. El tiempo correcto es $300 / (80+70) = 2$ horas."
+      },
+      {
+        "letra": "D",
+        "texto": "4.29 horas",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $4.29 \\approx 300 / 70$, que usa solo la velocidad del auto B e ignora que el auto A también avanza. Ambos vehículos se mueven al mismo tiempo y en sentidos contrarios, así que la velocidad relativa es $80 + 70 = 150$ km/h. Tiempo correcto: $300 / 150 = 2$ horas."
+      }
+    ]
+  },
+  {
+    "id": "prac5-procesos-fisicos-persecucion",
+    "dificultad": 2,
+    "enunciado": "Ana camina a 5 km/h. Carlos sale en la misma dirección que Ana 1.5 horas después, a 8 km/h. ¿Cuánto tiempo después de salir Carlos alcanza a Ana?",
+    "pista": "Primero calcula la ventaja de Ana cuando sale Carlos. Luego, la velocidad relativa de Carlos respecto a Ana es la diferencia de velocidades. El tiempo de alcance = ventaja ÷ velocidad relativa.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "2.5 horas",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Ventaja de Ana cuando sale Carlos: $5 \\times 1.5 = 7.5$ km. Velocidad relativa: $8 - 5 = 3$ km/h. Tiempo de alcance: $7.5 / 3 = 2.5$ horas. Verificación: Ana lleva $1.5 + 2.5 = 4$ horas en total → $5 \\times 4 = 20$ km. Carlos: $8 \\times 2.5 = 20$ km ✓."
+      },
+      {
+        "letra": "B",
+        "texto": "7.5 horas",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 7.5 es la **distancia** en km que Ana lleva de ventaja cuando sale Carlos, no el tiempo en horas. Para convertirla en tiempo hay que dividir por la velocidad relativa: $7.5 / (8-5) = 7.5 / 3 = 2.5$ horas."
+      },
+      {
+        "letra": "C",
+        "texto": "1.5 horas",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 1.5 horas es el tiempo de ventaja que Ana lleva sobre Carlos al inicio, no el tiempo que Carlos tarda en alcanzarla. Carlos necesita recuperar $7.5$ km a una velocidad relativa de $3$ km/h: $7.5 / 3 = 2.5$ horas."
+      },
+      {
+        "letra": "D",
+        "texto": "0.94 horas",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $0.94 \\approx 7.5 / 8$, que divide la ventaja entre la velocidad de Carlos (8 km/h) en vez de entre la velocidad relativa (3 km/h). La velocidad relativa es la diferencia entre las velocidades de Carlos y Ana: $8 - 5 = 3$ km/h. Tiempo correcto: $7.5 / 3 = 2.5$ horas."
+      }
+    ]
+  },
+  {
+    "id": "prac6-procesos-fisicos-trabajo-combinado",
+    "dificultad": 2,
+    "enunciado": "Ana puede pintar una habitación en 4 horas y Beatriz puede pintarla en 6 horas. ¿Cuánto tiempo tardan si trabajan juntas?",
+    "pista": "No sumes los tiempos. Calcula la tasa de trabajo de cada una (fracción de habitación por hora) y suma las tasas. El tiempo total es el inverso de la tasa combinada.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "2.4 horas",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Tasa de Ana: $1/4$ habitaciones/hora. Tasa de Beatriz: $1/6$ habitaciones/hora. Tasa combinada: $1/4 + 1/6 = 3/12 + 2/12 = 5/12$. Tiempo: $1 / (5/12) = 12/5 = 2.4$ horas. También: $t = 4 \\times 6 / (4 + 6) = 24/10 = 2.4$ h."
+      },
+      {
+        "letra": "B",
+        "texto": "5 horas",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $5 = (4 + 6)/2$, que promedia los tiempos. Trabajar juntas no promedia los tiempos — suma las tasas de trabajo. El resultado siempre debe ser menor que el tiempo de la más rápida (4h). Si obtuvieras 5h, algo está mal: $t = 24/10 = 2.4$ horas."
+      },
+      {
+        "letra": "C",
+        "texto": "10 horas",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $10 = 4 + 6$, que suma los tiempos en vez de las tasas. Al trabajar juntas, los esfuerzos se combinan y el tiempo total es menor que cualquiera de los dos tiempos individuales. Correcto: $t = 4 \\times 6 / (4 + 6) = 2.4$ horas."
+      },
+      {
+        "letra": "D",
+        "texto": "3 horas",
+        "es_correcta": false,
+        "explicacion": "Es trampa posiblemente por error al calcular el mínimo común denominador: $1/4 + 1/6 = 2/12 + 3/12 = 5/12$, no $1/4$. Si se equivoca en la suma de fracciones y obtiene $1/3$, el tiempo resultante sería 3 horas. El cálculo correcto da $5/12 \\rightarrow t = 12/5 = 2.4$ horas."
+      }
+    ]
+  },
+  {
+    "id": "prac7-procesos-fisicos-llenado-dos-grifos",
+    "dificultad": 2,
+    "enunciado": "El grifo A llena un tanque en 4 horas. El grifo B llena el mismo tanque en 12 horas. Si se abren ambos grifos al mismo tiempo, ¿en cuántas horas se llena el tanque?",
+    "pista": "Calcula la tasa de llenado de cada grifo (fracción del tanque por hora) y suma las tasas. El tiempo total es el inverso de la tasa combinada.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "16 horas",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $16 = 4 + 12$, que suma los tiempos individuales. Con dos grifos llenando al mismo tiempo, el tanque se llena en MENOS tiempo, no en la suma de los dos. Correcto: $t = 4 \\times 12 / (4 + 12) = 48 / 16 = 3$ horas."
+      },
+      {
+        "letra": "B",
+        "texto": "8 horas",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $8 = (4 + 12) / 2$, que promedia los tiempos. Los tiempos no se promedian — se suman las tasas de llenado. Tasa total: $1/4 + 1/12 = 3/12 + 1/12 = 4/12 = 1/3$. Tiempo: 3 horas."
+      },
+      {
+        "letra": "C",
+        "texto": "3 horas",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Tasa del grifo A: $1/4$ del tanque/hora. Tasa del grifo B: $1/12$ del tanque/hora. Tasa combinada: $1/4 + 1/12 = 3/12 + 1/12 = 4/12 = 1/3$. Tiempo: $t = 1/(1/3) = 3$ horas. Fórmula directa: $t = 4 \\times 12 / (4 + 12) = 48 / 16 = 3$ h."
+      },
+      {
+        "letra": "D",
+        "texto": "6 horas",
+        "es_correcta": false,
+        "explicacion": "Es trampa por error al sumar fracciones: si se calcula $1/4 + 1/12 = 2/12 = 1/6$ (omitiendo convertir $1/4$ a $3/12$ y dejándolo como $1/12$), se obtiene $t = 6$ horas. El cálculo correcto: $1/4 = 3/12$, entonces $3/12 + 1/12 = 4/12 = 1/3$, y $t = 3$ horas."
+      }
+    ]
+  },
+  {
+    "id": "prac8-procesos-fisicos-llenado-con-fuga",
+    "dificultad": 2,
+    "enunciado": "Un grifo llena un tanque en 4 horas. Simultáneamente, una fuga en el tanque lo vacía en 12 horas. Si el grifo y la fuga operan al mismo tiempo, ¿cuántas horas tarda el tanque en llenarse?",
+    "pista": "La tasa del grifo es positiva (entra agua) y la tasa de la fuga es negativa (sale agua). Calcula la tasa neta y obtén el tiempo como su inverso.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "3 horas",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $3 \\approx 1 / (1/4 + 1/12) = 1/(4/12) = 12/4 = 3$. Este cálculo suma las tasas en vez de restarlas — trata la fuga como un segundo grifo de llenado. Como la fuga vacía el tanque, su tasa debe restarse: $1/4 - 1/12 = 1/6$, y $t = 6$ horas."
+      },
+      {
+        "letra": "B",
+        "texto": "6 horas",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Tasa de llenado: $+1/4$ del tanque/hora. Tasa de vaciado (fuga): $-1/12$ del tanque/hora. Tasa neta: $1/4 - 1/12 = 3/12 - 1/12 = 2/12 = 1/6$. Tiempo: $t = 1 / (1/6) = 6$ horas."
+      },
+      {
+        "letra": "C",
+        "texto": "4 horas",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 4 horas es el tiempo que tarda el grifo solo, ignorando la fuga. La fuga vacía el tanque mientras el grifo lo llena, reduciendo la tasa neta. Con la fuga activa, el tanque tarda más que con el grifo solo: $t = 6$ horas."
+      },
+      {
+        "letra": "D",
+        "texto": "8 horas",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $8 = (4 + 12) / 2$, que promedia los tiempos. La tasa neta de llenado no es el promedio de los tiempos — es la diferencia de las tasas: $1/4 - 1/12 = 1/6$, lo que da un tiempo de llenado de 6 horas."
+      }
+    ]
+  },
+  {
+    "id": "prac9-procesos-fisicos-mezcla-simple",
+    "dificultad": 2,
+    "enunciado": "Se mezclan 2 litros de jugo con 30% de azúcar y 3 litros de jugo con 50% de azúcar. ¿Cuál es la concentración de azúcar en la mezcla resultante?",
+    "pista": "Calcula la cantidad de azúcar en cada solución por separado (volumen × concentración), suma los azúcares, y divide entre el volumen total.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "40%",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $(30\\% + 50\\%) / 2 = 40\\%$, que promedia las concentraciones sin considerar los volúmenes. Como hay más del jugo al 50% (3 litros) que del al 30% (2 litros), la mezcla debe estar más cerca del 50%. Correcto: $(2 \\times 30 + 3 \\times 50)/(2+3) = (60+150)/5 = 210/5 = 42\\%$."
+      },
+      {
+        "letra": "B",
+        "texto": "38%",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $38\\% = (3 \\times 30 + 2 \\times 50)/5 = (90 + 100)/5 = 190/5$. Este resultado viene de intercambiar los volúmenes: usa 3 litros para el 30% y 2 litros para el 50% (al revés de lo que dice el problema). El orden correcto: $2 \\times 30 + 3 \\times 50 = 60 + 150 = 210$, y $210/5 = 42\\%$."
+      },
+      {
+        "letra": "C",
+        "texto": "42%",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Azúcar en primer jugo: $2 \\times 0.30 = 0.60$ litros. Azúcar en segundo jugo: $3 \\times 0.50 = 1.50$ litros. Azúcar total: $0.60 + 1.50 = 2.10$ litros. Volumen total: $2 + 3 = 5$ litros. Concentración: $2.10 / 5 = 0.42 = 42\\%$."
+      },
+      {
+        "letra": "D",
+        "texto": "50%",
+        "es_correcta": false,
+        "explicacion": "Es trampa: tomar la concentración más alta como resultado final. Al mezclar con una solución de menor concentración (30%), la mezcla siempre resulta en una concentración menor que la más alta. La concentración final (42%) está entre 30% y 50%, más cerca del 50% porque ese jugo tiene mayor volumen."
+      }
+    ]
+  },
+  {
+    "id": "prac10-procesos-fisicos-promedio-ponderado",
+    "dificultad": 3,
+    "enunciado": "Las calificaciones de un estudiante son: Parcial 1: 3.5 (peso 20%), Parcial 2: 4.0 (peso 30%), Examen Final: 4.5 (peso 50%). ¿Cuál es su nota definitiva?",
+    "pista": "El promedio ponderado es la suma de (cada nota × su peso). Los pesos deben sumar 1 (o 100%). Multiplica cada nota por su peso decimal y suma los resultados.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "4.0",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $(3.5 + 4.0 + 4.5)/3 = 12/3 = 4.0$, que calcula la media aritmética sin aplicar los pesos. El examen final (50%) tiene el doble de peso que el Parcial 2 (30%) y más del doble del Parcial 1 (20%). Al ponderarlos correctamente: $3.5 \\times 0.20 + 4.0 \\times 0.30 + 4.5 \\times 0.50 = 0.70 + 1.20 + 2.25 = 4.15$."
+      },
+      {
+        "letra": "B",
+        "texto": "4.15",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Nota ponderada $= 3.5 \\times 0.20 + 4.0 \\times 0.30 + 4.5 \\times 0.50 = 0.70 + 1.20 + 2.25 = 4.15$. Verificación: los pesos suman $0.20 + 0.30 + 0.50 = 1.00$ ✓. La nota está entre 3.5 y 4.5 y más cerca de 4.5 (el componente con mayor peso) ✓."
+      },
+      {
+        "letra": "C",
+        "texto": "3.85",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $3.85 = 3.5 \\times 0.50 + 4.0 \\times 0.30 + 4.5 \\times 0.20 = 1.75 + 1.20 + 0.90$. Este resultado viene de invertir los pesos: asigna el 50% al Parcial 1 (la nota más baja) y el 20% al Final (la nota más alta). Los pesos correctos son: Parcial 1 = 20%, Parcial 2 = 30%, Final = 50%."
+      },
+      {
+        "letra": "D",
+        "texto": "4.5",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 4.5 es la nota del Examen Final, que tiene el mayor peso (50%), pero no es la nota definitiva por sí sola. Los otros componentes también contribuyen: el Parcial 1 (3.5) y el Parcial 2 (4.0) suman el 50% restante. La nota ponderada correcta es $4.15$."
+      }
+    ]
+  },
+  {
+    "id": "prac11-procesos-fisicos-velocidad-promedio-trampa",
+    "dificultad": 3,
+    "enunciado": "Una persona va de la ciudad A a la ciudad B (60 km de distancia) a 60 km/h y regresa por la misma ruta a 40 km/h. ¿Cuál es su velocidad promedio en todo el viaje de ida y vuelta?",
+    "pista": "Calcula la distancia total y el tiempo total por separado, luego divide. No promedies directamente las velocidades — el tiempo que pasas a cada velocidad es distinto.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "50 km/h",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $(60 + 40)/2 = 50$ km/h. Este sería el resultado si los tiempos a cada velocidad fueran iguales (por ejemplo, 1 hora a 60 km/h y 1 hora a 40 km/h). Pero aquí la distancia es la misma (60 km), no el tiempo. La vuelta a 40 km/h dura más: $t_{\\text{vuelta}} = 60/40 = 1.5$ h frente a $t_{\\text{ida}} = 60/60 = 1$ h. Promedio correcto: $120/2.5 = 48$ km/h."
+      },
+      {
+        "letra": "B",
+        "texto": "80 km/h",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $80 = 120 / (1 \\times 1.5)$, que divide la distancia total por el producto de los tiempos en vez de la suma. El denominador correcto es el tiempo total: $t_{\\text{total}} = 1 + 1.5 = 2.5$ horas. Velocidad promedio: $120 / 2.5 = 48$ km/h."
+      },
+      {
+        "letra": "C",
+        "texto": "24 km/h",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $24 = 60 / 2.5$, que usa la distancia de solo uno de los trayectos (60 km) en vez de la distancia total (120 km). La velocidad promedio usa la distancia total del viaje completo: $v = 120 / 2.5 = 48$ km/h."
+      },
+      {
+        "letra": "D",
+        "texto": "48 km/h",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Tiempo de ida: $60/60 = 1$ hora. Tiempo de vuelta: $60/40 = 1.5$ horas. Distancia total: $120$ km. Tiempo total: $2.5$ horas. Velocidad promedio: $120/2.5 = 48$ km/h. Comprobación con media armónica: $\\dfrac{2 \\times 60 \\times 40}{60 + 40} = \\dfrac{4800}{100} = 48$ km/h ✓."
+      }
+    ]
+  },
+  {
+    "id": "prac12-procesos-fisicos-mezcla-inversa",
+    "dificultad": 3,
+    "enunciado": "Un químico tiene 4 litros de solución salina al 75% de concentración. ¿Cuántos litros de agua pura (0% de sal) debe agregar para obtener una solución al 50% de sal?",
+    "pista": "Plantea la ecuación: (sal en la solución original + sal en el agua) / (volumen total) = concentración deseada. El agua aporta 0% de sal. Despeja el volumen de agua desconocido.",
+    "opciones": [
+      {
+        "letra": "A",
+        "texto": "1 litro",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $1 = 4 \\times (0.75 - 0.50)$, que multiplica el volumen original por la diferencia de concentraciones. Esto no tiene base algebraica correcta. La ecuación correcta: $\\dfrac{4 \\times 0.75}{4 + x} = 0.50 \\Rightarrow 3 = 2 + 0.5x \\Rightarrow x = 2$ litros."
+      },
+      {
+        "letra": "B",
+        "texto": "2 litros",
+        "es_correcta": true,
+        "explicacion": "Es correcto. Sal original: $4 \\times 0.75 = 3$ litros de sal. Con $x$ litros de agua agregada: $\\dfrac{3 + 0}{4 + x} = 0.50$. Despejando: $3 = 0.50 \\times (4 + x) = 2 + 0.5x$. Entonces $0.5x = 1$, luego $x = 2$ litros. Verificación: $(4 \\times 0.75)/(4+2) = 3/6 = 0.50 = 50\\%$ ✓."
+      },
+      {
+        "letra": "C",
+        "texto": "6 litros",
+        "es_correcta": false,
+        "explicacion": "Es trampa: $6 = 4 \\times 0.75 / 0.50 = 3/0.50$. Este resultado viene de plantear $4 \\times 0.75 = 0.50 \\times x$ (sin incluir el volumen original 4 en el denominador). La ecuación correcta es $\\dfrac{4 \\times 0.75}{4 + x} = 0.50$, donde $(4 + x)$ es el volumen total, no solo el agua agregada. Correcto: $x = 2$ litros."
+      },
+      {
+        "letra": "D",
+        "texto": "4 litros",
+        "es_correcta": false,
+        "explicacion": "Es trampa: 4 litros surge de razonar que 'al 50% necesito partes iguales de solución y agua' (4 litros de cada uno → 50%). Pero eso ignora que la solución original es al 75%, no al 100%. Con 4 litros de agua: $(4 \\times 0.75)/(4+4) = 3/8 = 37.5\\%$ (no 50%). El volumen correcto de agua es $x = 2$ litros."
+      }
+    ]
+  }
+]
