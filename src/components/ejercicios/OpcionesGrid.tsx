@@ -57,13 +57,13 @@ export function OpcionesGrid({ opciones, seleccionada, haRespondido, showFeedbac
             )}>
               {opcion.letra}
             </span>
-            <span className={cn(
-              "flex-1 leading-snug",
+            <div className={cn(
+              "flex-1 leading-snug min-w-0",
               variant === 'correct' && "text-success",
               variant === 'wrong' && "text-destructive"
             )}>
               <MathText text={opcion.texto} />
-            </span>
+            </div>
           </button>
         )
       })}

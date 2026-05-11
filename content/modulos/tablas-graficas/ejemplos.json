@@ -22,14 +22,14 @@
   },
   {
     "id": "ej3-tablas-grafico-circular",
-    "enunciado": "Un gráfico circular muestra la distribución del presupuesto mensual de una familia con ingreso de $\\$2.500.000$:\n- Vivienda: 35%\n- Alimentación: 30%\n- Transporte: 15%\n- Educación: 12%\n- Ahorro: 8%\n\n¿A cuánto equivale el rubro de Transporte en pesos?",
+    "enunciado": "Un gráfico circular muestra la distribución del presupuesto mensual de una familia con ingreso de \\$2.500.000:\n- Vivienda: 35%\n- Alimentación: 30%\n- Transporte: 15%\n- Educación: 12%\n- Ahorro: 8%\n\n¿A cuánto equivale el rubro de Transporte en pesos?",
     "pasos": [
-      "Paso 1 — Identificar: Transporte = 15%, Total = $\\$2.500.000$.",
-      "Paso 2 — Calcular: $\\$2.500.000 \\times 0.15 = \\$375.000$.",
-      "Paso 3 — Verificar errores típicos: si alguien escribe $\\$15.000$, confundió 15% con $\\$15.000$ directamente. Si escribe $\\$150.000$, calculó el 15% de $\\$1.000.000$ (total incorrecto).",
+      "Paso 1 — Identificar: Transporte = 15%, Total = \\$2.500.000.",
+      "Paso 2 — Calcular: \\$2.500.000 × 0.15 = \\$375.000.",
+      "Paso 3 — Verificar errores típicos: si alguien escribe \\$15.000, confundió 15% con \\$15.000 directamente. Si escribe \\$150.000, calculó el 15% de \\$1.000.000 (total incorrecto).",
       "Paso 4 — Comprobar que los porcentajes suman: $35+30+15+12+8 = 100\\%$ ✓."
     ],
-    "conclusion": "Transporte equivale a $\\mathbf{\\$375.000}$. Nunca uses el porcentaje como valor directo — siempre multiplica por el total."
+    "conclusion": "Transporte equivale a **\\$375.000**. Nunca uses el porcentaje como valor directo — siempre multiplica por el total."
   },
   {
     "id": "ej4-tablas-doble-entrada",

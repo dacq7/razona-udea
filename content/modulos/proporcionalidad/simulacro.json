@@ -33,31 +33,31 @@
   {
     "id": "sim2-proporcionalidad-regla-directa",
     "modulo_slug": "proporcionalidad",
-    "enunciado": "Si 12 metros de tela cuestan $\\$96.000$, ¿cuánto cuestan 7 metros del mismo tipo de tela?",
+    "enunciado": "Si 12 metros de tela cuestan \\$96.000, ¿cuánto cuestan 7 metros del mismo tipo de tela?",
     "opciones": [
       {
         "letra": "A",
-        "texto": "$\\$64.000$",
+        "texto": "\\$64.000",
         "es_correcta": false,
-        "explicacion": "Error: $\\$64.000 = 8 \\times \\$8.000$, lo que implicaría 8 metros en vez de 7. Precio por metro = $\\$96.000 \\div 12 = \\$8.000$. Para 7 metros: $7 \\times \\$8.000 = \\$56.000$."
+        "explicacion": "Error: \\$64.000 = 8 × \\$8.000, lo que implicaría 8 metros en vez de 7. Precio por metro = \\$96.000 ÷ 12 = \\$8.000. Para 7 metros: 7 × \\$8.000 = \\$56.000."
       },
       {
         "letra": "B",
-        "texto": "$\\$56.000$",
+        "texto": "\\$56.000",
         "es_correcta": true,
-        "explicacion": "Correcto. Precio por metro: $\\$96.000 \\div 12 = \\$8.000$. Para 7 metros: $7 \\times \\$8.000 = \\$56.000$."
+        "explicacion": "Correcto. Precio por metro: \\$96.000 ÷ 12 = \\$8.000. Para 7 metros: 7 × \\$8.000 = \\$56.000."
       },
       {
         "letra": "C",
-        "texto": "$\\$48.000$",
+        "texto": "\\$48.000",
         "es_correcta": false,
-        "explicacion": "Error: $\\$48.000 = 6 \\times \\$8.000$, correspondiente a 6 metros, no 7. Precio por metro = $\\$8.000$; 7 metros = $\\$56.000$."
+        "explicacion": "Error: \\$48.000 = 6 × \\$8.000, correspondiente a 6 metros, no 7. Precio por metro = \\$8.000; 7 metros = \\$56.000."
       },
       {
         "letra": "D",
-        "texto": "$\\$98.000$",
+        "texto": "\\$98.000",
         "es_correcta": false,
-        "explicacion": "Error: $\\$98.000 = \\$96.000 + \\$2.000$, resultado de sumar en vez de hacer la regla de tres. Precio por metro = $\\$8.000$; para 7 metros = $\\$56.000$."
+        "explicacion": "Error: \\$98.000 = \\$96.000 + \\$2.000, resultado de sumar en vez de hacer la regla de tres. Precio por metro = \\$8.000; para 7 metros = \\$56.000."
       }
     ]
   },
@@ -157,31 +157,31 @@
   {
     "id": "sim6-proporcionalidad-descuentos-sucesivos",
     "modulo_slug": "proporcionalidad",
-    "enunciado": "Un abrigo tiene precio original $\\$200.000$. Le aplican primero un 15% de descuento y luego un 10% adicional sobre el precio resultante. ¿Cuánto se paga finalmente?",
+    "enunciado": "Un abrigo tiene precio original \\$200.000. Le aplican primero un 15% de descuento y luego un 10% adicional sobre el precio resultante. ¿Cuánto se paga finalmente?",
     "opciones": [
       {
         "letra": "A",
-        "texto": "$\\$150.000$",
+        "texto": "\\$150.000",
         "es_correcta": false,
-        "explicacion": "Error de sumar descuentos: $15\\% + 10\\% = 25\\%$; $\\$200.000 \\times 0.75 = \\$150.000$. Los descuentos sucesivos NO se suman. El descuento efectivo es $1 - 0.85 \\times 0.90 = 23.5\\%$, no 25%."
+        "explicacion": "Error de sumar descuentos: $15\\% + 10\\% = 25\\%$; \\$200.000 × 0.75 = \\$150.000. Los descuentos sucesivos NO se suman. El descuento efectivo es $1 - 0.85 \\times 0.90 = 23.5\\%$, no 25%."
       },
       {
         "letra": "B",
-        "texto": "$\\$153.000$",
+        "texto": "\\$153.000",
         "es_correcta": true,
-        "explicacion": "Correcto. Paso 1: $\\$200.000 \\times 0.85 = \\$170.000$. Paso 2: $\\$170.000 \\times 0.90 = \\$153.000$. Descuento efectivo: $1 - 0.765 = 23.5\\%$."
+        "explicacion": "Correcto. Paso 1: \\$200.000 × 0.85 = \\$170.000. Paso 2: \\$170.000 × 0.90 = \\$153.000. Descuento efectivo: $1 - 0.765 = 23.5\\%$."
       },
       {
         "letra": "C",
-        "texto": "$\\$170.000$",
+        "texto": "\\$170.000",
         "es_correcta": false,
-        "explicacion": "Error: $\\$170.000$ es el precio después de solo el primer descuento del 15%. Falta aplicar el segundo descuento del 10%: $\\$170.000 \\times 0.90 = \\$153.000$."
+        "explicacion": "Error: \\$170.000 es el precio después de solo el primer descuento del 15%. Falta aplicar el segundo descuento del 10%: \\$170.000 × 0.90 = \\$153.000."
       },
       {
         "letra": "D",
-        "texto": "$\\$160.000$",
+        "texto": "\\$160.000",
         "es_correcta": false,
-        "explicacion": "Error: $\\$160.000 = \\$200.000 \\times 0.80$, que equivaldría a un descuento simple del 20%. Los descuentos reales son del 15% y luego 10%, que dan $\\$153.000$, no $\\$160.000$."
+        "explicacion": "Error: \\$160.000 = \\$200.000 × 0.80, que equivaldría a un descuento simple del 20%. Los descuentos reales son del 15% y luego 10%, que dan \\$153.000, no \\$160.000."
       }
     ]
   },

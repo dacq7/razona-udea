@@ -1,9 +1,14 @@
 import Link from "next/link"
-import { getAllSimulacroEjercicios } from "@/lib/content"
+import { getSimulacroEjerciciosPorModulo } from "@/lib/content"
 import { SimulacroFinalController } from "@/components/simulacro/SimulacroFinalController"
 
 export default async function SimulacroFinalPage() {
-  const ejercicios = await getAllSimulacroEjercicios()
+  const ejerciciosPorModulo = await getSimulacroEjerciciosPorModulo()
+
+  const totalDisponibles = Object.values(ejerciciosPorModulo).reduce(
+    (sum, arr) => sum + arr.length,
+    0
+  )
 
   return (
     <article className="space-y-6">
@@ -16,12 +21,12 @@ export default async function SimulacroFinalPage() {
 
       <h1 className="text-2xl font-bold leading-tight">Simulacro Final</h1>
 
-      {ejercicios.length === 0 ? (
+      {totalDisponibles === 0 ? (
         <p className="text-muted-foreground italic">
           El simulacro final estará disponible cuando los módulos tengan contenido. ¡Vuelve pronto!
         </p>
       ) : (
-        <SimulacroFinalController ejercicios={ejercicios} />
+        <SimulacroFinalController ejerciciosPorModulo={ejerciciosPorModulo} />
       )}
     </article>
   )

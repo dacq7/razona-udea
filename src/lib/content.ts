@@ -59,3 +59,12 @@ export async function getAllSimulacroEjercicios(): Promise<EjercicioSimulacro[]>
   }
   return all
 }
+
+export async function getSimulacroEjerciciosPorModulo(): Promise<Record<string, EjercicioSimulacro[]>> {
+  const map: Record<string, EjercicioSimulacro[]> = {}
+  for (const modulo of MODULES) {
+    const ejercicios = await getSimulacro(modulo.slug)
+    map[modulo.slug] = ejercicios.map((e) => ({ ...e, modulo_slug: modulo.slug }))
+  }
+  return map
+}

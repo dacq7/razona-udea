@@ -44,17 +44,17 @@ export function FeedbackPanel({ opciones, letraSeleccionada }: Props) {
                     : <MinusCircle className="size-4 text-muted-foreground shrink-0 mt-0.5" aria-hidden />
                 }
                 <div className="flex-1 min-w-0 space-y-1">
-                  <p className={cn(
+                  <div className={cn(
                     "font-medium leading-snug",
                     isCorrect && "text-success",
                     isSelected && !isCorrect && "text-destructive"
                   )}>
                     <span className="font-bold">{opcion.letra}.</span>{" "}
                     <MathText text={opcion.texto} />
-                  </p>
-                  <p className="text-xs text-muted-foreground leading-snug">
+                  </div>
+                  <div className="text-xs text-muted-foreground leading-snug">
                     <MathText text={opcion.explicacion} />
-                  </p>
+                  </div>
                 </div>
               </div>
             </li>

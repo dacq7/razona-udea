@@ -66,32 +66,32 @@
   {
     "id": "prac3-tablas-graficas-circular-valor",
     "dificultad": 1,
-    "enunciado": "Un gráfico circular muestra el destino de un presupuesto de eventos de $\\$800.000$:\n- Comida: 40%\n- Decoración: 25%\n- Música: 20%\n- Logística: 15%\n\n¿A cuánto equivale el rubro de Música en pesos?",
+    "enunciado": "Un gráfico circular muestra el destino de un presupuesto de eventos de \\$800.000:\n- Comida: 40%\n- Decoración: 25%\n- Música: 20%\n- Logística: 15%\n\n¿A cuánto equivale el rubro de Música en pesos?",
     "pista": "Multiplica el porcentaje de Música por el presupuesto total. No uses el porcentaje como valor directo.",
     "opciones": [
       {
         "letra": "A",
-        "texto": "$\\$20.000$",
+        "texto": "\\$20.000",
         "es_correcta": false,
-        "explicacion": "Es trampa: error de usar el porcentaje (20) como si fueran pesos directamente, sin multiplicar por el total. $20\\%$ de $\\$800.000$ no es $\\$20.000$; es $\\$160.000$."
+        "explicacion": "Es trampa: error de usar el porcentaje (20) como si fueran pesos directamente, sin multiplicar por el total. $20\\%$ de \\$800.000 no es \\$20.000; es \\$160.000."
       },
       {
         "letra": "B",
-        "texto": "$\\$120.000$",
+        "texto": "\\$120.000",
         "es_correcta": false,
         "explicacion": "Es trampa: $120.000 = 800.000 \\times 0.15$, que corresponde a Logística (15%), no a Música (20%). Error de leer el porcentaje equivocado."
       },
       {
         "letra": "C",
-        "texto": "$\\$160.000$",
+        "texto": "\\$160.000",
         "es_correcta": true,
-        "explicacion": "Es correcto. $\\$800.000 \\times 0.20 = \\$160.000$."
+        "explicacion": "Es correcto. \\$800.000 × 0.20 = \\$160.000."
       },
       {
         "letra": "D",
-        "texto": "$\\$200.000$",
+        "texto": "\\$200.000",
         "es_correcta": false,
-        "explicacion": "Es trampa: $\\$200.000 = \\$1.000.000 \\times 0.20$. Se usó $\\$1.000.000$ como total en lugar del presupuesto real de $\\$800.000$."
+        "explicacion": "Es trampa: \\$200.000 = \\$1.000.000 × 0.20. Se usó \\$1.000.000 como total en lugar del presupuesto real de \\$800.000."
       }
     ]
   },
@@ -290,14 +290,14 @@
   {
     "id": "prac10-tablas-graficas-escala-enganosa",
     "dificultad": 3,
-    "enunciado": "Un gráfico de barras muestra las ganancias de dos empresas con el eje Y comenzando en $\\$900.000$ (no en $0$):\n- Empresa A: $\\$1.000.000$\n- Empresa B: $\\$1.100.000$\n\nVisualmente la barra de B parece el doble de la de A. ¿Cuál es el incremento porcentual REAL de B respecto a A?",
+    "enunciado": "Un gráfico de barras muestra las ganancias de dos empresas con el eje Y comenzando en \\$900.000 (no en $0$):\n- Empresa A: \\$1.000.000\n- Empresa B: \\$1.100.000\n\nVisualmente la barra de B parece el doble de la de A. ¿Cuál es el incremento porcentual REAL de B respecto a A?",
     "pista": "Ignora el tamaño visual de las barras. Usa solo los valores numéricos reales. La base es el valor de la Empresa A.",
     "opciones": [
       {
         "letra": "A",
         "texto": "100%",
         "es_correcta": false,
-        "explicacion": "Es trampa visual: si el eje empieza en $\\$900.000$, las barras visibles miden 100.000 (A) y 200.000 (B). B parece el doble de A, sugiriendo un 100% de diferencia. Pero los valores REALES son $\\$1.000.000$ y $\\$1.100.000$. El incremento real es $\\dfrac{100.000}{1.000.000} = 10\\%$."
+        "explicacion": "Es trampa visual: si el eje empieza en \\$900.000, las barras visibles miden 100.000 (A) y 200.000 (B). B parece el doble de A, sugiriendo un 100% de diferencia. Pero los valores REALES son \\$1.000.000 y \\$1.100.000. El incremento real es $\\dfrac{100.000}{1.000.000} = 10\\%$."
       },
       {
         "letra": "B",

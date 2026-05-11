@@ -1,5 +1,5 @@
 "use client"
-import { useCallback, useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { useRouter } from "next/navigation"
 import { toast } from "sonner"
 import { SimulacroTimer } from "./SimulacroTimer"
@@ -16,27 +16,54 @@ import {
 import type { EjercicioSimulacro, SimulacroEnCurso, SimulacroFinalResult } from "@/types"
 
 const DURACION_BASE = 5400 // 90 min for 40 questions
-const TOTAL_BASE = 40
+const TOTAL_OBJETIVO = 40
+const PREGUNTAS_POR_MODULO = 5
 
 type Letra = 'A' | 'B' | 'C' | 'D'
 type Fase = 'bienvenida' | 'confirmando' | 'en_curso' | 'terminado'
 
 interface Props {
-  ejercicios: EjercicioSimulacro[]
+  ejerciciosPorModulo: Record<string, EjercicioSimulacro[]>
 }
 
-export function SimulacroFinalController({ ejercicios }: Props) {
+function seleccionarEjercicios(porModulo: Record<string, EjercicioSimulacro[]>): EjercicioSimulacro[] {
+  const seleccionados: EjercicioSimulacro[] = []
+  for (const arr of Object.values(porModulo)) {
+    const cuantos = Math.min(PREGUNTAS_POR_MODULO, arr.length)
+    seleccionados.push(...shuffle(arr).slice(0, cuantos))
+  }
+  return shuffle(seleccionados).map(shuffleOpciones)
+}
+
+export function SimulacroFinalController({ ejerciciosPorModulo }: Props) {
   const router = useRouter()
   const routerRef = useRef(router)
   useEffect(() => { routerRef.current = router }, [router])
 
-  // Duration scales proportionally when fewer exercises are available (see ADR-021)
-  // useState lazy initializer: ejercicios.length never changes (stable Server prop)
-  const [duracion] = useState(() =>
-    ejercicios.length >= TOTAL_BASE
-      ? DURACION_BASE
-      : Math.max(60, Math.round((ejercicios.length / TOTAL_BASE) * DURACION_BASE))
+  // Flat list of ALL available exercises — used to restore saved sessions by ID
+  const allEjercicios = useMemo(
+    () => Object.values(ejerciciosPorModulo).flat(),
+    [ejerciciosPorModulo]
   )
+
+  // Exercises that would be selected (5 per module, capped by availability)
+  const totalSeleccionado = useMemo(
+    () => Object.values(ejerciciosPorModulo).reduce(
+      (sum, arr) => sum + Math.min(PREGUNTAS_POR_MODULO, arr.length),
+      0
+    ),
+    [ejerciciosPorModulo]
+  )
+
+  // Duration: fixed 90 min when full 40 questions available, proportional otherwise
+  const [duracion] = useState(() => {
+    const total = Object.values(ejerciciosPorModulo).reduce(
+      (sum, arr) => sum + Math.min(PREGUNTAS_POR_MODULO, arr.length),
+      0
+    )
+    if (total >= TOTAL_OBJETIVO) return DURACION_BASE
+    return Math.max(60, Math.round((total / TOTAL_OBJETIVO) * DURACION_BASE))
+  })
 
   const [fase, setFase] = useState<Fase>('bienvenida')
   const [preguntaActual, setPreguntaActual] = useState(0)
@@ -54,11 +81,9 @@ export function SimulacroFinalController({ ejercicios }: Props) {
   const avisado10MinRef = useRef(false)
   const avisado2MinRef = useRef(false)
 
-  // Sync refs with state via useEffect (react-hooks/refs compliance)
   useEffect(() => { inicioTimestampRef.current = inicioTimestamp }, [inicioTimestamp])
   useEffect(() => { ejerciciosOrdenadosRef.current = ejerciciosOrdenados }, [ejerciciosOrdenados])
 
-  // All data accessed via refs or stable references — empty dep array intentional
   const finalizarSesion = useCallback((
     respuestasArg: Record<string, Letra>,
     inicioTs?: number
@@ -106,13 +131,11 @@ export function SimulacroFinalController({ ejercicios }: Props) {
   // On mount: check for existing final simulacro session (no modulo_slug = final)
   useEffect(() => {
     const session = getSimulacroEnCurso()
-    // modulo_slug is defined → it's a module simulacro, not the final one
     if (!session || session.modulo_slug !== undefined) return
 
     const elapsed = Math.floor((Date.now() - session.inicio_timestamp) / 1000)
     if (elapsed >= session.duracion_segundos) {
-      // Expired — restore exercise order and finalize
-      const exerciseMap = new Map(ejercicios.map((e) => [e.id, e]))
+      const exerciseMap = new Map(allEjercicios.map((e) => [e.id, e]))
       const restored = session.preguntas_ids
         .map((id) => exerciseMap.get(id))
         .filter((e): e is EjercicioSimulacro => e !== undefined)
@@ -124,7 +147,7 @@ export function SimulacroFinalController({ ejercicios }: Props) {
     setTiempoRestanteSesion(Math.max(0, session.duracion_segundos - elapsed))
     setSesionAnterior(session)
     setFase('confirmando')
-  }, [ejercicios, finalizarSesion])
+  }, [allEjercicios, finalizarSesion])
 
   // Auto-save every 30s while en_curso
   useEffect(() => {
@@ -137,7 +160,7 @@ export function SimulacroFinalController({ ejercicios }: Props) {
         duracion_segundos: duracion,
         preguntas_ids: ejerciciosOrdenadosRef.current.map((e) => e.id),
         respuestas: respuestasRef.current,
-        // no modulo_slug = this is the final simulacro
+        // no modulo_slug = final simulacro
       })
     }, 30_000)
 
@@ -166,20 +189,19 @@ export function SimulacroFinalController({ ejercicios }: Props) {
     return () => clearInterval(interval)
   }, [fase, duracion])
 
-  // Passes current answers explicitly — timer fires async, closure would be stale
   const handleTimeUp = useCallback(() => {
     finalizarSesion(respuestasRef.current)
   }, [finalizarSesion])
 
   function iniciarSimulacro() {
-    const shuffled = shuffle(ejercicios).map(shuffleOpciones)
+    const selected = seleccionarEjercicios(ejerciciosPorModulo)
     const ts = Date.now()
     inicioTimestampRef.current = ts
     respuestasRef.current = {}
-    ejerciciosOrdenadosRef.current = shuffled
+    ejerciciosOrdenadosRef.current = selected
     avisado10MinRef.current = false
     avisado2MinRef.current = false
-    setEjerciciosOrdenados(shuffled)
+    setEjerciciosOrdenados(selected)
     setInicioTimestamp(ts)
     setRespuestas({})
     setPreguntaActual(0)
@@ -187,7 +209,7 @@ export function SimulacroFinalController({ ejercicios }: Props) {
     saveSimulacroEnCurso({
       inicio_timestamp: ts,
       duracion_segundos: duracion,
-      preguntas_ids: shuffled.map((e) => e.id),
+      preguntas_ids: selected.map((e) => e.id),
       respuestas: {},
       // no modulo_slug = final simulacro
     })
@@ -196,7 +218,7 @@ export function SimulacroFinalController({ ejercicios }: Props) {
 
   function continuarSesion(session: SimulacroEnCurso) {
     const resps = session.respuestas as Record<string, Letra>
-    const exerciseMap = new Map(ejercicios.map((e) => [e.id, e]))
+    const exerciseMap = new Map(allEjercicios.map((e) => [e.id, e]))
     const restored = session.preguntas_ids
       .map((id) => exerciseMap.get(id))
       .filter((e): e is EjercicioSimulacro => e !== undefined)
@@ -279,16 +301,25 @@ export function SimulacroFinalController({ ejercicios }: Props) {
   }
 
   if (fase === 'bienvenida') {
-    const isPartial = ejercicios.length < TOTAL_BASE
+    const isPartial = totalSeleccionado < TOTAL_OBJETIVO
     return (
       <div className="rounded-lg border bg-card p-6 space-y-4">
         <h2 className="font-semibold text-lg">Simulacro Final de Razonamiento Lógico</h2>
         <ul className="text-sm text-muted-foreground space-y-1">
-          <li>• {ejercicios.length} preguntas{isPartial ? ` (${TOTAL_BASE - ejercicios.length} módulos pendientes de contenido)` : ""}</li>
-          <li>• {formatTime(duracion)} de tiempo</li>
-          <li>• Puedes cambiar respuestas y saltar entre preguntas</li>
-          <li>• Sin pistas — condiciones reales de examen</li>
-          <li>• Feedback detallado al finalizar</li>
+          {isPartial ? (
+            <>
+              <li>• {totalSeleccionado} preguntas (simulacro parcial — algunos módulos sin contenido)</li>
+              <li>• {formatTime(duracion)} de tiempo (proporcional)</li>
+            </>
+          ) : (
+            <>
+              <li>• 40 preguntas (5 de cada módulo)</li>
+              <li>• 90 minutos</li>
+            </>
+          )}
+          <li>• Avisos a los 10 y 2 minutos restantes</li>
+          <li>• Auto-envío al llegar a 0</li>
+          <li>• Feedback completo al finalizar</li>
         </ul>
         <button
           onClick={iniciarSimulacro}

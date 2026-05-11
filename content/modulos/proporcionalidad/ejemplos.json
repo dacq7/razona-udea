@@ -1,14 +1,14 @@
 [
   {
     "id": "ej1-proporcionalidad-regla-tres-directa",
-    "enunciado": "Si 8 metros de tela cuestan $\\$56.000$, ¿cuánto cuestan 15 metros de la misma tela?",
+    "enunciado": "Si 8 metros de tela cuestan \\$56.000, ¿cuánto cuestan 15 metros de la misma tela?",
     "pasos": [
       "Paso 1 — Identificar la proporcionalidad: más metros → mayor precio → proporción directa.",
-      "Paso 2 — Plantear la regla de tres: $\\dfrac{8 \\text{ m}}{\\$56.000} = \\dfrac{15 \\text{ m}}{x}$.",
+      "Paso 2 — Plantear la regla de tres: $\\dfrac{8 \\text{ m}}{56.000} = \\dfrac{15 \\text{ m}}{x}$.",
       "Paso 3 — Aplicar productos cruzados: $8 \\times x = 56.000 \\times 15$.",
-      "Paso 4 — Despejar: $x = \\dfrac{56.000 \\times 15}{8} = \\dfrac{840.000}{8} = \\$105.000$."
+      "Paso 4 — Despejar: $x = \\dfrac{56.000 \\times 15}{8} = \\dfrac{840.000}{8} = 105.000$."
     ],
-    "conclusion": "Los 15 metros cuestan $\\mathbf{\\$105.000}$. Alternativa: precio por metro = $56.000 \\div 8 = \\$7.000$; luego $7.000 \\times 15 = \\$105.000$."
+    "conclusion": "Los 15 metros cuestan **\\$105.000**. Alternativa: precio por metro = 56.000 ÷ 8 = \\$7.000; luego 7.000 × 15 = \\$105.000."
   },
   {
     "id": "ej2-proporcionalidad-regla-tres-inversa",
@@ -34,14 +34,14 @@
   },
   {
     "id": "ej4-proporcionalidad-descuentos-sucesivos",
-    "enunciado": "Un televisor cuesta $\\$800.000$. Le aplican primero un descuento del 25% y luego un 10% sobre el precio resultante. ¿Cuánto se paga?",
+    "enunciado": "Un televisor cuesta \\$800.000. Le aplican primero un descuento del 25% y luego un 10% sobre el precio resultante. ¿Cuánto se paga?",
     "pasos": [
-      "Paso 1 — Primer descuento (25%): $\\$800.000 \\times 0.75 = \\$600.000$.",
-      "Paso 2 — Segundo descuento (10% sobre el nuevo precio): $\\$600.000 \\times 0.90 = \\$540.000$.",
+      "Paso 1 — Primer descuento (25%): \\$800.000 × 0.75 = \\$600.000.",
+      "Paso 2 — Segundo descuento (10% sobre el nuevo precio): \\$600.000 × 0.90 = \\$540.000.",
       "Paso 3 — Descuento efectivo total: $1 - (0.75 \\times 0.90) = 1 - 0.675 = 32.5\\%$, no $35\\%$.",
-      "Paso 4 — Si se sumaran los descuentos (error frecuente): $35\\%$ de $\\$800.000 = \\$280.000$ → precio = $\\$520.000 \\neq \\$540.000$."
+      "Paso 4 — Si se sumaran los descuentos (error frecuente): $35\\%$ de \\$800.000 = \\$280.000 → precio = \\$520.000 ≠ \\$540.000."
     ],
-    "conclusion": "El precio final es $\\mathbf{\\$540.000}$ (descuento real: 32.5%). Sumar los descuentos porcentuales sobreestima el ahorro."
+    "conclusion": "El precio final es **\\$540.000** (descuento real: 32.5%). Sumar los descuentos porcentuales sobreestima el ahorro."
   },
   {
     "id": "ej5-proporcionalidad-probabilidad",
