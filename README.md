@@ -10,23 +10,37 @@
 [![MDX](https://img.shields.io/badge/MDX-KaTeX-1B1F24?logo=mdx&logoColor=white)](https://mdxjs.com)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-<!--
 ## Screenshots
 
 <p align="center">
-  <img src=".github/screenshots/dashboard.png" alt="Dashboard with per-module progress" width="800">
+  <img src=".github/screenshots/dashboard.png" alt="Dashboard showing per-module progress, cumulative stats and the recommended next module" width="800">
+  <br>
+  <em>Dashboard — completed modules, cumulative correct answers and time studied, with the next recommended module surfaced on top.</em>
 </p>
 
 <p align="center">
-  <img src=".github/screenshots/teoria.png" alt="Theory page with KaTeX formulas and ELI10 toggle" width="400">
-  <img src=".github/screenshots/practica.png" alt="Practice question with per-option feedback" width="400">
+  <img src=".github/screenshots/teoria.png" alt="Theory page rendering truth tables and logic formulas with KaTeX" width="800">
+  <br>
+  <em>Theory — formulas and truth tables rendered server-side with KaTeX. Every module also ships an ELI10 version, one toggle away.</em>
 </p>
 
 <p align="center">
-  <img src=".github/screenshots/simulacro-final.png" alt="Final mock exam with timer and navigation dots" width="400">
-  <img src=".github/screenshots/resultados.png" alt="Results breakdown by module" width="400">
+  <img src=".github/screenshots/practica.png" alt="Practice question answered, showing per-option feedback with explanations" width="800">
+  <br>
+  <em>Practice — after answering, all four options expand with their explanation: why the right one is right, and which misconception each distractor is built on.</em>
 </p>
--->
+
+<p align="center">
+  <img src=".github/screenshots/simulacro-final.png" alt="Final mock exam with countdown timer and 40 navigation dots" width="800">
+  <br>
+  <em>Final mock exam — 90-minute countdown and 40 navigation dots marking answered, current and unanswered questions. The session survives a reload.</em>
+</p>
+
+<p align="center">
+  <img src=".github/screenshots/resultados.png" alt="Results screen with score and per-module breakdown" width="800">
+  <br>
+  <em>Results — score breakdown per module, weakest first, each linking straight back to the module worth reviewing.</em>
+</p>
 
 ## What is this?
 
